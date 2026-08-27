@@ -365,23 +365,26 @@ section{padding:90px 0}
 
 <script>
 var IMG = {
-toys:'https://images.unsplash.com/photo-1530053969600-caed2596d242?q=80&w=800&auto=format&fit=crop',
+seabob:'https://images.unsplash.com/photo-1602199926649-2e5e447bab97?q=80&w=800&auto=format&fit=crop',
+efoil:'https://images.unsplash.com/photo-1713962386741-a7a77f8d4b4a?q=80&w=800&auto=format&fit=crop',
+jetboard:'https://images.unsplash.com/photo-1555572151-ed24ab503e09?q=80&w=800&auto=format&fit=crop',
 pool:'https://images.unsplash.com/photo-1534854638093-bada1813ca19?q=80&w=800&auto=format&fit=crop',
 sup:'https://images.unsplash.com/photo-1517176118179-65244903d13c?q=80&w=800&auto=format&fit=crop',
-plat:'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=800&auto=format&fit=crop',
-deck:'https://images.unsplash.com/photo-1526761122248-c31c93f8b2b9?q=80&w=800&auto=format&fit=crop'
+plat:'https://images.unsplash.com/photo-1580777187326-d45ec82084d3?q=80&w=800&auto=format&fit=crop',
+slide:'https://images.unsplash.com/photo-1646207683942-971653b6f6c2?q=80&w=800&auto=format&fit=crop',
+fender:'https://images.unsplash.com/photo-1615210833617-2698b1daad62?q=80&w=800&auto=format&fit=crop'
 };
 var PRODUCTS = [
-{id:'sbf5',cat:'Toys eléctricos',brand:'Seabob',name:'F5',price:10900,img:IMG.toys,specs:['Hasta 14 km/h en superficie e inmersión','29 kg · autonomía hasta 60 min','Blanco o azul · stock UE']},
-{id:'sbf5s',cat:'Toys eléctricos',brand:'Seabob',name:'F5 S',price:13900,img:IMG.toys,specs:['Hasta 20 km/h · 680 N de empuje','35 kg · cámara 4K opcional','El más vendido en superyates']},
-{id:'flite',cat:'Toys eléctricos',brand:'Fliteboard',name:'Series 3 eFoil',price:12900,img:IMG.toys,specs:['Vuelo sobre el agua a 25+ km/h','90 min de autonomía · app de control','Tabla PRO 5\'8 en carbono']},
-{id:'awake',cat:'Toys eléctricos',brand:'Awake',name:'RÄVIK S',price:11900,img:IMG.toys,specs:['Jetboard eléctrico · 0–50 km/h en 4 s','Batería intercambiable en 10 s','Para riders deportivos']},
+{id:'sbf5',cat:'Toys eléctricos',brand:'Seabob',name:'F5',price:10900,img:IMG.seabob,specs:['Hasta 14 km/h en superficie e inmersión','29 kg · autonomía hasta 60 min','Blanco o azul · stock UE']},
+{id:'sbf5s',cat:'Toys eléctricos',brand:'Seabob',name:'F5 S',price:13900,img:IMG.seabob,specs:['Hasta 20 km/h · 680 N de empuje','35 kg · cámara 4K opcional','El más vendido en superyates']},
+{id:'flite',cat:'Toys eléctricos',brand:'Fliteboard',name:'Series 3 eFoil',price:12900,img:IMG.efoil,specs:['Vuelo sobre el agua a 25+ km/h','90 min de autonomía · app de control','Tabla PRO 5\'8 en carbono']},
+{id:'awake',cat:'Toys eléctricos',brand:'Awake',name:'RÄVIK S',price:11900,img:IMG.jetboard,specs:['Jetboard eléctrico · 0–50 km/h en 4 s','Batería intercambiable en 10 s','Para riders deportivos']},
 {id:'ybplat',cat:'Plataformas & docks',brand:'Yachtbeach',name:'Master Platform 4.10',price:2790,img:IMG.plat,specs:['4.10 × 2.02 m · drop-stitch doble capa','Conectores modulares a otros módulos','Teca sintética antideslizante']},
 {id:'nbvoy',cat:'Plataformas & docks',brand:'NautiBuoy',name:'Voyager 4 m',price:4950,img:IMG.plat,specs:['Plataforma premium 4 × 2 m','Sistema de anclaje 360°','Grado superyate · 5 años garantía']},
 {id:'ybpool',cat:'Sea pools',brand:'Yachtbeach',name:'Sea Pool 4×4 con red',price:4590,img:IMG.pool,specs:['Piscina oceánica 4 × 4 m','Red de protección certificada','Bordes lounge inflables']},
-{id:'funair',cat:'Slides & juegos',brand:'FunAir',name:'Yacht Slide 4.5 m',price:7900,img:IMG.sup,specs:['Tobogán curvo para popa','Inflado en 8 min · turbina incluida','A medida para su francobordo']},
+{id:'funair',cat:'Slides & juegos',brand:'FunAir',name:'Yacht Slide 4.5 m',price:7900,img:IMG.slide,specs:['Tobogán curvo para popa','Inflado en 8 min · turbina incluida','A medida para su francobordo']},
 {id:'redp',cat:'Slides & juegos',brand:'Red Paddle Co',name:'Ride 10\'6 SUP',price:1290,img:IMG.sup,specs:['La tabla inflable de referencia','Kit completo: remo, bomba, mochila','Lista para regalar a bordo']},
-{id:'fendx',cat:'Fendería & amarre',brand:'Fendertex',name:'Set 4 fenders textiles S70',price:1390,img:IMG.deck,specs:['Fenders textiles ultraligeros','70% más ligeros que PVC','Fundas en color de su casco']}
+{id:'fendx',cat:'Fendería & amarre',brand:'Fendertex',name:'Set 4 fenders textiles S70',price:1390,img:IMG.fender,specs:['Fenders textiles ultraligeros','70% más ligeros que PVC','Fundas en color de su casco']}
 ];
 var cart = [];
 function fmt(n){return '€'+n.toLocaleString('es-ES')}
