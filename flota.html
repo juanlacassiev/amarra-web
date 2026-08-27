@@ -110,7 +110,7 @@ footer span{color:var(--gold-l)}
 <div class="note"><div class="wrap">
 <p class="big">¿No encuentra su barco?</p>
 <p>Esta selección es una muestra de los modelos más pedidos. A través de nuestra red accedemos a <strong>más de 9.000 barcos en 500 destinos</strong> — dinos qué buscas (zona, fechas, nº de camarotes, con o sin tripulación) y te enviamos una propuesta a medida en 24 h: <a href="index.html#charter">solicitar propuesta</a>.</p>
-<p style="margin-top:18px">Precios orientativos por semana en temporada media, según base y fechas. Confirmamos precio final, extras y disponibilidad por escrito antes de cualquier pago. Reserva formal con contrato de la flota operadora.</p>
+<p style="margin-top:18px">Rangos por semana de temporada baja a alta (julio–agosto), verificados contra listados reales de mercado. En barcos sin tripulación se suman extras habituales: limpieza final, combustible y patrón opcional. En yates tripulados se añade APA (~25–30%) para combustible, comida y amarres. El gulet opera en régimen todo incluido. Confirmamos precio final, extras y disponibilidad por escrito antes de cualquier pago. Reserva formal con contrato de la flota operadora.</p>
 </div></div>
 
 <footer><div class="wrap">
@@ -140,18 +140,18 @@ footer span{color:var(--gold-l)}
 var IMG='https://images.unsplash.com/photo-';
 var Q='?q=80&w=900&auto=format&fit=crop';
 var BOATS=[
-{cat:'vela',tag:'Velero — Monocasco',name:'Oceanis 46.1',brand:'Beneteau',img:'1504813205186-380b1235a5d2',len:'14,60 m',cab:'4 camarotes + salón',plz:'8+2 plazas',base:'Palma de Mallorca — Baleares',yr:'2022–2024',price:3400,crew:false},
-{cat:'vela',tag:'Velero — Monocasco',name:'Sun Odyssey 490',brand:'Jeanneau',img:'1503634192480-e77a6436f075',len:'14,80 m',cab:'5 camarotes',plz:'10 plazas',base:'Atenas (Álimos) — Grecia',yr:'2021–2023',price:3900,crew:false},
-{cat:'vela',tag:'Velero — Monocasco',name:'Hanse 508',brand:'Hanse Yachts',img:'1636730740168-c94f3ab802e6',len:'15,55 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Split — Croacia',yr:'2022–2024',price:4200,crew:false},
-{cat:'vela',tag:'Velero — Performance cruiser',name:'Grand Soleil 46 LC',brand:'Cantiere del Pardo',img:'1613578699399-82ae71be53a3',len:'14,20 m',cab:'4 camarotes',plz:'8 plazas',base:'Olbia — Cerdeña',yr:'2021–2023',price:5900,crew:false},
-{cat:'cat',tag:'Catamarán',name:'Lagoon 42',brand:'Lagoon',img:'1723037706467-18ba6d269666',len:'12,80 m',cab:'4 camarotes + 2 marineros',plz:'10+2 plazas',base:'Palma de Mallorca — Baleares',yr:'2022–2024',price:5900,crew:false},
-{cat:'cat',tag:'Catamarán',name:'Bali 4.6',brand:'Bali Catamarans',img:'1581271164789-7c97932822d3',len:'14,28 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Lavrion — Grecia',yr:'2022–2024',price:7400,crew:false},
-{cat:'cat',tag:'Catamarán',name:'Lagoon 46',brand:'Lagoon',img:'1652952116747-ecdcabb667de',len:'13,99 m',cab:'4 camarotes + 2 marineros',plz:'10+2 plazas',base:'Dubrovnik — Croacia',yr:'2021–2024',price:8200,crew:false},
-{cat:'cat',tag:'Catamarán',name:'Tanna 47',brand:'Fountaine Pajot',img:'1590218087440-df21ca448c26',len:'13,94 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Saint-Mandrier — Côte d\'Azur',yr:'2022–2024',price:9500,crew:false},
-{cat:'motor',tag:'Yate a motor',name:'Princess V50',brand:'Princess Yachts',img:'1569263979104-865ab7cd8d13',len:'15,24 m',cab:'3 camarotes',plz:'6 plazas · patrón opcional',base:'Puerto Portals — Baleares',yr:'2020–2023',price:14900,crew:false},
-{cat:'motor',tag:'Yate a motor — Tripulado',name:'Manhattan 66',brand:'Sunseeker',img:'1621277224630-81d9af65e40c',len:'20,30 m',cab:'4 camarotes',plz:'8 plazas · 2 de tripulación',base:'Ibiza — Baleares',yr:'2019–2022',price:29500,crew:true},
-{cat:'motor',tag:'Yate a motor — Tripulado',name:'Azimut 68',brand:'Azimut Yachts',img:'1604737637145-48cc31d160eb',len:'21,05 m',cab:'4 camarotes',plz:'8 plazas · 2–3 de tripulación',base:'Cannes — Côte d\'Azur',yr:'2020–2023',price:31000,crew:true},
-{cat:'gulet',tag:'Gulet clásico — Todo incluido',name:'Gulet 24 m',brand:'Construcción artesanal en madera',img:'1711143965967-d1e451ec555b',len:'24,00 m',cab:'6 camarotes en suite',plz:'12 plazas · 4 de tripulación',base:'Bodrum — Turquía / Dodecaneso',yr:'Reformado 2021+',price:18000,crew:true}
+{cat:'vela',tag:'Velero — Monocasco',name:'Oceanis 46.1',brand:'Beneteau',img:'1504813205186-380b1235a5d2',len:'14,60 m',cab:'4 camarotes + salón',plz:'8+2 plazas',base:'Palma de Mallorca — Baleares',yr:'2022–2024',price:3400,hi:6500,crew:false},
+{cat:'vela',tag:'Velero — Monocasco',name:'Sun Odyssey 490',brand:'Jeanneau',img:'1503634192480-e77a6436f075',len:'14,80 m',cab:'5 camarotes',plz:'10 plazas',base:'Atenas (Álimos) — Grecia',yr:'2021–2023',price:3900,hi:7500,crew:false},
+{cat:'vela',tag:'Velero — Monocasco',name:'Hanse 508',brand:'Hanse Yachts',img:'1636730740168-c94f3ab802e6',len:'15,55 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Split — Croacia',yr:'2022–2024',price:4200,hi:8500,crew:false},
+{cat:'vela',tag:'Velero — Performance cruiser',name:'Grand Soleil 46 LC',brand:'Cantiere del Pardo',img:'1613578699399-82ae71be53a3',len:'14,20 m',cab:'4 camarotes',plz:'8 plazas',base:'Olbia — Cerdeña',yr:'2021–2023',price:5900,hi:9800,crew:false},
+{cat:'cat',tag:'Catamarán',name:'Lagoon 42',brand:'Lagoon',img:'1723037706467-18ba6d269666',len:'12,80 m',cab:'4 camarotes + 2 marineros',plz:'10+2 plazas',base:'Palma de Mallorca — Baleares',yr:'2022–2024',price:5900,hi:11500,crew:false},
+{cat:'cat',tag:'Catamarán',name:'Bali 4.6',brand:'Bali Catamarans',img:'1581271164789-7c97932822d3',len:'14,28 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Lavrion — Grecia',yr:'2022–2024',price:7400,hi:14500,crew:false},
+{cat:'cat',tag:'Catamarán',name:'Lagoon 46',brand:'Lagoon',img:'1652952116747-ecdcabb667de',len:'13,99 m',cab:'4 camarotes + 2 marineros',plz:'10+2 plazas',base:'Dubrovnik — Croacia',yr:'2021–2024',price:8200,hi:16000,crew:false},
+{cat:'cat',tag:'Catamarán',name:'Tanna 47',brand:'Fountaine Pajot',img:'1590218087440-df21ca448c26',len:'13,94 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Saint-Mandrier — Côte d\'Azur',yr:'2022–2024',price:9500,hi:18500,crew:false},
+{cat:'motor',tag:'Yate a motor',name:'Princess V50',brand:'Princess Yachts',img:'1569263979104-865ab7cd8d13',len:'15,24 m',cab:'3 camarotes',plz:'6 plazas · patrón opcional',base:'Puerto Portals — Baleares',yr:'2020–2023',price:14900,hi:19500,crew:false},
+{cat:'motor',tag:'Yate a motor — Tripulado',name:'Manhattan 66',brand:'Sunseeker',img:'1621277224630-81d9af65e40c',len:'20,30 m',cab:'4 camarotes',plz:'8 plazas · 2 de tripulación',base:'Ibiza — Baleares',yr:'2019–2022',price:29500,hi:38000,crew:true},
+{cat:'motor',tag:'Yate a motor — Tripulado',name:'Azimut 68',brand:'Azimut Yachts',img:'1604737637145-48cc31d160eb',len:'21,05 m',cab:'4 camarotes',plz:'8 plazas · 2–3 de tripulación',base:'Cannes — Côte d\'Azur',yr:'2020–2023',price:24500,hi:35000,crew:true},
+{cat:'gulet',tag:'Gulet clásico — Todo incluido',name:'Gulet 24 m',brand:'Construcción artesanal en madera',img:'1711143965967-d1e451ec555b',len:'24,00 m',cab:'6 camarotes en suite',plz:'12 plazas · 4 de tripulación',base:'Bodrum — Turquía / Dodecaneso',yr:'Reformado 2021+',price:24500,hi:31500,crew:true}
 ];
 function fmt(n){return '€'+n.toLocaleString('es-ES')}
 function render(f){
@@ -168,7 +168,7 @@ return '<div class="card">'+
 '<li><span>Capacidad</span><span>'+b.plz+'</span></li>'+
 '<li><span>Año</span><span>'+b.yr+'</span></li>'+
 '</ul>'+
-'<div class="price-row"><div class="price">desde '+fmt(b.price)+'<small> +extras</small></div><div class="per">por semana</div></div>'+
+'<div class="price-row"><div class="price">'+fmt(b.price)+' – '+fmt(b.hi)+'<small> +extras</small></div><div class="per">por semana · según temporada</div></div>'+
 '<button class="cta" onclick="openModal(\''+b.name.replace(/'/g,"\\'")+' — '+b.brand.replace(/'/g,"\\'")+'\')">Solicitar disponibilidad</button>'+
 '</div></div>'
 }).join('');
