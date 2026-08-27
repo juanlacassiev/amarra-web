@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMARRA — SeaSuite™ | Horizon &amp; Aurora, el camarote flotante de lujo</title>
+<meta name="description" content="SeaSuite™ Horizon y Aurora: suites flotantes de lujo que se amarran a la popa de su yate. Materiales técnicos europeos, serie inaugural de 12 unidades, entrega en el Mediterráneo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0b0e13;--ink:#141922;--ivory:#f4f1ea;--paper:#faf8f4;--gold:#ab9260;--gold-l:#c9b586;--line-d:rgba(244,241,234,.14);--line-l:rgba(11,14,19,.12);--mut-d:#8b93a1;--mut-l:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);font-weight:300;line-height:1.6}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,14,19,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+.wordmark{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.42em;color:var(--ivory);text-decoration:none;font-weight:500}
+.nav-r a{color:var(--mut-d);text-decoration:none;margin-left:28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;transition:color .3s}
+.nav-r a:hover,.nav-r a.on{color:var(--gold-l)}
+header{background:var(--black);color:var(--ivory);padding:170px 0 100px;position:relative;overflow:hidden}
+header .bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1637576308588-6647bf80944d?q=80&w=1800&auto=format&fit=crop') center 55%/cover;opacity:.42}
+header .grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,19,.5),rgba(11,14,19,.93))}
+header .wrap{position:relative;z-index:2}
+.eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-l);margin-bottom:22px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,76px);font-weight:500;line-height:1.05}
+h1 em{font-style:italic;color:var(--gold-l)}
+.lede{max-width:660px;color:#c7ccd6;margin-top:24px;font-size:15px}
+.lede strong{color:var(--ivory);font-weight:400}
+.product{padding:90px 0;border-top:1px solid var(--line-l)}
+.product.dark{background:var(--black);color:var(--ivory)}
+.p-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:8px}
+.p-num{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.product h2{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4.5vw,58px);font-weight:500;line-height:1.05}
+.tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--mut-l);margin:6px 0 36px}
+.dark .tagline{color:var(--mut-d)}
+.p-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
+@media(max-width:900px){.p-grid{grid-template-columns:1fr}}
+.gal .main{width:100%;height:440px;object-fit:cover;display:block;background:var(--ink)}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.thumbs img{width:100%;height:92px;object-fit:cover;display:block;cursor:pointer;opacity:.75;transition:opacity .3s;background:var(--ink)}
+.thumbs img:hover{opacity:1}
+.gal .cap{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut-l);margin-top:10px}
+.dark .gal .cap{color:var(--mut-d)}
+.desc{font-size:14.5px;margin-bottom:26px}
+.dark .desc{color:#c7ccd6}
+.spec{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line-l);font-size:13px}
+.dark .spec{border-color:var(--line-d)}
+.spec .k{color:var(--mut-l);letter-spacing:.06em}
+.dark .spec .k{color:var(--mut-d)}
+.mat-h{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin:28px 0 10px}
+.mats{list-style:none}
+.mats li{font-size:13px;padding:6px 0 6px 18px;position:relative}
+.dark .mats li{color:#c7ccd6}
+.mats li:before{content:'—';position:absolute;left:0;color:var(--gold)}
+.price-line{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin:30px 0 8px}
+.price{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500}
+.price small{font-size:14px;color:var(--mut-l);font-family:'Inter',sans-serif;font-weight:300}
+.dark .price small{color:var(--mut-d)}
+.edition{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.btn{font-family:'Inter',sans-serif;display:inline-block;margin-top:18px;padding:16px 38px;background:var(--ink);color:var(--ivory);border:1px solid var(--ink);font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.btn:hover{background:var(--gold);border-color:var(--gold)}
+.dark .btn{background:none;border-color:var(--gold);color:var(--gold-l)}
+.dark .btn:hover{background:var(--gold);color:var(--black)}
+.build{background:#fff;border-top:1px solid var(--line-l);padding:90px 0}
+.build h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;margin-bottom:10px}
+.build .sub-p{font-size:13.5px;color:var(--mut-l);max-width:700px;margin-bottom:50px}
+.b-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px}
+.b-item h3{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;margin-bottom:10px;color:var(--ink)}
+.b-item p{font-size:13px;color:var(--mut-l)}
+.b-item .who{display:block;margin-top:8px;font-size:11px;letter-spacing:.1em;color:var(--gold)}
+.steps-sec{background:var(--ivory);border-top:1px solid var(--line-l);padding:80px 0}
+.steps-sec h2{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:500;margin-bottom:44px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+.step .num{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold);line-height:1;margin-bottom:12px}
+.step h3{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:8px}
+.step p{font-size:13px;color:var(--mut-l)}
+.note{background:var(--paper);border-top:1px solid var(--line-l);padding:56px 0 64px}
+.note .big{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;margin-bottom:14px;line-height:1.2}
+.note p{max-width:780px;font-size:13px;color:var(--mut-l)}
+.note p strong{color:var(--ink);font-weight:500}
+footer{background:var(--black);color:var(--mut-d);padding:44px 0;font-size:11px;letter-spacing:.12em}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer span{color:var(--gold-l)}
+.veil{display:none;position:fixed;inset:0;background:rgba(11,14,19,.6);z-index:80;backdrop-filter:blur(3px)}
+.modal{display:none;position:fixed;z-index:90;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,92vw);max-height:88vh;overflow:auto;background:var(--paper);padding:44px}
+.modal.open,.veil.open{display:block}
+.modal h4{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;margin-bottom:4px}
+.modal .sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:26px}
+.modal label{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut-l);margin:16px 0 6px}
+.modal input,.modal select,.modal textarea{width:100%;padding:13px 14px;border:1px solid var(--line-l);background:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:300;color:var(--ink)}
+.modal textarea{resize:vertical;min-height:80px}
+.modal .send{margin-top:26px;width:100%;padding:16px;background:var(--ink);color:var(--ivory);border:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.modal .send:hover{background:var(--gold)}
+.modal .x{position:absolute;top:16px;right:20px;background:none;border:none;font-size:22px;color:var(--mut-l);cursor:pointer}
+.modal .ok-msg{display:none;padding:14px;background:rgba(171,146,96,.12);border:1px solid var(--gold);font-size:13px;margin-top:18px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-in">
+<a class="wordmark" href="index.html">AMARRA</a>
+<div class="nav-r"><a href="index.html">Inicio</a><a href="flota.html">La Flota</a><a href="index.html#boutique">Boutique</a><a class="on" href="#horizon">SeaSuite™</a></div>
+</div></nav>
+
+<header>
+<div class="bg"></div><div class="grad"></div>
+<div class="wrap">
+<div class="eyebrow">SeaSuite™ — Serie Inaugural</div>
+<h1>El camarote que<br><em>duerme sobre el agua</em></h1>
+<p class="lede">Al atardecer, la tripulación la despliega y la amarra a su popa. Usted cena a bordo, cruza la pasarela y duerme <strong>literalmente sobre el mar</strong> — con cama queen, blackout total y el amanecer entrando por la cúpula. Dos modelos. Doce unidades. Mediterráneo, verano 2027.</p>
+</div>
+</header>
+
+<section class="product" id="horizon"><div class="wrap">
+<div class="p-head"><div><div class="p-num">Nº 01</div><h2>SeaSuite™ Horizon</h2><p class="tagline">La suite de hotel sobre el agua</p></div><div class="edition">Edición de 12 · Entrega primavera 2027</div></div>
+<div class="p-grid">
+<div class="gal">
+<img class="main" id="g-hz" src="https://images.unsplash.com/photo-1688999991151-d797021df975?q=80&w=1400&auto=format&fit=crop" alt="Interior tipo suite de lona con cama y ventanales">
+<div class="thumbs">
+<img src="https://images.unsplash.com/photo-1688999991151-d797021df975?q=80&w=900&auto=format&fit=crop" onclick="sw('g-hz',this)" alt="Suite de lona">
+<img src="https://images.unsplash.com/photo-1693921149059-5bab3d1d8c13?q=80&w=900&auto=format&fit=crop" onclick="sw('g-hz',this)" alt="Interior con cama vestida">
+<img src="https://images.unsplash.com/photo-1731017035777-7550cd3a688a?q=80&w=900&auto=format&fit=crop" alt="Plataforma flotante drop-stitch" onclick="sw('g-hz',this)">
+<img src="https://images.unsplash.com/photo-1637576308588-6647bf80944d?q=80&w=900&auto=format&fit=crop" onclick="sw('g-hz',this)" alt="Vida sobre el agua al atardecer">
+</div>
+<p class="cap">Imágenes de referencia de diseño y ambiente · la serie inaugural se fotografía en Mahón</p>
+</div>
+<div>
+<p class="desc">Una plataforma flotante de doble cámara con cabina de lona tensada: la solidez de una habitación de hotel, el silencio del mar abierto. Suelo rígido drop-stitch, teca sintética en cubierta y un porche de proa para el café del amanecer.</p>
+<div class="spec"><span class="k">Plataforma</span><span>6.0 × 3.2 m · drop-stitch alta presión</span></div>
+<div class="spec"><span class="k">Cabina</span><span>3.6 × 2.6 m · altura interior 1.95 m</span></div>
+<div class="spec"><span class="k">Capacidad</span><span>2 huéspedes · cama queen 160</span></div>
+<div class="spec"><span class="k">Viento de diseño</span><span>25 nudos amarrada</span></div>
+<div class="spec"><span class="k">Energía</span><span>Solar 200 W · luz cálida + USB</span></div>
+<div class="spec"><span class="k">Montaje</span><span>18 min · 2 tripulantes</span></div>
+<div class="spec"><span class="k">Peso / estiba</span><span>~95 kg · 2 bolsas de tambucho</span></div>
+<div class="mat-h">Materiales</div>
+<ul class="mats">
+<li>Casco: tejido drop-stitch DWF 0.9 mm de grado marino</li>
+<li>Cabina: Valmex® Mare (Mehler Texnologies, Alemania)</li>
+<li>Cubiertas técnicas: Stamoid® Marine (Serge Ferrari, Francia)</li>
+<li>Cierres estancos YKK® Aquaseal · costuras termoselladas</li>
+<li>Suelo: teca sintética EVA · herrajes inox 316</li>
+</ul>
+<div class="price-line"><div class="price">€15.500 <small>IVA incl.</small></div></div>
+<button class="btn" onclick="openR('Horizon','€15.500')">Reservar con señal de €500</button>
+</div>
+</div>
+</div></section>
+
+<section class="product dark" id="aurora"><div class="wrap">
+<div class="p-head"><div><div class="p-num">Nº 02</div><h2>SeaSuite™ Aurora</h2><p class="tagline">Dormir bajo las estrellas, literalmente</p></div><div class="edition">Edición de 12 · Entrega primavera 2027</div></div>
+<div class="p-grid">
+<div class="gal">
+<img class="main" id="g-au" src="https://images.unsplash.com/photo-1695198027348-6aa12b19d517?q=80&w=1400&auto=format&fit=crop" alt="Cúpulas transparentes iluminadas de noche">
+<div class="thumbs">
+<img src="https://images.unsplash.com/photo-1695198027348-6aa12b19d517?q=80&w=900&auto=format&fit=crop" onclick="sw('g-au',this)" alt="Cúpula transparente de noche">
+<img src="https://images.unsplash.com/photo-1642022467988-506051e8fe7f?q=80&w=900&auto=format&fit=crop" onclick="sw('g-au',this)" alt="El cielo desde la cama, a través de la cúpula">
+<img src="https://images.unsplash.com/photo-1640755668096-4f4c7b8f4410?q=80&w=900&auto=format&fit=crop" onclick="sw('g-au',this)" alt="Suites de cúpula, vista exterior de día">
+<img src="https://images.unsplash.com/photo-1717308086506-4cbc0f4624ed?q=80&w=900&auto=format&fit=crop" onclick="sw('g-au',this)" alt="Cúpula encendida al anochecer junto al agua">
+</div>
+<p class="cap">Imágenes de referencia de diseño y ambiente · la serie inaugural se fotografía en Mahón</p>
+</div>
+<div>
+<p class="desc">La misma plataforma de grado oceánico, coronada por una cúpula transparente de TPU cristal: 180° de cielo desde la cama. Cortina blackout de 360° para dormir hasta tarde y ventilación cruzada silenciosa. La habitación más romántica del Mediterráneo no está en ningún hotel.</p>
+<div class="spec"><span class="k">Plataforma</span><span>4.6 × 4.0 m · drop-stitch alta presión</span></div>
+<div class="spec"><span class="k">Cúpula</span><span>⌀ 3.4 m · TPU cristal óptico anti-UV</span></div>
+<div class="spec"><span class="k">Capacidad</span><span>2 huéspedes · cama queen 160</span></div>
+<div class="spec"><span class="k">Viento de diseño</span><span>20 nudos · repliegue en 60 s</span></div>
+<div class="spec"><span class="k">Privacidad</span><span>Blackout 360° · ventilación cruzada</span></div>
+<div class="spec"><span class="k">Energía</span><span>Solar 200 W · turbina de aire silenciosa</span></div>
+<div class="spec"><span class="k">Peso / estiba</span><span>~110 kg · 2 bolsas de tambucho</span></div>
+<div class="mat-h">Materiales</div>
+<ul class="mats">
+<li>Casco: tejido drop-stitch DWF 0.9 mm de grado marino</li>
+<li>Cúpula: TPU cristal 0.6 mm con tratamiento anti-UV</li>
+<li>Base y faldones: Valmex® Mare (Mehler Texnologies)</li>
+<li>Blackout: Sunbrella® Marine con guías perimetrales</li>
+<li>Cierres estancos YKK® Aquaseal · herrajes inox 316</li>
+</ul>
+<div class="price-line"><div class="price">€18.200 <small>IVA incl.</small></div></div>
+<button class="btn" onclick="openR('Aurora','€18.200')">Reservar con señal de €500</button>
+</div>
+</div>
+</div></section>
+
+<section class="build"><div class="wrap">
+<h2>Cómo está construida</h2>
+<p class="sub-p">Cada SeaSuite se fabrica bajo pedido con materiales técnicos de proveedores europeos y asiáticos de primera línea — los mismos tejidos que visten neumáticas de gran eslora, toldos de superyate y arquitectura textil de lujo — y pasa inspección independiente antes de embarcar.</p>
+<div class="b-grid">
+<div class="b-item"><h3>Flotabilidad</h3><p>Doble cámara drop-stitch de alta presión: rígida como una cubierta, estable con dos personas de pie en el mismo borde.</p><span class="who">Tejido DWF de grado marino</span></div>
+<div class="b-item"><h3>Textil de cabina</h3><p>Lona náutica alemana con tratamiento anti-moho, anti-UV y salitre, la referencia del sector para embarcaciones neumáticas premium.</p><span class="who">Valmex® Mare — Mehler Texnologies</span></div>
+<div class="b-item"><h3>Cúpula Aurora</h3><p>TPU cristal de calidad óptica, flexible a baja temperatura y estabilizado UV, termosellado sin costuras vistas.</p><span class="who">TPU cristal 0.6 mm anti-UV</span></div>
+<div class="b-item"><h3>Sellado y herrajes</h3><p>Cremalleras estancas, costuras termoselladas al aire caliente y acero inoxidable 316 en cada punto de amarre.</p><span class="who">YKK® Aquaseal · inox 316</span></div>
+<div class="b-item"><h3>Sombra y blackout</h3><p>Tejidos técnicos de exterior con garantía marina para el porche, cortinas y el sistema blackout de 360°.</p><span class="who">Stamoid® Serge Ferrari · Sunbrella® Marine</span></div>
+<div class="b-item"><h3>Control de calidad</h3><p>Prototipo aprobado en Mahón, inspección independiente en fábrica y prueba de fondeo de 48 h antes de la entrega.</p><span class="who">Inspección SGS / QIMA</span></div>
+</div>
+</div></section>
+
+<section class="steps-sec"><div class="wrap">
+<h2>De la reserva a su popa</h2>
+<div class="steps">
+<div class="step"><div class="num">01</div><h3>Reserva</h3><p>Señal reembolsable de €500 que fija su número de serie dentro de la edición de 12.</p></div>
+<div class="step"><div class="num">02</div><h3>Configuración</h3><p>Color de lona, teca de cubierta y bordado del nombre de su barco. Confirmación del resto del pago al iniciar producción.</p></div>
+<div class="step"><div class="num">03</div><h3>Producción</h3><p>6–8 semanas de fabricación bajo pedido con inspección independiente y prueba de fondeo de 48 horas.</p></div>
+<div class="step"><div class="num">04</div><h3>Entrega</h3><p>En su amarre del Mediterráneo con puesta en marcha a bordo, o recogida en Mahón. Garantía de 2 años.</p></div>
+</div>
+</div></section>
+
+<section class="note"><div class="wrap">
+<p class="big">Doce unidades. Ni una más.</p>
+<p>La serie inaugural SeaSuite™ se limita a <strong>12 unidades numeradas</strong> entre ambos modelos. La señal de €500 es <strong>íntegramente reembolsable</strong> hasta la confirmación de producción y se descuenta del precio final. Precio con IVA y entrega en el Mediterráneo incluidos — sin costes ocultos. Consultas: <a href="mailto:zagatomiami@gmail.com" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold)">zagatomiami@gmail.com</a></p>
+</div></section>
+
+<footer><div class="wrap"><div><span>AMARRA</span> — Maison Náutica</div><div>Mahón · Mónaco · Miami</div></div></footer>
+
+<div class="veil" id="veil" onclick="closeR()"></div>
+<div class="modal" id="rmodal">
+<button class="x" onclick="closeR()">×</button>
+<h4 id="rm-title">Reservar SeaSuite™</h4>
+<div class="sub" id="rm-sub">Señal reembolsable de €500</div>
+<form id="rform">
+<label>Nombre completo</label><input name="nombre" required>
+<label>Email</label><input type="email" name="email" required>
+<label>Teléfono / WhatsApp</label><input name="telefono" required>
+<label>Puerto base de su barco</label><input name="puerto" placeholder="p. ej. Mahón, Palma, Port Grimaud">
+<label>Mensaje</label><textarea name="mensaje" placeholder="Fechas, eslora de su barco, dudas…"></textarea>
+<input type="hidden" name="modelo" id="rm-model">
+<button class="send" type="submit">Solicitar reserva — le contactamos en 24 h</button>
+<div class="ok-msg" id="rm-ok">Solicitud recibida. Le escribiremos en menos de 24 horas para formalizar la señal y su número de serie.</div>
+</form>
+</div>
+
+<script>
+function sw(id,el){document.getElementById(id).src=el.src.replace('w=900','w=1400')}
+function openR(model,price){
+document.getElementById('rm-title').textContent='Reservar SeaSuite™ '+model;
+document.getElementById('rm-sub').textContent='Señal reembolsable de €500 · precio '+price+' IVA incl.';
+document.getElementById('rm-model').value=model+' ('+price+')';
+document.getElementById('rmodal').classList.add('open');document.getElementById('veil').classList.add('open');
+}
+function closeR(){document.getElementById('rmodal').classList.remove('open');document.getElementById('veil').classList.remove('open')}
+document.getElementById('rform').addEventListener('submit',function(e){
+e.preventDefault();
+var f=e.target,btn=f.querySelector('.send');btn.disabled=true;btn.textContent='Enviando…';
+var data={};new FormData(f).forEach(function(v,k){data[k]=v});
+data._subject='AMARRA — Reserva SeaSuite '+data.modelo;
+fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+.then(function(r){return r.json()}).then(function(){
+document.getElementById('rm-ok').style.display='block';btn.textContent='Solicitud enviada ✓';
+}).catch(function(){
+window.location.href='mailto:zagatomiami@gmail.com?subject='+encodeURIComponent('Reserva SeaSuite '+data.modelo)+'&body='+encodeURIComponent('Nombre: '+data.nombre+'\nTel: '+data.telefono);
+});
+});
+</script>
+</body>
+</html>
