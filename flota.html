@@ -46,12 +46,20 @@ h1 em{font-style:italic;color:var(--gold-l)}
 .specs{list-style:none;margin:18px 0 6px;flex:1}
 .specs li{font-size:13px;color:#3d4451;padding:7px 0;border-bottom:1px dashed var(--line-l);display:flex;justify-content:space-between;gap:12px}
 .specs li span:first-child{color:var(--mut-l)}
-.price-row{display:flex;align-items:baseline;justify-content:space-between;margin:16px 0 14px}
-.price{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500}
-.price small{font-family:'Inter',sans-serif;font-size:11px;color:var(--mut-l);letter-spacing:.06em}
+.price-row{display:flex;align-items:baseline;justify-content:space-between;margin:16px 0 14px;flex-wrap:wrap;gap:6px}
+.price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500}
 .per{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut-l)}
 .cta{font-family:'Inter',sans-serif;width:100%;padding:15px;background:var(--ink);color:var(--ivory);border:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s}
 .cta:hover{background:var(--gold)}
+.cta.ghost{background:none;border:1px solid var(--line-l);color:var(--ink);margin-bottom:10px}
+.cta.ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(171,146,96,.06)}
+.proceso{background:#fff;border-top:1px solid var(--line-l);padding:80px 0}
+.proceso h2{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:500;margin-bottom:10px}
+.proceso .sub-p{font-size:13px;color:var(--mut-l);max-width:640px;margin-bottom:44px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.step .num{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold);line-height:1;margin-bottom:12px}
+.step h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:8px}
+.step p{font-size:13px;color:var(--mut-l)}
 .note{background:var(--ivory);border-top:1px solid var(--line-l);padding:56px 0 64px}
 .note p{max-width:760px;font-size:13px;color:var(--mut-l)}
 .note p strong{color:var(--ink);font-weight:500}
@@ -70,9 +78,41 @@ footer span{color:var(--gold-l)}
 .modal textarea{resize:vertical;min-height:80px}
 .modal .send{margin-top:26px;width:100%;padding:16px;background:var(--ink);color:var(--ivory);border:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s}
 .modal .send:hover{background:var(--gold)}
-.modal .x{position:absolute;top:18px;right:22px;background:none;border:none;font-size:22px;color:var(--mut-l);cursor:pointer}
+.modal .x,.sheet .x{position:absolute;top:18px;right:22px;background:none;border:none;font-size:22px;color:var(--mut-l);cursor:pointer;z-index:5}
 .ok-msg{display:none;background:rgba(171,146,96,.1);border:1px solid var(--gold);padding:16px;font-size:13px;color:var(--ink);margin-top:20px}
-@media(max-width:720px){.nav-r a{display:none}.wrap{padding:0 20px}}
+.sheet{display:none;position:fixed;z-index:85;top:50%;left:50%;transform:translate(-50%,-50%);width:min(980px,94vw);max-height:90vh;overflow:auto;background:var(--paper)}
+.sheet.open{display:block}
+.sheet .inner{padding:44px}
+.sheet .cat-tag{margin-bottom:6px}
+.sheet h4{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:500;line-height:1.1}
+.sheet .brand{margin:2px 0 22px}
+.gal-main{height:min(440px,48vw);background:var(--ink);overflow:hidden}
+.gal-main img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.thumbs img{width:100%;height:84px;object-fit:cover;display:block;cursor:pointer;opacity:.65;border:1px solid transparent;transition:opacity .3s}
+.thumbs img.on,.thumbs img:hover{opacity:1;border-color:var(--gold)}
+.sheet-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:36px}
+.sheet h5{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.tspecs{width:100%;border-collapse:collapse;font-size:13px}
+.tspecs td{padding:7px 0;border-bottom:1px dashed var(--line-l)}
+.tspecs td:first-child{color:var(--mut-l);padding-right:14px}
+.tspecs td:last-child{text-align:right;color:#3d4451}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:11.5px;border:1px solid var(--line-l);background:#fff;padding:6px 12px;color:#3d4451}
+.tsea{width:100%;border-collapse:collapse;font-size:13px;margin-top:2px}
+.tsea th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut-l);font-weight:400;text-align:left;padding:0 0 8px}
+.tsea th:last-child,.tsea td:last-child{text-align:right}
+.tsea td{padding:9px 0;border-top:1px dashed var(--line-l);color:#3d4451}
+.tsea td:last-child{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--ink)}
+.inc{margin-top:22px;font-size:12.5px}
+.inc ul{list-style:none}
+.inc li{padding:5px 0 5px 18px;position:relative;color:#3d4451}
+.inc li:before{content:'—';position:absolute;left:0;color:var(--gold)}
+.inc li.no:before{content:'×';color:var(--mut-l)}
+.inc li.no{color:var(--mut-l)}
+.fee-line{font-size:11px;letter-spacing:.1em;color:var(--mut-l);margin-top:10px}
+.sheet .big-cta{margin-top:34px}
+@media(max-width:760px){.nav-r a{display:none}.wrap{padding:0 20px}.sheet-cols{grid-template-columns:1fr}.sheet .inner{padding:28px 20px}}
 </style>
 </head>
 <body>
@@ -92,7 +132,7 @@ footer span{color:var(--gold-l)}
 <div class="wrap">
 <div class="eyebrow">Charter &amp; Brokerage — Mediterráneo</div>
 <h1>La <em>flota</em>.</h1>
-<p class="lede">Los barcos más solicitados de nuestra red — <strong>conectada al sistema NauSYS, con más de 9.000 yates y disponibilidad en tiempo real</strong>. Elija su barco, envíe las fechas y reciba <strong>disponibilidad confirmada y 3 alternativas en menos de 24 horas</strong>. La comisión la asume la flota, nunca usted.</p>
+<p class="lede">Los barcos más solicitados de nuestra red — <strong>conectada al sistema NauSYS, con más de 9.000 yates y disponibilidad en tiempo real</strong>. Elija su barco, envíe las fechas y reciba <strong>disponibilidad confirmada y 3 alternativas en menos de 24 horas</strong>. Precio final con la gestión AMARRA incluida — sin cargos ocultos.</p>
 </div>
 </header>
 
@@ -107,10 +147,21 @@ footer span{color:var(--gold-l)}
 <div class="grid" id="grid"></div>
 </div>
 
+<div class="proceso"><div class="wrap">
+<h2>El proceso de reserva</h2>
+<p class="sub-p">Cuatro pasos, sin letra pequeña. Usted decide con toda la información por escrito antes de cualquier pago.</p>
+<div class="steps">
+<div class="step"><div class="num">01</div><h3>Solicitud</h3><p>Envíe el barco, sus fechas y el número de invitados. Sin compromiso.</p></div>
+<div class="step"><div class="num">02</div><h3>Confirmación en 24 h</h3><p>Recibe disponibilidad y precio final por escrito, junto a 3 alternativas comparables.</p></div>
+<div class="step"><div class="num">03</div><h3>Contrato</h3><p>Reserva formal con contrato de la flota operadora y condiciones claras de pago y cancelación.</p></div>
+<div class="step"><div class="num">04</div><h3>Embarque</h3><p>Check-in en base, briefing técnico y a navegar. Le acompañamos durante todo el charter.</p></div>
+</div>
+</div></div>
+
 <div class="note"><div class="wrap">
 <p class="big">¿No encuentra su barco?</p>
-<p>Esta selección es una muestra de los modelos más pedidos. A través de nuestra red accedemos a <strong>más de 9.000 barcos en 500 destinos</strong> — dinos qué buscas (zona, fechas, nº de camarotes, con o sin tripulación) y te enviamos una propuesta a medida en 24 h: <a href="index.html#charter">solicitar propuesta</a>.</p>
-<p style="margin-top:18px">Rangos por semana de temporada baja a alta (julio–agosto), verificados contra listados reales de mercado. En barcos sin tripulación se suman extras habituales: limpieza final, combustible y patrón opcional. En yates tripulados se añade APA (~25–30%) para combustible, comida y amarres. El gulet opera en régimen todo incluido. Confirmamos precio final, extras y disponibilidad por escrito antes de cualquier pago. Reserva formal con contrato de la flota operadora.</p>
+<p>Esta selección es una muestra de los modelos más pedidos. A través de nuestra red accedemos a <strong>más de 9.000 barcos en 500 destinos</strong> — díganos qué busca (zona, fechas, nº de camarotes, con o sin tripulación) y le enviamos una propuesta a medida en 24 h: <a href="index.html#charter">solicitar propuesta</a>.</p>
+<p style="margin-top:18px">Rangos por semana de temporada baja a alta (julio–agosto), verificados contra listados reales de mercado. <strong>Todos los precios mostrados ya incluyen la gestión de AMARRA</strong> — no se añade comisión alguna. En barcos sin tripulación se suman extras habituales: limpieza final, combustible y patrón opcional. En yates tripulados se añade APA (~25–30%) para combustible, comida y amarres. El gulet opera en régimen todo incluido. Confirmamos precio final, extras y disponibilidad por escrito antes de cualquier pago. Reserva formal con contrato de la flota operadora.</p>
 </div></div>
 
 <footer><div class="wrap">
@@ -118,7 +169,13 @@ footer span{color:var(--gold-l)}
 <div>Mahón · Mónaco · Miami</div>
 </div></footer>
 
-<div class="veil" id="veil" onclick="closeModal()"></div>
+<div class="veil" id="veil" onclick="closeAll()"></div>
+
+<div class="sheet" id="sheet">
+<button class="x" onclick="closeSheet()">×</button>
+<div class="inner" id="sheet-body"></div>
+</div>
+
 <div class="modal" id="modal" style="position:fixed">
 <button class="x" onclick="closeModal()">×</button>
 <h4 id="m-title">Solicitar disponibilidad</h4>
@@ -139,46 +196,143 @@ footer span{color:var(--gold-l)}
 <script>
 var IMG='https://images.unsplash.com/photo-';
 var Q='?q=80&w=900&auto=format&fit=crop';
+var QB='?q=80&w=1400&auto=format&fit=crop';
+var SPL=['Eslora','Manga','Calado','Desplazamiento','Motor','Combustible','Agua dulce','Camarotes','Baños','Plazas'];
 var BOATS=[
-{cat:'vela',tag:'Velero — Monocasco',name:'Oceanis 46.1',brand:'Beneteau',img:'1504813205186-380b1235a5d2',len:'14,60 m',cab:'4 camarotes + salón',plz:'8+2 plazas',base:'Palma de Mallorca — Baleares',yr:'2022–2024',price:3400,hi:6500,crew:false},
-{cat:'vela',tag:'Velero — Monocasco',name:'Sun Odyssey 490',brand:'Jeanneau',img:'1503634192480-e77a6436f075',len:'14,80 m',cab:'5 camarotes',plz:'10 plazas',base:'Atenas (Álimos) — Grecia',yr:'2021–2023',price:3900,hi:7500,crew:false},
-{cat:'vela',tag:'Velero — Monocasco',name:'Hanse 508',brand:'Hanse Yachts',img:'1636730740168-c94f3ab802e6',len:'15,55 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Split — Croacia',yr:'2022–2024',price:4200,hi:8500,crew:false},
-{cat:'vela',tag:'Velero — Performance cruiser',name:'Grand Soleil 46 LC',brand:'Cantiere del Pardo',img:'1613578699399-82ae71be53a3',len:'14,20 m',cab:'4 camarotes',plz:'8 plazas',base:'Olbia — Cerdeña',yr:'2021–2023',price:5900,hi:9800,crew:false},
-{cat:'cat',tag:'Catamarán',name:'Lagoon 42',brand:'Lagoon',img:'1723037706467-18ba6d269666',len:'12,80 m',cab:'4 camarotes + 2 marineros',plz:'10+2 plazas',base:'Palma de Mallorca — Baleares',yr:'2022–2024',price:5900,hi:11500,crew:false},
-{cat:'cat',tag:'Catamarán',name:'Bali 4.6',brand:'Bali Catamarans',img:'1581271164789-7c97932822d3',len:'14,28 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Lavrion — Grecia',yr:'2022–2024',price:7400,hi:14500,crew:false},
-{cat:'cat',tag:'Catamarán',name:'Lagoon 46',brand:'Lagoon',img:'1652952116747-ecdcabb667de',len:'13,99 m',cab:'4 camarotes + 2 marineros',plz:'10+2 plazas',base:'Dubrovnik — Croacia',yr:'2021–2024',price:8200,hi:16000,crew:false},
-{cat:'cat',tag:'Catamarán',name:'Tanna 47',brand:'Fountaine Pajot',img:'1590218087440-df21ca448c26',len:'13,94 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Saint-Mandrier — Côte d\'Azur',yr:'2022–2024',price:9500,hi:18500,crew:false},
-{cat:'motor',tag:'Yate a motor',name:'Princess V50',brand:'Princess Yachts',img:'1569263979104-865ab7cd8d13',len:'15,24 m',cab:'3 camarotes',plz:'6 plazas · patrón opcional',base:'Puerto Portals — Baleares',yr:'2020–2023',price:14900,hi:19500,crew:false},
-{cat:'motor',tag:'Yate a motor — Tripulado',name:'Manhattan 66',brand:'Sunseeker',img:'1621277224630-81d9af65e40c',len:'20,30 m',cab:'4 camarotes',plz:'8 plazas · 2 de tripulación',base:'Ibiza — Baleares',yr:'2019–2022',price:29500,hi:38000,crew:true},
-{cat:'motor',tag:'Yate a motor — Tripulado',name:'Azimut 68',brand:'Azimut Yachts',img:'1604737637145-48cc31d160eb',len:'21,05 m',cab:'4 camarotes',plz:'8 plazas · 2–3 de tripulación',base:'Cannes — Côte d\'Azur',yr:'2020–2023',price:24500,hi:35000,crew:true},
-{cat:'gulet',tag:'Gulet clásico — Todo incluido',name:'Gulet 24 m',brand:'Construcción artesanal en madera',img:'1711143965967-d1e451ec555b',len:'24,00 m',cab:'6 camarotes en suite',plz:'12 plazas · 4 de tripulación',base:'Bodrum — Turquía / Dodecaneso',yr:'Reformado 2021+',price:24500,hi:31500,crew:true}
+{cat:'vela',tag:'Velero — Monocasco',name:'Oceanis 46.1',brand:'Beneteau',base:'Palma de Mallorca — Baleares',yr:'2022–2024',lo:3900,hi:7500,crew:false,inc:'bare',
+imgs:['1504813205186-380b1235a5d2','1605472074915-e1406eda66bd','1498623116890-37e912163d5d','1598448251941-ae4dd47dba33'],
+sp:['14,60 m','4,50 m','2,35 m','10,6 t','Yanmar 57 CV','200 L','370 L','4 + salón','4','8+2'],
+eq:['Piloto automático','Plotter GPS en bañera','Molinete eléctrico','Génova enrollable','Bimini y capota','Dinghy con fueraborda','Wifi 4G','Solárium de proa','Ducha de popa','Música Bluetooth']},
+{cat:'vela',tag:'Velero — Monocasco',name:'Sun Odyssey 490',brand:'Jeanneau',base:'Atenas (Álimos) — Grecia',yr:'2021–2023',lo:4500,hi:8600,crew:false,inc:'bare',
+sp:['14,80 m','4,49 m','2,24 m','11,9 t','Yanmar 80 CV','240 L','330 L','5','3','10'],
+imgs:['1503634192480-e77a6436f075','1540946485063-a40da27545f8','1586430528689-ef72996d745a','1600812703042-38e573598898'],
+eq:['Piloto automático','Plotter GPS','Molinete eléctrico','Cubiertas laterales sin escalones','Bimini y capota','Dinghy con fueraborda','Wifi 4G','Mesa de bañera eléctrica','Ducha de popa','Música Bluetooth']},
+{cat:'vela',tag:'Velero — Monocasco',name:'Hanse 508',brand:'Hanse Yachts',base:'Split — Croacia',yr:'2022–2024',lo:4800,hi:9800,crew:false,inc:'bare',
+sp:['15,55 m','4,75 m','2,28 m','14,9 t','Volvo Penta 72 CV','280 L','600 L','5','3','10+2'],
+imgs:['1636730740168-c94f3ab802e6','1528154291023-a6525fabe5b4','1605472075443-25dae4f7626b','1674606878551-f424ad6ce965'],
+eq:['Aire acondicionado','Generador','Piloto automático','Plotter GPS doble','Molinete eléctrico','Winches eléctricos','Bimini y capota','Dinghy con fueraborda','Wifi 4G','Plataforma de baño']},
+{cat:'vela',tag:'Velero — Performance cruiser',name:'Grand Soleil 46 LC',brand:'Cantiere del Pardo',base:'Olbia — Cerdeña',yr:'2021–2023',lo:6800,hi:11300,crew:false,inc:'bare',
+sp:['14,20 m','4,35 m','2,30 m','12,5 t','Volvo Penta 75 CV','330 L','500 L','4','2','8'],
+imgs:['1613578699399-82ae71be53a3','1501771924607-209f42a6e7e4','1531141445733-14c2eb7d4c1f','1697124510322-27ef594f67fd'],
+eq:['Aire acondicionado','Generador','Potabilizadora','Piloto automático','Velas de performance','Winches eléctricos','Teca en cubierta','Dinghy con fueraborda','Wifi Starlink','Plataforma de baño']},
+{cat:'cat',tag:'Catamarán',name:'Lagoon 42',brand:'Lagoon',base:'Palma de Mallorca — Baleares',yr:'2022–2024',lo:6800,hi:13200,crew:false,inc:'bare',
+sp:['12,80 m','7,70 m','1,25 m','12,0 t','2× Yanmar 45 CV','2× 300 L','300 L','4 + 2 marineros','4','10+2'],
+imgs:['1723037706467-18ba6d269666','1697734702928-edca6e92d6d5','1618131920480-5a853847a2a4','1598448056086-307e98ef5c4a'],
+eq:['Aire acondicionado','Generador','Piloto automático','Plotter GPS','Trampolín de proa','Bimini rígido en flybridge','Dinghy con fueraborda','Wifi 4G','Solárium de popa','Música Bluetooth']},
+{cat:'cat',tag:'Catamarán',name:'Bali 4.6',brand:'Bali Catamarans',base:'Lavrion — Grecia',yr:'2022–2024',lo:8500,hi:16700,crew:false,inc:'bare',
+sp:['14,28 m','7,61 m','1,22 m','14,5 t','2× Yanmar 57 CV','2× 400 L','800 L','5','4','10+2'],
+imgs:['1581271164789-7c97932822d3','1583200771217-8b9112459344','1630516477416-d0de250ff769','1502986591842-471865a47d0e'],
+eq:['Aire acondicionado','Generador','Potabilizadora','Puerta basculante de popa','Solárium de proa rígido','Flybridge con solárium','Dinghy con fueraborda','Wifi 4G','Nevera y máquina de hielo','Música Bluetooth']},
+{cat:'cat',tag:'Catamarán',name:'Lagoon 46',brand:'Lagoon',base:'Dubrovnik — Croacia',yr:'2021–2024',lo:9400,hi:18400,crew:false,inc:'bare',
+sp:['13,99 m','7,96 m','1,35 m','15,4 t','2× Yanmar 57 CV','2× 520 L','2× 300 L','4 + 2 marineros','4','10+2'],
+imgs:['1652952116747-ecdcabb667de','1599580792927-de3b03c5dc20','1535314799572-930a78482c39','1674606867480-a3f97bd91533'],
+eq:['Aire acondicionado','Generador','Potabilizadora','Piloto automático','Flybridge amplio','Winches eléctricos','Dinghy con fueraborda','Wifi Starlink','Solárium de proa','Máquina de hielo']},
+{cat:'cat',tag:'Catamarán',name:'Tanna 47',brand:'Fountaine Pajot',base:'Saint-Mandrier — Côte d\'Azur',yr:'2022–2024',lo:10900,hi:21300,crew:false,inc:'bare',
+sp:['13,94 m','7,70 m','1,25 m','13,9 t','2× Volvo Penta 60 CV','2× 470 L','700 L','5','5','10+2'],
+imgs:['1590218087440-df21ca448c26','1641790536702-8a472fa78eec','1616494228870-e2ed875ec48a','1674606867357-a9b26fbdca9e'],
+eq:['Aire acondicionado','Generador','Potabilizadora','Piloto automático','Lounge de flybridge','Cocina exterior','Dinghy con fueraborda','Wifi Starlink','Paddle surf','Máquina de hielo']},
+{cat:'motor',tag:'Yate a motor',name:'Princess V50',brand:'Princess Yachts',base:'Puerto Portals — Baleares',yr:'2020–2023',lo:17100,hi:22400,crew:false,inc:'bare',
+sp:['15,24 m','4,34 m','1,14 m','17,5 t','2× Volvo Penta IPS650 · 960 CV','1.800 L','490 L','3','2','6 · patrón opcional'],
+imgs:['1569263979104-865ab7cd8d13','1585000962552-70f0a67223d9','1614350391736-ed8619d63c06','1598448154313-6e7789856d06'],
+eq:['Aire acondicionado','Generador','Joystick de atraque','Techo deportivo eléctrico','Plataforma de baño hidráulica','Dinghy Williams','Wifi 4G','Solárium de proa y popa','Nevera exterior','Música Bluetooth']},
+{cat:'motor',tag:'Yate a motor — Tripulado',name:'Manhattan 66',brand:'Sunseeker',base:'Ibiza — Baleares',yr:'2019–2022',lo:33900,hi:43700,crew:true,inc:'crew',
+sp:['20,30 m','5,16 m','1,60 m','34,0 t','2× MAN V8 1000 CV','3.500 L','850 L','4','4','8 · 2 tripulación'],
+imgs:['1621277224630-81d9af65e40c','1567899378494-47b22a2ae96a','1622219969983-45589eae5637','1700319839183-cbad15ac66a4'],
+eq:['Aire acondicionado completo','Generador doble','Potabilizadora','Estabilizadores','Flybridge con wet bar','Plataforma hidráulica','Tender Williams 395','Seabob','Wifi Starlink','Paddle surf y snorkel']},
+{cat:'motor',tag:'Yate a motor — Tripulado',name:'Azimut 68',brand:'Azimut Yachts',base:'Cannes — Côte d\'Azur',yr:'2020–2023',lo:28200,hi:40300,crew:true,inc:'crew',
+sp:['21,05 m','5,65 m','1,70 m','40,5 t','2× MAN V12 1200 CV','4.200 L','1.000 L','4','4','8 · 2–3 tripulación'],
+imgs:['1604737637145-48cc31d160eb','1678122878190-b8a567929f6d','1569282066844-679ec34e3416','1535078035266-a0fa7d3b8f65'],
+eq:['Aire acondicionado completo','Generador doble','Potabilizadora','Estabilizadores giroscópicos','Flybridge con solárium','Plataforma hidráulica','Tender con fueraborda','Seabob','Wifi Starlink','Equipo de snorkel']},
+{cat:'gulet',tag:'Gulet clásico — Todo incluido',name:'Gulet 24 m',brand:'Construcción artesanal en madera',base:'Bodrum — Turquía / Dodecaneso',yr:'Reformado 2021+',lo:28200,hi:36200,crew:true,inc:'gulet',
+sp:['24,00 m','6,50 m','2,80 m','90 t','Diésel 400 CV','3.000 L','6.000 L','6 en suite','6','12 · 4 tripulación'],
+imgs:['1711143965967-d1e451ec555b','1710793411254-1df834210b24','1682107318108-6c51eeb71502','1695455775258-6839e7b1983d'],
+eq:['Aire acondicionado','Generador','Potabilizadora','Cubierta de teca con colchonetas','Comedor exterior a la sombra','Cocinero a bordo','Tender con fueraborda','Wifi 4G','Kayak y paddle surf','Equipo de snorkel']}
 ];
+var INC={
+bare:{si:['Embarcación con equipamiento completo','Seguro de casco y responsabilidad civil base','Dinghy con fueraborda','Ropa de cama y toallas'],
+no:['Combustible según consumo','Limpieza final','Patrón opcional (bajo petición)','Amarres fuera de la base']},
+crew:{si:['Yate con tripulación profesional','Seguro del yate y gestión del charter','Ropa de cama, toallas y juguetes acuáticos'],
+no:['APA ~25–30 %: combustible, provisiones, bebidas y amarres','Propinas discrecionales']},
+gulet:{si:['Tripulación completa de 4 con cocinero','Pensión completa a bordo: desayuno, comida y cena','Combustible en ruta estándar','Agua, refrescos y equipo de snorkel'],
+no:['Bebidas alcohólicas premium','Propinas discrecionales (~5–10 %)']}};
 function fmt(n){return '€'+n.toLocaleString('es-ES')}
+function mid(b){return Math.round((b.lo+b.hi)/2/100)*100}
 function render(f){
 var g=document.getElementById('grid');
-g.innerHTML=BOATS.filter(function(b){return f==='all'||b.cat===f}).map(function(b,i){
+g.innerHTML=BOATS.map(function(b,i){
+if(f!=='all'&&b.cat!==f)return '';
 return '<div class="card">'+
-'<div class="ph"><img loading="lazy" alt="'+b.name+'" src="'+IMG+b.img+Q+'" onerror="this.style.opacity=0">'+
+'<div class="ph"><img loading="lazy" alt="'+b.name+'" src="'+IMG+b.imgs[0]+Q+'" onerror="this.style.opacity=0">'+
 '<span class="badge">'+b.tag+'</span>'+(b.crew?'<span class="crewed">Con tripulación</span>':'')+'</div>'+
 '<div class="body"><div class="cat-tag">'+b.base+'</div>'+
 '<h3>'+b.name+'</h3><div class="brand">'+b.brand+'</div>'+
 '<ul class="specs">'+
-'<li><span>Eslora</span><span>'+b.len+'</span></li>'+
-'<li><span>Camarotes</span><span>'+b.cab+'</span></li>'+
-'<li><span>Capacidad</span><span>'+b.plz+'</span></li>'+
+'<li><span>Eslora</span><span>'+b.sp[0]+'</span></li>'+
+'<li><span>Camarotes</span><span>'+b.sp[7]+'</span></li>'+
+'<li><span>Plazas</span><span>'+b.sp[9]+'</span></li>'+
 '<li><span>Año</span><span>'+b.yr+'</span></li>'+
 '</ul>'+
-'<div class="price-row"><div class="price">'+fmt(b.price)+' – '+fmt(b.hi)+'<small> +extras</small></div><div class="per">por semana · según temporada</div></div>'+
-'<button class="cta" onclick="openModal(\''+b.name.replace(/'/g,"\\'")+' — '+b.brand.replace(/'/g,"\\'")+'\')">Solicitar disponibilidad</button>'+
+'<div class="price-row"><div class="price">'+fmt(b.lo)+' – '+fmt(b.hi)+'</div><div class="per">por semana · según temporada</div></div>'+
+'<button class="cta ghost" data-a="sheet" data-i="'+i+'">Ver ficha completa</button>'+
+'<button class="cta" data-a="ask" data-i="'+i+'">Solicitar disponibilidad</button>'+
 '</div></div>'
 }).join('');
 }
+document.getElementById('grid').addEventListener('click',function(e){
+var t=e.target;if(!t.getAttribute)return;
+var a=t.getAttribute('data-a'),i=t.getAttribute('data-i');
+if(a==='sheet')openSheet(+i);
+if(a==='ask')openModal(+i);
+});
 document.getElementById('filters').addEventListener('click',function(e){
 if(e.target.tagName!=='BUTTON')return;
 Array.prototype.forEach.call(this.querySelectorAll('button'),function(b){b.classList.remove('on')});
 e.target.classList.add('on');render(e.target.getAttribute('data-f'));
 });
-function openModal(boat){
+function openSheet(i){
+var b=BOATS[i],h='';
+h+='<div class="cat-tag">'+b.tag+' · '+b.base+'</div><h4>'+b.name+'</h4><div class="brand">'+b.brand+'</div>';
+h+='<div class="gal-main"><img id="gal-big" loading="lazy" alt="'+b.name+'" src="'+IMG+b.imgs[0]+QB+'" onerror="this.style.opacity=0"></div>';
+h+='<div class="thumbs" id="thumbs">'+b.imgs.map(function(im,k){
+return '<img loading="lazy" alt="'+b.name+' — vista '+(k+1)+'" src="'+IMG+im+Q+'" data-im="'+im+'"'+(k===0?' class="on"':'')+' onerror="this.style.opacity=0">'}).join('')+'</div>';
+h+='<div class="sheet-cols"><div><h5>Especificaciones técnicas</h5><table class="tspecs">';
+for(var s=0;s<SPL.length;s++)h+='<tr><td>'+SPL[s]+'</td><td>'+b.sp[s]+'</td></tr>';
+h+='<tr><td>Año</td><td>'+b.yr+'</td></tr><tr><td>Base</td><td>'+b.base+'</td></tr></table></div>';
+h+='<div><h5>Equipamiento</h5><div class="chips">'+b.eq.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>';
+var ic=INC[b.inc];
+h+='<div class="inc"><h5 style="margin-top:24px">'+(b.inc==='gulet'?'Régimen todo incluido':'Incluido / No incluido')+'</h5><ul>';
+h+=ic.si.map(function(x){return '<li>'+x+'</li>'}).join('')+ic.no.map(function(x){return '<li class="no">'+x+'</li>'}).join('');
+h+='</ul></div></div></div>';
+h+='<div style="margin-top:36px"><h5>Precio por semana según temporada</h5><table class="tsea">';
+h+='<tr><th>Temporada</th><th>Meses</th><th>Por semana</th></tr>';
+h+='<tr><td>Temporada baja</td><td>abr–may, oct</td><td>'+fmt(b.lo)+'</td></tr>';
+h+='<tr><td>Temporada media</td><td>jun, sep</td><td>'+fmt(mid(b))+'</td></tr>';
+h+='<tr><td>Temporada alta</td><td>jul–ago</td><td>'+fmt(b.hi)+'</td></tr></table>';
+h+='<div class="fee-line">Precio final con la gestión AMARRA incluida — sin cargos ocultos.</div></div>';
+h+='<button class="cta big-cta" data-ask="'+i+'">Solicitar disponibilidad — respuesta en 24 h</button>';
+document.getElementById('sheet-body').innerHTML=h;
+document.getElementById('sheet').classList.add('open');
+document.getElementById('veil').classList.add('open');
+document.getElementById('sheet').scrollTop=0;
+}
+document.getElementById('sheet-body').addEventListener('click',function(e){
+var t=e.target;
+if(t.getAttribute&&t.getAttribute('data-im')){
+document.getElementById('gal-big').src=IMG+t.getAttribute('data-im')+QB;
+document.getElementById('gal-big').style.opacity=1;
+Array.prototype.forEach.call(document.getElementById('thumbs').children,function(x){x.classList.remove('on')});
+t.classList.add('on');
+}
+if(t.hasAttribute&&t.hasAttribute('data-ask')){
+closeSheet(true);openModal(+t.getAttribute('data-ask'));
+}
+});
+function closeSheet(keepVeil){
+document.getElementById('sheet').classList.remove('open');
+if(!keepVeil)document.getElementById('veil').classList.remove('open');
+}
+function openModal(i){
+var boat=BOATS[i].name+' — '+BOATS[i].brand;
 document.getElementById('m-boat').textContent=boat;
 document.getElementById('f-barco').value=boat;
 document.getElementById('ok-msg').style.display='none';
@@ -189,6 +343,7 @@ function closeModal(){
 document.getElementById('modal').classList.remove('open');
 document.getElementById('veil').classList.remove('open');
 }
+function closeAll(){closeSheet();closeModal()}
 document.getElementById('req-form').addEventListener('submit',function(e){
 e.preventDefault();
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
