@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMARRA — La Flota | Veleros, Catamaranes, Yates a Motor y Gulets</title>
+<meta name="description" content="Flota de charter AMARRA: veleros, catamaranes, yates a motor y gulets en Baleares, Côte d'Azur, Grecia, Croacia y Cerdeña. Disponibilidad confirmada en 24 horas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0b0e13;--ink:#141922;--ivory:#f4f1ea;--paper:#faf8f4;--gold:#ab9260;--gold-l:#c9b586;--line-d:rgba(244,241,234,.14);--line-l:rgba(11,14,19,.12);--mut-d:#8b93a1;--mut-l:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);font-weight:300;line-height:1.6}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,14,19,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+.wordmark{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.42em;color:var(--ivory);text-decoration:none;font-weight:500}
+.nav-r{display:flex;align-items:center}
+.nav-r a{color:var(--mut-d);text-decoration:none;margin-left:28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;transition:color .3s}
+.nav-r a:hover,.nav-r a.on{color:var(--gold-l)}
+header{background:var(--black);color:var(--ivory);padding:170px 0 90px;position:relative;overflow:hidden}
+header .bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1519770340285-c801df5ff3db?q=80&w=1800&auto=format&fit=crop') center 60%/cover;opacity:.38}
+header .grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,19,.55),rgba(11,14,19,.92))}
+header .wrap{position:relative;z-index:2}
+.eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-l);margin-bottom:22px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,76px);font-weight:500;line-height:1.05}
+h1 em{font-style:italic;color:var(--gold-l)}
+.lede{max-width:640px;color:#c7ccd6;margin-top:24px;font-size:15px}
+.lede strong{color:var(--ivory);font-weight:400}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:60px 0 40px}
+.filters button{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:11px 22px;background:none;border:1px solid var(--line-l);color:var(--mut-l);cursor:pointer;transition:all .3s}
+.filters button.on,.filters button:hover{border-color:var(--gold);color:var(--gold);background:rgba(171,146,96,.06)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;padding-bottom:90px}
+.card{background:#fff;border:1px solid var(--line-l);display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(11,14,19,.10)}
+.card .ph{position:relative;height:230px;overflow:hidden;background:var(--ink)}
+.card .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.card:hover .ph img{transform:scale(1.05)}
+.badge{position:absolute;top:14px;left:14px;background:rgba(11,14,19,.78);color:var(--gold-l);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;padding:6px 12px;backdrop-filter:blur(6px)}
+.crewed{position:absolute;top:14px;right:14px;background:rgba(171,146,96,.92);color:#fff;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px}
+.card .body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.cat-tag{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:500;line-height:1.1}
+.brand{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut-l);margin-top:3px}
+.specs{list-style:none;margin:18px 0 6px;flex:1}
+.specs li{font-size:13px;color:#3d4451;padding:7px 0;border-bottom:1px dashed var(--line-l);display:flex;justify-content:space-between;gap:12px}
+.specs li span:first-child{color:var(--mut-l)}
+.price-row{display:flex;align-items:baseline;justify-content:space-between;margin:16px 0 14px}
+.price{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500}
+.price small{font-family:'Inter',sans-serif;font-size:11px;color:var(--mut-l);letter-spacing:.06em}
+.per{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut-l)}
+.cta{font-family:'Inter',sans-serif;width:100%;padding:15px;background:var(--ink);color:var(--ivory);border:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.cta:hover{background:var(--gold)}
+.note{background:var(--ivory);border-top:1px solid var(--line-l);padding:56px 0 64px}
+.note p{max-width:760px;font-size:13px;color:var(--mut-l)}
+.note p strong{color:var(--ink);font-weight:500}
+.note .big{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--ink);font-weight:500;margin-bottom:14px;line-height:1.2}
+.note a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold)}
+footer{background:var(--black);color:var(--mut-d);padding:44px 0;font-size:11px;letter-spacing:.12em}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer span{color:var(--gold-l)}
+.veil{display:none;position:fixed;inset:0;background:rgba(11,14,19,.6);z-index:80;backdrop-filter:blur(3px)}
+.modal{display:none;position:fixed;z-index:90;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,92vw);max-height:88vh;overflow:auto;background:var(--paper);padding:44px}
+.modal.open,.veil.open{display:block}
+.modal h4{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;margin-bottom:4px}
+.modal .sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:26px}
+.modal label{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut-l);margin:16px 0 6px}
+.modal input,.modal select,.modal textarea{width:100%;padding:13px 14px;border:1px solid var(--line-l);background:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:300;color:var(--ink)}
+.modal textarea{resize:vertical;min-height:80px}
+.modal .send{margin-top:26px;width:100%;padding:16px;background:var(--ink);color:var(--ivory);border:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.modal .send:hover{background:var(--gold)}
+.modal .x{position:absolute;top:18px;right:22px;background:none;border:none;font-size:22px;color:var(--mut-l);cursor:pointer}
+.ok-msg{display:none;background:rgba(171,146,96,.1);border:1px solid var(--gold);padding:16px;font-size:13px;color:var(--ink);margin-top:20px}
+@media(max-width:720px){.nav-r a{display:none}.wrap{padding:0 20px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-in">
+<a class="wordmark" href="index.html">AMARRA</a>
+<div class="nav-r">
+<a href="index.html#maison">La Maison</a>
+<a href="index.html#boutique">Boutique</a>
+<a href="index.html#charter">Charter</a>
+<a class="on" href="flota.html">Flota</a>
+<a href="index.html#seasuite">SeaSuite™</a>
+</div>
+</div></nav>
+
+<header>
+<div class="bg"></div><div class="grad"></div>
+<div class="wrap">
+<div class="eyebrow">Charter &amp; Brokerage — Mediterráneo</div>
+<h1>La <em>flota</em>.</h1>
+<p class="lede">Los barcos más solicitados de nuestra red — <strong>conectada al sistema NauSYS, con más de 9.000 yates y disponibilidad en tiempo real</strong>. Elija su barco, envíe las fechas y reciba <strong>disponibilidad confirmada y 3 alternativas en menos de 24 horas</strong>. La comisión la asume la flota, nunca usted.</p>
+</div>
+</header>
+
+<div class="wrap">
+<div class="filters" id="filters">
+<button class="on" data-f="all">Todos</button>
+<button data-f="vela">Veleros</button>
+<button data-f="cat">Catamaranes</button>
+<button data-f="motor">Yates a motor</button>
+<button data-f="gulet">Gulets con tripulación</button>
+</div>
+<div class="grid" id="grid"></div>
+</div>
+
+<div class="note"><div class="wrap">
+<p class="big">¿No encuentra su barco?</p>
+<p>Esta selección es una muestra de los modelos más pedidos. A través de nuestra red accedemos a <strong>más de 9.000 barcos en 500 destinos</strong> — dinos qué buscas (zona, fechas, nº de camarotes, con o sin tripulación) y te enviamos una propuesta a medida en 24 h: <a href="index.html#charter">solicitar propuesta</a>.</p>
+<p style="margin-top:18px">Precios orientativos por semana en temporada media, según base y fechas. Confirmamos precio final, extras y disponibilidad por escrito antes de cualquier pago. Reserva formal con contrato de la flota operadora.</p>
+</div></div>
+
+<footer><div class="wrap">
+<div>AMARRA — Maison Náutica · Nacida en Menorca a bordo del <span>Buganvilia</span></div>
+<div>Mahón · Mónaco · Miami</div>
+</div></footer>
+
+<div class="veil" id="veil" onclick="closeModal()"></div>
+<div class="modal" id="modal" style="position:fixed">
+<button class="x" onclick="closeModal()">×</button>
+<h4 id="m-title">Solicitar disponibilidad</h4>
+<div class="sub" id="m-boat"></div>
+<form id="req-form">
+<input type="hidden" name="barco" id="f-barco">
+<label>Nombre</label><input name="nombre" required>
+<label>Email</label><input type="email" name="email" required>
+<label>Teléfono / WhatsApp</label><input name="telefono" required>
+<label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2ª quincena de julio, 7 noches" required>
+<label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 niños">
+<label>Comentarios</label><textarea name="comentarios" placeholder="Patrón, hostess, preferencias de puerto de salida…"></textarea>
+<button class="send" type="submit">Enviar solicitud — respuesta en 24 h</button>
+<div class="ok-msg" id="ok-msg">Solicitud recibida. Le enviaremos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+</form>
+</div>
+
+<script>
+var IMG='https://images.unsplash.com/photo-';
+var Q='?q=80&w=900&auto=format&fit=crop';
+var BOATS=[
+{cat:'vela',tag:'Velero — Monocasco',name:'Oceanis 46.1',brand:'Beneteau',img:'1661889213741-64b118b28c5f',len:'14,60 m',cab:'4 camarotes + salón',plz:'8+2 plazas',base:'Palma de Mallorca — Baleares',yr:'2022–2024',price:3400,crew:false},
+{cat:'vela',tag:'Velero — Monocasco',name:'Sun Odyssey 490',brand:'Jeanneau',img:'1503634192480-e77a6436f075',len:'14,80 m',cab:'5 camarotes',plz:'10 plazas',base:'Atenas (Álimos) — Grecia',yr:'2021–2023',price:3900,crew:false},
+{cat:'vela',tag:'Velero — Monocasco',name:'Hanse 508',brand:'Hanse Yachts',img:'1636730740168-c94f3ab802e6',len:'15,55 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Split — Croacia',yr:'2022–2024',price:4200,crew:false},
+{cat:'vela',tag:'Velero — Performance cruiser',name:'Grand Soleil 46 LC',brand:'Cantiere del Pardo',img:'1613578699399-82ae71be53a3',len:'14,20 m',cab:'4 camarotes',plz:'8 plazas',base:'Olbia — Cerdeña',yr:'2021–2023',price:5900,crew:false},
+{cat:'cat',tag:'Catamarán',name:'Lagoon 42',brand:'Lagoon',img:'1723037706467-18ba6d269666',len:'12,80 m',cab:'4 camarotes + 2 marineros',plz:'10+2 plazas',base:'Palma de Mallorca — Baleares',yr:'2022–2024',price:5900,crew:false},
+{cat:'cat',tag:'Catamarán',name:'Bali 4.6',brand:'Bali Catamarans',img:'1581271164789-7c97932822d3',len:'14,28 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Lavrion — Grecia',yr:'2022–2024',price:7400,crew:false},
+{cat:'cat',tag:'Catamarán',name:'Lagoon 46',brand:'Lagoon',img:'1652952116747-ecdcabb667de',len:'13,99 m',cab:'4 camarotes + 2 marineros',plz:'10+2 plazas',base:'Dubrovnik — Croacia',yr:'2021–2024',price:8200,crew:false},
+{cat:'cat',tag:'Catamarán',name:'Tanna 47',brand:'Fountaine Pajot',img:'1590218087440-df21ca448c26',len:'13,94 m',cab:'5 camarotes',plz:'10+2 plazas',base:'Saint-Mandrier — Côte d\'Azur',yr:'2022–2024',price:9500,crew:false},
+{cat:'motor',tag:'Yate a motor',name:'Princess V50',brand:'Princess Yachts',img:'1569263979104-865ab7cd8d13',len:'15,24 m',cab:'3 camarotes',plz:'6 plazas · patrón opcional',base:'Puerto Portals — Baleares',yr:'2020–2023',price:14900,crew:false},
+{cat:'motor',tag:'Yate a motor — Tripulado',name:'Manhattan 66',brand:'Sunseeker',img:'1621277224630-81d9af65e40c',len:'20,30 m',cab:'4 camarotes',plz:'8 plazas · 2 de tripulación',base:'Ibiza — Baleares',yr:'2019–2022',price:29500,crew:true},
+{cat:'motor',tag:'Yate a motor — Tripulado',name:'Azimut 68',brand:'Azimut Yachts',img:'1604737637145-48cc31d160eb',len:'21,05 m',cab:'4 camarotes',plz:'8 plazas · 2–3 de tripulación',base:'Cannes — Côte d\'Azur',yr:'2020–2023',price:31000,crew:true},
+{cat:'gulet',tag:'Gulet clásico — Todo incluido',name:'Gulet 24 m',brand:'Construcción artesanal en madera',img:'1711143965967-d1e451ec555b',len:'24,00 m',cab:'6 camarotes en suite',plz:'12 plazas · 4 de tripulación',base:'Bodrum — Turquía / Dodecaneso',yr:'Reformado 2021+',price:18000,crew:true}
+];
+function fmt(n){return '€'+n.toLocaleString('es-ES')}
+function render(f){
+var g=document.getElementById('grid');
+g.innerHTML=BOATS.filter(function(b){return f==='all'||b.cat===f}).map(function(b,i){
+return '<div class="card">'+
+'<div class="ph"><img loading="lazy" alt="'+b.name+'" src="'+IMG+b.img+Q+'" onerror="this.style.opacity=0">'+
+'<span class="badge">'+b.tag+'</span>'+(b.crew?'<span class="crewed">Con tripulación</span>':'')+'</div>'+
+'<div class="body"><div class="cat-tag">'+b.base+'</div>'+
+'<h3>'+b.name+'</h3><div class="brand">'+b.brand+'</div>'+
+'<ul class="specs">'+
+'<li><span>Eslora</span><span>'+b.len+'</span></li>'+
+'<li><span>Camarotes</span><span>'+b.cab+'</span></li>'+
+'<li><span>Capacidad</span><span>'+b.plz+'</span></li>'+
+'<li><span>Año</span><span>'+b.yr+'</span></li>'+
+'</ul>'+
+'<div class="price-row"><div class="price">desde '+fmt(b.price)+'<small> +extras</small></div><div class="per">por semana</div></div>'+
+'<button class="cta" onclick="openModal(\''+b.name.replace(/'/g,"\\'")+' — '+b.brand.replace(/'/g,"\\'")+'\')">Solicitar disponibilidad</button>'+
+'</div></div>'
+}).join('');
+}
+document.getElementById('filters').addEventListener('click',function(e){
+if(e.target.tagName!=='BUTTON')return;
+Array.prototype.forEach.call(this.querySelectorAll('button'),function(b){b.classList.remove('on')});
+e.target.classList.add('on');render(e.target.getAttribute('data-f'));
+});
+function openModal(boat){
+document.getElementById('m-boat').textContent=boat;
+document.getElementById('f-barco').value=boat;
+document.getElementById('ok-msg').style.display='none';
+document.getElementById('modal').classList.add('open');
+document.getElementById('veil').classList.add('open');
+}
+function closeModal(){
+document.getElementById('modal').classList.remove('open');
+document.getElementById('veil').classList.remove('open');
+}
+document.getElementById('req-form').addEventListener('submit',function(e){
+e.preventDefault();
+var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
+d._subject='Solicitud de flota AMARRA — '+d.barco;d._template='table';d._captcha='false';
+fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+.then(function(r){return r.json()}).then(function(){document.getElementById('ok-msg').style.display='block'})
+.catch(function(){document.getElementById('ok-msg').style.display='block'});
+});
+render('all');
+</script>
+</body>
+</html>
