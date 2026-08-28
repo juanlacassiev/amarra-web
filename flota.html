@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMARRA — La Flota | Veleros, Catamaranes, Yates a Motor y Gulets</title>
-<meta name="description" content="Flota de charter AMARRA: veleros, catamaranes, yates a motor y gulets en Baleares, Côte d'Azur, Grecia, Croacia y Cerdeña. Disponibilidad confirmada en 24 horas.">
+<title>AMARRA — La Flota | Veleros y catamaranes en Mallorca e Ibiza</title>
+<meta name="description" content="Flota real de charter AMARRA en Baleares: 52 veleros y catamaranes en Palma, Pollença, Portocolom, Can Pastilla e Ibiza. Fotos, fichas técnicas y tarifas por temporada verificadas. Disponibilidad confirmada en 24 h.">
+<meta property="og:title" content="AMARRA — La Flota">
+<meta property="og:description" content="52 veleros y catamaranes en Mallorca e Ibiza, con fichas técnicas y tarifas reales por temporada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://s3-eu-west-1.amazonaws.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--black:#0b0e13;--ink:#141922;--ivory:#f4f1ea;--paper:#faf8f4;--gold:#ab9260;--gold-l:#c9b586;--line-d:rgba(244,241,234,.14);--line-l:rgba(11,14,19,.12);--mut-d:#8b93a1;--mut-l:#6b7280}
@@ -19,18 +22,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,14,19,.72)
 .nav-r{display:flex;align-items:center}
 .nav-r a{color:var(--mut-d);text-decoration:none;margin-left:28px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;transition:color .3s}
 .nav-r a:hover,.nav-r a.on{color:var(--gold-l)}
-header{background:var(--black);color:var(--ivory);padding:170px 0 90px;position:relative;overflow:hidden}
+header{background:var(--black);color:var(--ivory);padding:170px 0 84px;position:relative;overflow:hidden}
 header .bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1519770340285-c801df5ff3db?q=80&w=1800&auto=format&fit=crop') center 60%/cover;opacity:.38}
 header .grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,19,.55),rgba(11,14,19,.92))}
 header .wrap{position:relative;z-index:2}
 .eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-l);margin-bottom:22px}
 h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,76px);font-weight:500;line-height:1.05}
 h1 em{font-style:italic;color:var(--gold-l)}
-.lede{max-width:640px;color:#c7ccd6;margin-top:24px;font-size:15px}
+.lede{max-width:660px;color:#c7ccd6;margin-top:24px;font-size:15px}
 .lede strong{color:var(--ivory);font-weight:400}
-.filters{display:flex;flex-wrap:wrap;gap:10px;margin:60px 0 40px}
+.kpis{display:flex;flex-wrap:wrap;gap:44px;margin-top:40px;padding-top:30px;border-top:1px solid var(--line-d)}
+.kpi b{display:block;font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;color:var(--gold-l);line-height:1}
+.kpi span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut-d)}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin:56px 0 12px}
+.filters{display:flex;flex-wrap:wrap;gap:10px}
 .filters button{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:11px 22px;background:none;border:1px solid var(--line-l);color:var(--mut-l);cursor:pointer;transition:all .3s}
 .filters button.on,.filters button:hover{border-color:var(--gold);color:var(--gold);background:rgba(171,146,96,.06)}
+.sortbox{display:flex;align-items:center;gap:10px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut-l)}
+.sortbox select{font-family:'Inter',sans-serif;font-size:12px;font-weight:300;padding:9px 12px;border:1px solid var(--line-l);background:#fff;color:var(--ink)}
+.count{font-size:12px;color:var(--mut-l);margin:0 0 28px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;padding-bottom:90px}
 .card{background:#fff;border:1px solid var(--line-l);display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
 .card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(11,14,19,.10)}
@@ -38,7 +48,7 @@ h1 em{font-style:italic;color:var(--gold-l)}
 .card .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
 .card:hover .ph img{transform:scale(1.05)}
 .badge{position:absolute;top:14px;left:14px;background:rgba(11,14,19,.78);color:var(--gold-l);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;padding:6px 12px;backdrop-filter:blur(6px)}
-.crewed{position:absolute;top:14px;right:14px;background:rgba(171,146,96,.92);color:#fff;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px}
+.nphoto{position:absolute;bottom:14px;right:14px;background:rgba(11,14,19,.7);color:var(--ivory);font-size:9.5px;letter-spacing:.14em;padding:5px 10px;backdrop-filter:blur(6px)}
 .card .body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
 .cat-tag{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .card h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:500;line-height:1.1}
@@ -61,7 +71,7 @@ h1 em{font-style:italic;color:var(--gold-l)}
 .step h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:8px}
 .step p{font-size:13px;color:var(--mut-l)}
 .note{background:var(--ivory);border-top:1px solid var(--line-l);padding:56px 0 64px}
-.note p{max-width:760px;font-size:13px;color:var(--mut-l)}
+.note p{max-width:780px;font-size:13px;color:var(--mut-l)}
 .note p strong{color:var(--ink);font-weight:500}
 .note .big{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--ink);font-weight:500;margin-bottom:14px;line-height:1.2}
 .note a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold)}
@@ -78,18 +88,21 @@ footer span{color:var(--gold-l)}
 .modal textarea{resize:vertical;min-height:80px}
 .modal .send{margin-top:26px;width:100%;padding:16px;background:var(--ink);color:var(--ivory);border:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s}
 .modal .send:hover{background:var(--gold)}
-.modal .x,.sheet .x{position:absolute;top:18px;right:22px;background:none;border:none;font-size:22px;color:var(--mut-l);cursor:pointer;z-index:5}
+.modal .x,.sheet .x{position:absolute;top:18px;right:22px;background:rgba(250,248,244,.9);border:none;font-size:22px;color:var(--mut-l);cursor:pointer;z-index:5;width:38px;height:38px;line-height:1}
 .ok-msg{display:none;background:rgba(171,146,96,.1);border:1px solid var(--gold);padding:16px;font-size:13px;color:var(--ink);margin-top:20px}
-.sheet{display:none;position:fixed;z-index:85;top:50%;left:50%;transform:translate(-50%,-50%);width:min(980px,94vw);max-height:90vh;overflow:auto;background:var(--paper)}
+.sheet{display:none;position:fixed;z-index:85;top:50%;left:50%;transform:translate(-50%,-50%);width:min(1020px,95vw);max-height:92vh;overflow:auto;background:var(--paper)}
 .sheet.open{display:block}
 .sheet .inner{padding:44px}
 .sheet .cat-tag{margin-bottom:6px}
 .sheet h4{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:500;line-height:1.1}
 .sheet .brand{margin:2px 0 22px}
-.gal-main{height:min(440px,48vw);background:var(--ink);overflow:hidden}
+.gal-main{height:min(460px,50vw);background:var(--ink);overflow:hidden;position:relative}
 .gal-main img{width:100%;height:100%;object-fit:cover;display:block}
-.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
-.thumbs img{width:100%;height:84px;object-fit:cover;display:block;cursor:pointer;opacity:.65;border:1px solid transparent;transition:opacity .3s}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(11,14,19,.55);color:var(--ivory);border:none;width:44px;height:60px;font-size:20px;cursor:pointer}
+.gal-nav.prev{left:0}.gal-nav.next{right:0}
+.gal-nav:hover{background:var(--gold)}
+.thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:8px}
+.thumbs img{width:100%;height:74px;object-fit:cover;display:block;cursor:pointer;opacity:.6;border:1px solid transparent;transition:opacity .3s}
 .thumbs img.on,.thumbs img:hover{opacity:1;border-color:var(--gold)}
 .sheet-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:36px}
 .sheet h5{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
@@ -104,15 +117,15 @@ footer span{color:var(--gold-l)}
 .tsea th:last-child,.tsea td:last-child{text-align:right}
 .tsea td{padding:9px 0;border-top:1px dashed var(--line-l);color:#3d4451}
 .tsea td:last-child{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--ink)}
-.inc{margin-top:22px;font-size:12.5px}
-.inc ul{list-style:none}
-.inc li{padding:5px 0 5px 18px;position:relative;color:#3d4451}
-.inc li:before{content:'—';position:absolute;left:0;color:var(--gold)}
-.inc li.no:before{content:'×';color:var(--mut-l)}
-.inc li.no{color:var(--mut-l)}
-.fee-line{font-size:11px;letter-spacing:.1em;color:var(--mut-l);margin-top:10px}
+.tsea tr.hi td{color:var(--ink)}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:34px}
+.exlist{list-style:none;font-size:12.5px}
+.exlist li{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px dashed var(--line-l);color:#3d4451}
+.exlist li b{font-weight:400;color:var(--ink);white-space:nowrap}
+.fee-line{font-size:11px;letter-spacing:.06em;color:var(--mut-l);margin-top:12px;line-height:1.7}
 .sheet .big-cta{margin-top:34px}
-@media(max-width:760px){.nav-r a{display:none}.wrap{padding:0 20px}.sheet-cols{grid-template-columns:1fr}.sheet .inner{padding:28px 20px}}
+.empty{grid-column:1/-1;text-align:center;padding:70px 0;color:var(--mut-l);font-size:14px}
+@media(max-width:760px){.nav-r a{display:none}.wrap{padding:0 20px}.sheet-cols,.extras{grid-template-columns:1fr}.sheet .inner{padding:28px 20px}.thumbs{grid-template-columns:repeat(4,1fr)}.kpis{gap:26px}}
 </style>
 </head>
 <body>
@@ -123,236 +136,237 @@ footer span{color:var(--gold-l)}
 <a href="index.html#boutique">Boutique</a>
 <a href="index.html#charter">Charter</a>
 <a class="on" href="flota.html">Flota</a>
-<a href="index.html#seasuite">SeaSuite™</a>
+<a href="index.html#seasuite">SeaSuite&trade;</a>
 </div>
 </div></nav>
 
 <header>
 <div class="bg"></div><div class="grad"></div>
 <div class="wrap">
-<div class="eyebrow">Charter &amp; Brokerage — Mediterráneo</div>
+<div class="eyebrow">Charter &amp; Brokerage &mdash; Baleares</div>
 <h1>La <em>flota</em>.</h1>
-<p class="lede">Los barcos más solicitados de nuestra red — <strong>conectada al sistema NauSYS, con más de 9.000 yates y disponibilidad en tiempo real</strong>. Elija su barco, envíe las fechas y reciba <strong>disponibilidad confirmada y 3 alternativas en menos de 24 horas</strong>. Precio final con la gestión AMARRA incluida — sin cargos ocultos.</p>
+<p class="lede">Cincuenta y dos barcos <strong>reales</strong>, disponibles esta temporada en Mallorca e Ibiza. Fotograf&iacute;as, fichas t&eacute;cnicas, equipamiento y tarifas por temporada tal y como los publican las flotas operadoras &mdash; <strong>sin fotos de cat&aacute;logo ni precios inventados</strong>. Elija su barco, env&iacute;e sus fechas y reciba disponibilidad confirmada y tres alternativas en menos de 24&nbsp;horas.</p>
+<div class="kpis">
+<div class="kpi"><b>52</b><span>Barcos con ficha completa</span></div>
+<div class="kpi"><b>6</b><span>Bases en Mallorca e Ibiza</span></div>
+<div class="kpi"><b>9.000+</b><span>Yates en la red AMARRA</span></div>
+<div class="kpi"><b>24 h</b><span>Respuesta garantizada</span></div>
+</div>
 </div>
 </header>
 
 <div class="wrap">
+<div class="toolbar">
 <div class="filters" id="filters">
 <button class="on" data-f="all">Todos</button>
 <button data-f="vela">Veleros</button>
 <button data-f="cat">Catamaranes</button>
-<button data-f="motor">Yates a motor</button>
-<button data-f="gulet">Gulets con tripulación</button>
+<button data-f="mallorca">Mallorca</button>
+<button data-f="ibiza">Ibiza</button>
+<button data-f="fam">Hasta 5.000 &euro;</button>
 </div>
+<div class="sortbox"><label for="sort">Ordenar</label>
+<select id="sort">
+<option value="p">Precio &mdash; menor a mayor</option>
+<option value="pd">Precio &mdash; mayor a menor</option>
+<option value="l">Eslora</option>
+<option value="c">Camarotes</option>
+<option value="y">A&ntilde;o &mdash; m&aacute;s reciente</option>
+</select></div>
+</div>
+<p class="count" id="count"></p>
 <div class="grid" id="grid"></div>
 </div>
 
 <div class="proceso"><div class="wrap">
 <h2>El proceso de reserva</h2>
-<p class="sub-p">Cuatro pasos, sin letra pequeña. Usted decide con toda la información por escrito antes de cualquier pago.</p>
+<p class="sub-p">Cuatro pasos, sin letra peque&ntilde;a. Usted decide con toda la informaci&oacute;n por escrito antes de cualquier pago.</p>
 <div class="steps">
-<div class="step"><div class="num">01</div><h3>Solicitud</h3><p>Envíe el barco, sus fechas y el número de invitados. Sin compromiso.</p></div>
-<div class="step"><div class="num">02</div><h3>Confirmación en 24 h</h3><p>Recibe disponibilidad y precio final por escrito, junto a 3 alternativas comparables.</p></div>
-<div class="step"><div class="num">03</div><h3>Contrato</h3><p>Reserva formal con contrato de la flota operadora y condiciones claras de pago y cancelación.</p></div>
-<div class="step"><div class="num">04</div><h3>Embarque</h3><p>Check-in en base, briefing técnico y a navegar. Le acompañamos durante todo el charter.</p></div>
+<div class="step"><div class="num">01</div><h3>Solicitud</h3><p>Env&iacute;e el barco, sus fechas y el n&uacute;mero de invitados. Sin compromiso.</p></div>
+<div class="step"><div class="num">02</div><h3>Confirmaci&oacute;n en 24 h</h3><p>Consultamos disponibilidad real en el sistema y le enviamos precio en firme m&aacute;s tres alternativas comparables.</p></div>
+<div class="step"><div class="num">03</div><h3>Contrato</h3><p>Reserva formal con contrato de la flota operadora y condiciones claras de pago y cancelaci&oacute;n.</p></div>
+<div class="step"><div class="num">04</div><h3>Embarque</h3><p>Check-in en base, briefing t&eacute;cnico y a navegar. Le acompa&ntilde;amos durante todo el charter.</p></div>
 </div>
 </div></div>
 
 <div class="note"><div class="wrap">
-<p class="big">¿No encuentra su barco?</p>
-<p>Esta selección es una muestra de los modelos más pedidos. A través de nuestra red accedemos a <strong>más de 9.000 barcos en 500 destinos</strong> — díganos qué busca (zona, fechas, nº de camarotes, con o sin tripulación) y le enviamos una propuesta a medida en 24 h: <a href="index.html#charter">solicitar propuesta</a>.</p>
-<p style="margin-top:18px">Rangos por semana de temporada baja a alta (julio–agosto), verificados contra listados reales de mercado. <strong>Todos los precios mostrados ya incluyen la gestión de AMARRA</strong> — no se añade comisión alguna. En barcos sin tripulación se suman extras habituales: limpieza final, combustible y patrón opcional. En yates tripulados se añade APA (~25–30%) para combustible, comida y amarres. El gulet opera en régimen todo incluido. Confirmamos precio final, extras y disponibilidad por escrito antes de cualquier pago. Reserva formal con contrato de la flota operadora.</p>
+<p class="big">C&oacute;mo leer estos precios</p>
+<p>Las tarifas mostradas son el <strong>precio semanal para el cliente</strong>, con el descuento que AMARRA ya tiene negociado con cada flota aplicado. <strong>No a&ntilde;adimos comisi&oacute;n</strong>: nuestros honorarios los paga el operador, no usted. Los importes corresponden a las listas de precios publicadas por las flotas para la temporada 2027 y son orientativos hasta la confirmaci&oacute;n por escrito.</p>
+<p style="margin-top:18px">A la tarifa semanal se suman los <strong>servicios obligatorios</strong> de cada barco (paquete de charter, limpieza final, ropa de cama) y los <strong>extras opcionales</strong> que elija &mdash; todos ellos detallados en la ficha de cada embarcaci&oacute;n con su precio real. La <strong>fianza</strong> es reembolsable y se libera tras el check-out. Los alquileres son sin patr&oacute;n salvo indicaci&oacute;n contraria; el patr&oacute;n puede a&ntilde;adirse en casi todos los barcos.</p>
+<p style="margin-top:18px">Esta selecci&oacute;n cubre Mallorca e Ibiza. A trav&eacute;s de nuestra red accedemos a <strong>m&aacute;s de 9.000 barcos en el Mediterr&aacute;neo</strong> &mdash; Menorca, C&ocirc;te d'Azur, Cerde&ntilde;a, Croacia, Grecia y Turqu&iacute;a. D&iacute;ganos qu&eacute; busca y le enviamos una propuesta a medida: <a href="index.html#charter">solicitar propuesta</a>.</p>
 </div></div>
 
 <footer><div class="wrap">
-<div>AMARRA — Maison Náutica · Nacida en Menorca a bordo del <span>Buganvilia</span></div>
-<div>Mahón · Mónaco · Miami</div>
+<div>AMARRA &mdash; Maison N&aacute;utica &middot; Nacida en Menorca a bordo del <span>Buganvilia</span></div>
+<div>Mah&oacute;n &middot; M&oacute;naco &middot; Miami</div>
 </div></footer>
 
 <div class="veil" id="veil" onclick="closeAll()"></div>
 
 <div class="sheet" id="sheet">
-<button class="x" onclick="closeSheet()">×</button>
+<button class="x" onclick="closeSheet()">&times;</button>
 <div class="inner" id="sheet-body"></div>
 </div>
 
-<div class="modal" id="modal" style="position:fixed">
-<button class="x" onclick="closeModal()">×</button>
+<div class="modal" id="modal">
+<button class="x" onclick="closeModal()">&times;</button>
 <h4 id="m-title">Solicitar disponibilidad</h4>
 <div class="sub" id="m-boat"></div>
 <form id="req-form">
 <input type="hidden" name="barco" id="f-barco">
 <label>Nombre</label><input name="nombre" required>
 <label>Email</label><input type="email" name="email" required>
-<label>Teléfono / WhatsApp</label><input name="telefono" required>
-<label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2ª quincena de julio, 7 noches" required>
-<label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 niños">
-<label>Comentarios</label><textarea name="comentarios" placeholder="Patrón, hostess, preferencias de puerto de salida…"></textarea>
-<button class="send" type="submit">Enviar solicitud — respuesta en 24 h</button>
+<label>Tel&eacute;fono / WhatsApp</label><input name="telefono" required>
+<label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
+<label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
+<label>Comentarios</label><textarea name="comentarios" placeholder="Patr&oacute;n, hostess, preferencias de puerto de salida&hellip;"></textarea>
+<button class="send" type="submit">Enviar solicitud &mdash; respuesta en 24 h</button>
 <div class="ok-msg" id="ok-msg">Solicitud recibida. Le enviaremos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
 </form>
 </div>
 
 <script>
-var IMG='https://images.unsplash.com/photo-';
-var Q='?q=80&w=900&auto=format&fit=crop';
-var QB='?q=80&w=1400&auto=format&fit=crop';
-var SPL=['Eslora','Manga','Calado','Desplazamiento','Motor','Combustible','Agua dulce','Camarotes','Baños','Plazas'];
-var BOATS=[
-{cat:'vela',tag:'Velero — Monocasco',name:'Oceanis 46.1',brand:'Beneteau',base:'Palma de Mallorca — Baleares',yr:'2022–2024',lo:3900,hi:7500,crew:false,inc:'bare',
-imgs:['1534296264129-b318f8140c27','1605472074915-e1406eda66bd','1498623116890-37e912163d5d','1598448251941-ae4dd47dba33'],
-sp:['14,60 m','4,50 m','2,35 m','10,6 t','Yanmar 57 CV','200 L','370 L','4 + salón','4','8+2'],
-eq:['Piloto automático','Plotter GPS en bañera','Molinete eléctrico','Génova enrollable','Bimini y capota','Dinghy con fueraborda','Wifi 4G','Solárium de proa','Ducha de popa','Música Bluetooth']},
-{cat:'vela',tag:'Velero — Monocasco',name:'Sun Odyssey 490',brand:'Jeanneau',base:'Atenas (Álimos) — Grecia',yr:'2021–2023',lo:4500,hi:8600,crew:false,inc:'bare',
-sp:['14,80 m','4,49 m','2,24 m','11,9 t','Yanmar 80 CV','240 L','330 L','5','3','10'],
-imgs:['1540946485063-a40da27545f8','1526761122248-c31c93f8b2b9','1586430528689-ef72996d745a','1600812703042-38e573598898'],
-eq:['Piloto automático','Plotter GPS','Molinete eléctrico','Cubiertas laterales sin escalones','Bimini y capota','Dinghy con fueraborda','Wifi 4G','Mesa de bañera eléctrica','Ducha de popa','Música Bluetooth']},
-{cat:'vela',tag:'Velero — Monocasco',name:'Hanse 508',brand:'Hanse Yachts',base:'Split — Croacia',yr:'2022–2024',lo:4800,hi:9800,crew:false,inc:'bare',
-sp:['15,55 m','4,75 m','2,28 m','14,9 t','Volvo Penta 72 CV','280 L','600 L','5','3','10+2'],
-imgs:['1561728130-afd430af0493','1528154291023-a6525fabe5b4','1605472075443-25dae4f7626b','1674606878551-f424ad6ce965'],
-eq:['Aire acondicionado','Generador','Piloto automático','Plotter GPS doble','Molinete eléctrico','Winches eléctricos','Bimini y capota','Dinghy con fueraborda','Wifi 4G','Plataforma de baño']},
-{cat:'vela',tag:'Velero — Performance cruiser',name:'Grand Soleil 46 LC',brand:'Cantiere del Pardo',base:'Olbia — Cerdeña',yr:'2021–2023',lo:6800,hi:11300,crew:false,inc:'bare',
-sp:['14,20 m','4,35 m','2,30 m','12,5 t','Volvo Penta 75 CV','330 L','500 L','4','2','8'],
-imgs:['1501771924607-209f42a6e7e4','1605387202149-47169c4ea58a','1531141445733-14c2eb7d4c1f','1697124510322-27ef594f67fd'],
-eq:['Aire acondicionado','Generador','Potabilizadora','Piloto automático','Velas de performance','Winches eléctricos','Teca en cubierta','Dinghy con fueraborda','Wifi Starlink','Plataforma de baño']},
-{cat:'cat',tag:'Catamarán',name:'Lagoon 42',brand:'Lagoon',base:'Palma de Mallorca — Baleares',yr:'2022–2024',lo:6800,hi:13200,crew:false,inc:'bare',
-sp:['12,80 m','7,70 m','1,25 m','12,0 t','2× Yanmar 45 CV','2× 300 L','300 L','4 + 2 marineros','4','10+2'],
-imgs:['1723037706467-18ba6d269666','1697734702928-edca6e92d6d5','1618131920480-5a853847a2a4','1598448056086-307e98ef5c4a'],
-eq:['Aire acondicionado','Generador','Piloto automático','Plotter GPS','Trampolín de proa','Bimini rígido en flybridge','Dinghy con fueraborda','Wifi 4G','Solárium de popa','Música Bluetooth']},
-{cat:'cat',tag:'Catamarán',name:'Bali 4.6',brand:'Bali Catamarans',base:'Lavrion — Grecia',yr:'2022–2024',lo:8500,hi:16700,crew:false,inc:'bare',
-sp:['14,28 m','7,61 m','1,22 m','14,5 t','2× Yanmar 57 CV','2× 400 L','800 L','5','4','10+2'],
-imgs:['1581271164789-7c97932822d3','1583200771217-8b9112459344','1630516477416-d0de250ff769','1502986591842-471865a47d0e'],
-eq:['Aire acondicionado','Generador','Potabilizadora','Puerta basculante de popa','Solárium de proa rígido','Flybridge con solárium','Dinghy con fueraborda','Wifi 4G','Nevera y máquina de hielo','Música Bluetooth']},
-{cat:'cat',tag:'Catamarán',name:'Lagoon 46',brand:'Lagoon',base:'Dubrovnik — Croacia',yr:'2021–2024',lo:9400,hi:18400,crew:false,inc:'bare',
-sp:['13,99 m','7,96 m','1,35 m','15,4 t','2× Yanmar 57 CV','2× 520 L','2× 300 L','4 + 2 marineros','4','10+2'],
-imgs:['1535314799572-930a78482c39','1652952116747-ecdcabb667de','1723037706467-18ba6d269666','1674606867480-a3f97bd91533'],
-eq:['Aire acondicionado','Generador','Potabilizadora','Piloto automático','Flybridge amplio','Winches eléctricos','Dinghy con fueraborda','Wifi Starlink','Solárium de proa','Máquina de hielo']},
-{cat:'cat',tag:'Catamarán',name:'Tanna 47',brand:'Fountaine Pajot',base:'Saint-Mandrier — Côte d\'Azur',yr:'2022–2024',lo:10900,hi:21300,crew:false,inc:'bare',
-sp:['13,94 m','7,70 m','1,25 m','13,9 t','2× Volvo Penta 60 CV','2× 470 L','700 L','5','5','10+2'],
-imgs:['1685720543787-54800296f5e7','1590218087440-df21ca448c26','1616494228870-e2ed875ec48a','1674606867357-a9b26fbdca9e'],
-eq:['Aire acondicionado','Generador','Potabilizadora','Piloto automático','Lounge de flybridge','Cocina exterior','Dinghy con fueraborda','Wifi Starlink','Paddle surf','Máquina de hielo']},
-{cat:'motor',tag:'Yate a motor',name:'Princess V50',brand:'Princess Yachts',base:'Puerto Portals — Baleares',yr:'2020–2023',lo:17100,hi:22400,crew:false,inc:'bare',
-sp:['15,24 m','4,34 m','1,14 m','17,5 t','2× Volvo Penta IPS650 · 960 CV','1.800 L','490 L','3','2','6 · patrón opcional'],
-imgs:['1535024966840-e7424dc2635b','1585000962552-70f0a67223d9','1614350391736-ed8619d63c06','1598448154313-6e7789856d06'],
-eq:['Aire acondicionado','Generador','Joystick de atraque','Techo deportivo eléctrico','Plataforma de baño hidráulica','Dinghy Williams','Wifi 4G','Solárium de proa y popa','Nevera exterior','Música Bluetooth']},
-{cat:'motor',tag:'Yate a motor — Tripulado',name:'Manhattan 66',brand:'Sunseeker',base:'Ibiza — Baleares',yr:'2019–2022',lo:33900,hi:43700,crew:true,inc:'crew',
-sp:['20,30 m','5,16 m','1,60 m','34,0 t','2× MAN V8 1000 CV','3.500 L','850 L','4','4','8 · 2 tripulación'],
-imgs:['1605281317010-fe5ffe798166','1747447724564-ee7bc64606f2','1622219969983-45589eae5637','1700319839183-cbad15ac66a4'],
-eq:['Aire acondicionado completo','Generador doble','Potabilizadora','Estabilizadores','Flybridge con wet bar','Plataforma hidráulica','Tender Williams 395','Seabob','Wifi Starlink','Paddle surf y snorkel']},
-{cat:'motor',tag:'Yate a motor — Tripulado',name:'Azimut 68',brand:'Azimut Yachts',base:'Cannes — Côte d\'Azur',yr:'2020–2023',lo:28200,hi:40300,crew:true,inc:'crew',
-sp:['21,05 m','5,65 m','1,70 m','40,5 t','2× MAN V12 1200 CV','4.200 L','1.000 L','4','4','8 · 2–3 tripulación'],
-imgs:['1604737637145-48cc31d160eb','1678122878190-b8a567929f6d','1569282066844-679ec34e3416','1535078035266-a0fa7d3b8f65'],
-eq:['Aire acondicionado completo','Generador doble','Potabilizadora','Estabilizadores giroscópicos','Flybridge con solárium','Plataforma hidráulica','Tender con fueraborda','Seabob','Wifi Starlink','Equipo de snorkel']},
-{cat:'gulet',tag:'Gulet clásico — Todo incluido',name:'Gulet 24 m',brand:'Construcción artesanal en madera',base:'Bodrum — Turquía / Dodecaneso',yr:'Reformado 2021+',lo:28200,hi:36200,crew:true,inc:'gulet',
-sp:['24,00 m','6,50 m','2,80 m','90 t','Diésel 400 CV','3.000 L','6.000 L','6 en suite','6','12 · 4 tripulación'],
-imgs:['1711143965967-d1e451ec555b','1710793411254-1df834210b24','1682107318108-6c51eeb71502','1695455775258-6839e7b1983d'],
-eq:['Aire acondicionado','Generador','Potabilizadora','Cubierta de teca con colchonetas','Comedor exterior a la sombra','Cocinero a bordo','Tender con fueraborda','Wifi 4G','Kayak y paddle surf','Equipo de snorkel']}
-];
-var INC={
-bare:{si:['Embarcación con equipamiento completo','Seguro de casco y responsabilidad civil base','Dinghy con fueraborda','Ropa de cama y toallas'],
-no:['Combustible según consumo','Limpieza final','Patrón opcional (bajo petición)','Amarres fuera de la base']},
-crew:{si:['Yate con tripulación profesional','Seguro del yate y gestión del charter','Ropa de cama, toallas y juguetes acuáticos'],
-no:['APA ~25–30 %: combustible, provisiones, bebidas y amarres','Propinas discrecionales']},
-gulet:{si:['Tripulación completa de 4 con cocinero','Pensión completa a bordo: desayuno, comida y cena','Combustible en ruta estándar','Agua, refrescos y equipo de snorkel'],
-no:['Bebidas alcohólicas premium','Propinas discrecionales (~5–10 %)']}};
-function fmt(n){return '€'+n.toLocaleString('es-ES')}
-function mid(b){return Math.round((b.lo+b.hi)/2/100)*100}
-function render(f){
-var g=document.getElementById('grid');
-g.innerHTML=BOATS.map(function(b,i){
-if(f!=='all'&&b.cat!==f)return '';
-return '<div class="card">'+
-'<div class="ph"><img loading="lazy" alt="'+b.name+'" src="'+IMG+b.imgs[0]+Q+'" onerror="this.style.opacity=0">'+
-'<span class="badge">'+b.tag+'</span>'+(b.crew?'<span class="crewed">Con tripulación</span>':'')+'</div>'+
-'<div class="body"><div class="cat-tag">'+b.base+'</div>'+
-'<h3>'+b.name+'</h3><div class="brand">'+b.brand+'</div>'+
-'<ul class="specs">'+
-'<li><span>Eslora</span><span>'+b.sp[0]+'</span></li>'+
-'<li><span>Camarotes</span><span>'+b.sp[7]+'</span></li>'+
-'<li><span>Plazas</span><span>'+b.sp[9]+'</span></li>'+
-'<li><span>Año</span><span>'+b.yr+'</span></li>'+
-'</ul>'+
-'<div class="price-row"><div class="price">'+fmt(b.lo)+' – '+fmt(b.hi)+'</div><div class="per">por semana · según temporada</div></div>'+
-'<button class="cta ghost" data-a="sheet" data-i="'+i+'">Ver ficha completa</button>'+
-'<button class="cta" data-a="ask" data-i="'+i+'">Solicitar disponibilidad</button>'+
-'</div></div>'
-}).join('');
+var BOATS=[{"id":3,"cat":"vela","zone":"mallorca","model":"Sun Odyssey 349 - 3 cab.","name":"CASTOR","yr":"2019","refit":"","base":79,"op":1,"type":14,"cab":"3","berth":"6","wc":"1","loa":"10.34","lo":1323,"hi":3780,"dep":"2500","pics":["9292215/castor_main.jpg","9292215/castor_n.jpg","9292215/castor_n1%20%281%29.jpg","9292215/castor_n1.jpg","9292215/castor_n2.jpg","9292215/castor_n3.jpg","9292215/castor_n4.jpg","9292215/castor_p.jpg","9292215/castor_p1.jpg","9292215/castor_p2.jpg","9292215/castor_p3.jpg","9292215/castor_p4.jpg","9292215/castor_r.jpg","9292215/castor_r1.jpg","9292215/castor_r2.jpg","9292215/castor_r3.jpg","9292215/castor_w.jpg","9292215/castor_w1.jpg"],"eq":[6,11,5,44,73,74,24,38,3,20,41,83,49,51,82,247],"seas":[[134,1323],[98,1777],[155,2155],[156,2722],[167,3251],[168,3780],[157,3515]],"obl":[[18,30],[59,108]],"opt":[[90,192],[9,16],[23,17],[31,39],[36,39],[4,76],[67,19],[2,193]],"spec":[[42,"10.34 m (34 ft)"],[61,"3.44 m"],[43,308],[25,187],["Año",278],[26,"3"],[37,174],[62,"1"],[27,65],[78,"2 × 21.0 CV (2 × 15,45 kW)"],[0,276],[15,202],[87,79]]},{"id":12,"cat":"vela","zone":"mallorca","model":284,"name":"PLAYA BLANCA","yr":"2023","refit":"","base":8,"op":1,"type":14,"cab":"3","berth":"6","wc":"2","loa":"12.4","lo":1332,"hi":4205,"dep":"3500","pics":["30818054/PlayaBlanca_main.jpg","30818054/PlayaBlanca_n.jpg","30818054/PlayaBlanca_p.jpg","30818054/PlayaBlanca_p1.jpg","30818054/PlayaBlanca_p2.jpg","30818054/PlayaBlanca_p3.jpg","30818054/PlayaBlanca_r.jpg","30818054/PlayaBlanca_w.jpg","30818054/PlayaBlanca_w1.jpg","30818054/PlayaBlanca_w2.jpg","30818054/PlayaBlanca_z.jpg"],"eq":[6,11,5,44,73,74,3,20,12,83,85,"AIS",51,170,205,"Cartas náuticas"],"seas":[[119,1474],[99,1975],[29,2400],[101,3024],[105,3619],[120,4205],[106,3912]],"obl":[[18,30],[59,228]],"opt":[[50,17],[9,126],[7,10],[23,17],[68,60],[31,39],[36,39],[89,125],[4,10],[67,17],[2,33]],"spec":[[42,267],[61,325],[43,277],[25,113],["Año",229],[26,"3"],[37,174],[62,"2"],[27,65],[78,"1 × 57.0 CV (1 × 41,92 kW)"],[87,8]]},{"id":5,"cat":"vela","zone":"mallorca","model":"Bavaria Cruiser 40 S","name":"ATLANTICA","yr":"2013","refit":"","base":8,"op":1,"type":14,"cab":"3","berth":"6","wc":"2","loa":"12.35","lo":1342,"hi":3827,"dep":"2500","pics":["23194083/layout.JPG","23194083/main.jpg","23194083/n.jpg","23194083/n1.jpg","23194083/n2.jpg","23194083/p.jpg","23194083/w.jpg","23194083/w1.jpg"],"eq":[6,71,5,73,74,24,38,3,20,94,118,49,51,188,"Hélice plegable de 3 palas",238],"seas":[["27 mar – 2 abr",1408],["3 abr – 16 abr",1342],["17 abr – 23 abr",1408],[99,1796],[29,2183],[101,2759],["19 jun – 23 jul",3289]],"obl":[[18,30],[59,279]],"opt":[[50,17],[9,16],[7,10],[23,17],[68,60],[31,39],[36,39],[4,10],[67,17],[2,33]],"spec":[[42,"12.35 m (40 ft)"],[61,"3.96 m"],[43,300],[25,113],["Año",309],[26,"3"],[37,"6"],[62,"2"],[27,145],[78,199],[0,222],[15,286],[87,8]]},{"id":7,"cat":"vela","zone":"mallorca","model":196,"name":"ALENA","yr":"2013","refit":"","base":8,"op":1,"type":14,"cab":"4","berth":"8","wc":"3","loa":"14.27","lo":1370,"hi":3922,"dep":"3000","pics":["23194079/layout.jpg","23194079/main.jpg","23194079/n.jpg","23194079/n1.jpg","23194079/n2.jpg","23194079/p.jpg","23194079/p1.jpg","23194079/p2.jpg","23194079/p3.jpg","23194079/p4.jpg","23194079/p5.jpg","23194079/p6.jpg","23194079/r.jpg","23194079/r1.jpg","23194079/r2.jpg","23194079/w.jpg","23194079/w1.jpg","23194079/w2.jpg"],"eq":[6,71,5,44,73,74,24,38,20,94,118,203,12,83,49,"Radar"],"seas":[[119,1370],[99,1843],[29,2240],[101,2826],[105,3374],[120,3922],[106,3648]],"obl":[[18,30],[59,228]],"opt":[[50,17],[9,126],[7,10],[23,17],[68,60],[31,39],[36,39],[4,10],[67,17],[2,33]],"spec":[[42,248],[61,310],[43,277],[25,113],["Año",309],[26,"4"],[37,"8"],[62,"3"],[27,65],[78,"1 × 53.0 CV (1 × 38,98 kW)"],[0,222],[15,286],[87,8]]},{"id":9,"cat":"vela","zone":"mallorca","model":209,"name":"MARIE","yr":"2019","refit":"","base":79,"op":1,"type":14,"cab":"3","berth":"6","wc":"1","loa":"11.75","lo":1408,"hi":4016,"dep":"2500","pics":["8566703/Marie_main.jpg","8566703/Marie_n.jpg","8566703/Marie_n1.jpg","8566703/Marie_n2.jpg","8566703/Marie_n3.jpg","8566703/Marie_n4.jpg","8566703/Marie_p.jpg","8566703/Marie_p1.jpg","8566703/Marie_p2.jpg","8566703/Marie_p3.jpg","8566703/Marie_p4.jpg","8566703/Marie_r.jpg","8566703/Marie_r1.jpg","8566703/Marie_r2.jpg","8566703/Marie_r3.jpg","8566703/Marie_w.jpg","8566703/Marie_w1.jpg"],"eq":[6,11,5,44,73,74,3,94,12,41,49,"AIS",82,205,238,247],"seas":[[134,1408],[98,1890],[155,2287],[156,2892],[167,3459],[168,4016],[157,3733]],"obl":[[18,30],[59,108]],"opt":[[90,192],[9,16],[23,17],[31,39],[36,39],[4,76],[67,19],[2,193]],"spec":[[42,210],[61,290],[43,291],[25,187],["Año",278],[26,"3"],[37,"6"],[62,"1"],[27,145],[78,129],[0,276],[15,202],[87,79]]},{"id":10,"cat":"vela","zone":"mallorca","model":209,"name":"BARELLI","yr":"2019","refit":"","base":8,"op":1,"type":14,"cab":"3","berth":"6","wc":"1","loa":"11.75","lo":1408,"hi":4016,"dep":"2500","pics":["7972068/Barelli_main.jpg","7972068/Barelli_n.jpg","7972068/Barelli_n2.jpg","7972068/Barelli_n3.jpg","7972068/Barelli_n4.jpg","7972068/Barelli_p1.jpg","7972068/Barelli_p2.jpg","7972068/Barelli_p4.jpg","7972068/Barelli_r.jpg","7972068/Barelli_r1.jpg","7972068/Barelli_r2.jpg","7972068/Barelli_r3.jpg","7972068/Barelli_w.jpg","7972068/Barelli_w1.jpg","7972068/Barelli_z.jpg","7972068/Layout%20Barelli.jpg"],"eq":[6,11,5,46,44,73,74,206,3,94,12,85,49,"AIS",82,205],"seas":[[119,1408],[99,1890],[29,2287],[101,2892],[105,3459],[120,4016],[106,3733]],"obl":[[18,30],[59,279]],"opt":[[50,17],[9,16],[7,10],[23,17],[68,60],[31,39],[36,39],[89,125],[4,10],[67,17],[2,33]],"spec":[[42,210],[61,290],[43,"2.0 m"],[25,187],["Año",278],[26,"3"],[37,174],[62,"1"],[27,65],[78,129],[0,276],[15,202],[87,8]]},{"id":11,"cat":"vela","zone":"mallorca","model":209,"name":"MOELLI","yr":"2020","refit":"","base":79,"op":1,"type":14,"cab":"3","berth":"6","wc":"1","loa":"11.75","lo":1474,"hi":4205,"dep":"2500","pics":["10230810/moelli_main%20%281%29.jpg","10230810/moelli_main.jpg","10230810/moelli_n.jpg","10230810/moelli_n1.jpg","10230810/moelli_n2.jpg","10230810/moelli_n3.jpg","10230810/moelli_p.jpg","10230810/moelli_p1.jpg","10230810/moelli_p2.jpg","10230810/moelli_r.jpg","10230810/moelli_r1.jpg","10230810/moelli_w.jpg","10230810/moelli_w1.jpg","10230810/moelli_z.jpg"],"eq":[6,71,5,46,44,73,74,24,206,20,94,118,12,41,85,49],"seas":[[134,1474],[98,1975],[155,2400],[156,3024],[167,3619],[168,4205],[157,3912]],"obl":[[18,30],[59,108]],"opt":[[90,192],[9,16],[23,17],[31,39],[36,39],[4,76],[67,19],[2,193]],"spec":[[42,210],[61,290],[43,291],[25,187],["Año",280],[26,"3"],[37,174],[62,"1"],[27,65],[78,129],[0,276],[15,202],[87,79]]},{"id":25,"cat":"vela","zone":"mallorca","model":"Oceanis 40.1","name":"STAR OF THE SEAS","yr":"2021","refit":"","base":79,"op":1,"type":14,"cab":"4","berth":"8","wc":"2","loa":"12.87","lo":1739,"hi":4961,"dep":"2500","pics":["12782203/SOTS%20I_main.jpg","12782203/SOTS%20I_n.jpg","12782203/SOTS%20I_n1.jpg","12782203/SOTS%20I_n2.jpg","12782203/SOTS%20I_n3.jpg","12782203/SOTS%20I_n4.jpg","12782203/SOTS%20I_p%20%281%29.jpg","12782203/SOTS%20I_p1%20%281%29.jpg","12782203/SOTS%20I_p2.jpg","12782203/SOTS%20I_p3.jpg","12782203/SOTS%20I_r.jpg","12782203/SOTS%20I_r1.jpg","12782203/SOTS%20I_r2.jpg","12782203/SOTS%20I_r3.jpg","12782203/SOTS%20I_r4.jpg","12782203/SOTS%20I_w.jpg","12782203/SOTS%20I_w1.jpg"],"eq":[6,11,5,46,44,73,74,24,38,3,20,171,83,85,"AIS",230],"seas":[[134,1739],[98,2334],[155,2826],[156,3572],[167,4271],[168,4961],[157,4612]],"obl":[[18,30],[59,108]],"opt":[[90,192],[9,16],[23,17],[31,39],[36,39],[4,76],[67,19],[2,193]],"spec":[[42,"12.87 m (40 ft)"],[61,"4.18 m"],[43,"2.17 m"],[25,189],["Año","2021"],[26,"4"],[37,223],[62,"2"],[27,95],[78,"1 × 45.0 CV (1 × 33,10 kW)"],[0,326],[15,236],[87,79]]},{"id":4,"cat":"vela","zone":"mallorca","model":"Bavaria Cruiser 41 - 3 cab.","name":"SUMMER ELLI","yr":"2018","refit":"","base":8,"op":1,"type":14,"cab":"3","berth":"6","wc":"2","loa":"12.35","lo":1786,"hi":4243,"dep":"2500","pics":["23902975/main.jpeg","23902975/n.jpeg","23902975/n1.jpeg","23902975/n2.jpeg","23902975/p.jpeg","23902975/p1.jpeg","23902975/r.jpeg","23902975/r1.jpeg","23902975/r2.jpeg","23902975/w.jpeg","23902975/w1.jpeg"],"eq":[6,5,44,73,74,24,38,20,94,12,41,49,"AIS",51,82,143],"seas":[[134,2174],[132,3062],[121,3204],["10 jul – 16 jul",3393],["24 jul – 30 jul",3771],[122,4243],[135,3771]],"obl":[[18,30],[59,228]],"opt":[[50,17],[9,16],[7,10],[23,17],[68,60],[31,39],[36,39],[89,125],[4,10],[67,17],[114,178],[2,33]],"spec":[[42,249],[61,"3.95 m"],[43,311],[25,113],["Año",335],[26,"3"],[37,301],[62,"2"],[27,239],[78,199],[0,222],[15,286],[87,8]]},{"id":29,"cat":"vela","zone":"mallorca","model":"Bavaria Cruiser 51","name":"ALISSA","yr":"2016","refit":"","base":8,"op":1,"type":14,"cab":"5","berth":"10","wc":"3","loa":"15.59","lo":1966,"hi":5623,"dep":"3000","pics":["23194080/layout.jpg","23194080/Alissa_main.jpg","23194080/Alissa_n.jpg","23194080/Alissa_n1.jpg","23194080/Alissa_n2.jpg","23194080/Alissa_p.jpg","23194080/Alissa_p1.jpg","23194080/Alissa_r.jpg","23194080/Alissa_r1.jpg","23194080/Alissa_r2.jpg","23194080/Alissa_r3.jpg","23194080/Alissa_w.jpg","23194080/Alissa_w1.jpg","23194080/Alissa_w2.jpg"],"eq":[6,71,11,5,44,73,74,24,38,3,20,94,118,12,49,"AIS"],"seas":[["27 mar – 9 abr",1966],[99,2646],["22 may – 4 jun",4045],[121,4045],[268,4838],["10 jul – 30 jul",4838],[106,5008]],"obl":[[18,30],[59,108]],"opt":[[50,17],[9,126],[7,10],[23,17],[68,60],[31,39],[36,39],[4,10],[67,17],[2,33]],"spec":[[42,"15.59 m (51 ft)"],[61,"4.67 m"],[43,312],[25,113],["Año",336],[26,"5"],[37,"10"],[62,"3"],[27,95],[78,"1 × 75.0 CV (1 × 55,16 kW)"],[0,327],[15,"710 l"],[87,8]]},{"id":15,"cat":"vela","zone":"mallorca","model":"Bavaria C38","name":"LEVANTE","yr":"2023","refit":"","base":13,"op":22,"type":14,"cab":"3","berth":"6","wc":"1/1","loa":"11.31","lo":2193,"hi":3740,"dep":"3000","pics":["50695423/layout.jpg","50695423/main.jpg","50695423/n2.jpg","50695423/n3.jpg","50695423/n4.jpg","50695423/n5.jpg","50695423/n6.jpg","50695423/p1.jpg","50695423/p2.jpg","50695423/r1.jpg","50695423/r2.jpg","50695423/w1.jpg"],"eq":[6,11,5,46,44,73,74,24,38,3,20,94,118,12,83,49],"seas":[[52,2193],[29,2805],[47,2890],[55,3060],[64,3740],[56,3485],[48,3060]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[163,91],[21,19],[28,88],[2,19]],"spec":[[42,"11.31 m (38 ft)"],[61,"3.98 m"],[43,311],[25,113],["Año",229],[26,"3"],[37,"6"],[62,"1  (elektric)"],[27,145],[78,"1 × 39.0 CV (1 × 28,68 kW)"],[0,222],[15,222],[87,13]]},{"id":2,"cat":"vela","zone":"mallorca","model":"Oceanis 38 - 3 cab.","name":"MOIN","yr":"2014","refit":"2024","base":34,"op":107,"type":14,"cab":"3","berth":"6","wc":"1","loa":"11.5","lo":2202,"hi":3986,"dep":"3000","pics":["76581400/layout.jpeg","76581400/main.jpeg","76581400/n.jpeg","76581400/n1.jpeg","76581400/n2.jpeg","76581400/n3.jpeg","76581400/n4.jpeg","76581400/n5.jpeg","76581400/n6.jpeg","76581400/n7.jpeg","76581400/n8.jpeg","76581400/p.jpeg","76581400/p1.jpeg","76581400/p2.jpeg","76581400/r.jpeg","76581400/r1.jpeg","76581400/w.jpeg"],"eq":[6,71,5,73,74,102,24,3,41,51,143,205,70,146,"Manta ignífuga","Extintor"],"seas":[[52,2202],[169,2542],[158,3136],[159,3986],[135,3136],[160,2542],[161,2202]],"obl":[[136,207]],"opt":[[9,144],[7,16],[151,76],[68,190],[21,75],[2,53],[191,75]],"spec":[[42,"11.5 m (38 ft)"],[61,313],[43,308],[25,189],["Año","2014 · refit 2024"],[26,"3"],[37,174],[62,"1"],[27,65],[0,276],[15,"336 l"],[87,34]]},{"id":22,"cat":"vela","zone":"mallorca","model":196,"name":"EVA","yr":"2012","refit":"","base":13,"op":22,"type":14,"cab":"4","berth":"8","wc":"3/3","loa":"14.27","lo":2210,"hi":4080,"dep":"2000","pics":["50706533/layout.jpg","50706533/main.jpg","50706533/n1.jpg","50706533/n10.jpg","50706533/n11.jpg","50706533/n12.jpg","50706533/n3.jpg","50706533/n4.jpg","50706533/n5.jpg","50706533/n6.jpg","50706533/n7.jpg","50706533/n8.jpg","50706533/n9.jpg","50706533/p.jpg","50706533/p01.jpg","50706533/p02.jpg","50706533/p03.jpg","50706533/p04.jpg"],"eq":[6,11,5,44,73,74,24,38,3,20,94,118,12,83,49,28],"seas":[[52,2210],[29,2762],[47,2932],[55,3102],[64,4080],[56,3612],[48,3102]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[163,91],[28,88],[2,19]],"spec":[[42,248],[61,310],[43,277],[25,113],["Año","2012"],[26,"4"],[37,"8"],[62,"3"],[27,65],[78,"1 × 54.38 CV (1 × 40,00 kW)"],[0,222],[15,286],[87,13]]},{"id":38,"cat":"cat","zone":"mallorca","model":"Lagoon 40 - 4 + 1 cab.","name":"SUNRISE","yr":"2019","refit":"","base":32,"op":22,"type":14,"cab":"4+1","berth":"10","wc":"4","loa":"11.74","lo":2252,"hi":6672,"dep":"3000","pics":["8066375/layout.jpg","8066375/main.jpg","8066375/n.jpg","8066375/n1.jpg","8066375/n10.jpg","8066375/n13.jpg","8066375/n2.jpg","8066375/n3.jpg","8066375/n4.jpg","8066375/n5.jpg","8066375/n6.jpg","8066375/n7.jpg","8066375/n8.jpg","8066375/n9.jpg","8066375/p.jpg","8066375/p1.jpg","8066375/p15.jpg","8066375/p16.jpg"],"eq":[77,6,11,5,46,73,74,152,24,38,3,20,49,"AIS",51,194],"seas":[[52,2252],[29,3782],[47,4335],[55,5440],[64,6672],[56,5525],[48,5440]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[21,19],[28,88],[2,19]],"spec":[[42,250],[61,314],[43,292],[25,92],["Año",278],[26,211],[37,176],[62,"4"],[27,103],[78,"2 × 39.0 CV (2 × 28,68 kW)"],[0,251],[15,137],[87,32]]},{"id":23,"cat":"vela","zone":"mallorca","model":284,"name":"BLUE EYES","yr":"2024","refit":"","base":13,"op":22,"type":14,"cab":"3","berth":"6","wc":"2/2","loa":"12.4","lo":2295,"hi":4165,"dep":"3000","pics":["73186621/layout.jpg","73186621/main.jpg","73186621/n02.jpg","73186621/n03.jpg","73186621/n04.jpg","73186621/n05.jpg","73186621/n06.jpg","73186621/n07.jpg","73186621/n08.jpg","73186621/p01.jpg","73186621/p02.jpg","73186621/p03.jpg","73186621/p04.jpg","73186621/r07.jpg","73186621/r08.jpg","73186621/w13.jpg"],"eq":[77,6,11,5,44,73,74,24,38,3,20,94,118,12,83,49],"seas":[[52,2295],[29,2975],[47,3145],[55,3655],[64,4165],[56,3910],[48,3655]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[163,91],[21,19],[28,88],[2,19]],"spec":[[42,267],[61,325],[43,277],[25,113],["Año",295],[26,"3"],[37,"6"],[62,"2  (1x electric (bow toilet is electric. Stern toilet is manual))"],[27,145],[78,129],[0,222],[15,"460 l"],[87,13]]},{"id":24,"cat":"vela","zone":"mallorca","model":"Sun Odyssey 410 - 3 cab.","name":"TITZI","yr":"2025","refit":"","base":13,"op":22,"type":14,"cab":"3","berth":"6","wc":"2/1","loa":"12.35","lo":2295,"hi":4250,"dep":"1500","pics":["52051330/layout.jpg","52051330/main.jpg","52051330/n1.jpg","52051330/n2.jpg","52051330/n3.jpg","52051330/n4.jpg","52051330/p1.jpg","52051330/p2.jpg","52051330/p3.jpg","52051330/p4.jpg","52051330/p5.jpg","52051330/r1.jpg","52051330/r2.jpg","52051330/r3.jpg","52051330/w1.jpg","52051330/w2.jpg"],"eq":[77,6,11,5,44,73,74,24,38,3,20,94,118,12,41,49],"seas":[[52,2295],[29,2975],[47,3145],[55,3698],[64,4250],[56,3995],[48,3698]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[163,91],[21,19],[28,88],[2,19]],"spec":[[42,249],[61,313],[43,"1.6 m"],[25,187],["Año",296],[26,"3"],[37,174],[62,175],[27,65],[78,"1 × 44.0 CV (1 × 32,36 kW)"],[0,202],[15,236],[87,13]]},{"id":6,"cat":"vela","zone":"mallorca","model":"Hanse 415","name":"NORD STAR","yr":"2015","refit":"","base":34,"op":107,"type":14,"cab":"3","berth":"6","wc":"2","loa":"12.4","lo":2372,"hi":4156,"dep":"3000","pics":["76581401/main.jpeg","76581401/n.jpeg","76581401/n1.jpeg","76581401/n2.jpeg","76581401/n3.jpeg","76581401/n4.jpeg","76581401/p.jpeg","76581401/p1.jpeg","76581401/p2.jpeg","76581401/p3.jpeg","76581401/r.jpeg","76581401/r1.jpeg","76581401/r2.jpeg","76581401/w.jpeg","76581401/w1.jpeg","76581401/w2.jpeg"],"eq":[6,71,5,44,73,74,102,24,3,41,51,188,143,205,231,70],"seas":[[52,2372],[169,2712],[158,3306],[159,4156],[135,3306],[160,2712],[161,2372]],"obl":[[136,207]],"opt":[[9,144],[7,16],[151,76],[68,190],[21,75],[2,53],[191,75]],"spec":[[42,"12.4 m (41 ft)"],[61,"4.17 m"],[43,277],[25,232],["Año",337],[26,"3"],[37,174],[62,"2"],[27,65],[0,"160 l"],[15,"520 l"],[87,34]]},{"id":26,"cat":"vela","zone":"mallorca","model":"Sun Odyssey 440 - 3 cab.","name":"CARLOTTA","yr":"2022","refit":"","base":13,"op":22,"type":14,"cab":"3","berth":"6","wc":"2","loa":"13.0","lo":2380,"hi":4420,"dep":"3000","pics":["67874588/layout.jpg","67874588/main.jpg","67874588/n02.jpg","67874588/n03.jpg","67874588/n04.jpg","67874588/n05.jpg","67874588/n06.jpg","67874588/n07.jpg","67874588/n08.jpg","67874588/p01.jpg","67874588/p02.jpg","67874588/p04.jpg","67874588/p05.jpg","67874588/r03.jpg","67874588/w06.jpg"],"eq":[45,6,11,5,44,73,74,24,38,3,20,118,179,12,49,"AIS"],"seas":[[52,2380],[29,3060],[47,3315],[55,3825],[64,4420],[56,4165],[48,3825]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[163,91],[21,19],[28,88],[2,19]],"spec":[[42,"13.0 m (44 ft)"],[61,"4.29 m"],[43,300],[25,187],["Año",297],[26,"3"],[37,174],[62,175],[27,65],[78,"1 × 57.1 CV (1 × 42,00 kW)"],[0,202],[15,236],[87,13]]},{"id":43,"cat":"cat","zone":"mallorca","model":"Fountaine Pajot Isla 40 - 4 + 1 cab.","name":"LAJA","yr":"2023","refit":"","base":32,"op":22,"type":14,"cab":"4+1","berth":"10","wc":"2","loa":"11.93","lo":2380,"hi":7182,"dep":"3000","pics":["31028247/layout.jpg","31028247/main.jpg","31028247/n1.jpg","31028247/n2.jpg","31028247/n4.jpg","31028247/n5.jpg","31028247/n6.jpg","31028247/n7.jpg","31028247/n8.jpg","31028247/p.jpg","31028247/p1.jpg","31028247/p2.jpg","31028247/r.jpg","31028247/r1.jpg","31028247/r2.jpg","31028247/r4.jpg","31028247/w.jpg","31028247/w1.jpg"],"eq":[77,6,11,5,46,73,74,152,24,3,20,94,118,12,41,83],"seas":[[52,2380],[29,4122],[47,4718],[55,5865],[64,7182],[56,5908],[48,5865]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[21,19],[28,88],[2,19]],"spec":[[42,"11.93 m (40 ft)"],[61,"6.63 m"],[43,315],[25,138],["Año",229],[26,211],[37,176],[62,175],[27,103],[78,"2 × 29.0 CV (2 × 21,33 kW)"],[0,327],[15,236],[87,32]]},{"id":30,"cat":"vela","zone":"mallorca","model":"Hanse 458 - 3 cab.","name":"NAMAKA ELUA","yr":"2023","refit":"","base":13,"op":22,"type":14,"cab":"3","berth":"6","wc":"2/2","loa":"14.04","lo":2465,"hi":4845,"dep":"2000","pics":["50700555/layout.jpg","50700555/main.jpg","50700555/n1.jpg","50700555/n2.jpg","50700555/n3.jpg","50700555/n5.jpg","50700555/n6.jpg","50700555/n7.jpg","50700555/n8.jpg","50700555/p1.jpg","50700555/p2.jpg","50700555/p3.jpg","50700555/p4.jpg","50700555/p5.jpg","50700555/p6.jpg","50700555/p7.jpg","50700555/r1.jpg","50700555/r2.jpg"],"eq":[6,11,5,44,73,74,24,38,3,20,94,118,281,12,252,83],"seas":[[52,2465],[29,3570],[47,4250],[55,4378],[64,4845],[56,4505],[48,4378]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[163,91],[21,19],[28,88],[2,19]],"spec":[[42,"14.04 m (45 ft)"],[61,"4.38 m"],[43,300],[25,232],["Año",229],[26,"3"],[37,174],[62,"2"],[27,65],[78,153],[0,222],[15,328],[87,13]]},{"id":31,"cat":"vela","zone":"mallorca","model":"Dufour 44 - 3 cab.","name":"GIMME! GIMME!","yr":"2026","refit":"","base":13,"op":22,"type":14,"cab":"3","berth":"6","wc":"2","loa":"13.91","lo":2550,"hi":4972,"dep":"3000","pics":["68160131/main.jpg","68160131/n02.jpg","68160131/n05.jpg","68160131/n06.jpg","68160131/n07.jpg","68160131/n08.jpg","68160131/p01.jpg","68160131/p02.jpg","68160131/p05.jpg","68160131/p06.jpg","68160131/r03.jpg","68160131/r04.jpg"],"eq":[77,6,11,5,44,73,74,24,38,3,20,139,94,118,12,83],"seas":[[52,2550],[29,3655],[47,4378],[55,4505],[64,4972],[56,4632],[48,4505]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[163,91],[21,19],[28,88],[2,19]],"spec":[[42,"13.91 m (44 ft)"],[61,"4.45 m"],[43,329],[25,273],["Año",287],[26,"3"],[37,"6"],[62,175],[27,145],[78,"1 × 56.0 CV (1 × 41,19 kW)"],[0,302],[15,302],[87,13]]},{"id":33,"cat":"vela","zone":"mallorca","model":"Oceanis 46.1 - 4 cab.","name":"SOPHIA","yr":"2023","refit":"","base":32,"op":22,"type":14,"cab":"4","berth":"8","wc":"4","loa":"14.6","lo":2550,"hi":5610,"dep":"3000","pics":["32096476/layout.jpg","32096476/main.jpg","32096476/n1.jpg","32096476/n2.jpg","32096476/n3.jpg","32096476/n4.jpg","32096476/n5.jpg","32096476/n6.jpg","32096476/p.jpg","32096476/p1.jpg","32096476/p2.jpg","32096476/p3.jpg","32096476/p4.jpg","32096476/p5.jpg","32096476/p6.jpg","32096476/r.jpg","32096476/r1.jpg","32096476/r2.jpg"],"eq":[77,6,11,5,44,73,74,24,38,3,20,110,118,12,83,49],"seas":[[52,2550],[29,4208],[47,4972],[55,5185],[64,5610],[56,5312],[48,5185]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[163,91],[21,19],[28,88],[2,19]],"spec":[[42,217],[61,288],[43,"2.35 m"],[25,189],["Año",229],[26,"4"],[37,223],[62,"4  (electric)"],[27,95],[78,153],[0,202],[15,"570 l"],[87,32]]},{"id":49,"cat":"cat","zone":"mallorca","model":"Fountaine Pajot Fp 41 Maestro 3","name":"GIN MAR","yr":"2026","refit":"","base":32,"op":22,"type":14,"cab":"3","berth":"6","wc":"2/2","loa":"12.1","lo":2550,"hi":7608,"dep":"3000","pics":["67652352/layout.jpg","67652352/main.jpg","67652352/n01.jpg","67652352/n02.jpg","67652352/n03.jpg","67652352/n04.jpg","67652352/n07.jpg","67652352/p01.jpg","67652352/p02.jpg","67652352/p03.jpg","67652352/p04.jpg","67652352/r05.jpg","67652352/r6.jpg","67652352/w10.jpg","67652352/w9.jpg"],"eq":[45,100,6,11,5,46,73,74,38,3,20,94,118,"Lavadora",85,49],"seas":[[52,2550],[29,4250],[47,5015],[55,6035],[64,7608],[56,6290],[48,6035]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[21,19],[28,88],[2,19]],"spec":[[42,"12.1 m (41 ft)"],[61,"6.92 m"],[43,"1.34 m"],[25,138],["Año",287],[26,"3"],[37,174],[62,175],[27,65],[78,"2 × 40.79 CV (2 × 30,00 kW)"],[0,"350 l"],[15,137],[87,32]]},{"id":35,"cat":"cat","zone":"mallorca","model":"Lagoon 40 - 4 + 2 Cab","name":"STARELLI","yr":"2019","refit":"","base":8,"op":1,"type":14,"cab":"4+2","berth":"10","wc":"4","loa":"11.74","lo":2561,"hi":7324,"dep":"3500","pics":["7972029/StarElli_main.jpg","7972029/StarElli_n.jpg","7972029/StarElli_n1.jpg","7972029/StarElli_n2.jpg","7972029/StarElli_p%20%281%29.jpg","7972029/StarElli_p.jpg","7972029/StarElli_p1%20%281%29.jpg","7972029/StarElli_p1.jpg","7972029/StarElli_p2.jpg","7972029/StarElli_p3.jpg","7972029/StarElli_r.jpg","7972029/StarElli_r1.jpg"],"eq":[6,11,5,46,73,74,3,20,41,49,51,82,247,213,146,"Dinghy"],"seas":[[119,2561],[99,3440],[29,4177],[101,5273],[105,6303],[120,7324],[106,6813]],"obl":[[18,30],[59,76]],"opt":[[50,17],[9,126],[7,10],[23,17],[68,60],[31,39],[36,39],[89,125],[4,10],[115,10],[2,33]],"spec":[[42,250],[61,314],[43,292],[25,92],["Año",278],[26,224],[37,177],[62,"4"],[27,84],[78,200],[0,137],[15,137],[87,8]]},{"id":13,"cat":"vela","zone":"mallorca","model":"Oceanis 41.1","name":"PASSEPARTOUT","yr":"2020","refit":"","base":34,"op":107,"type":14,"cab":"3","berth":"6","wc":"2","loa":"12.43","lo":2712,"hi":4496,"dep":"3000","pics":["76581394/main.jpeg","76581394/n.jpeg","76581394/n1.jpeg","76581394/n2.jpeg","76581394/n3.jpeg","76581394/n4.jpeg","76581394/n5.jpeg","76581394/n6.jpeg","76581394/n7.jpeg","76581394/p.jpeg","76581394/p1.jpeg","76581394/p2.jpeg","76581394/p3.jpeg","76581394/r.jpeg","76581394/r1.jpeg","76581394/w.jpeg"],"eq":[6,71,5,73,74,102,24,3,41,85,51,188,143,205,231,70],"seas":[[52,2712],[169,3052],[158,3646],[159,4496],[135,3646],[160,3052],[161,2712]],"obl":[[136,207]],"opt":[[9,144],[7,16],[151,76],[68,190],[21,75],[2,53],[191,75]],"spec":[[42,"12.43 m (41 ft)"],[61,"4.2 m"],[43,"2.4 m"],[25,189],["Año",280],[26,"3"],[37,174],[62,"2"],[27,65],[0,326],[15,236],[87,34]]},{"id":50,"cat":"cat","zone":"mallorca","model":"Lagoon 42 - 4 cab.","name":"SUNSHINE","yr":"2020","refit":"","base":32,"op":22,"type":14,"cab":"4","berth":"8","wc":"4","loa":"12.8","lo":2720,"hi":7608,"dep":"3000","pics":["10363033/layout.jpg","10363033/main.jpg","10363033/n.jpg","10363033/n1.jpg","10363033/n2.jpg","10363033/n3.jpg","10363033/n4.jpg","10363033/n5.jpg","10363033/n6.jpg","10363033/p.jpg","10363033/p1.jpg","10363033/r.jpg","10363033/r1.jpg","10363033/r2.jpg","10363033/r3.jpg","10363033/w.jpg"],"eq":[6,11,5,46,"Bimini rígido",74,24,38,123,3,20,94,203,171,12,41],"seas":[[52,2720],[29,4250],[47,5015],[55,6035],[64,7608],[56,6290],[48,6035]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[21,19],[28,88],[2,19]],"spec":[[42,269],[61,330],[43,293],[25,92],["Año",280],[26,224],[37,177],[62,"4"],[27,84],[78,80],[0,137],[15,137],[87,32]]},{"id":47,"cat":"cat","zone":"mallorca","model":"Lagoon 450 S - 4 + 2 cab.","name":"TWIN ELLI","yr":"2020","refit":"","base":8,"op":1,"type":14,"cab":"4+2","berth":"10","wc":"4","loa":"13.96","lo":2782,"hi":8788,"dep":"3500","pics":["23902171/TWIN%20ELLI_main.jpg","23902171/TWIN%20ELLI_n.jpg","23902171/TWIN%20ELLI_n1.jpg","23902171/TWIN%20ELLI_n2.jpg","23902171/TWIN%20ELLI_n3.jpg","23902171/TWIN%20ELLI_n4.jpg","23902171/TWIN%20ELLI_p.jpg","23902171/TWIN%20ELLI_p1.jpg","23902171/TWIN%20ELLI_p2.jpg","23902171/TWIN%20ELLI_p3.jpg","23902171/TWIN%20ELLI_r.jpg","23902171/TWIN%20ELLI_r1.jpg","23902171/TWIN%20ELLI_w.jpg","23902171/TWIN%20ELLI_w1.jpg"],"eq":[45,100,6,71,5,46,73,74,24,38,20,110,94,252,41,83],"seas":[[119,3081],[99,4130],[29,5008],[101,6332],[105,7560],[120,8788],[106,8174]],"obl":[[18,30],[59,108]],"opt":[[50,17],[9,126],[7,10],[23,17],[68,60],[31,39],[36,39],[89,125],[4,10],[114,178],[2,33]],"spec":[[42,180],[61,316],[43,289],[25,92],["Año",280],[26,224],[37,177],[62,"4"],[27,84],[78,200],[0,294],[15,237],[87,8]]},{"id":48,"cat":"cat","zone":"mallorca","model":"Lagoon 450 F - 4 + 1 cab.","name":"BIGELLI","yr":"2019","refit":"","base":8,"op":1,"type":14,"cab":"4+1","berth":"10","wc":"5","loa":"13.96","lo":2782,"hi":8788,"dep":"3500","pics":["7972033/layout.jpg","7972033/main.jpg","7972033/n.jpg","7972033/n1.jpg","7972033/n2.jpg","7972033/n3.jpg","7972033/n4.jpg","7972033/n5.jpg","7972033/p.jpg","7972033/p2.jpg","7972033/r.jpg","7972033/r1.jpg"],"eq":[45,100,86,6,11,5,46,73,74,3,20,41,83,85,49,"AIS"],"seas":[[119,3081],[99,4130],[29,5008],[101,6332],[105,7560],[120,8788],[106,8174]],"obl":[[18,30],[59,108]],"opt":[[50,17],[9,126],[7,10],[23,17],[68,60],[31,39],[36,39],[89,125],[4,10],[115,10],[114,178],[2,33]],"spec":[[42,180],[61,317],[43,315],[25,92],["Año",278],[26,211],[37,176],[62,"5"],[27,103],[78,80],[0,137],[15,137],[87,8]]},{"id":41,"cat":"cat","zone":"mallorca","model":"Lagoon 42 - 4 + 2 cab.","name":"DAYELLI","yr":"2020","refit":"","base":79,"op":1,"type":14,"cab":"4+2","berth":"10","wc":"4","loa":"12.8","lo":2863,"hi":8174,"dep":"3500","pics":["10292305/dayelli_main-2.jpg","10292305/dayelli_main.jpg","10292305/dayelli_n.jpg","10292305/dayelli_n1-2.jpg","10292305/dayelli_n1.jpg","10292305/dayelli_n2.jpg","10292305/dayelli_n3.jpg","10292305/dayelli_n4-2.jpg","10292305/dayelli_n4-3.jpg","10292305/dayelli_n4.jpg","10292305/dayelli_p-2.jpg","10292305/dayelli_p.jpg","10292305/dayelli_p1-2.jpg","10292305/dayelli_p1.jpg","10292305/dayelli_p2-2.jpg","10292305/dayelli_p2.jpg","10292305/dayelli_r.jpg","10292305/dayelli_r1.jpg"],"eq":[45,100,86,6,71,5,46,73,74,3,20,41,83,85,49,"AIS"],"seas":[[134,2863],[98,3846],[155,4659],[156,5887],[167,7031],[168,8174],[157,7598]],"obl":[[18,30],[59,"€320/reserva"]],"opt":[[90,192],[9,126],[23,17],[31,39],[36,39],[4,76],["Motor fueraborda 15 CV",53],[2,193]],"spec":[[42,269],[61,330],[43,293],[25,92],["Año",280],[26,224],[37,177],[62,"4"],[27,84],[78,80],[0,137],[15,137],[87,79]]},{"id":18,"cat":"vela","zone":"mallorca","model":"Oceanis 45 - 3 cab.","name":"AVALON","yr":"2018","refit":"","base":34,"op":107,"type":14,"cab":"3","berth":"6","wc":"2","loa":"13.94","lo":2882,"hi":4666,"dep":"3000","pics":["76581392/main.jpeg","76581392/n.jpeg","76581392/n1.jpeg","76581392/n2.jpeg","76581392/n3.jpeg","76581392/n4.jpeg","76581392/n5.jpeg","76581392/n6.jpeg","76581392/n7.jpeg","76581392/n8.jpeg","76581392/p.jpeg","76581392/p1.jpeg","76581392/p2.jpeg","76581392/r.jpeg","76581392/r1.jpeg","76581392/w.jpeg"],"eq":[6,71,5,73,74,102,24,3,41,85,51,188,143,205,231,70],"seas":[[52,2882],[169,3222],[158,3816],[159,4666],[135,3816],[160,3222],[161,2882]],"obl":[[136,207]],"opt":[[9,144],[7,16],[151,76],[68,190],[21,75],[2,53],[191,75]],"spec":[[42,"13.94 m (45 ft)"],[61,288],[43,291],[25,189],["Año",335],[26,"3"],[37,174],[62,"2"],[27,65],[0,202],[15,236],[87,34]]},{"id":20,"cat":"vela","zone":"mallorca","model":"Dufour 460 Gl","name":"RUBIN","yr":"2016","refit":"2025","base":34,"op":107,"type":14,"cab":"4","berth":"8","wc":"4","loa":"14.15","lo":3052,"hi":4836,"dep":"3500","pics":["76581391/main.jpeg","76581391/n.jpeg","76581391/n1.jpeg","76581391/n2.jpeg","76581391/n3.jpeg","76581391/n4.jpeg","76581391/n5.jpeg","76581391/n6.jpeg","76581391/p.jpeg","76581391/p1.jpeg","76581391/p2.jpeg","76581391/p3.jpeg","76581391/r.jpeg","76581391/r1.jpeg","76581391/r2.jpeg","76581391/w.jpeg"],"eq":[6,71,5,73,74,102,24,3,85,51,188,143,205,231,70,146],"seas":[[52,3052],[169,3392],[158,3986],[159,4836],[135,3986],[160,3392],[161,3052]],"obl":[[136,57]],"opt":[[9,"€500/semana"],[7,16],[151,76],[68,190],[21,75],[2,53],[191,75]],"spec":[[42,"14.15 m (46 ft)"],[61,288],[43,329],[25,273],["Año","2016 · refit 2025"],[26,"4"],[37,223],[62,"4"],[27,95],[0,302],[15,236],[87,34]]},{"id":46,"cat":"cat","zone":"mallorca","model":"Lagoon 450 - 4 + 2 cab.","name":"ANABELLA","yr":"2017","refit":"","base":8,"op":1,"type":14,"cab":"4+2","berth":"10","wc":"4","loa":"13.96","lo":3081,"hi":9734,"dep":"4500","pics":["23194082/layout.jpg","23194082/main.jpg","23194082/n.jpg","23194082/n1.jpg","23194082/n2.jpg","23194082/n3.jpg","23194082/n4.jpg","23194082/n5.jpg","23194082/n6.jpg","23194082/n7.jpg","23194082/n8.jpg","23194082/n9.jpg","23194082/n91.jpg","23194082/n92.jpg","23194082/p.jpg","23194082/p1.jpg","23194082/p2.jpg","23194082/p3.jpg"],"eq":[6,71,11,5,46,73,74,3,20,94,118,203,12,41,83,85],"seas":[[119,3081],[29,5008],["29 may – 18 jun",6332],[268,7966],["17 jul – 23 jul",7466],["31 jul – 6 ago",8788],[122,9261]],"obl":[[18,30],[59,108]],"opt":[[50,17],[9,57],[7,10],[23,17],[68,60],[31,39],[36,39],[4,10],[115,10],[2,33]],"spec":[[42,180],[61,317],[43,289],[25,92],["Año","2017"],[26,224],[37,177],[62,"4"],[27,84],[78,80],[0,137],[15,137],[87,8]]},{"id":51,"cat":"cat","zone":"mallorca","model":"Lagoon 450 S","name":"VAMOS ELLI","yr":"2016","refit":"","base":8,"op":1,"type":14,"cab":"4","berth":"8","wc":"4","loa":"13.96","lo":3241,"hi":9261,"dep":"4000","pics":["23194090/layout.jpg","23194090/main.jpg","23194090/n.jpg","23194090/n1.jpg","23194090/n2.jpg","23194090/n3.jpg","23194090/n4.jpg","23194090/n5.jpg","23194090/n6.jpg","23194090/n7.jpg","23194090/n8.jpg","23194090/n9.jpg","23194090/n91.jpg","23194090/n92.jpg","23194090/n93.jpg","23194090/p.jpg","23194090/p1.jpg","23194090/p2.jpg"],"eq":[45,100,86,6,11,5,73,74,38,3,20,110,94,118,116,171],"seas":[[119,3241],[99,4356],[29,5283],[101,6672],[105,7966],[120,9261],[106,8609]],"obl":[[18,30],[59,108]],"opt":[[50,17],[9,57],[7,10],[23,17],[68,60],[31,39],[36,39],[89,125],[4,10],[115,10],[114,178],[2,33]],"spec":[[42,180],[61,316],[43,289],[25,92],["Año",336],[26,"4"],[37,223],[62,"4"],[27,95],[78,80],[0,137],[15,237],[87,8]]},{"id":36,"cat":"vela","zone":"mallorca","model":"Oceanis 51.1","name":"FLIPPER","yr":"2023","refit":"","base":32,"op":22,"type":14,"cab":"5","berth":"10","wc":"3","loa":"15.94","lo":3315,"hi":6502,"dep":"3000","pics":["31028492/layout.jpg","31028492/main.jpg","31028492/n.jpg","31028492/n1.jpg","31028492/n2.jpg","31028492/n3.jpg","31028492/n4.jpg","31028492/n6.jpg","31028492/p1.jpg","31028492/p2.jpg","31028492/p3.jpg","31028492/p4.jpg","31028492/p5.jpg","31028492/r1.jpg","31028492/r2.jpg","31028492/r3.jpg","31028492/r4.jpg","31028492/r5.jpg"],"eq":[77,6,11,5,44,73,74,38,3,20,118,12,49,"AIS",194,82],"seas":[[52,3315],[29,4972],[47,5950],[55,6120],[64,6502],[56,6290],[48,6120]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[163,91],[21,19],[28,88],[2,19]],"spec":[[42,"15.94 m (51 ft)"],[61,"4.8 m"],[43,"2.36 m"],[25,189],["Año",229],[26,"5"],[37,318],[62,"3"],[27,84],[78,153],[0,202],[15,"770 l"],[87,32]]},{"id":52,"cat":"cat","zone":"ibiza","model":"Aventura 37","name":"WENNY","yr":"2023","refit":"","base":35,"op":1,"type":14,"cab":"4","berth":"8","wc":"2","loa":"10.9","lo":3600,"hi":9206,"dep":"4000","pics":["33880604/layout.jpeg","33880604/main.jpeg","33880604/n.jpeg","33880604/n1.jpeg","33880604/n2.jpeg","33880604/n3.jpeg","33880604/n4.jpeg","33880604/p.jpeg","33880604/p1.jpeg","33880604/p2.jpeg","33880604/p3.jpeg","33880604/p4.jpeg","33880604/p5.jpeg","33880604/p6.jpeg","33880604/r.jpeg","33880604/r1.jpeg","33880604/r2.jpeg","33880604/r3.jpeg"],"eq":[45,100,86,71,46,3,20,21,110,94,118,116,85,18,40,"Toallas de ducha"],"seas":[[141,4170],[98,5120],[132,6450],[121,7306],[142,8350],[122,8446],[150,6450]],"obl":[[149,243],[164,144],[109,182],[130,165]],"opt":[[7,76],[147,16],[96,104],[127,72],[68,72],[124,97],[124,97],[77,17],[4,16],[148,181],[140,218],[253,91],[12,19],[28,172],[2,53],[81,53],[81,75],[197,53]],"spec":[[42,"10.9 m (37 ft)"],[61,"5.94 m"],[43,303],[25,"Aventura Catamarans"],["Año",229],[26,"4"],[37,223],[62,"2"],[27,95],[78,"2 × 30.0 CV (2 × 22,07 kW)"],[0,331],[15,331],[87,35]]},{"id":53,"cat":"cat","zone":"mallorca","model":"Leopard 45","name":"LADY MARA","yr":"2020","refit":"","base":32,"op":22,"type":14,"cab":"4+2","berth":"10","wc":"4","loa":"13.7","lo":3740,"hi":9308,"dep":"3000","pics":["69869231/layout.jpg","69869231/main.jpg","69869231/n02.jpg","69869231/n03.jpg","69869231/n05.jpg","69869231/n06.jpg","69869231/n07.jpg","69869231/n08.jpg","69869231/n09.jpg","69869231/n10.jpg","69869231/p02.jpg","69869231/p07.jpg","69869231/r03.jpg","69869231/r04.jpg","69869231/r05.jpg","69869231/r06.jpg","69869231/w08.jpg","69869231/w09.jpg"],"eq":[45,100,86,77,6,11,5,73,74,3,20,110,94,118,203,179],"seas":[[52,3740],[29,6035],[47,6970],[55,7480],[64,9308],[56,8075],[48,7480]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[68,69],[40,30],[28,88],[2,19]],"spec":[[42,"13.72 m (45 ft)"],[61,"7.36 m"],[43,"1.55 m"],[25,"Leopard Catamarans / Robertson & Caine"],["Año",280],[26,211],[37,176],[62,"4 + 1  (4 x electric)"],[27,103],[78,"2 × 46.23 CV (2 × 34,00 kW)"],[0,237],[15,"780 l"],[87,32]]},{"id":17,"cat":"vela","zone":"mallorca","model":"Jeanneau 53 - 4 + 1 cab.","name":"TRINITY","yr":"2013","refit":"","base":8,"op":1,"type":14,"cab":"4+1","berth":"10","wc":"4","loa":"16.06","lo":3780,"hi":3780,"dep":"3000","pics":["23845892/layout.jpg","23845892/TRINITY_main.jpg","23845892/TRINITY_n.jpg","23845892/TRINITY_n1.jpg"],"eq":[6,71,11,5,44,73,74,38,206,20,94,12,41,83,49,"AIS"],"seas":[["27 mar – 5 nov",3780]],"obl":[[18,30],[59,108]],"opt":[[50,17],[9,126],[7,10],[23,17],[68,60],[31,39],[36,39],[89,125],[4,10],[67,17],[114,178],[2,33]],"spec":[[42,"16.06 m (53 ft)"],[61,"4.77 m"],[43,"2.28 m"],[25,187],["Año",309],[26,211],[37,176],[62,"4"],[27,103],[78,"1 × 110.0 CV (1 × 80,91 kW)"],[0,"240 l"],[15,"950 l"],[87,8]]},{"id":54,"cat":"cat","zone":"ibiza","model":274,"name":"LA BOHEME","yr":"2022","refit":"","base":35,"op":1,"type":14,"cab":"4","berth":"8","wc":"4","loa":"12.31","lo":4360,"hi":10726,"dep":"4000","pics":["32861606/layout.jpeg","32861606/layout1.jpeg","32861606/main.jpeg","32861606/n.jpeg","32861606/n1.jpeg","32861606/n3.jpeg","32861606/n4.jpeg","32861606/n5.jpeg","32861606/n6.jpeg","32861606/n7.jpeg","32861606/n8.jpeg","32861606/n9.jpeg","32861606/n92.jpeg","32861606/nespresso%20CS.jpeg","32861606/nevera%20CS.jpeg","32861606/p.jpeg","32861606/p1.jpeg","32861606/p2.jpeg"],"eq":[45,100,86,71,102,20,21,139,110,94,118,116,85,51,18,233],"seas":[[141,4930],[98,5976],[132,7496],[121,8636],[142,9680],[122,9776],[150,7496]],"obl":[[149,243],[164,173],[109,182],[130,165]],"opt":[[7,76],[147,16],[96,104],[127,72],[68,72],[124,97],[124,97],[77,17],[4,16],[148,181],[140,218],[253,91],[12,19],[28,172],[2,53],[81,53],[81,75],[197,53]],"spec":[[42,254],[61,319],[43,332],[25,234],["Año",297],[26,"4"],[37,223],[62,"4"],[27,95],[78,201],[0,237],[15,251],[87,35]]},{"id":55,"cat":"cat","zone":"ibiza","model":274,"name":"TURANDOT","yr":"2022","refit":"","base":35,"op":1,"type":14,"cab":"4","berth":"8","wc":"4","loa":"12.31","lo":4360,"hi":10726,"dep":"4000","pics":["32861813/layout.jpeg","32861813/layout1.jpeg","32861813/main.jpeg","32861813/n.jpeg","32861813/n1.jpeg","32861813/n3.jpeg","32861813/n4.jpeg","32861813/n5.jpeg","32861813/n6.jpeg","32861813/n7.jpeg","32861813/n8.jpeg","32861813/n9.jpeg","32861813/n92.jpeg","32861813/p.jpeg","32861813/p1.jpeg","32861813/p2.jpeg","32861813/p2.png","32861813/p3.jpeg"],"eq":[45,100,86,71,102,20,21,139,110,94,118,116,85,51,18,233],"seas":[[141,4930],[98,5976],[132,7496],[121,8636],[142,9680],[122,9776],[150,7496]],"obl":[[149,243],[164,173],[109,182],[130,165]],"opt":[[7,76],[147,16],[96,104],[127,72],[68,72],[124,97],[124,97],[77,17],[4,16],[148,181],[140,218],[253,91],[12,19],[28,172],[2,53],[81,53],[81,75],[197,53]],"spec":[[42,254],[61,319],[43,332],[25,234],["Año",297],[26,"4"],[37,223],[62,"4"],[27,95],[78,201],[0,237],[15,251],[87,35]]},{"id":59,"cat":"cat","zone":"mallorca","model":214,"name":"VOYAGER","yr":"2022","refit":"","base":32,"op":22,"type":14,"cab":"4+2","berth":"10","wc":"4","loa":"13.99","lo":4462,"hi":11050,"dep":"3000","pics":["23835946/layout.jpg","23835946/main.jpg","23835946/n.jpg","23835946/n1.jpg","23835946/n2.jpg","23835946/n3.jpg","23835946/n4.jpg","23835946/n5.jpg","23835946/n6.jpg","23835946/n7.jpg","23835946/n8.jpg","23835946/n9.jpg","23835946/n91.jpg","23835946/n92.jpg","23835946/p1.jpg","23835946/p2.jpg","23835946/p3.jpg","23835946/p4.jpg"],"eq":[45,100,77,6,71,5,46,73,74,152,24,38,123,3,20,110],"seas":[[52,4462],[29,7395],[47,8245],[55,8882],[64,11050],[56,9732],[48,8882]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[21,19],[28,88],[2,19]],"spec":[[42,255],[61,320],[43,292],[25,92],["Año",297],[26,224],[37,177],[62,"4"],[27,84],[78,80],[0,294],[15,137],[87,32]]},{"id":56,"cat":"cat","zone":"mallorca","model":"Fountaine Pajot Fp 44 Maestro - 3 cab.","name":"HI IAKA","yr":"2026","refit":"","base":13,"op":22,"type":14,"cab":"3+1","berth":"8","wc":"3/3","loa":"13.26","lo":4888,"hi":10582,"dep":"3000","pics":["73801726/layout.jpg","73801726/main.jpg","73801726/n02.jpg","73801726/n03.jpg","73801726/n04.jpg","73801726/n05.jpg","73801726/n06.jpg","73801726/n07.jpg","73801726/n08.jpg","73801726/n09.jpg","73801726/n10.jpg","73801726/n11.jpg","73801726/n12.jpg","73801726/n13.jpg","73801726/p01.jpg","73801726/p02.jpg","73801726/p03.jpg","73801726/p04.jpg"],"eq":[45,100,86,6,11,5,46,73,74,183,38,3,20,110,118,179],"seas":[[52,4888],[29,6758],[47,7608],[55,8245],[64,10582],[56,9095],[48,8245]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[58,33],[68,69],[40,30],[21,19],[28,88],[2,19]],"spec":[[42,"13.26 m (44 ft)"],[61,"7.44 m"],[43,"1.58 m"],[25,138],["Año",287],[26,304],[37,301],[62,"3  (electrically)"],[27,65],[78,"2 × 57.78 CV (2 × 42,50 kW)"],[0,237],[15,137],[87,13]]},{"id":58,"cat":"cat","zone":"mallorca","model":"Fountaine Pajot Elba 45 - 3 cab.","name":"YARA","yr":"2025","refit":"","base":32,"op":22,"type":14,"cab":"3+1","berth":"8","wc":"3/3","loa":"13.45","lo":5312,"hi":11008,"dep":"3000","pics":["50680976/layout.jpg","50680976/main.jpg","50680976/n1.jpg","50680976/n10.jpg","50680976/n11.jpg","50680976/n12.jpg","50680976/n13.jpg","50680976/n2.jpg","50680976/n3.jpg","50680976/n4.jpg","50680976/n5.jpg","50680976/n6.jpg","50680976/n7.jpg","50680976/n8.jpg","50680976/n9.jpg","50680976/p1.jpg","50680976/p16.jpg","50680976/p17.jpg"],"eq":[45,100,86,77,6,11,5,46,73,74,183,38,123,3,20,139],"seas":[[52,5312],[29,7182],[47,8032],[55,8670],[64,11008],[56,9520],[48,8670]],"obl":[[66,57]],"opt":[[9,16],[7,10],[96,63],[68,69],[40,30],[28,88],[2,19]],"spec":[[42,"13.45 m (45 ft)"],[61,"7.55 m"],[43,303],[25,138],["Año",296],[26,304],[37,"6 + 2 + 1"],[62,"3  (electric)"],[27,240],[78,"2 × 60.0 CV (2 × 44,13 kW)"],[0,"470 l"],[15,237],[87,32]]},{"id":65,"cat":"cat","zone":"ibiza","model":214,"name":"SILVER ELLI","yr":"2023","refit":"","base":35,"op":1,"type":14,"cab":"4+2","berth":"10","wc":"4","loa":"13.99","lo":6450,"hi":16046,"dep":"4000","pics":["35234162/layout.jpg","35234162/layout1.jpg","35234162/main.jpg","35234162/main1.jpg","35234162/n.jpg","35234162/n1.jpg","35234162/n2.jpg","35234162/n3.jpg","35234162/n4.jpg","35234162/n5.jpg","35234162/n6.jpg","35234162/n7.jpg","35234162/n8.jpg","35234162/p.jpg","35234162/p1.jpg","35234162/p3.jpg","35234162/r.jpg","35234162/r4.jpg"],"eq":[45,100,86,6,73,"Flybridge",3,110,94,116,12,252,41,85,"AIS",18],"seas":[[141,13386],[98,8826],[132,11296],[121,12816],[142,14430],[122,14620],[150,11296]],"obl":[[149,144],[164,173],[109,182],[130,165]],"opt":[[7,76],[147,16],[96,104],[127,72],[68,72],[124,97],[124,97],[77,17],[4,16],[21,75],[148,181],[140,218],[253,91],[12,19],[28,172],[2,53],[81,53],[81,75],[197,53]],"spec":[[42,255],[61,320],[43,289],[25,92],["Año",229],[26,224],[37,177],[62,"4"],[27,84],[78,80],[87,35]]},{"id":66,"cat":"cat","zone":"ibiza","model":"Bali 4.6 - 5 + 1 cab.","name":"CANCELLI DEL CIELO","yr":"2024","refit":"","base":35,"op":1,"type":14,"cab":"5+1","berth":"12","wc":"4","loa":"14.28","lo":6926,"hi":17186,"dep":"4000","pics":["40041069/layout.jpeg","40041069/main.jpeg","40041069/n.jpeg","40041069/n1.jpeg","40041069/n2.jpeg","40041069/n3.jpeg","40041069/n4.jpeg","40041069/n5.jpeg","40041069/n6.jpeg","40041069/n91.jpeg","40041069/p.jpeg","40041069/p1.jpeg","40041069/p2.jpeg","40041069/p3.jpeg","40041069/p4.jpeg","40041069/p5.jpeg","40041069/r.jpeg","40041069/r1.jpeg"],"eq":[45,100,86,71,123,3,20,21,139,114,110,94,118,116,85,18],"seas":[[141,14240],[98,9206],[132,12150],[121,13766],[142,15570],[122,15666],[150,12150]],"obl":[[149,144],[164,173],[109,182],[130,165]],"opt":[[7,76],[147,16],[96,104],[127,72],[68,72],[124,97],[124,97],[77,17],[4,16],[148,181],[140,218],[253,91],[12,19],[28,172],[2,53],[81,53],[81,75],[197,53]],"spec":[[42,"14.28 m (46 ft)"],[61,"7.66 m"],[43,"1.22 m"],[25,234],["Año",295],[26,305],[37,"10 + 1 + 1"],[62,"4"],[27,84],[78,80],[0,306],[15,306],[87,35]]},{"id":69,"cat":"cat","zone":"ibiza","model":"Lagoon 51 - 6 + 2 cab.","name":"DEB ELLI","yr":"2025","refit":"","base":35,"op":1,"type":14,"cab":"6+2","berth":"14","wc":"4","loa":"15.9","lo":10346,"hi":25546,"dep":"4000","pics":["40305913/layout.jpeg","40305913/layout1.jpeg","40305913/main.jpeg","40305913/n.jpeg","40305913/n1.jpeg","40305913/n2.jpeg","40305913/n3.jpeg","40305913/n4.jpeg","40305913/p.jpeg","40305913/p1.jpeg","40305913/p2.jpeg","40305913/r.jpeg"],"eq":[45,100,86,71,38,123,3,21,110,94,118,116,18,82,40,"Ropa de cama"],"seas":[[141,13860],[98,13956],[132,17850],[121,20510],[142,23076],[122,23266],[150,17756]],"obl":[[149,144],[164,"€650/semana"],[109,182],[130,165]],"opt":[[9,10],[7,76],[147,16],[96,104],[127,72],[124,97],[124,97],[77,17],[4,16],[148,181],[140,218],[253,91],[12,19],[28,172],[2,53],[81,53],[81,75],[197,53]],"spec":[[42,"15.35 m (51 ft)"],[61,"8.1 m"],[43,"1.38 m"],[25,92],["Año",296],[26,174],[37,"12 + 2"],[62,224],[27,84],[78,"2 × 80.0 CV (2 × 58,84 kW)"],[0,294],[15,"830 l"],[87,35]]},{"id":70,"cat":"cat","zone":"mallorca","model":215,"name":"FLOKI","yr":"2024","refit":"","base":34,"op":107,"type":14,"cab":"4 + 1","berth":"8 + 2 + 1","wc":"2","loa":"11.42","lo":3990,"hi":7990,"dep":"3500","pics":["76581385/main.jpeg","76581385/n.jpeg","76581385/n1.jpeg","76581385/n2.jpeg","76581385/n3.jpeg","76581385/n4.jpeg","76581385/n5.jpeg","76581385/n6.jpeg","76581385/n7.jpeg","76581385/n8.jpeg","76581385/n9.jpeg","76581385/n91.jpeg","76581385/n92.jpeg","76581385/p.jpeg","76581385/p1.jpeg","76581385/p2.jpeg","76581385/p3.jpeg","76581385/r.jpeg","76581385/r1.jpeg","76581385/r2.jpeg","76581385/r3.jpeg"],"eq":[6,71,70,143,5,244,208,41,282,198,3,170,188,51,146,230,227,298,204,235,299,241],"seas":[[275,3990],[258,4990],[259,6490],[260,7990],[261,6490],[262,4990],[263,3990]],"obl":[[93,283]],"opt":[[166,173],[184,16],[256,76],[68,190],[21,75],[2,53],[191,75]],"spec":[[42,257],[61,321],[43,322],[25,323],["Año",295],[26,211],[37,176],[62,"2"],[27,103],[333,216],[334,285],[0,251],[133,137],[128,14]]},{"id":71,"cat":"cat","zone":"mallorca","model":215,"name":"KAZBEGI","yr":"2024","refit":"","base":34,"op":107,"type":14,"cab":"4 + 1","berth":"8 + 2 + 1","wc":"2","loa":"11.42","lo":3990,"hi":7990,"dep":"3500","pics":["76581386/main.jpeg","76581386/n.jpeg","76581386/n1.jpeg","76581386/n2.jpeg","76581386/p.jpeg","76581386/p1.jpeg","76581386/r.jpeg","76581386/r1.jpeg","76581386/r2.jpeg","76581386/r3.jpeg","76581386/w.jpeg"],"eq":[6,71,70,143,5,244,208,41,282,198,3,170,188,51,146,230,227,298,204,235,299,241],"seas":[[275,3990],[258,4990],[259,6490],[260,7990],[261,6490],[262,4990],[263,3990]],"obl":[[93,283]],"opt":[[166,173],[184,16],[256,76],[68,190],[21,75],[2,53],[191,75]],"spec":[[42,257],[61,321],[43,322],[25,323],["Año",295],[26,211],[37,176],[62,"2"],[27,103],[333,216],[334,285],[0,251],[133,137],[128,14]]},{"id":72,"cat":"cat","zone":"mallorca","model":"Bali 4.4 - 4 + 1 cab.","name":"TIRAMINELLI","yr":"2023","refit":"","base":8,"op":1,"type":14,"cab":"4 + 1","berth":"8 + 1","wc":"4 + 1","loa":"13.5","lo":4515,"hi":13545,"dep":"3500","pics":["30816949/Tiraminelli_main.jpg","30816949/Tiraminelli_n.jpg","30816949/Tiraminelli_n1.jpg","30816949/Tiraminelli_n2.jpg","30816949/Tiraminelli_n3.jpg","30816949/Tiraminelli_n4.jpg","30816949/Tiraminelli_p.jpg","30816949/Tiraminelli_p1-2.jpg","30816949/Tiraminelli_p1.jpg","30816949/Tiraminelli_p2-2.jpg","30816949/Tiraminelli_p2.jpg","30816949/Tiraminelli_p3-2.jpg","30816949/Tiraminelli_p3.jpg","30816949/Tiraminelli_p4-2.jpg","30816949/Tiraminelli_p4.jpg","30816949/Tiraminelli_w.jpg","30816949/Tiraminelli_z2.jpg","30816949/n5.jpg","30816949/r.jpg"],"eq":[45,100,46,"2 plotters GPS","AIS","Radar reflector",6,"Potabilizadora Schenker ZEN 100",83,282,41,"Neumática ZAR RIB 10",5,212,24,20,21,"Congelador y nevera",114,49,"Radio Fusion MSRA70N","TV","Balsa salvavidas inflable","GMDSS",264],"seas":[[270,4515],[99,6300],[29,7560],[101,9660],[105,11550],["31 jul – 27 ago",13545],["28 ago – 3 sep",12600],["4 sep – 10 sep",11025],[265,10500],[266,8925],[162,6825]],"obl":[[18,30],[59,108]],"opt":[["Exención de daños (reduce la fianza a 850 €)",126],[68,242],[185,10],[50,17],[23,17],[154,125],[4,10],[115,10],[2,33],[31,39],[36,39],[124,195]],"spec":[[42,"13.5 m (44 ft)"],[61,"7.4 m"],[43,303],[25,"Catana Group (Bali)"],["Año",229],[26,211],[37,"8 + 1"],[62,211],[27,240],[78,"2 × 57 CV Yanmar (2 × 41,92 kW)"],[0,306],[133,"860 l"],["Código mySea","VERI-LETI43"],[128,14]]},{"id":73,"cat":"vela","zone":"mallorca","model":"Oceanis 46.1 - 5 cab.","name":"PAULA","yr":"2026","refit":"","base":32,"op":22,"type":14,"cab":"5","berth":"10 + 2","wc":"3","loa":"14.6","lo":3400,"hi":7200,"dep":"2000","pics":["67733318/main.jpg","67733318/n2.jpg","67733318/n3.jpg","67733318/n4.jpg","67733318/n5.jpg","67733318/n8.jpg","67733318/p1.jpg","67733318/p2.jpg","67733318/p7.jpg","67733318/r3.jpg","67733318/r4.jpg","67733318/r5.jpg","67733318/r6.jpg","67733318/w10.jpg","67733318/w8.jpg","67733318/w9.jpg"],"eq":["Aire acondicionado 36.000 BTU",6,11,"AIS",44,219,41,"Baterías de litio","Inversor 2000 VA",5,"Pescante para neumática",272,212,"Plataforma de baño de teca",20,"Plancha de gas en bañera","Horno y cocina de gas",225,49,"Mesa de salón abatible",194,12,51,"Tanque de aguas negras"],"seas":[[226,3400],[29,5350],[47,6300],[55,6600],[64,7200],[56,6850],[48,6600],[220,6300],[221,5350],[162,3400]],"obl":[[54,57]],"opt":[[117,69],[111,63],[112,16],[131,10],[58,33],[186,19],[2,19],[28,88],[40,30],[4,195]],"spec":[[42,217],[61,288],[43,"1.75 m"],[25,189],["Año",287],[26,"5"],[37,318],[62,271],[27,84],[245,"54,00 m²"],["Superficie génova","52,16 m²"],[246,"21,30 m"],[78,"1 × 79 CV Yanmar (58,10 kW)"],[0,251],[133,"370 l"],["Bandera","Alemania"],[128,14]]},{"id":74,"cat":"vela","zone":"mallorca","model":"Hanse 460 - 4 cab.","name":"ANTARES","yr":"2026","refit":"","base":32,"op":22,"type":14,"cab":"4","berth":"8 + 2","wc":"2","loa":"14.6","lo":3400,"hi":7200,"dep":"3000","pics":["67635890/main.jpg","67635890/n01.jpg","67635890/n02.jpg","67635890/n03.jpg","67635890/n04.jpg","67635890/n05.jpg","67635890/n06.jpg","67635890/n07.jpg","67635890/n08.jpg","67635890/n09.jpg","67635890/n10.jpg","67635890/n11.jpg","67635890/n12.jpg","67635890/n13.jpg","67635890/p01.jpg","67635890/p06.jpg","67635890/p09.jpg","67635890/p10.jpg","67635890/p11.jpg","67635890/p12.jpg","67635890/r02.jpg","67635890/r03.jpg","67635890/r04.jpg","67635890/r05.jpg","67635890/w07.jpg","67635890/w08.jpg"],"eq":["Aire acondicionado 28.000 BTU","Generador 6,4 kW","Radar Raymarine Quantum 2","Plotter Raymarine Axiom 2","Piloto Raymarine p70s","AIS y Navtex",44,"Winches eléctricos Lewmar","Velas laminadas Elvstrøm SPS","Molinete 1500 W con contador","Plataforma de baño eléctrica","Teca sintética en cubierta",212,"Pescante",272,"Horno, microondas y cocina de gas",225,"Lavadora-secadora","Mesa de salón eléctrica convertible",77,"Audio Fusion Apollo MS-RA770",194,51,"Inodoros eléctricos"],"seas":[[226,3400],[29,5350],[47,6300],[55,6600],[64,7200],[56,6850],[48,6600],[220,6300],[221,5350],[162,3400]],"obl":[[54,57]],"opt":[[117,69],[111,63],[112,16],[131,10],[58,33],[186,19],[2,19],[28,88],[40,30],[4,195]],"spec":[[42,217],[61,"4.79 m"],[43,312],[25,232],["Año",287],[26,"4"],[37,223],[62,"2 (eléctricos)"],[324,"2"],[27,95],[245,"64,00 m²"],["Foque autovirante","42,00 m²"],[246,"22,90 m"],[78,"1 × 81,58 CV (60,00 kW)"],[0,202],[133,328],[128,14]]},{"id":75,"cat":"cat","zone":"mallorca","model":"Fountaine Pajot Saba 50 - 5 + 1 cab.","name":"SUNSHINE REGGAE","yr":"2015","refit":"","base":8,"op":1,"type":"Con patrón","cab":"5 + 1","berth":"10","wc":"5 + 1","loa":"14.98","lo":5218.5,"hi":14910,"dep":"5000","pics":["23194093/main.jpg","23194093/n1.jpg","23194093/n2.jpg","23194093/n3.jpg","23194093/n4.jpg","23194093/n5.jpg","23194093/n6.jpg","23194093/n7.jpg","23194093/n8.jpg","23194093/p.jpg","23194093/p1.jpg","23194093/p2.jpg","23194093/p3.jpg","23194093/p4.jpg","23194093/p5.jpg","23194093/p6.jpg","23194093/r.jpg","23194093/r1.jpg","23194093/r2.jpg","23194093/r3.jpg","23194093/r4.jpg","23194093/r5.jpg","23194093/r6.jpg","23194093/w.jpg","23194093/w1.jpg","23194093/w2.jpg"],"eq":["Tripulación: patrón incluido en extras",100,86,83,46,"AIS",71,"Cartas y guías náuticas",230,213,73,74,272,"Cafetera",110,203,118,12,"TV",264],"seas":[[270,5218.5],[99,7003.5],[29,8494.5],[101,10731],[105,12820.5],[120,14910],[106,13870.5],[265,12222],[266,9985.5],[162,7749]],"obl":[["Patrón (obligatorio)",242],[18,30],[59,"€270/reserva"]],"opt":[["Exención de daños (reduce la fianza a 1.000 €)",57],[185,10],[50,17],[23,17],[154,125],[4,10],[115,10],[114,178],[2,33],[31,39],[36,39],[124,195]],"spec":[[42,"14.98 m (50 ft)"],[61,"7.99 m"],[43,293],[25,138],["Año",337],[26,305],[62,305],["Invitados","10"],[27,103],[307,"2 × 75 CV"],["Registro CAIB","0471/2026"],["Puerto base",8],[128,"Con patrón (skippered)"]]},{"id":76,"cat":"cat","zone":"mallorca","model":"Fountaine Pajot MY6 - 3 + 1 cab.","name":"MAMMA MIA","yr":"2025","refit":"","base":13,"op":22,"type":14,"cab":"3 + 1","berth":"6 + 1","wc":"3","loa":"15.0","lo":10900,"hi":16500,"dep":"4000","pics":["50706947/main.jpg","50706947/n02.jpg","50706947/n3.jpg","50706947/n4.jpg","50706947/n5.jpg","50706947/n6.jpg","50706947/n7.jpg","50706947/n8.jpg","50706947/p01.jpg","50706947/p02.jpg","50706947/p03.jpg","50706947/p04.jpg","50706947/p08.jpg","50706947/r05.jpg","50706947/r06.jpg","50706947/r07.jpg","50706947/r21.jpg","50706947/r22.jpg","50706947/r23.jpg","50706947/r24.jpg","50706947/r25.jpg","50706947/w09.jpg","50706947/w10.jpg","50706947/w11.jpg","50706947/w12.jpg","50706947/w13.jpg","50706947/w14.jpg","50706947/z03.jpg","50706947/z04.jpg"],"eq":["Aire acondicionado 40.000 BTU","Generador 10 kW",219,"Inversor 3.000 W","Joystick IPS adicional",6,"Plotter GPS en puesto de mando","Cámara de marcha atrás","Flybridge con hard top y mesa","Plataforma hidráulica 250 kg","Teca sintética","Neumática Highfield 310 con fueraborda 20 CV","Molinete eléctrico con contador","Nevera-congelador 530 l","Placa de inducción de 4 fuegos","Horno-microondas",281,"Lavadora 5 kg","Termo de 75 l",20,"Colchonetas de bañera y solarium",41,51,194],"seas":[[226,10900],[29,11900],[47,13300],[55,15300],[64,16500],[56,15700],[48,15300],[220,13300],[221,11900],[162,10900]],"obl":[[54,"€750/reserva"]],"opt":[[117,"€300/día"],[111,63],[112,16],[58,33],[186,19],[2,19],[28,88],[40,30],[4,195]],"spec":[[42,"15.0 m (50 ft)"],[61,"6.0 m"],[43,"1.31 m"],[25,138],["Año",296],[26,304],[37,301],[62,271],[324,"3"],[27,239],[307,"2 × 652,62 CV (2 × 480 kW)"],["Combustible","Diésel"],[0,"2.000 l"],[133,137],["Tipo","Catamarán a motor"],[128,14]],"mot":1}];var D=["Depósito combustible","Five Seasons Yachting (Premium Fleet)","Paddle surf (SUP)","Colchonetas de bañera","Red de seguridad en balcones","Molinete eléctrico","Piloto automático","Check-in anticipado","Palma de Mallorca — La Lonja","Exención de daños","€150/reserva","Plotter GPS en bañera","Altavoces exteriores","Palma de Mallorca — Naviera Balear","Sin patrón","Depósito agua","€300/reserva","€100/reserva","Ropa de cama y toallas","€100/semana","Ducha de popa","Plancha / barbacoa","First Class Sailing Spain","Limpieza extra — mascotas","Plataforma de baño","Astillero","Camarotes","Pasajeros","Equipo de snorkel","8 may – 21 may","€20/persona","Ropa de cama adicional","Can Pastilla — Palma","€140/reserva","Port de Pollença — RCN Pollença","Sant Antoni de Portmany — Ibiza","Toallas adicionales","Literas","Bañera de teca","€10/juego","Toalla de playa","Placas solares","Eslora","Calado","Hélice de proa","Aire acondicionado","Winche eléctrico","22 may – 28 may","18 sep – 24 sep","Agua caliente","Cambio de tripulación","Balsa salvavidas","1 ene – 7 may","€150/semana","Paquete de base — limpieza, ropa de cama, juego de toallas, gas, Wi-Fi, neumática y fueraborda","29 may – 2 jul","4 sep – 17 sep","€500/reserva","Mascota a bordo","Limpieza final","€255/día + manutención","Manga","Baños","€1.750/semana","3 jul – 3 sep","Registrado para 8","Paquete de base","Motor fueraborda 2,3 CV","Patrón","€2.100/semana","Instrumentos viento/velocidad/sonda","Plotter GPS","€242/día + manutención","Bimini","Capota","€200/semana","€200/reserva","Wi-Fi a bordo","Motor","Portocolom — Mallorca","2 × 57.0 CV (2 × 41,92 kW)","Scooter submarino","Menaje y cubertería completos","Calefacción","Registrado para 12","WC eléctrico","Potabilizadora","Base","€35/juego","Blíster (vela de proa)","Reserva Parque Nacional de Cabrera","€250/semana","Lagoon-Bénéteau","Charter pack — limpieza final, ropa de cama y toallas, gas, neumática y fueraborda","Nevera","Registrado para 10","Azafata","€140/trayecto","1 may – 14 may","24 abr – 7 may","Generador","22 may – 18 jun","Dinghy con fueraborda","Registrado para 11","€217,8/día + manutención","19 jun – 30 jul","21 ago – 10 sep","CM Charter Mallorca","€220/reserva","Consumo de combustible","Congelador","Azafata (camarote propio, dietas incluidas)","Exención de daños (fianza reducida a 500 €)","Bavaria Yachtbau","Máquina de hielo","Motor fueraborda 5 CV","Cafetera Nespresso","Patrón (camarote propio, dietas incluidas)","Horno","27 mar – 23 abr","31 jul – 20 ago","12 jun – 18 jun","14 ago – 20 ago","Colchonetas de solárium","Traslado","€300/semana","€400/reserva","Azafata / cocinero","Tipo de charter","1 × 29.0 CV (1 × 21,33 kW)","Seguro a terceros","Check-in anticipado (12:00 h, según disponibilidad)","29 may – 4 jun","Depósito de agua","27 mar – 30 abr","28 ago – 10 sep","Paquete de charter","600 l","Fountaine Pajot","Barbacoa en bañera","Donut hinchable","27 mar – 16 abr","26 jun – 16 jul","Prismáticos","€450/semana","Registrado para 6","Radiobaliza EPIRB","Limpieza extra","Gafas de buceo","Gastos de base","4 sep – 24 sep","Check-out tardío","Plataforma de baño en teca","1 × 80.0 CV (1 × 58,84 kW)","Spinnaker asimétrico (+500 € de fianza)","15 may – 28 may","29 may – 25 jun","28 ago – 17 sep","12 jun – 16 jul","17 jul – 27 ago","11 sep – 15 oct","16 oct – 31 dic","16 oct – 31 oct","Génnaker","Pack confort","€105/reserva","Exención de daños (+500 € de fianza)","26 jun – 6 ago","7 ago – 27 ago","8 may – 11 jun","Colchonetas de cubierta","Equipo de sonido Fusion","€50/reserva","€550/semana","6 + 2","2  (electric)","8 + 2 + 1","8 + 2 + 2","€50/semana","Cafetera de cápsulas","13.96 m (45 ft)","€50/unidad","€30/semana","Plataforma de baño hidráulica","Check-in anticipado (13:00 h)","Check-in anticipado (14:00 h)","Plancha de gas Cobb","Jeanneau","Lazy bag","Bénéteau","€250/día","Starlink","€10/reserva","€145/semana","Caja fuerte","A consultar","Bavaria Cruiser 45 - 4 cab.","Wakeboard","Toma de corriente de puerto","1 × 40.0 CV (1 × 29,42 kW)","2 × 45.0 CV (2 × 33,10 kW)","2 × 40.0 CV (2 × 29,42 kW)","200 l","Microondas","Extintor y manta ignifuga","Compás","Cubierta de teca","€450/reserva","Neumática con fueraborda","Sun Odyssey 389","11.75 m (38 ft)","4 + 1","Bimini y capota","Chalecos autoinflables","Lagoon 46 - 4 + 2 cab.","Excess 11 - 4 + 1 cab.","Enrollable full batten","14.6 m (46 ft)","€60/día","Potabilizadora 60 l/h","25 sep – 1 oct","2 oct – 15 oct","210 l","8 + 2","4 + 2","Cafetera Dolce Gusto","1 abr – 7 may","Chalecos salvavidas","€180/reserva","2023","Radio VHF","Derrotero","Hanse Yachts","Colchonetas de sol","Catana Group","Caña de emergencia","530 l","700 l","Corredera y sonda","Registrado para 7","Registrado para 9","Inodoro eléctrico","€255/día + dietas","€350/semana","Ancla con cadena","Superficie mayor","Altura de mástil","Anemómetro","14.27 m (45 ft)","12.35 m (41 ft)","11.74 m (40 ft)","400 l","Televisión","Kayak","12.31 m (40 ft)","13.99 m (46 ft)","Check-in tardío","11.42 m (37 ft)","10 may – 13 jun","14 jun – 18 jul","19 jul – 29 ago","30 ago – 12 sep","13 sep – 17 oct","18 oct – 31 oct","Menaje completo","11 sep – 24 sep","25 sep – 15 oct","12.4 m (42 ft)","26 jun – 2 jul","12.8 m (42 ft)","1 abr – 23 abr","3 (eléctricos)","Neumática","Dufour Yachts","Bali Catspace","1 abr – 9 may","130 l","2.1 m","2019","€160/reserva","2020","Lavavajillas","Inversor","€550/reserva","Bavaria C42","Autovirante","360 l","2026","4.5 m","1.3 m","3.76 m","2.15 m","1.35 m","1.25 m","1040 l","2024","2025","2022","Botiquín","Pasarela","2.3 m","6 + 1","250 l","1.2 m","3 + 1","5 + 1","800 l","Motores","2.05 m","2013","4.35 m","1.65 m","2.25 m","3.99 m","6.76 m","1.21 m","7.84 m","7.87 m","10 + 2","6.56 m","7.96 m","6.59 m","1.15 m","Excess","Duchas","4.3 m","195 l","300 l","450 l","2.2 m","7.7 m","500 l","1.1 m","Mayor","Foque","2018","2016","2015"];function dx(v){return typeof v==='number'?D[v]:v}BOATS.forEach(function(b){['base','op','type','model'].forEach(function(k){b[k]=dx(b[k])});if(b.eq)b.eq=b.eq.map(dx);['opt','obl','spec'].forEach(function(k){if(b[k])b[k]=b[k].map(function(r){return[dx(r[0]),dx(r[1])]})});if(b.seas)b.seas=b.seas.map(function(r){return[dx(r[0]),r[1]]})});
+function img(u,w){return 'https://ws.nausys.com/CBMS-external/rest/yacht/'+u.replace('/','/pictures/')+'?w='+w}
+function fmt(n){var s=String(Math.round(Number(n))),o='',c=0,i;for(i=s.length-1;i>=0;i--){o=s.charAt(i)+o;c++;if(c%3===0&&i>0)o='.'+o;}return '\u20ac'+o}
+var view=BOATS.slice(),curF='all',curS='p';
+function catLabel(b){return b.mot?'Catamarán a motor':(b.cat==='cat'?'Catamarán':'Velero')}
+function apply(){
+  var f=curF;
+  view=BOATS.filter(function(b){
+    if(f==='all')return true;
+    if(f==='vela'||f==='cat')return b.cat===f;
+    if(f==='mallorca'||f==='ibiza')return b.zone===f;
+    if(f==='fam')return b.lo<=5000;
+    return true;
+  });
+  var s=curS;
+  view.sort(function(a,b){
+    if(s==='p')return a.lo-b.lo;
+    if(s==='pd')return b.lo-a.lo;
+    if(s==='l')return parseFloat(b.loa)-parseFloat(a.loa);
+    if(s==='c')return parseFloat(b.cab)-parseFloat(a.cab);
+    if(s==='y')return (parseInt(b.yr)||0)-(parseInt(a.yr)||0);
+    return 0;
+  });
+  render();
 }
+function render(){
+  var g=document.getElementById('grid');
+  document.getElementById('count').textContent=view.length+(view.length===1?' barco disponible':' barcos disponibles')+' · tarifas semanales verificadas para la temporada 2027';
+  if(!view.length){g.innerHTML='<div class="empty">No hay barcos con ese filtro. Pruebe otra selección.</div>';return}
+  g.innerHTML=view.map(function(b){
+  return '<article class="card">'+
+  '<div class="ph"><img loading="lazy" alt="'+b.model+' '+b.name+'" src="'+img(b.pics[0],640)+'">'+
+  '<span class="badge">'+catLabel(b)+'</span>'+
+  '<span class="nphoto">'+b.pics.length+' fotos</span></div>'+
+  '<div class="body"><div class="cat-tag">'+b.base+'</div>'+
+  '<h3>'+b.name+'</h3><div class="brand">'+b.model+(b.yr?' · '+b.yr:'')+'</div>'+
+  '<ul class="specs">'+
+  '<li><span>Eslora</span><span>'+b.loa.replace('.',',')+' m</span></li>'+
+  '<li><span>Camarotes</span><span>'+b.cab+'</span></li>'+
+  '<li><span>Plazas</span><span>'+b.berth+'</span></li>'+
+  '<li><span>Baños</span><span>'+b.wc+'</span></li>'+
+  '</ul>'+
+  '<div class="price-row"><div class="price">'+fmt(b.lo)+' – '+fmt(b.hi)+'</div><div class="per">por semana · según temporada</div></div>'+
+  '<button class="cta ghost" data-a="sheet" data-i="'+b.id+'">Ver ficha completa</button>'+
+  '<button class="cta" data-a="ask" data-i="'+b.id+'">Solicitar disponibilidad</button>'+
+  '</div></article>'}).join('');
+}
+function byId(i){for(var k=0;k<BOATS.length;k++)if(BOATS[k].id===i)return BOATS[k];return null}
 document.getElementById('grid').addEventListener('click',function(e){
-var t=e.target;if(!t.getAttribute)return;
-var a=t.getAttribute('data-a'),i=t.getAttribute('data-i');
-if(a==='sheet')openSheet(+i);
-if(a==='ask')openModal(+i);
+  var t=e.target;if(!t.getAttribute)return;
+  var a=t.getAttribute('data-a'),i=parseInt(t.getAttribute('data-i'),10);
+  if(a==='sheet')openSheet(i);
+  if(a==='ask')openModal(i);
 });
 document.getElementById('filters').addEventListener('click',function(e){
-if(e.target.tagName!=='BUTTON')return;
-Array.prototype.forEach.call(this.querySelectorAll('button'),function(b){b.classList.remove('on')});
-e.target.classList.add('on');render(e.target.getAttribute('data-f'));
+  if(e.target.tagName!=='BUTTON')return;
+  Array.prototype.forEach.call(this.querySelectorAll('button'),function(b){b.classList.remove('on')});
+  e.target.classList.add('on');curF=e.target.getAttribute('data-f');apply();
 });
-function openSheet(i){
-var b=BOATS[i],h='';
-h+='<div class="cat-tag">'+b.tag+' · '+b.base+'</div><h4>'+b.name+'</h4><div class="brand">'+b.brand+'</div>';
-h+='<div class="gal-main"><img id="gal-big" loading="lazy" alt="'+b.name+'" src="'+IMG+b.imgs[0]+QB+'" onerror="this.style.opacity=0"></div>';
-h+='<div class="thumbs" id="thumbs">'+b.imgs.map(function(im,k){
-return '<img loading="lazy" alt="'+b.name+' — vista '+(k+1)+'" src="'+IMG+im+Q+'" data-im="'+im+'"'+(k===0?' class="on"':'')+' onerror="this.style.opacity=0">'}).join('')+'</div>';
-h+='<div class="sheet-cols"><div><h5>Especificaciones técnicas</h5><table class="tspecs">';
-for(var s=0;s<SPL.length;s++)h+='<tr><td>'+SPL[s]+'</td><td>'+b.sp[s]+'</td></tr>';
-h+='<tr><td>Año</td><td>'+b.yr+'</td></tr><tr><td>Base</td><td>'+b.base+'</td></tr></table></div>';
-h+='<div><h5>Equipamiento</h5><div class="chips">'+b.eq.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>';
-var ic=INC[b.inc];
-h+='<div class="inc"><h5 style="margin-top:24px">'+(b.inc==='gulet'?'Régimen todo incluido':'Incluido / No incluido')+'</h5><ul>';
-h+=ic.si.map(function(x){return '<li>'+x+'</li>'}).join('')+ic.no.map(function(x){return '<li class="no">'+x+'</li>'}).join('');
-h+='</ul></div></div></div>';
-h+='<div style="margin-top:36px"><h5>Precio por semana según temporada</h5><table class="tsea">';
-h+='<tr><th>Temporada</th><th>Meses</th><th>Por semana</th></tr>';
-h+='<tr><td>Temporada baja</td><td>abr–may, oct</td><td>'+fmt(b.lo)+'</td></tr>';
-h+='<tr><td>Temporada media</td><td>jun, sep</td><td>'+fmt(mid(b))+'</td></tr>';
-h+='<tr><td>Temporada alta</td><td>jul–ago</td><td>'+fmt(b.hi)+'</td></tr></table>';
-h+='<div class="fee-line">Precio final con la gestión AMARRA incluida — sin cargos ocultos.</div></div>';
-h+='<button class="cta big-cta" data-ask="'+i+'">Solicitar disponibilidad — respuesta en 24 h</button>';
-document.getElementById('sheet-body').innerHTML=h;
-document.getElementById('sheet').classList.add('open');
-document.getElementById('veil').classList.add('open');
-document.getElementById('sheet').scrollTop=0;
+document.getElementById('sort').addEventListener('change',function(){curS=this.value;apply()});
+var GAL=[],GI=0;
+function openSheet(id){
+  var b=byId(id);if(!b)return;
+  GAL=b.pics;GI=0;
+  var h='';
+  h+='<div class="cat-tag">'+catLabel(b)+' · '+b.type+' · '+b.base+'</div>';
+  h+='<h4>'+b.name+'</h4><div class="brand">'+b.model+(b.yr?' · '+b.yr:'')+(b.refit?' · refit '+b.refit:'')+'</div>';
+  h+='<div class="gal-main"><img id="gal-big" alt="'+b.name+'" src="'+img(b.pics[0],1600)+'">'+
+     '<button class="gal-nav prev" data-g="-1">‹</button><button class="gal-nav next" data-g="1">›</button></div>';
+  h+='<div class="thumbs" id="thumbs">'+b.pics.map(function(p,k){
+     return '<img loading="lazy" alt="'+b.name+' — foto '+(k+1)+'" src="'+img(p,170)+'" data-k="'+k+'"'+(k===0?' class="on"':'')+'>'}).join('')+'</div>';
+  h+='<div class="sheet-cols"><div><h5>Ficha técnica</h5><table class="tspecs">';
+  h+=b.spec.map(function(s){return '<tr><td>'+s[0]+'</td><td>'+s[1]+'</td></tr>'}).join('');
+  h+='<tr><td>Flota operadora</td><td>'+b.op+'</td></tr>';
+  if(b.dep)h+='<tr><td>Fianza reembolsable</td><td>'+fmt(b.dep)+'</td></tr>';
+  h+='</table></div>';
+  h+='<div><h5>Equipamiento de serie</h5><div class="chips">'+b.eq.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>';
+  h+='<h5 style="margin-top:28px">Tarifa por temporada</h5><table class="tsea"><tr><th>Periodo 2027</th><th>Por semana</th></tr>';
+  h+=b.seas.map(function(s){return '<tr'+(s[1]===b.hi?' class="hi"':'')+'><td>'+s[0]+'</td><td>'+fmt(s[1])+'</td></tr>'}).join('');
+  h+='</table><div class="fee-line">Precio para el cliente con el descuento AMARRA ya aplicado. Sin comisión añadida.</div></div></div>';
+  if(b.obl.length||b.opt.length){
+    h+='<div class="extras">';
+    if(b.obl.length)h+='<div><h5>Servicios obligatorios</h5><ul class="exlist">'+b.obl.map(function(x){return '<li><span>'+x[0]+'</span><b>'+x[1]+'</b></li>'}).join('')+'</ul></div>';
+    if(b.opt.length)h+='<div><h5>Extras opcionales</h5><ul class="exlist">'+b.opt.map(function(x){return '<li><span>'+x[0]+'</span><b>'+x[1]+'</b></li>'}).join('')+'</ul></div>';
+    h+='</div>';
+  }
+  h+='<button class="cta big-cta" data-ask="'+b.id+'">Solicitar disponibilidad — respuesta en 24 h</button>';
+  document.getElementById('sheet-body').innerHTML=h;
+  document.getElementById('sheet').classList.add('open');
+  document.getElementById('veil').classList.add('open');
+  document.getElementById('sheet').scrollTop=0;
+  document.body.style.overflow='hidden';
+}
+function setGal(k){
+  if(!GAL.length)return;
+  GI=(k+GAL.length)%GAL.length;
+  document.getElementById('gal-big').src=img(GAL[GI],1600);
+  var th=document.getElementById('thumbs');
+  Array.prototype.forEach.call(th.children,function(x,j){x.classList.toggle('on',j===GI)});
 }
 document.getElementById('sheet-body').addEventListener('click',function(e){
-var t=e.target;
-if(t.getAttribute&&t.getAttribute('data-im')){
-document.getElementById('gal-big').src=IMG+t.getAttribute('data-im')+QB;
-document.getElementById('gal-big').style.opacity=1;
-Array.prototype.forEach.call(document.getElementById('thumbs').children,function(x){x.classList.remove('on')});
-t.classList.add('on');
-}
-if(t.hasAttribute&&t.hasAttribute('data-ask')){
-closeSheet(true);openModal(+t.getAttribute('data-ask'));
-}
+  var t=e.target;if(!t.getAttribute)return;
+  if(t.getAttribute('data-k')!==null&&t.getAttribute('data-k')!==undefined&&t.hasAttribute('data-k')){setGal(parseInt(t.getAttribute('data-k'),10));return}
+  if(t.hasAttribute('data-g')){setGal(GI+parseInt(t.getAttribute('data-g'),10));return}
+  if(t.hasAttribute('data-ask')){closeSheet(true);openModal(parseInt(t.getAttribute('data-ask'),10))}
+});
+document.addEventListener('keydown',function(e){
+  if(!document.getElementById('sheet').classList.contains('open'))return;
+  if(e.key==='ArrowRight')setGal(GI+1);
+  if(e.key==='ArrowLeft')setGal(GI-1);
+  if(e.key==='Escape')closeAll();
 });
 function closeSheet(keepVeil){
-document.getElementById('sheet').classList.remove('open');
-if(!keepVeil)document.getElementById('veil').classList.remove('open');
+  document.getElementById('sheet').classList.remove('open');
+  if(!keepVeil){document.getElementById('veil').classList.remove('open');document.body.style.overflow=''}
 }
-function openModal(i){
-var boat=BOATS[i].name+' — '+BOATS[i].brand;
-document.getElementById('m-boat').textContent=boat;
-document.getElementById('f-barco').value=boat;
-document.getElementById('ok-msg').style.display='none';
-document.getElementById('modal').classList.add('open');
-document.getElementById('veil').classList.add('open');
+function openModal(id){
+  var b=byId(id);if(!b)return;
+  var label=b.name+' — '+b.model+' · '+b.base;
+  document.getElementById('m-boat').textContent=label;
+  document.getElementById('f-barco').value=label;
+  document.getElementById('ok-msg').style.display='none';
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('veil').classList.add('open');
+  document.body.style.overflow='hidden';
 }
 function closeModal(){
-document.getElementById('modal').classList.remove('open');
-document.getElementById('veil').classList.remove('open');
+  document.getElementById('modal').classList.remove('open');
+  document.getElementById('veil').classList.remove('open');
+  document.body.style.overflow='';
 }
 function closeAll(){closeSheet();closeModal()}
 document.getElementById('req-form').addEventListener('submit',function(e){
-e.preventDefault();
-var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
-d._subject='Solicitud de flota AMARRA — '+d.barco;d._template='table';d._captcha='false';
-fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok-msg').style.display='block'})
-.catch(function(){document.getElementById('ok-msg').style.display='block'});
+  e.preventDefault();
+  var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
+  d._subject='Solicitud de flota AMARRA — '+d.barco;d._template='table';d._captcha='false';
+  fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+  .then(function(r){return r.json()}).then(function(){document.getElementById('ok-msg').style.display='block'})
+  .catch(function(){document.getElementById('ok-msg').style.display='block'});
 });
-render('all');
+apply();
 </script>
 </body>
 </html>
