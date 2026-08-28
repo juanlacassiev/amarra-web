@@ -247,7 +247,10 @@ function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').repl
 /* URL propia de cada barco (misma regla que build_yates.py) */
 function slug(s){return String(s).normalize('NFD').replace(/[̀-ͯ]/g,'')
   .replace(/[^A-Za-z0-9]+/g,'-').replace(/^-+|-+$/g,'').toLowerCase().replace(/-{2,}/g,'-').slice(0,70)||'yate'}
-function yurl(b){return 'yate/'+slug(b[1]+'-'+b[2])+'-'+b[0]+'.html'}
+function combo(m,n){m=String(m).trim();n=String(n).trim();
+  if(!m)return n;if(!n)return m;
+  return n.toLowerCase().indexOf(m.toLowerCase())>=0?n:m+' '+n}
+function yurl(b){return 'yate/'+slug(combo(b[1],b[2]))+'-'+b[0]+'.html'}
 var PAGE=48,shown=PAGE,view=B.slice(),curF='all',curS='r',curQ='';
 /* «Recomendados»: primero yates de crucero de verdad (2+ camarotes), luego los
    mas recientes, con mas fotografias y mayor eslora. Evita abrir el listado con
