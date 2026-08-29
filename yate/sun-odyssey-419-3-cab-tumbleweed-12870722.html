@@ -32,7 +32,7 @@
 <div><h2>Ficha t&eacute;cnica</h2><table><tr><td>Tipo</td><td>Velero</td></tr><tr><td>Modalidad</td><td>Sin patrón</td></tr><tr><td>Astillero</td><td>Jeanneau</td></tr><tr><td>Año de construcción</td><td>2018</td></tr><tr><td>Eslora total</td><td>12.76 m (41 ft)</td></tr><tr><td>Manga</td><td>3.99 m</td></tr><tr><td>Calado</td><td>2.1 m</td></tr><tr><td>Camarotes</td><td>3</td></tr><tr><td>Literas</td><td>6 + 2</td></tr><tr><td>Baños</td><td>2</td></tr><tr><td>Pasajeros máx.</td><td>Registrado para 8</td></tr><tr><td>Motor</td><td>1 x 40.0 HP (1 x 29,42 kW)</td></tr><tr><td>Depósito combustible</td><td>200 l</td></tr><tr><td>Depósito agua</td><td>530 l</td></tr><tr><td>Fianza</td><td>€3.000</td></tr><tr><td>Base de salida</td><td>Corfu, Gouvia Marina, Grecia</td></tr></table></div>
 <div><h2>Tarifa por temporada 2027</h2><div class="price-box"><div class="p">€2.000 – €4.800</div><div class="per">por semana &middot; temporada 2027</div></div><table style="margin-top:16px"><tr><th>Periodo</th><th>Por semana</th></tr><tr><td>1 ene – 23 abr</td><td>€2.000</td></tr><tr><td>24 abr – 21 may</td><td>€2.800</td></tr><tr><td>22 may – 25 jun</td><td>€3.600</td></tr><tr><td>26 jun – 13 ago</td><td>€4.350</td></tr><tr class="hi"><td>14 ago – 17 sep</td><td>€4.800</td></tr><tr><td>18 sep – 8 oct</td><td>€3.600</td></tr><tr><td>9 oct – 29 oct</td><td>€2.800</td></tr><tr><td>30 oct – 31 dic</td><td>€2.000</td></tr></table><p class="note">Tarifa oficial del operador. AMARRA no a&ntilde;ade comisi&oacute;n ni recargo.</p></div>
 </div>
-<div class="extras"><div><h2>Servicios obligatorios</h2><ul class="exlist"><li><span>Paquete de servicio</span><b>€250 /reserva</b></li></ul></div><div><h2>Extras opcionales</h2><ul class="exlist"><li><span>Check-in anticipado</span><b>€200 /reserva</b></li><li><span>Cuota de flotilla</span><b>€750 /semana</b></li><li><span>Consumo de combustible</span><b>Precio a consultar</b></li><li><span>Hostess</span><b>€180 /día + manutención</b></li><li><span>Patrón</span><b>€240 /día + manutención</b></li><li><span>Traslado</span><b>€50 /trayecto</b></li><li><span>Traslado</span><b>€70 /trayecto</b></li><li><span>Traslado</span><b>€100 /trayecto</b></li><li><span>Wi-Fi a bordo</span><b>€50 /reserva</b></li></ul></div></div>
+<div class="extras"><div><h2>Servicios obligatorios</h2><ul class="exlist"><li><div class="exrow"><span>Paquete de servicio</span><b>€250 /reserva</b></div></li></ul></div><div><h2>Extras opcionales</h2><ul class="exlist"><li><div class="exrow"><span>Check-in anticipado</span><b>€200 /reserva</b></div></li><li><div class="exrow"><span>Cuota de flotilla</span><b>€750 /semana</b></div></li><li><div class="exrow"><span>Consumo de combustible</span><b>Precio a consultar</b></div></li><li><div class="exrow"><span>Hostess</span><b>€180 /día</b></div><em class="exnote">+ manutención</em></li><li><div class="exrow"><span>Patrón</span><b>€240 /día</b></div><em class="exnote">+ manutención</em></li><li><div class="exrow"><span>Traslado</span><b>€50 /trayecto</b></div></li><li><div class="exrow"><span>Traslado</span><b>€70 /trayecto</b></div></li><li><div class="exrow"><span>Traslado</span><b>€100 /trayecto</b></div></li><li><div class="exrow"><span>Wi-Fi a bordo</span><b>€50 /reserva</b></div></li></ul></div></div>
 <section id="solicitar"><h2>Solicitar disponibilidad</h2>
 <p class="note">Te confirmamos disponibilidad real y precio oficial del operador en menos de 24 horas. Sin comisi&oacute;n ni recargo a&ntilde;adido por AMARRA.</p>
 <form id="f"><input type="hidden" name="barco" value="Tumbleweed — Sun Odyssey 419 - 3 cab. · Corfu, Gouvia Marina">
@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Corfu, Gouvia Marina</h2><div class="sim"><a href="bavaria-46-cruiser-paxos-73161020.html"><img loading="lazy" alt="Paxos" src="https://ws.nausys.com/CBMS-external/rest/yacht/73161020/pictures/main.png?w=400"><div class="t"><div class="n">Paxos</div><div class="m">Bavaria 46 Cruiser &middot; 4 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="sun-odyssey-449-sikinos-10110186.html"><img loading="lazy" alt="SIKINOS" src="https://ws.nausys.com/CBMS-external/rest/yacht/10110186/pictures/main.jpg?w=400"><div class="t"><div class="n">SIKINOS</div><div class="m">Sun Odyssey 449 &middot; 4 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="oceanis-48-5-cab-farquhar-10110302.html"><img loading="lazy" alt="FARQUHAR" src="https://ws.nausys.com/CBMS-external/rest/yacht/10110302/pictures/main.jpg?w=400"><div class="t"><div class="n">FARQUHAR</div><div class="m">Oceanis 48 - 5 cab. &middot; 5 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="oceanis-48-5-cab-levanzo-10111401.html"><img loading="lazy" alt="LEVANZO" src="https://ws.nausys.com/CBMS-external/rest/yacht/10111401/pictures/main.jpg?w=400"><div class="t"><div class="n">LEVANZO</div><div class="m">Oceanis 48 - 5 cab. &middot; 5 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="oceanis-51-1-5-1-cab-spoonbill-10127315.html"><img loading="lazy" alt="SPOONBILL" src="https://ws.nausys.com/CBMS-external/rest/yacht/10127315/pictures/main.jpg?w=400"><div class="t"><div class="n">SPOONBILL</div><div class="m">Oceanis 51.1 - 5 + 1 cab. &middot; 5 + 1 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="oceanis-48-5-cab-desroches-10127369.html"><img loading="lazy" alt="DESROCHES" src="https://ws.nausys.com/CBMS-external/rest/yacht/10127369/pictures/main.jpg?w=400"><div class="t"><div class="n">DESROCHES</div><div class="m">Oceanis 48 - 5 cab. &middot; 5 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="sun-loft-47-6-1-cab-ancolie-10303434.html"><img loading="lazy" alt="ANCOLIE" src="https://ws.nausys.com/CBMS-external/rest/yacht/10303434/pictures/main.jpg?w=400"><div class="t"><div class="n">ANCOLIE</div><div class="m">Sun Loft 47 - 6 + 1 cab. &middot; 6 + 1 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="sun-loft-47-6-1-cab-galeopsis-10303436.html"><img loading="lazy" alt="GALEOPSIS" src="https://ws.nausys.com/CBMS-external/rest/yacht/10303436/pictures/main.jpg?w=400"><div class="t"><div class="n">GALEOPSIS</div><div class="m">Sun Loft 47 - 6 + 1 cab. &middot; 6 + 1 cab.</div><div class="pr">Precio a consultar</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>

@@ -32,7 +32,7 @@
 <div><h2>Ficha t&eacute;cnica</h2><table><tr><td>Tipo</td><td>Velero</td></tr><tr><td>Modalidad</td><td>Sin patrón</td></tr><tr><td>Astillero</td><td>Bavaria Yachtbau</td></tr><tr><td>Año de construcción</td><td>2026</td></tr><tr><td>Eslora total</td><td>11.31 m (38 ft)</td></tr><tr><td>Manga</td><td>3.98 m</td></tr><tr><td>Calado</td><td>2.05 m</td></tr><tr><td>Camarotes</td><td>3</td></tr><tr><td>Literas</td><td>6</td></tr><tr><td>Baños</td><td>2</td></tr><tr><td>Pasajeros máx.</td><td>Registrado para 8</td></tr><tr><td>Motor</td><td>1 x 40.0 HP (1 x 29,42 kW)</td></tr><tr><td>Fianza</td><td>€3.000</td></tr><tr><td>Base de salida</td><td>Palairos, Grecia</td></tr></table></div>
 <div><h2>Tarifa por temporada 2027</h2><div class="price-box"><div class="p">€3.100 – €4.600</div><div class="per">por semana &middot; temporada 2027</div></div><table style="margin-top:16px"><tr><th>Periodo</th><th>Por semana</th></tr><tr><td>1 ene – 16 abr</td><td>€3.100</td></tr><tr><td>17 abr – 14 may</td><td>€3.700</td></tr><tr><td>15 may – 11 jun</td><td>€4.100</td></tr><tr><td>12 jun – 23 jul</td><td>€4.200</td></tr><tr class="hi"><td>24 jul – 13 ago</td><td>€4.600</td></tr><tr><td>14 ago – 10 sep</td><td>€4.200</td></tr><tr><td>11 sep – 24 sep</td><td>€4.100</td></tr><tr><td>25 sep – 1 oct</td><td>€3.700</td></tr><tr><td>2 oct – 31 dic</td><td>€3.100</td></tr></table><p class="note">Tarifa oficial del operador. AMARRA no a&ntilde;ade comisi&oacute;n ni recargo.</p></div>
 </div>
-<div class="extras"><div><h2>Servicios obligatorios</h2><ul class="exlist"><li><span>Paquete de bienvenida</span><b>€250 /reserva</b></li></ul></div><div><h2>Extras opcionales</h2><ul class="exlist"><li><span>Cocinero</span><b>€200 /día + manutención</b></li><li><span>Cambio de tripulación</span><b>€150 /reserva</b></li><li><span>Embarque anticipado</span><b>€200 /reserva</b></li><li><span>Hostess</span><b>€190 /día + manutención</b></li><li><span>Paquete internet</span><b>€70 /reserva</b></li><li><span>Paquete de ropa de cama</span><b>€10 /juego</b></li><li><span>Fianza no reembolsable / seguro</span><b>€250 /reserva</b></li><li><span>Patrón</span><b>€210 /día + manutención</b></li><li><span>Paquete de bienvenida</span><b>€70 /reserva</b></li></ul></div></div>
+<div class="extras"><div><h2>Servicios obligatorios</h2><ul class="exlist"><li><div class="exrow"><span>Paquete de bienvenida</span><b>€250 /reserva</b></div></li></ul></div><div><h2>Extras opcionales</h2><ul class="exlist"><li><div class="exrow"><span>Cocinero</span><b>€200 /día</b></div><em class="exnote">+ manutención</em></li><li><div class="exrow"><span>Cambio de tripulación</span><b>€150 /reserva</b></div></li><li><div class="exrow"><span>Embarque anticipado</span><b>€200 /reserva</b></div></li><li><div class="exrow"><span>Hostess</span><b>€190 /día</b></div><em class="exnote">+ manutención</em></li><li><div class="exrow"><span>Paquete internet</span><b>€70 /reserva</b></div></li><li><div class="exrow"><span>Paquete de ropa de cama</span><b>€10 /juego</b></div></li><li><div class="exrow"><span>Fianza no reembolsable / seguro</span><b>€250 /reserva</b></div></li><li><div class="exrow"><span>Patrón</span><b>€210 /día</b></div><em class="exnote">+ manutención</em></li><li><div class="exrow"><span>Paquete de bienvenida</span><b>€70 /reserva</b></div></li></ul></div></div>
 <section id="solicitar"><h2>Solicitar disponibilidad</h2>
 <p class="note">Te confirmamos disponibilidad real y precio oficial del operador en menos de 24 horas. Sin comisi&oacute;n ni recargo a&ntilde;adido por AMARRA.</p>
 <form id="f"><input type="hidden" name="barco" value="Olivia — Bavaria C38 · Palairos">
@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Palairos</h2><div class="sim"><a href="oceanis-38-1-the-boss-12634012.html"><img loading="lazy" alt="The Boss" src="https://ws.nausys.com/CBMS-external/rest/yacht/12634012/pictures/n.jpg?w=400"><div class="t"><div class="n">The Boss</div><div class="m">Oceanis 38.1 &middot; 3 cab.</div><div class="pr">€2.200 /sem.</div></div></a><a href="dufour-41-3-cab-syrena-62046680.html"><img loading="lazy" alt="Syrena" src="https://ws.nausys.com/CBMS-external/rest/yacht/62046680/pictures/main.jfif?w=400"><div class="t"><div class="n">Syrena</div><div class="m">Dufour 41 - 3 cab. &middot; 3 cab.</div><div class="pr">€2.400 /sem.</div></div></a><a href="elan-impression-45-1-thetis-12833321.html"><img loading="lazy" alt="Thetis" src="https://ws.nausys.com/CBMS-external/rest/yacht/12833321/pictures/main.jpeg?w=400"><div class="t"><div class="n">Thetis</div><div class="m">Elan Impression 45.1 &middot; 4 cab.</div><div class="pr">€2.500 /sem.</div></div></a><a href="oceanis-54-sirena-de-oro-75248881.html"><img loading="lazy" alt="Oceanis 54 Sirena De Oro" src="https://ws.nausys.com/CBMS-external/rest/yacht/75248881/pictures/main.jpg?w=400"><div class="t"><div class="n">Oceanis 54 Sirena De Oro</div><div class="m">Oceanis 54 Sirena De Oro &middot; 5 cab.</div><div class="pr">€2.574 /sem.</div></div></a><a href="oceanis-40-1-fots-12634013.html"><img loading="lazy" alt="Oceanis 40.1 Fots" src="https://ws.nausys.com/CBMS-external/rest/yacht/12634013/pictures/N.jpg?w=400"><div class="t"><div class="n">Oceanis 40.1 Fots</div><div class="m">Oceanis 40.1 Fots &middot; 4 cab.</div><div class="pr">€2.800 /sem.</div></div></a><a href="sun-odyssey-410-iliada-74140965.html"><img loading="lazy" alt="Iliada" src="https://ws.nausys.com/CBMS-external/rest/yacht/74140965/pictures/main.png?w=400"><div class="t"><div class="n">Iliada</div><div class="m">Sun Odyssey 410 &middot; 3 cab.</div><div class="pr">€2.950 /sem.</div></div></a><a href="bavaria-cruiser-46-4-cab-wanderlust-1070353.html"><img loading="lazy" alt="Wanderlust" src="https://ws.nausys.com/CBMS-external/rest/yacht/1070353/pictures/2V3A1221.jpg?w=400"><div class="t"><div class="n">Wanderlust</div><div class="m">Bavaria Cruiser 46 - 4 cab. &middot; 4 cab.</div><div class="pr">€3.000 /sem.</div></div></a><a href="bavaria-c46-kebifaiv-52162246.html"><img loading="lazy" alt="Kebifaiv" src="https://ws.nausys.com/CBMS-external/rest/yacht/52162246/pictures/main.png?w=400"><div class="t"><div class="n">Kebifaiv</div><div class="m">Bavaria C46 &middot; 5 cab.</div><div class="pr">€3.000 /sem.</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>

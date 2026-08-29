@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Kotor, Port of Kotor</h2><div class="sim"><a href="dufour-460-gl-boqueirao-10109062.html"><img loading="lazy" alt="BOQUEIRAO" src="https://ws.nausys.com/CBMS-external/rest/yacht/10109062/pictures/main.jpg?w=400"><div class="t"><div class="n">BOQUEIRAO</div><div class="m">Dufour 460 GL &middot; 4 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="oceanis-48-5-cab-korcula-10110306.html"><img loading="lazy" alt="KORCULA" src="https://ws.nausys.com/CBMS-external/rest/yacht/10110306/pictures/main.jpg?w=400"><div class="t"><div class="n">KORCULA</div><div class="m">Oceanis 48 - 5 cab. &middot; 5 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="dufour-460-gl-erasmus-10127426.html"><img loading="lazy" alt="ERASMUS" src="https://ws.nausys.com/CBMS-external/rest/yacht/10127426/pictures/main.jpg?w=400"><div class="t"><div class="n">ERASMUS</div><div class="m">Dufour 460 GL &middot; 4 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="bali-4-0-4-2-cab-dragonera-10229043.html"><img loading="lazy" alt="DRAGONERA" src="https://ws.nausys.com/CBMS-external/rest/yacht/10229043/pictures/main.jpg?w=400"><div class="t"><div class="n">DRAGONERA</div><div class="m">Bali 4.0 - 4 + 2 cab. &middot; 4 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="dufour-520-gl-caruso-10268038.html"><img loading="lazy" alt="CARUSO" src="https://ws.nausys.com/CBMS-external/rest/yacht/10268038/pictures/main.jpg?w=400"><div class="t"><div class="n">CARUSO</div><div class="m">Dufour 520 GL &middot; 5 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="lagoon-40-4-2-cab-kowalski-20067320.html"><img loading="lazy" alt="KOWALSKI" src="https://ws.nausys.com/CBMS-external/rest/yacht/20067320/pictures/main.jpg?w=400"><div class="t"><div class="n">KOWALSKI</div><div class="m">Lagoon 40 - 4 + 2 cab &middot; 4 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="lagoon-40-4-2-cab-jecky-s-back-28553486.html"><img loading="lazy" alt="JECKY'S BACK" src="https://ws.nausys.com/CBMS-external/rest/yacht/28553486/pictures/main.jpg?w=400"><div class="t"><div class="n">JECKY'S BACK</div><div class="m">Lagoon 40 - 4 + 2 cab &middot; 4 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="excess-11-4-2-cab-seazam-52240723.html"><img loading="lazy" alt="SEAZAM" src="https://ws.nausys.com/CBMS-external/rest/yacht/52240723/pictures/main.jpg?w=400"><div class="t"><div class="n">SEAZAM</div><div class="m">Excess 11 - 4 + 2 cab. &middot; 4 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>

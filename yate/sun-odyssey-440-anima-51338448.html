@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Athens, Attica, Nea Peramos Marina</h2><div class="sim"><a href="sun-odyssey-35-kama-25711436.html"><img loading="lazy" alt="Kama" src="https://ws.nausys.com/CBMS-external/rest/yacht/25711436/pictures/MAIN.jpg?w=400"><div class="t"><div class="n">Kama</div><div class="m">Sun Odyssey 35 &middot; 3 cab.</div><div class="pr">€1.140 /sem.</div></div></a><a href="sun-odyssey-36i-dione-23970945.html"><img loading="lazy" alt="Dione" src="https://ws.nausys.com/CBMS-external/rest/yacht/23970945/pictures/MAIN.jpg?w=400"><div class="t"><div class="n">Dione</div><div class="m">Sun Odyssey 36i &middot; 3 cab.</div><div class="pr">€1.500 /sem.</div></div></a><a href="sun-odyssey-410-3-cab-high-time-23966792.html"><img loading="lazy" alt="High Time" src="https://ws.nausys.com/CBMS-external/rest/yachtModel/7912959/pictures/main.jpg?w=400"><div class="t"><div class="n">High Time</div><div class="m">Sun Odyssey 410 - 3 cab. &middot; 3 cab.</div><div class="pr">€2.050 /sem.</div></div></a><a href="sun-odyssey-410-3-cab-kallisto-23966877.html"><img loading="lazy" alt="Kallisto" src="https://ws.nausys.com/CBMS-external/rest/yachtModel/7912959/pictures/main.jpg?w=400"><div class="t"><div class="n">Kallisto</div><div class="m">Sun Odyssey 410 - 3 cab. &middot; 3 cab.</div><div class="pr">€2.050 /sem.</div></div></a><a href="sun-odyssey-440-4-cab-thousand-sunny-25141025.html"><img loading="lazy" alt="Thousand Sunny" src="https://ws.nausys.com/CBMS-external/rest/yacht/25141025/pictures/MAIN.jpg?w=400"><div class="t"><div class="n">Thousand Sunny</div><div class="m">Sun Odyssey 440 - 4 cab. &middot; 4 cab.</div><div class="pr">€2.800 /sem.</div></div></a><a href="cyclades-50-5-alegria-33067993.html"><img loading="lazy" alt="Cyclades 50.5 Alegria" src="https://ws.nausys.com/CBMS-external/rest/yacht/33067993/pictures/n.png?w=400"><div class="t"><div class="n">Cyclades 50.5 Alegria</div><div class="m">Cyclades 50.5 Alegria &middot; 5 + 1 cab.</div><div class="pr">€2.860 /sem.</div></div></a><a href="sun-odyssey-490-4-cab-lydia-23970702.html"><img loading="lazy" alt="Lydia" src="https://ws.nausys.com/CBMS-external/rest/yacht/23970702/pictures/MAIN.jpg?w=400"><div class="t"><div class="n">Lydia</div><div class="m">Sun Odyssey 490 - 4 cab. &middot; 4 cab.</div><div class="pr">€2.930 /sem.</div></div></a><a href="sun-odyssey-490-jouir-23970650.html"><img loading="lazy" alt="Jouir" src="https://ws.nausys.com/CBMS-external/rest/yacht/23970650/pictures/JUIR-1.jpg?w=400"><div class="t"><div class="n">Jouir</div><div class="m">Sun Odyssey 490 &middot; 4 cab.</div><div class="pr">€2.930 /sem.</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>

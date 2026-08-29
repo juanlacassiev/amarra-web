@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Rhodes New Marina</h2><div class="sim"><a href="hanse-415-kuro-siwo-1323019.html"><img loading="lazy" alt="Kuro Siwo" src="https://ws.nausys.com/CBMS-external/rest/yacht/1323019/pictures/Hanse_415a6b2_pic9.jpg?w=400"><div class="t"><div class="n">Kuro Siwo</div><div class="m">Hanse 415 &middot; 3 cab.</div><div class="pr">€1.700 /sem.</div></div></a><a href="sun-odyssey-419-3-cab-geva-i-4327917.html"><img loading="lazy" alt="Geva I" src="https://ws.nausys.com/CBMS-external/rest/yacht/4327917/pictures/main.jpg?w=400"><div class="t"><div class="n">Geva I</div><div class="m">Sun Odyssey 419 - 3 cab. &middot; 3 cab.</div><div class="pr">€1.700 /sem.</div></div></a><a href="bavaria-cruiser-41-3-cab-nostalgia-10067573.html"><img loading="lazy" alt="Nostalgia" src="https://ws.nausys.com/CBMS-external/rest/yacht/10067573/pictures/Bav41.jpg?w=400"><div class="t"><div class="n">Nostalgia</div><div class="m">Bavaria Cruiser 41 - 3 cab. &middot; 3 cab.</div><div class="pr">€1.750 /sem.</div></div></a><a href="bavaria-cruiser-41-alkyoni-10067569.html"><img loading="lazy" alt="Alkyoni" src="https://ws.nausys.com/CBMS-external/rest/yacht/10067569/pictures/main.JPG?w=400"><div class="t"><div class="n">Alkyoni</div><div class="m">Bavaria Cruiser 41 &middot; 3 cab.</div><div class="pr">€1.750 /sem.</div></div></a><a href="bavaria-cruiser-41-3-cab-forkys-10377806.html"><img loading="lazy" alt="Forkys" src="https://ws.nausys.com/CBMS-external/rest/yacht/10377806/pictures/_DSC4408L.jpg?w=400"><div class="t"><div class="n">Forkys</div><div class="m">Bavaria Cruiser 41 - 3 cab. &middot; 3 cab.</div><div class="pr">€1.800 /sem.</div></div></a><a href="sun-odyssey-440-4-cab-tolinho-10454422.html"><img loading="lazy" alt="Tolinho" src="https://ws.nausys.com/CBMS-external/rest/yacht/10454422/pictures/Istion_Yacthing_so440_h.jpg?w=400"><div class="t"><div class="n">Tolinho</div><div class="m">Sun Odyssey 440 - 4 cab. &middot; 4 cab.</div><div class="pr">€1.900 /sem.</div></div></a><a href="lagoon-380-4-2-cab-my-elisabeth-40650312.html"><img loading="lazy" alt="My Elisabeth" src="https://ws.nausys.com/CBMS-external/rest/yacht/40650312/pictures/main.jpg?w=400"><div class="t"><div class="n">My Elisabeth</div><div class="m">Lagoon 380 - 4 + 2 cab. &middot; 4 + 2 cab.</div><div class="pr">€1.900 /sem.</div></div></a><a href="sun-odyssey-410-henry-every-39073057.html"><img loading="lazy" alt="Henry Every" src="https://ws.nausys.com/CBMS-external/rest/yacht/39073057/pictures/main.jpg?w=400"><div class="t"><div class="n">Henry Every</div><div class="m">Sun Odyssey 410 &middot; 3 cab.</div><div class="pr">€1.900 /sem.</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>

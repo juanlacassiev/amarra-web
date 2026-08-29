@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Palermo, Marina Si.Ti.mar</h2><div class="sim"><a href="sun-odyssey-319-2-cab-hija-del-viento-8802089.html"><img loading="lazy" alt="Hija del Viento" src="https://ws.nausys.com/CBMS-external/rest/yacht/8802089/pictures/main.jpg?w=400"><div class="t"><div class="n">Hija del Viento</div><div class="m">Sun Odyssey 319 - 2 cab. &middot; 2 cab.</div><div class="pr">€1.500 /sem.</div></div></a><a href="dufour-390-gl-sympathy-planet-12729083.html"><img loading="lazy" alt="Dufour 390 GL Sympathy Planet" src="https://ws.nausys.com/CBMS-external/rest/yacht/12729083/pictures/Dufour-390-GL-Sympathy-Planet-ext-01.jpg?w=400"><div class="t"><div class="n">Dufour 390 GL Sympathy Planet</div><div class="m">Dufour 390 GL Sympathy Planet &middot; 3 cab.</div><div class="pr">€2.000 /sem.</div></div></a><a href="dufour-430-3-cab-si-puo-fare-33855778.html"><img loading="lazy" alt="Si Puo Fare" src="https://ws.nausys.com/CBMS-external/rest/yacht/33855778/pictures/Dufour-430-Si-puo-fare-ext-05%20-%20Copia%20-%20Copia.jpg?w=400"><div class="t"><div class="n">Si Puo Fare</div><div class="m">Dufour 430 - 3 cab. &middot; 3 cab.</div><div class="pr">€2.560 /sem.</div></div></a><a href="dufour-460-gl-discovery-planet-12726094.html"><img loading="lazy" alt="Dufour 460 GL Discovery Planet" src="https://ws.nausys.com/CBMS-external/rest/yachtModel/1026022/pictures/Dufour-460-Discovery-Planet-ext-05.jpg?w=400"><div class="t"><div class="n">Dufour 460 GL Discovery Planet</div><div class="m">Dufour 460 GL Discovery Planet &middot; 4 cab.</div><div class="pr">€2.800 /sem.</div></div></a><a href="dufour-520-gl-holiday-planet-7754991.html"><img loading="lazy" alt="Holiday Planet" src="https://ws.nausys.com/CBMS-external/rest/yacht/7754991/pictures/Cabin%20Duf%20520.jpeg?w=400"><div class="t"><div class="n">Holiday Planet</div><div class="m">Dufour 520 GL &middot; 5 cab.</div><div class="pr">€2.930 /sem.</div></div></a><a href="bali-4-1-talitha-12729080.html"><img loading="lazy" alt="Talitha" src="https://ws.nausys.com/CBMS-external/rest/yacht/12729080/pictures/Bali-41-Talitha-ext-0.jpg?w=400"><div class="t"><div class="n">Talitha</div><div class="m">Bali 4.1 &middot; 4 + 2 cab.</div><div class="pr">€3.940 /sem.</div></div></a><a href="dufour-48-catamaran-oblivion-planet-31027934.html"><img loading="lazy" alt="Oblivion Planet" src="https://ws.nausys.com/CBMS-external/rest/yachtModel/5052719/pictures/Dufour-catamaran-48-oblivion-planet-ext-12.jpg?w=400"><div class="t"><div class="n">Oblivion Planet</div><div class="m">Dufour 48 Catamaran &middot; 5 + 1 cab.</div><div class="pr">€6.390 /sem.</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>

@@ -32,7 +32,7 @@
 <div><h2>Ficha t&eacute;cnica</h2><table><tr><td>Tipo</td><td>Velero</td></tr><tr><td>Modalidad</td><td>Sin patrón</td></tr><tr><td>Astillero</td><td>Bavaria Yachtbau</td></tr><tr><td>Año de construcción</td><td>2024</td></tr><tr><td>Eslora total</td><td>12.4 m (42 ft)</td></tr><tr><td>Manga</td><td>4.3 m</td></tr><tr><td>Calado</td><td>2.1 m</td></tr><tr><td>Camarotes</td><td>3</td></tr><tr><td>Literas</td><td>6</td></tr><tr><td>Baños</td><td>2</td></tr><tr><td>Pasajeros máx.</td><td>Registrado para 6</td></tr><tr><td>Motor</td><td>1 x 57.0 HP (1 x 41,92 kW)</td></tr><tr><td>Depósito combustible</td><td>210 l</td></tr><tr><td>Depósito agua</td><td>360 l</td></tr><tr><td>Fianza</td><td>€2.000</td></tr><tr><td>Base de salida</td><td>Marmaris, Albatros Marina, Turquía</td></tr></table></div>
 <div><h2>Tarifa por temporada 2027</h2><div class="price-box"><div class="p">€3.240 – €4.320</div><div class="per">por semana &middot; temporada 2027</div></div><table style="margin-top:16px"><tr><th>Periodo</th><th>Por semana</th></tr><tr><td>1 ene – 23 abr</td><td>€3.240</td></tr><tr><td>24 abr – 4 jun</td><td>€3.810</td></tr><tr><td>5 jun – 20 ago</td><td>€4.140</td></tr><tr class="hi"><td>21 ago – 29 oct</td><td>€4.320</td></tr><tr><td>30 oct – 12 nov</td><td>€3.810</td></tr></table><p class="note">Tarifa oficial del operador. AMARRA no a&ntilde;ade comisi&oacute;n ni recargo.</p></div>
 </div>
-<div class="extras"><div><h2>Servicios obligatorios</h2><ul class="exlist"><li><span>Paquete de base</span><b>€350 /reserva</b></li></ul></div><div><h2>Extras opcionales</h2><ul class="exlist"><li><span>Cocinero</span><b>€180 /día + manutención</b></li><li><span>Cambio de tripulación</span><b>€80 /servicio</b></li><li><span>Check-in anticipado</span><b>€150 /reserva</b></li><li><span>Hostess</span><b>€140 /día + manutención</b></li><li><span>Traslado de base</span><b>€400 /trayecto</b></li><li><span>Mascota a bordo</span><b>€150 /reserva</b></li><li><span>Aprovisionamiento</span><b>€30 /servicio</b></li><li><span>Suplemento regata</span><b>€500 /semana</b></li><li><span>Tasa de registro</span><b>€50 /servicio</b></li></ul></div></div>
+<div class="extras"><div><h2>Servicios obligatorios</h2><ul class="exlist"><li><div class="exrow"><span>Paquete de base</span><b>€350 /reserva</b></div></li></ul></div><div><h2>Extras opcionales</h2><ul class="exlist"><li><div class="exrow"><span>Cocinero</span><b>€180 /día</b></div><em class="exnote">+ manutención</em></li><li><div class="exrow"><span>Cambio de tripulación</span><b>€80 /servicio</b></div></li><li><div class="exrow"><span>Check-in anticipado</span><b>€150 /reserva</b></div></li><li><div class="exrow"><span>Hostess</span><b>€140 /día</b></div><em class="exnote">+ manutención</em></li><li><div class="exrow"><span>Trayecto sencillo</span><b>€400 /trayecto</b></div></li><li><div class="exrow"><span>Mascota a bordo</span><b>€150 /reserva</b></div></li><li><div class="exrow"><span>Aprovisionamiento</span><b>€30 /servicio</b></div></li><li><div class="exrow"><span>Suplemento de regata</span><b>€500 /semana</b></div></li><li><div class="exrow"><span>Tasa de registro</span><b>€50 /servicio</b></div></li></ul></div></div>
 <section id="solicitar"><h2>Solicitar disponibilidad</h2>
 <p class="note">Te confirmamos disponibilidad real y precio oficial del operador en menos de 24 horas. Sin comisi&oacute;n ni recargo a&ntilde;adido por AMARRA.</p>
 <form id="f"><input type="hidden" name="barco" value="Sorores — Bavaria C42 · Marmaris, Albatros Marina">
@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Marmaris, Albatros Marina</h2><div class="sim"><a href="oceanis-30-1-lima-40241064.html"><img loading="lazy" alt="Lima" src="https://ws.nausys.com/CBMS-external/rest/yacht/40241064/pictures/037ce390-0001-46c2-a4bf-2870ef9fd2f0.jpeg?w=400"><div class="t"><div class="n">Lima</div><div class="m">Oceanis 30.1 &middot; 2 cab.</div><div class="pr">€1.300 /sem.</div></div></a><a href="bali-4-8-baikal-52068054.html"><img loading="lazy" alt="Baikal" src="https://ws.nausys.com/CBMS-external/rest/yacht/52068054/pictures/main.jpg?w=400"><div class="t"><div class="n">Baikal</div><div class="m">Bali 4.8 &middot; 6 + 1 cab.</div><div class="pr">€1.560 /sem.</div></div></a><a href="dufour-390-joy-5-72226278.html"><img loading="lazy" alt="Joy 5" src="https://ws.nausys.com/CBMS-external/rest/yacht/72226278/pictures/main.jpeg?w=400"><div class="t"><div class="n">Joy 5</div><div class="m">Dufour 390 &middot; 3 cab.</div><div class="pr">€2.420 /sem.</div></div></a><a href="bavaria-cruiser-46-classy-25394416.html"><img loading="lazy" alt="Classy" src="https://ws.nausys.com/CBMS-external/rest/yacht/25394416/pictures/main.jpg?w=400"><div class="t"><div class="n">Classy</div><div class="m">Bavaria Cruiser 46 &middot; 4 cab.</div><div class="pr">€3.610 /sem.</div></div></a><a href="lagoon-42-kairos-34431219.html"><img loading="lazy" alt="Kairos" src="https://ws.nausys.com/CBMS-external/rest/yacht/34431219/pictures/main.jpg?w=400"><div class="t"><div class="n">Kairos</div><div class="m">Lagoon 42 &middot; 4 + 1 cab.</div><div class="pr">€3.800 /sem.</div></div></a><a href="bavaria-cruiser-46-leisure-39170135.html"><img loading="lazy" alt="Leisure" src="https://ws.nausys.com/CBMS-external/rest/yacht/39170135/pictures/main.jpg?w=400"><div class="t"><div class="n">Leisure</div><div class="m">Bavaria Cruiser 46 &middot; 4 cab.</div><div class="pr">€3.810 /sem.</div></div></a><a href="lagoon-40-shima-34431269.html"><img loading="lazy" alt="Shima" src="https://ws.nausys.com/CBMS-external/rest/yacht/34431269/pictures/main.jpg?w=400"><div class="t"><div class="n">Shima</div><div class="m">Lagoon 40 &middot; 4 + 1 cab.</div><div class="pr">€3.900 /sem.</div></div></a><a href="bali-catspace-ida-73288972.html"><img loading="lazy" alt="Bali Catspace Ida" src="https://ws.nausys.com/CBMS-external/rest/yachtModel/10306352/pictures/main.jpg?w=400"><div class="t"><div class="n">Bali Catspace Ida</div><div class="m">Bali Catspace Ida &middot; 4 cab.</div><div class="pr">€3.900 /sem.</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>

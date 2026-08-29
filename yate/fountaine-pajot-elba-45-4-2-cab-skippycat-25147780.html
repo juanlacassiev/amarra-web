@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Nassau, Palm Cay Marina</h2><div class="sim"><a href="bali-4-4-jackalope-54459977.html"><img loading="lazy" alt="Jackalope" src="https://ws.nausys.com/CBMS-external/rest/yacht/54459977/pictures/main.jpeg?w=400"><div class="t"><div class="n">Jackalope</div><div class="m">Bali 4.4 &middot; 3 + 1 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="bali-5-4-6-2-cab-aragorn-11422711.html"><img loading="lazy" alt="ARAGORN" src="https://ws.nausys.com/CBMS-external/rest/yacht/11422711/pictures/main.jpg?w=400"><div class="t"><div class="n">ARAGORN</div><div class="m">Bali 5.4 - 6 + 2 cab. &middot; 6 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="fountaine-pajot-astrea-42-4-2-cab-laura-mae-12482532.html"><img loading="lazy" alt="LAURA MAE" src="https://ws.nausys.com/CBMS-external/rest/yacht/12482532/pictures/main.jpg?w=400"><div class="t"><div class="n">LAURA MAE</div><div class="m">Fountaine Pajot Astrea 42 - 4 + 2 cab. &middot; 4 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="sun-odyssey-410-3-cab-eretmochelys-13147667.html"><img loading="lazy" alt="ERETMOCHELYS" src="https://ws.nausys.com/CBMS-external/rest/yacht/13147667/pictures/main.jpg?w=400"><div class="t"><div class="n">ERETMOCHELYS</div><div class="m">Sun Odyssey 410 - 3 cab. &middot; 3 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="bali-5-4-6-2-cab-blue-jay-15172404.html"><img loading="lazy" alt="BLUE JAY" src="https://ws.nausys.com/CBMS-external/rest/yacht/15172404/pictures/main.jpg?w=400"><div class="t"><div class="n">BLUE JAY</div><div class="m">Bali 5.4 - 6 + 2 cab. &middot; 6 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="lagoon-46-4-2-cab-boatylicious-19572256.html"><img loading="lazy" alt="BOATYLICIOUS" src="https://ws.nausys.com/CBMS-external/rest/yacht/19572256/pictures/main.jpg?w=400"><div class="t"><div class="n">BOATYLICIOUS</div><div class="m">Lagoon 46 - 4 + 2 cab. &middot; 4 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="bali-4-6-5-1-cab-andiamo-25147770.html"><img loading="lazy" alt="ANDIAMO" src="https://ws.nausys.com/CBMS-external/rest/yacht/25147770/pictures/main.jpg?w=400"><div class="t"><div class="n">ANDIAMO</div><div class="m">Bali 4.6 - 5 + 1 cab. &middot; 5 + 1 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="bali-4-4-4-2-cab-saga-28806474.html"><img loading="lazy" alt="SAGA" src="https://ws.nausys.com/CBMS-external/rest/yacht/28806474/pictures/n.JPG?w=400"><div class="t"><div class="n">SAGA</div><div class="m">Bali 4.4 - 4 + 2 cab. &middot; 4 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>

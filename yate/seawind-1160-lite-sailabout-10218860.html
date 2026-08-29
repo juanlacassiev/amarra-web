@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Whitsundays, Airlie Beach, Coral Sea Marina</h2><div class="sim"><a href="dufour-412-gl-miss-b-10218861.html"><img loading="lazy" alt="MISS B" src="https://ws.nausys.com/CBMS-external/rest/yacht/10218861/pictures/main.jpg?w=400"><div class="t"><div class="n">MISS B</div><div class="m">Dufour 412 GL &middot; 3 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="bali-4-3-sinatra-10218866.html"><img loading="lazy" alt="SINATRA" src="https://ws.nausys.com/CBMS-external/rest/yacht/10218866/pictures/main.jpg?w=400"><div class="t"><div class="n">SINATRA</div><div class="m">Bali 4.3 &middot; 4 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="lagoon-421-traviata-1-10218876.html"><img loading="lazy" alt="TRAVIATA 1" src="https://ws.nausys.com/CBMS-external/rest/yacht/10218876/pictures/main.jpg?w=400"><div class="t"><div class="n">TRAVIATA 1</div><div class="m">Lagoon 421 &middot; 4 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="lagoon-380-4-cab-lunasea-10218879.html"><img loading="lazy" alt="LUNASEA" src="https://ws.nausys.com/CBMS-external/rest/yacht/10218879/pictures/main.jpg?w=400"><div class="t"><div class="n">LUNASEA</div><div class="m">Lagoon 380 - 4 cab. &middot; 4 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="cumberland-46-4-cab-dimanche-10218891.html"><img loading="lazy" alt="DIMANCHE" src="https://ws.nausys.com/CBMS-external/rest/yacht/10218891/pictures/main.jpg?w=400"><div class="t"><div class="n">DIMANCHE</div><div class="m">Cumberland 46 - 4 cab. &middot; 4 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="mahe-36-3-cab-neko-10218893.html"><img loading="lazy" alt="NEKO" src="https://ws.nausys.com/CBMS-external/rest/yacht/10218893/pictures/main.jpg?w=400"><div class="t"><div class="n">NEKO</div><div class="m">Mahe 36 - 3 cab. &middot; 3 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="catalina-350-wazabi-10218896.html"><img loading="lazy" alt="WAZABI" src="https://ws.nausys.com/CBMS-external/rest/yacht/10218896/pictures/main.jpg?w=400"><div class="t"><div class="n">WAZABI</div><div class="m">Catalina 350 &middot; 2 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="lagoon-50-kokomo-10228688.html"><img loading="lazy" alt="KOKOMO" src="https://ws.nausys.com/CBMS-external/rest/yacht/10228688/pictures/main.jpg?w=400"><div class="t"><div class="n">KOKOMO</div><div class="m">Lagoon 50 &middot; 4 + 2 cab.</div><div class="pr">Precio a consultar</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>

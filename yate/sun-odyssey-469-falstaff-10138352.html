@@ -42,8 +42,10 @@
 <label>Fechas aproximadas</label><input name="fechas" placeholder="p. ej. 2&ordf; quincena de julio, 7 noches" required>
 <label>Invitados</label><input name="invitados" placeholder="p. ej. 6 adultos, 2 ni&ntilde;os">
 <label>Comentarios</label><textarea name="comentarios"></textarea>
-<p style="margin:18px 0 0"><button class="cta" type="submit">Enviar solicitud</button></p>
+<p style="margin:18px 0 0"><button class="cta" id="sb" type="submit">Enviar solicitud</button></p>
 <div class="ok-msg" id="ok">Solicitud recibida. Te enviamos disponibilidad confirmada y 3 alternativas comparables en menos de 24 horas.</div>
+<div class="err-msg" id="err">No hemos podido enviar el formulario. Escr&iacute;benos directamente y te contestamos igual de r&aacute;pido:
+<a id="errmail" href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a></div>
 </form></section>
 <section><h2>Otros barcos en Cote D'Azur, Port Pin Rolland</h2><div class="sim"><a href="dufour-460-gl-5-cab-picabia-10110157.html"><img loading="lazy" alt="PICABIA" src="https://ws.nausys.com/CBMS-external/rest/yacht/10110157/pictures/main.jpg?w=400"><div class="t"><div class="n">PICABIA</div><div class="m">Dufour 460 GL - 5 cab. &middot; 5 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="dufour-460-gl-5-cab-dotterel-10127321.html"><img loading="lazy" alt="DOTTEREL" src="https://ws.nausys.com/CBMS-external/rest/yacht/10127321/pictures/main.jpg?w=400"><div class="t"><div class="n">DOTTEREL</div><div class="m">Dufour 460 GL - 5 cab. &middot; 5 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="dufour-520-gl-bianco-10268037.html"><img loading="lazy" alt="BIANCO" src="https://ws.nausys.com/CBMS-external/rest/yacht/10268037/pictures/main.jpg?w=400"><div class="t"><div class="n">BIANCO</div><div class="m">Dufour 520 GL &middot; 5 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="sun-odyssey-519-5-1-cab-gillepsie-10268039.html"><img loading="lazy" alt="GILLEPSIE" src="https://ws.nausys.com/CBMS-external/rest/yacht/10268039/pictures/main.jpg?w=400"><div class="t"><div class="n">GILLEPSIE</div><div class="m">Sun Odyssey 519 - 5 + 1 cab. &middot; 5 + 1 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="sun-loft-47-6-1-cab-dryade-10303448.html"><img loading="lazy" alt="DRYADE" src="https://ws.nausys.com/CBMS-external/rest/yacht/10303448/pictures/main.jpg?w=400"><div class="t"><div class="n">DRYADE</div><div class="m">Sun Loft 47 - 6 + 1 cab. &middot; 6 + 1 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="dufour-412-zanzibar-23167590.html"><img loading="lazy" alt="ZANZIBAR" src="https://ws.nausys.com/CBMS-external/rest/yacht/23167590/pictures/main.jpg?w=400"><div class="t"><div class="n">ZANZIBAR</div><div class="m">Dufour 412 &middot; 3 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="bali-4-6-5-1-cab-amare-23597207.html"><img loading="lazy" alt="AMARE" src="https://ws.nausys.com/CBMS-external/rest/yacht/23597207/pictures/main.jpg?w=400"><div class="t"><div class="n">AMARE</div><div class="m">Bali 4.6 - 5 + 1 cab. &middot; 5 + 1 cab.</div><div class="pr">Precio a consultar</div></div></a><a href="bali-catspace-le-wh-28364125.html"><img loading="lazy" alt="LE WH" src="https://ws.nausys.com/CBMS-external/rest/yacht/28364125/pictures/main.jpg?w=400"><div class="t"><div class="n">LE WH</div><div class="m">Bali Catspace &middot; 4 cab.</div><div class="pr">Precio a consultar</div></div></a></div><p><a class="cta" href="../flota.html">Ver los 4291 barcos de la flota</a></p></section>
 </div>
@@ -59,10 +61,21 @@ if(t.hasAttribute('data-k'))setG(parseInt(t.getAttribute('data-k'),10));
 if(t.hasAttribute('data-g'))setG(GI+parseInt(t.getAttribute('data-g'),10))});
 document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')setG(GI+1);if(e.key==='ArrowLeft')setG(GI-1)});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+var ok=document.getElementById('ok'),er=document.getElementById('err'),sb=document.getElementById('sb');
+ok.style.display=er.style.display='none';sb.disabled=true;sb.textContent='Enviando\u2026';
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 d._subject='Solicitud AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
+function fallo(){
+  // Nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo
+  // y el formulario queda intacto para reintentar.
+  sb.disabled=false;sb.textContent='Enviar solicitud';er.style.display='block';
+  er.scrollIntoView({behavior:'smooth',block:'center'});}
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-.then(function(r){return r.json()}).then(function(){document.getElementById('ok').style.display='block'})
-.catch(function(){document.getElementById('ok').style.display='block'});});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){
+  if(j&&(j.success===false||j.success==='false'))throw 0;
+  sb.style.display='none';ok.style.display='block';
+  ok.scrollIntoView({behavior:'smooth',block:'center'});})
+.catch(fallo);});
 </script>
 </body></html>
