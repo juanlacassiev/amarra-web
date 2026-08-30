@@ -30,6 +30,10 @@ tr.hi td{color:var(--gold);font-weight:500}
 .price-box .p{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--gold-l);line-height:1.1}
 .price-box .per{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut-d);margin-top:6px}
 .note{font-size:12px;color:var(--mut-l);margin-top:12px;line-height:1.55}
+.vent{margin-top:16px;padding:18px 20px;background:rgba(171,146,96,.09);border-left:2px solid var(--gold)}
+.vent h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+.vent p{font-size:13px;line-height:1.6;color:#3d4451;margin:0}
+.vent p b{font-weight:500;color:var(--ink)}
 .extras{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin:6px 0 34px}
 @media(max-width:820px){.extras{grid-template-columns:1fr}}
 .exlist{list-style:none;font-size:13.5px}
