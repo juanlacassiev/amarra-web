@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amarra.vercel.app/sitemap.xml
+Sitemap: https://amarrayachts.com/sitemap.xml

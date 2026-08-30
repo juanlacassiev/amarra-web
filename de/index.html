@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMARRA — Maison Nautique | Boutique, Charter und SeaSuite™</title>
-<meta name="description" content="Maison Nautique, geboren auf Menorca. Boutique für Toys und Plattformen mit Direktkauf, Charter-Brokerage in ganz Europa und die SeaSuite™.">
-<link rel="canonical" href="https://amarra.vercel.app/de/">
-<link rel="alternate" hreflang="es" href="https://amarra.vercel.app/">
-<link rel="alternate" hreflang="en" href="https://amarra.vercel.app/en/">
-<link rel="alternate" hreflang="fr" href="https://amarra.vercel.app/fr/">
-<link rel="alternate" hreflang="de" href="https://amarra.vercel.app/de/">
-<link rel="alternate" hreflang="it" href="https://amarra.vercel.app/it/">
-<link rel="alternate" hreflang="ca" href="https://amarra.vercel.app/ca/">
-<link rel="alternate" hreflang="x-default" href="https://amarra.vercel.app/">
+<title>AMARRA — Yacht- und Bootscharter in 45 Revieren | 4.290 Boote</title>
+<meta name="description" content="Charter von Segelyachten, Katamaranen und Motoryachten in 45 Revieren im Mittelmeer, in der Karibik und in Miami. 4.290 Boote mit technischem Datenblatt, echten Fotos und dem Tarif des Betreibers. Endpreis, ohne zusätzliche Provision.">
+<link rel="canonical" href="https://amarrayachts.com/de/">
+<link rel="alternate" hreflang="es" href="https://amarrayachts.com/">
+<link rel="alternate" hreflang="en" href="https://amarrayachts.com/en/">
+<link rel="alternate" hreflang="fr" href="https://amarrayachts.com/fr/">
+<link rel="alternate" hreflang="de" href="https://amarrayachts.com/de/">
+<link rel="alternate" hreflang="it" href="https://amarrayachts.com/it/">
+<link rel="alternate" hreflang="ca" href="https://amarrayachts.com/ca/">
+<link rel="alternate" hreflang="x-default" href="https://amarrayachts.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -94,9 +94,9 @@ section{padding:130px 0}
 .charter{background:var(--paper)}
 .charter .fleet-line{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.4vw,30px);font-style:italic;margin-bottom:60px}
 .charter .fleet-line span{color:var(--gold)}
-.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-bottom:80px}
-.dest{position:relative;overflow:hidden;background:linear-gradient(160deg,#12233a,#1a3a55);display:block}
-.dest img{width:100%;height:400px;object-fit:cover;transition:transform .6s;opacity:.88}
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px}
+.dest{position:relative;overflow:hidden;background:linear-gradient(160deg,#12233a,#1a3a55);display:block;text-decoration:none;color:inherit}
+.dest img{width:100%;height:330px;object-fit:cover;transition:transform .6s;opacity:.88}
 .dest:hover img{transform:scale(1.04)}
 .dest .veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(11,14,19,.85))}
 .dest .info{position:absolute;left:28px;right:28px;bottom:26px;color:var(--ivory)}
@@ -162,6 +162,7 @@ footer{background:var(--black);color:var(--mut-d);padding:0 0 50px}
 section{padding:90px 0}
 .maison-grid,.ss-grid,.faq-grid{grid-template-columns:1fr;gap:56px}
 .dest-grid,.prod-grid{grid-template-columns:1fr}
+.dest img{height:230px}
 .gallery{grid-template-columns:repeat(2,1fr)}
 .gallery figure:nth-child(5){display:none}
 .stats{grid-template-columns:1fr}
@@ -199,12 +200,12 @@ section{padding:90px 0}
 <nav><div class="wrap nav-in">
 <a class="wordmark" href="#">AMARRA</a>
 <div class="nav-r">
-<a href="#maison">La Maison</a>
-<a href="#boutique">Boutique</a>
-<a href="#prive">Privé</a>
-<a href="#charter">Charter</a>
+<a href="#destinos">Reviere</a>
 <a href="flota.html">Flotte</a>
+<a href="#charter">Charter</a>
 <a href="#seasuite">SeaSuite™</a>
+<a href="#boutique">Boutique</a>
+<a href="#maison">La Maison</a>
 <button class="cart-btn" onclick="openCart()">Bestellung (<span id="cart-n">0</span>)</button>
 <details class="lang"><summary title="Sprache" aria-label="Sprache"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.4 2.6 3.7 5.6 3.7 9s-1.3 6.4-3.7 9c-2.4-2.6-3.7-5.6-3.7-9S9.6 5.6 12 3z"/></svg><b>DE</b></summary><div class="lang-m"><a href="/" hreflang="es" lang="es">Español</a><a href="/en/" hreflang="en" lang="en">English</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/de/" class="on" aria-current="true">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/ca/" hreflang="ca" lang="ca">Català</a></div></details><script>(function(){var d=document.querySelector("details.lang");if(!d)return;document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false},true);document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false})})();</script>
 </div>
@@ -214,12 +215,12 @@ section{padding:90px 0}
 <img class="hero-img" src="https://images.unsplash.com/photo-1500514966906-fe245eea9344?q=80&w=2000&auto=format&fit=crop" alt="Yacht vor Anker im türkisfarbenen Wasser des Mittelmeers" onerror="this.style.display='none'">
 <div class="hero-veil"></div>
 <div class="wrap">
-<div class="micro">Maison Nautique — Charter · Boutique · SeaSuite™</div>
-<h1>Der Ozean ist<br>die neue <em>Suite</em>.</h1>
-<p class="sub">Boutique für Toys und Plattformen mit Direktkauf und Lieferung in ganz Europa, Charter-Brokerage und die SeaSuite™: die erste schwimmende Luxuskabine.</p>
+<div class="micro">Charter — Mittelmeer · Karibik · Miami</div>
+<h1>Zuerst das Revier.<br>Dann das <em>Boot</em>.</h1>
+<p class="sub">4.290 Boote mit technischem Datenblatt, echten Fotos und dem Tarif des Betreibers, in 45 Revieren. Endpreis inklusive AMARRA-Abwicklung: ohne zusätzliche Provision.</p>
 <div class="cta-row">
-<a class="lux-link" href="#boutique">Jetzt kaufen</a>
-<a class="lux-link dim" href="#charter">Charter buchen</a>
+<a class="lux-link" href="#destinos">Reviere ansehen</a>
+<a class="lux-link dim" href="#charter">Vorschlag in 24 Std.</a>
 </div>
 </div>
 <div class="coords"><span>Westliches Mittelmeer — 39° N</span><span>Mahón · Monaco · Miami</span></div>
@@ -233,64 +234,25 @@ section{padding:90px 0}
 <figure style="cursor:pointer" onclick="location.href='flota.html'"><img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=800&auto=format&fit=crop" alt="Mittelmeerstrand aus der Luft" onerror="this.parentElement.style.display='none'" loading="lazy"><figcaption>Balearisches Meer · Flotte ansehen →</figcaption></figure>
 </div>
 
-<section id="maison"><div class="wrap">
-<div class="sec-head"><span class="sec-num">I.</span><h2>La Maison</h2></div>
-<div class="maison-grid">
-<div class="maison">
-<blockquote>„Eine Yacht endet nicht an ihrem Rumpf. Sie endet dort, wo ihr Eigner <span>beschließt, den Horizont anzuhalten</span>.“</blockquote>
-<p>AMARRA entstand auf Menorca, an Bord der Segelyacht <em>Buganvilia</em>, aus der Idee dreier enger Freunde und Seeleute. Als sie eines Nachts vor der Insel ankerten, verstanden sie, dass das Wasser rund um eine Yacht ihr am wenigsten genutzter Raum ist — und beschlossen, es in Kabinen, Beach Clubs und Salons zu verwandeln.</p>
-<p>Heute vertreten wir die weltweit führenden Häuser für Superyacht-Inflatables, betreiben Charter im gesamten Mittelmeer und entwickeln die SeaSuite™, unsere eigene Kreation.</p>
-</div>
-<div class="photo-frame">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop" alt="Mittelmeerbucht mit kristallklarem Wasser" onerror="this.style.opacity=0" loading="lazy">
-<span class="cap">Cala Macarella — Menorca</span>
-</div>
-</div>
-</div></section>
-
-<section id="boutique" class="boutique"><div class="wrap">
-<div class="sec-head"><span class="sec-num">II.</span><h2>Boutique</h2></div>
-<p class="sec-sub">Direktkauf mit Lieferung in ganz Europa. Wählen Sie aus, senden Sie Ihre Bestellung und erhalten Sie die Pro-forma-Rechnung mit Zahlungsanweisungen in weniger als 2 Stunden. Der Bestand wird bestätigt, bevor abgerechnet wird.</p>
-<div class="prod-grid" id="prod-grid"></div>
-<p class="buy-note">Listenpreise in EUR, ohne MwSt. Versicherte Lieferung von Tür zu Tür oder direkt an Ihren Yachthafen in 5–15 Werktagen je nach Produkt. Zwei Jahre europäische Garantie. Zahlung derzeit per SEPA-Überweisung gegen Pro-forma-Rechnung; Kartenzahlung demnächst verfügbar.</p>
-</div></section>
-
-<section id="prive" class="prive">
-<img class="bg" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop" alt="" loading="lazy" onerror="this.style.display='none'">
-<div class="wrap">
-<span class="micro">III. — Privé</span>
-<h2>Ihr kompletter Beach Club: entworfen, geliefert und an Ihrem Heck installiert.</h2>
-<p class="lead">Ein einziger Ansprechpartner. Wir entwerfen die exakte Konfiguration für Ihre Länge, Ihren Ankerplatz und Ihre Gäste — und schulen Ihre Crew.</p>
-<div class="stats">
-<div class="stat"><div class="v">37 €–110k</div><div class="k">pro Gesamtprojekt</div></div>
-<div class="stat"><div class="v">21</div><div class="k">Tage Lieferzeit im Schnitt</div></div>
-<div class="stat"><div class="v">1</div><div class="k">fester Ansprechpartner</div></div>
-</div>
-<button class="lux-link" onclick="addPrive()">Privé-Projekt starten — Anzahlung 1.000 €</button>
+<section id="destinos" class="charter"><div class="wrap">
+<div class="sec-head"><span class="sec-num">I.</span><h2>Wohin m&ouml;chten Sie segeln?</h2></div>
+<p class="sec-sub">Zuerst das Revier, dann die Yacht. Jedes Seegebiet mit seiner echten Flotte, seinem Einstiegspreis und dem Betreiber, der sie dort liegen hat.</p>
+<p class="fleet-line"><span>4.290 Boote</span> mit technischem Datenblatt, echten Fotos und dem Tarif ihres Betreibers — in <span>184 Basen</span> in <span>23 Ländern</span>, zusammengefasst in <span>45 Revieren</span>.</p>
+<div class="dest-grid"><a class="dest" href="flota.html#z=split"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/72339431/pictures/main.jpg?w=900" alt="Split &amp; Mitteldalmatien" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Split &amp; Mitteldalmatien</h3><span class="from">590 Yachten &middot; Kroatien</span><span class="from" style="margin-top:8px;color:#c9b586">ab 250 € pro Woche</span></div></a>
+<a class="dest" href="flota.html#z=jonico"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/52110469/pictures/main.jfif.JPG?w=900" alt="Ionische Inseln" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Ionische Inseln</h3><span class="from">422 Yachten &middot; Griechenland</span><span class="from" style="margin-top:8px;color:#c9b586">ab 895 € pro Woche</span></div></a>
+<a class="dest" href="flota.html#z=bvi"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/58254929/pictures/main.jpg?w=900" alt="Britische Jungferninseln" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Britische Jungferninseln</h3><span class="from">150 Yachten &middot; Karibik</span><span class="from" style="margin-top:8px;color:#c9b586">ab 513 € pro Woche</span></div></a>
+<a class="dest" href="flota.html#z=gocek"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/26820881/pictures/main.jpg?w=900" alt="Fethiye &amp; Göcek" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Fethiye &amp; Göcek</h3><span class="from">129 Yachten &middot; Türkei</span><span class="from" style="margin-top:8px;color:#c9b586">ab 1.350 € pro Woche</span></div></a>
+<a class="dest" href="flota.html#z=cerdena"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/32861990/pictures/main.jpg?w=900" alt="Sardinien" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Sardinien</h3><span class="from">126 Yachten &middot; Italien</span><span class="from" style="margin-top:8px;color:#c9b586">ab 1.190 € pro Woche</span></div></a>
+<a class="dest" href="flota.html#z=baleares"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/39822480/pictures/n1.jpg?w=900" alt="Balearen" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Balearen</h3><span class="from">91 Yachten &middot; Spanien</span><span class="from" style="margin-top:8px;color:#c9b586">ab 1.470 € pro Woche</span></div></a>
+<a class="dest" href="flota.html#z=florida"><img src="https://www.miamiyachtingcompany.com/api/img/68-Galeon/Miami_Yachting_Company_68-Galeon_27.webp" alt="Miami" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Miami</h3><span class="from">87 Yachten &middot; Vereinigte Staaten</span><span class="from" style="margin-top:8px;color:#c9b586">ab $700 pro Woche</span></div></a>
+<a class="dest" href="flota.html#z=costa_azul"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/69010263/pictures/main.jpg?w=900" alt="Côte d’Azur" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Côte d’Azur</h3><span class="from">82 Yachten &middot; Frankreich</span><span class="from" style="margin-top:8px;color:#c9b586">ab 1.395 € pro Woche</span></div></a>
+<a class="dest" href="flota.html#z=tailandia"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/72234562/pictures/main.jpg?w=900" alt="Thailand" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Thailand</h3><span class="from">69 Yachten &middot; Thailand</span><span class="from" style="margin-top:8px;color:#c9b586">ab 265 € pro Woche</span></div></a></div>
+<p style="margin:-18px 0 0"><a class="lux-link" href="flota.html">Alle 45 Reviere und 4.290 Boote ansehen →</a></p>
 </div></section>
 
 <section id="charter" class="charter"><div class="wrap">
-<div class="sec-head"><span class="sec-num">IV.</span><h2>Charter &amp; Brokerage</h2></div>
+<div class="sec-head"><span class="sec-num">II.</span><h2>Charter &amp; Brokerage</h2></div>
 <p class="sec-sub">Zugang zum größten Charter-Netzwerk Europas und ab sofort zum Privatcharter in Miami — Segelyachten, Katamarane und Motoryachten, mit oder ohne Crew. Endpreis inklusive der Betreuung durch AMARRA — ohne versteckte Kosten.</p>
-<p class="fleet-line"><span>3.576 Yachten</span> veröffentlicht mit technischen Daten und echten Fotos — <span>3.127 mit bestätigtem Preis</span> — in <span>143 Basen</span> in <span>15 Ländern</span>, über <span>496 Partnerflotten</span>.</p>
-<p style="margin:-8px 0 26px"><a class="lux-link" href="flota.html">Die Flotte ansehen — 3.576 Yachten mit Preisen, technischen Daten und echten Fotos →</a></p>
-<div class="dest-grid">
-<div class="dest" style="cursor:pointer" data-dest="Balearen">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Bucht auf den Balearen" onerror="this.style.opacity=0" loading="lazy">
-<div class="veil"></div>
-<div class="info"><h3>Balearen</h3><span class="from">40 Yachten auf Mallorca und Ibiza · ab 1.470 € / Woche</span><span class="from" style="display:block;margin-top:8px;color:#c9b586">Yachten ansehen und Termine anfragen →</span></div>
-</div>
-<div class="dest" style="cursor:pointer" data-dest="Korsika / Sardinien / Sizilien">
-<img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=1200&auto=format&fit=crop" alt="Sonnenuntergang an der Riviera" onerror="this.style.opacity=0" loading="lazy">
-<div class="veil"></div>
-<div class="info"><h3>Korsika, Sardinien &amp; Sizilien</h3><span class="from">203 Yachten in Frankreich und Italien · ab 1.190 € / Woche</span><span class="from" style="display:block;margin-top:8px;color:#c9b586">Yachten ansehen und Termine anfragen →</span></div>
-</div>
-<div class="dest" style="cursor:pointer" data-dest="Griechenland">
-<img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1200&auto=format&fit=crop" alt="Oia, Santorin, Griechenland" onerror="this.style.opacity=0" loading="lazy">
-<div class="veil"></div>
-<div class="info"><h3>Griechenland &amp; Kroatien</h3><span class="from">1.092 Yachten · ab 870 € / Woche</span><span class="from" style="display:block;margin-top:8px;color:#c9b586">Yachten ansehen und Termine anfragen →</span></div>
-</div>
-</div>
 <div class="form-panel" id="charter-form-panel">
 <h3>Charter-Anfrage — Vorschlag in 24 h</h3>
 <p class="fp-sub">Nennen Sie uns Ihre Termine und Ihr Revier. Sie erhalten 3 konkrete Optionen mit Foto, Endpreis und echter Verfügbarkeit, unverbindlich.</p>
@@ -309,13 +271,49 @@ section{padding:90px 0}
 <button class="btn" type="submit">Vorschlag anfordern</button>
 <div class="ok-msg" id="charter-ok">Erhalten. Wir senden Ihnen in weniger als 24 Stunden 3 Optionen mit echter Verfügbarkeit.</div>
 <div class="err-msg" id="charter-err">Wir konnten Ihre Anfrage nicht senden. Schreiben Sie uns bitte direkt an <a href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a> und wir antworten genauso schnell.</div>
-<p class="wa-alt">Lieber kein Formular? Schreiben Sie uns direkt: <a href="https://wa.me/56958209294?text=Hallo%2C%20ich%20h%C3%A4tte%20gern%20Hilfe%20bei%20der%20Auswahl%20eines%20Bootes.%20https%3A//amarra.vercel.app/de/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=AMARRA%20Anfrage">E-Mail</a></p>
+<p class="wa-alt">Lieber kein Formular? Schreiben Sie uns direkt: <a href="https://wa.me/56958209294?text=Hallo%2C%20ich%20h%C3%A4tte%20gern%20Hilfe%20bei%20der%20Auswahl%20eines%20Bootes.%20https%3A//amarrayachts.com/de/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=AMARRA%20Anfrage">E-Mail</a></p>
 </form>
 </div>
 </div></section>
 
+<section id="maison"><div class="wrap">
+<div class="sec-head"><span class="sec-num">III.</span><h2>La Maison</h2></div>
+<div class="maison-grid">
+<div class="maison">
+<blockquote>„Eine Yacht endet nicht an ihrem Rumpf. Sie endet dort, wo ihr Eigner <span>beschließt, den Horizont anzuhalten</span>.“</blockquote>
+<p>AMARRA entstand auf Menorca, an Bord der Segelyacht <em>Buganvilia</em>, aus der Idee dreier enger Freunde und Seeleute. Als sie eines Nachts vor der Insel ankerten, verstanden sie, dass das Wasser rund um eine Yacht ihr am wenigsten genutzter Raum ist — und beschlossen, es in Kabinen, Beach Clubs und Salons zu verwandeln.</p>
+<p>Heute vertreten wir die weltweit führenden Häuser für Superyacht-Inflatables, betreiben Charter im gesamten Mittelmeer und entwickeln die SeaSuite™, unsere eigene Kreation.</p>
+</div>
+<div class="photo-frame">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop" alt="Mittelmeerbucht mit kristallklarem Wasser" onerror="this.style.opacity=0" loading="lazy">
+<span class="cap">Cala Macarella — Menorca</span>
+</div>
+</div>
+</div></section>
+
+<section id="boutique" class="boutique"><div class="wrap">
+<div class="sec-head"><span class="sec-num">IV.</span><h2>Boutique</h2></div>
+<p class="sec-sub">Direktkauf mit Lieferung in ganz Europa. Wählen Sie aus, senden Sie Ihre Bestellung und erhalten Sie die Pro-forma-Rechnung mit Zahlungsanweisungen in weniger als 2 Stunden. Der Bestand wird bestätigt, bevor abgerechnet wird.</p>
+<div class="prod-grid" id="prod-grid"></div>
+<p class="buy-note">Listenpreise in EUR, ohne MwSt. Versicherte Lieferung von Tür zu Tür oder direkt an Ihren Yachthafen in 5–15 Werktagen je nach Produkt. Zwei Jahre europäische Garantie. Zahlung derzeit per SEPA-Überweisung gegen Pro-forma-Rechnung; Kartenzahlung demnächst verfügbar.</p>
+</div></section>
+
+<section id="prive" class="prive">
+<img class="bg" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop" alt="" loading="lazy" onerror="this.style.display='none'">
+<div class="wrap">
+<span class="micro">V. — Privé</span>
+<h2>Ihr kompletter Beach Club: entworfen, geliefert und an Ihrem Heck installiert.</h2>
+<p class="lead">Ein einziger Ansprechpartner. Wir entwerfen die exakte Konfiguration für Ihre Länge, Ihren Ankerplatz und Ihre Gäste — und schulen Ihre Crew.</p>
+<div class="stats">
+<div class="stat"><div class="v">37 €–110k</div><div class="k">pro Gesamtprojekt</div></div>
+<div class="stat"><div class="v">21</div><div class="k">Tage Lieferzeit im Schnitt</div></div>
+<div class="stat"><div class="v">1</div><div class="k">fester Ansprechpartner</div></div>
+</div>
+<button class="lux-link" onclick="addPrive()">Privé-Projekt starten — Anzahlung 1.000 €</button>
+</div></section>
+
 <section id="seasuite" class="seasuite"><div class="wrap">
-<div class="sec-head"><span class="sec-num">V.</span><h2>SeaSuite™</h2></div>
+<div class="sec-head"><span class="sec-num">VI.</span><h2>SeaSuite™</h2></div>
 <p class="sec-sub">Die erste schwimmende Luxuskabine. Sie macht bei Sonnenuntergang an Ihrem Heck fest und Sie erwachen über dem Wasser: Queen-Bett, komplettes Blackout, transparente Kuppel aus Polymer in Ozeanqualität und eine Konstruktion, ausgelegt für 25 Knoten. Sichern Sie sich Ihren Platz in der ersten Serie mit einer erstattbaren Anzahlung.</p>
 <p style="margin:-46px 0 60px"><a href="seasuite.html" style="color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:.24em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:4px">Renders und Maßzeichnungen ansehen &rarr;</a></p>
 <div class="ss-grid">
@@ -345,7 +343,7 @@ section{padding:90px 0}
 </div></section>
 
 <section class="faq"><div class="wrap">
-<div class="sec-head"><span class="sec-num">VI.</span><h2>So funktioniert es</h2></div>
+<div class="sec-head"><span class="sec-num">VII.</span><h2>So funktioniert es</h2></div>
 <div class="faq-grid">
 <div class="faq-item"><h4>Wie kaufe ich?</h4><p>Legen Sie Produkte in Ihre Bestellung und vervollständigen Sie sie mit Ihren Daten. In weniger als 2 Stunden erhalten Sie die Pro-forma-Rechnung mit bestätigtem Bestand und den Zahlungsanweisungen für die SEPA-Überweisung. Es wird nichts abgebucht, bevor der Bestand mit Ihnen bestätigt ist.</p></div>
 <div class="faq-item"><h4>Wie lange dauert die Lieferung?</h4><p>Zwischen 5 und 15 Werktagen in der EU, versichert von Tür zu Tür oder an Ihren Yachthafen. Privé-Projekte dauern im Schnitt 21 Tage, Installation inklusive.</p></div>
@@ -357,7 +355,7 @@ section{padding:90px 0}
 </div></section>
 
 <section id="contacto" class="contact"><div class="wrap">
-<span class="micro" style="color:var(--gold-l);display:block;margin-bottom:26px">VII. — Kontakt</span>
+<span class="micro" style="color:var(--gold-l);display:block;margin-bottom:26px">VIII. — Kontakt</span>
 <h2>Sprechen wir über Ihr Projekt.</h2>
 <p>Eigner, Kapitäne, Family Offices und Broker. Antwort in 24 Stunden, auf Spanisch, Englisch oder Französisch.</p>
 <a class="mail" href="mailto:zagatomiami@gmail.com?subject=AMARRA%20Projekt">zagatomiami@gmail.com</a>
@@ -367,7 +365,7 @@ section{padding:90px 0}
 <div class="foot-in">
 <a class="wordmark" href="#">AMARRA</a>
 <div class="foot-links">
-<a href="#maison">Maison</a><a href="#boutique">Boutique</a><a href="#prive">Privé</a><a href="#charter">Charter</a><a href="#seasuite">SeaSuite™</a>
+<a href="#destinos">Reviere</a><a href="flota.html">Flotte</a><a href="#charter">Charter</a><a href="#seasuite">SeaSuite™</a><a href="#boutique">Boutique</a><a href="#prive">Privé</a><a href="#maison">Maison</a>
 </div>
 </div>
 <div class="fine"><span>© MMXXVI AMARRA — Menorca · Miami</span><span>Fotografie: Unsplash. Marken Dritter gehören ihren jeweiligen Häusern. Preise in EUR, Richtwerte.</span></div>
@@ -390,7 +388,7 @@ section{padding:90px 0}
 <label class="pay-opt" style="opacity:.55"><input type="radio" name="pago" value="Karte" disabled><span><strong>Karte / Finanzierung</strong><br><span class="pd">Demnächst verfügbar.</span></span></label>
 <button class="btn" type="submit">Bestellung senden</button>
 <div class="ok-msg" id="order-ok"></div>
-<p class="wa-alt">Lieber kein Formular? Schreiben Sie uns direkt: <a href="https://wa.me/56958209294?text=Hallo%2C%20ich%20h%C3%A4tte%20gern%20Hilfe%20bei%20der%20Auswahl%20eines%20Bootes.%20https%3A//amarra.vercel.app/de/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=AMARRA%20Anfrage">E-Mail</a></p>
+<p class="wa-alt">Lieber kein Formular? Schreiben Sie uns direkt: <a href="https://wa.me/56958209294?text=Hallo%2C%20ich%20h%C3%A4tte%20gern%20Hilfe%20bei%20der%20Auswahl%20eines%20Bootes.%20https%3A//amarrayachts.com/de/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=AMARRA%20Anfrage">E-Mail</a></p>
 </form>
 </div>
 </aside>
@@ -485,9 +483,8 @@ sendForm(d,'AMARRA Charter-Anfrage — '+d.destino,
   function(){er.style.display='block';er.scrollIntoView({behavior:'smooth',block:'center'})});
 });
 render();sync();
-Array.prototype.forEach.call(document.querySelectorAll('.dest'),function(d){d.addEventListener('click',function(){var s=document.querySelector('select[name=destino]');if(s)s.value=d.getAttribute('data-dest');var p=document.getElementById('charter-form-panel');if(p)p.scrollIntoView({behavior:'smooth'});})});
 </script>
 
-<a class="wa-float" href="https://wa.me/56958209294?text=Hallo%2C%20ich%20h%C3%A4tte%20gern%20Hilfe%20bei%20der%20Auswahl%20eines%20Bootes.%20https%3A//amarra.vercel.app/de/" rel="noopener" target="_blank" aria-label="Schreiben Sie uns auf WhatsApp" title="Schreiben Sie uns auf WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23z"/></svg><b>WhatsApp</b></a>
+<a class="wa-float" href="https://wa.me/56958209294?text=Hallo%2C%20ich%20h%C3%A4tte%20gern%20Hilfe%20bei%20der%20Auswahl%20eines%20Bootes.%20https%3A//amarrayachts.com/de/" rel="noopener" target="_blank" aria-label="Schreiben Sie uns auf WhatsApp" title="Schreiben Sie uns auf WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23z"/></svg><b>WhatsApp</b></a>
 </body>
 </html>

@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMARRA — Maison Nàutica | Boutique, Charter i SeaSuite™</title>
-<meta name="description" content="Maison nàutica nascuda a Menorca. Boutique de toys i plataformes amb compra directa, charter brokerage a tot Europa i la SeaSuite™.">
-<link rel="canonical" href="https://amarra.vercel.app/ca/">
-<link rel="alternate" hreflang="es" href="https://amarra.vercel.app/">
-<link rel="alternate" hreflang="en" href="https://amarra.vercel.app/en/">
-<link rel="alternate" hreflang="fr" href="https://amarra.vercel.app/fr/">
-<link rel="alternate" hreflang="de" href="https://amarra.vercel.app/de/">
-<link rel="alternate" hreflang="it" href="https://amarra.vercel.app/it/">
-<link rel="alternate" hreflang="ca" href="https://amarra.vercel.app/ca/">
-<link rel="alternate" hreflang="x-default" href="https://amarra.vercel.app/">
+<title>AMARRA — Lloguer de vaixells i iots a 45 destinacions | 4.290 vaixells</title>
+<meta name="description" content="Lloguer de velers, catamarans i iots a motor a 45 destinacions de la Mediterrània, el Carib i Miami. 4.290 vaixells amb fitxa tècnica, fotos reals i la tarifa de l'operador. Preu final, sense comissió afegida.">
+<link rel="canonical" href="https://amarrayachts.com/ca/">
+<link rel="alternate" hreflang="es" href="https://amarrayachts.com/">
+<link rel="alternate" hreflang="en" href="https://amarrayachts.com/en/">
+<link rel="alternate" hreflang="fr" href="https://amarrayachts.com/fr/">
+<link rel="alternate" hreflang="de" href="https://amarrayachts.com/de/">
+<link rel="alternate" hreflang="it" href="https://amarrayachts.com/it/">
+<link rel="alternate" hreflang="ca" href="https://amarrayachts.com/ca/">
+<link rel="alternate" hreflang="x-default" href="https://amarrayachts.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -94,9 +94,9 @@ section{padding:130px 0}
 .charter{background:var(--paper)}
 .charter .fleet-line{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.4vw,30px);font-style:italic;margin-bottom:60px}
 .charter .fleet-line span{color:var(--gold)}
-.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-bottom:80px}
-.dest{position:relative;overflow:hidden;background:linear-gradient(160deg,#12233a,#1a3a55);display:block}
-.dest img{width:100%;height:400px;object-fit:cover;transition:transform .6s;opacity:.88}
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px}
+.dest{position:relative;overflow:hidden;background:linear-gradient(160deg,#12233a,#1a3a55);display:block;text-decoration:none;color:inherit}
+.dest img{width:100%;height:330px;object-fit:cover;transition:transform .6s;opacity:.88}
 .dest:hover img{transform:scale(1.04)}
 .dest .veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(11,14,19,.85))}
 .dest .info{position:absolute;left:28px;right:28px;bottom:26px;color:var(--ivory)}
@@ -162,6 +162,7 @@ footer{background:var(--black);color:var(--mut-d);padding:0 0 50px}
 section{padding:90px 0}
 .maison-grid,.ss-grid,.faq-grid{grid-template-columns:1fr;gap:56px}
 .dest-grid,.prod-grid{grid-template-columns:1fr}
+.dest img{height:230px}
 .gallery{grid-template-columns:repeat(2,1fr)}
 .gallery figure:nth-child(5){display:none}
 .stats{grid-template-columns:1fr}
@@ -199,12 +200,12 @@ section{padding:90px 0}
 <nav><div class="wrap nav-in">
 <a class="wordmark" href="#">AMARRA</a>
 <div class="nav-r">
-<a href="#maison">La Maison</a>
-<a href="#boutique">Boutique</a>
-<a href="#prive">Privé</a>
-<a href="#charter">Charter</a>
+<a href="#destinos">Destinacions</a>
 <a href="flota.html">Flota</a>
+<a href="#charter">Charter</a>
 <a href="#seasuite">SeaSuite™</a>
+<a href="#boutique">Boutique</a>
+<a href="#maison">La Maison</a>
 <button class="cart-btn" onclick="openCart()">Comanda (<span id="cart-n">0</span>)</button>
 <details class="lang"><summary title="Idioma" aria-label="Idioma"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.4 2.6 3.7 5.6 3.7 9s-1.3 6.4-3.7 9c-2.4-2.6-3.7-5.6-3.7-9S9.6 5.6 12 3z"/></svg><b>CA</b></summary><div class="lang-m"><a href="/" hreflang="es" lang="es">Español</a><a href="/en/" hreflang="en" lang="en">English</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/ca/" class="on" aria-current="true">Català</a></div></details><script>(function(){var d=document.querySelector("details.lang");if(!d)return;document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false},true);document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false})})();</script>
 </div>
@@ -214,12 +215,12 @@ section{padding:90px 0}
 <img class="hero-img" src="https://images.unsplash.com/photo-1500514966906-fe245eea9344?q=80&w=2000&auto=format&fit=crop" alt="Vaixell fondejat en aigües turquesa de la Mediterrània" onerror="this.style.display='none'">
 <div class="hero-veil"></div>
 <div class="wrap">
-<div class="micro">Maison Nàutica — Charter · Boutique · SeaSuite™</div>
-<h1>L’oceà és<br>la nova <em>suite</em>.</h1>
-<p class="sub">Boutique de toys i plataformes amb compra directa i lliurament a tot Europa, charter brokerage i la SeaSuite™: el primer camarot flotant de luxe.</p>
+<div class="micro">Charter — Mediterrània · Carib · Miami</div>
+<h1>Primer la destinació.<br>Després el <em>vaixell</em>.</h1>
+<p class="sub">4.290 vaixells amb fitxa tècnica, fotos reals i la tarifa de l'operador, a 45 destinacions. Preu final amb la gestió AMARRA inclosa: sense comissió afegida.</p>
 <div class="cta-row">
-<a class="lux-link" href="#boutique">Comprar ara</a>
-<a class="lux-link dim" href="#charter">Reservar un charter</a>
+<a class="lux-link" href="#destinos">Veure les destinacions</a>
+<a class="lux-link dim" href="#charter">Proposta en 24 h</a>
 </div>
 </div>
 <div class="coords"><span>Mediterrània Occidental — 39° N</span><span>Maó · Mònaco · Miami</span></div>
@@ -233,64 +234,25 @@ section{padding:90px 0}
 <figure style="cursor:pointer" onclick="location.href='flota.html'"><img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=800&auto=format&fit=crop" alt="Platja mediterrània des de l’aire" onerror="this.parentElement.style.display='none'" loading="lazy"><figcaption>Mar Balear · Veure flota →</figcaption></figure>
 </div>
 
-<section id="maison"><div class="wrap">
-<div class="sec-head"><span class="sec-num">I.</span><h2>La Maison</h2></div>
-<div class="maison-grid">
-<div class="maison">
-<blockquote>«Un iot no acaba al seu buc. Acaba on el seu propietari <span>decideix aturar l’horitzó</span>.»</blockquote>
-<p>AMARRA neix a Menorca, a bord del veler <em>Buganvilia</em>, de la idea de tres grans amics i mariners. Fondejats una nit a l’illa, van entendre que l’aigua que envolta un vaixell és el seu espai més desaprofitat — i van decidir convertir-la en camarots, beach clubs i salons.</p>
-<p>Avui representem les cases líders del món en inflables de superiot, operem charter a tota la Mediterrània i desenvolupem la SeaSuite™, la nostra creació pròpia.</p>
-</div>
-<div class="photo-frame">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop" alt="Cala mediterrània d’aigües transparents" onerror="this.style.opacity=0" loading="lazy">
-<span class="cap">Cala Macarella — Menorca</span>
-</div>
-</div>
-</div></section>
-
-<section id="boutique" class="boutique"><div class="wrap">
-<div class="sec-head"><span class="sec-num">II.</span><h2>Boutique</h2></div>
-<p class="sec-sub">Compra directa amb lliurament a tot Europa. Selecciona, envia la teva comanda i rep la pro forma amb instruccions de pagament en menys de 2 hores. Estoc confirmat abans de cobrar.</p>
-<div class="prod-grid" id="prod-grid"></div>
-<p class="buy-note">Preus de tarifa en EUR, IVA no inclòs. Lliurament assegurat porta a porta o directament al seu port esportiu en 5–15 dies hàbils segons el producte. Garantia europea de 2 anys. Actualment el pagament és per transferència SEPA contra pro forma; el pagament amb targeta estarà disponible pròximament.</p>
-</div></section>
-
-<section id="prive" class="prive">
-<img class="bg" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop" alt="" loading="lazy" onerror="this.style.display='none'">
-<div class="wrap">
-<span class="micro">III. — Privé</span>
-<h2>El seu beach club complet, dissenyat, lliurat i instal·lat a la seva popa.</h2>
-<p class="lead">Un sol interlocutor. Dissenyem la configuració exacta per a la seva eslora, el seu fondeig i els seus hostes — i formem la seva tripulació.</p>
-<div class="stats">
-<div class="stat"><div class="v">37 €–110k</div><div class="k">per projecte complet</div></div>
-<div class="stat"><div class="v">21</div><div class="k">dies de lliurament de mitjana</div></div>
-<div class="stat"><div class="v">1</div><div class="k">interlocutor dedicat</div></div>
-</div>
-<button class="lux-link" onclick="addPrive()">Iniciar un projecte privé — senyal 1.000 €</button>
+<section id="destinos" class="charter"><div class="wrap">
+<div class="sec-head"><span class="sec-num">I.</span><h2>On vol navegar?</h2></div>
+<p class="sec-sub">Primer el dest&iacute;, despr&eacute;s el vaixell. Cada zona de navegaci&oacute; amb la seva flota real, el seu preu de sortida i l&rsquo;operador que la hi t&eacute; amarrada.</p>
+<p class="fleet-line"><span>4.290 vaixells</span> amb fitxa tècnica, fotos reals i la tarifa del seu operador — a <span>184 bases</span> de <span>23 països</span>, agrupades en <span>45 destinacions</span>.</p>
+<div class="dest-grid"><a class="dest" href="flota.html#z=split"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/72339431/pictures/main.jpg?w=900" alt="Split i Dalmàcia Central" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Split i Dalmàcia Central</h3><span class="from">590 vaixells &middot; Croàcia</span><span class="from" style="margin-top:8px;color:#c9b586">des de 250 € per setmana</span></div></a>
+<a class="dest" href="flota.html#z=jonico"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/52110469/pictures/main.jfif.JPG?w=900" alt="Illes Jòniques" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Illes Jòniques</h3><span class="from">422 vaixells &middot; Grècia</span><span class="from" style="margin-top:8px;color:#c9b586">des de 895 € per setmana</span></div></a>
+<a class="dest" href="flota.html#z=bvi"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/58254929/pictures/main.jpg?w=900" alt="Illes Verges Britàniques" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Illes Verges Britàniques</h3><span class="from">150 vaixells &middot; Carib</span><span class="from" style="margin-top:8px;color:#c9b586">des de 513 € per setmana</span></div></a>
+<a class="dest" href="flota.html#z=gocek"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/26820881/pictures/main.jpg?w=900" alt="Fethiye i Göcek" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Fethiye i Göcek</h3><span class="from">129 vaixells &middot; Turquia</span><span class="from" style="margin-top:8px;color:#c9b586">des de 1.350 € per setmana</span></div></a>
+<a class="dest" href="flota.html#z=cerdena"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/32861990/pictures/main.jpg?w=900" alt="Sardenya" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Sardenya</h3><span class="from">126 vaixells &middot; Itàlia</span><span class="from" style="margin-top:8px;color:#c9b586">des de 1.190 € per setmana</span></div></a>
+<a class="dest" href="flota.html#z=baleares"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/39822480/pictures/n1.jpg?w=900" alt="Balears" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Balears</h3><span class="from">91 vaixells &middot; Espanya</span><span class="from" style="margin-top:8px;color:#c9b586">des de 1.470 € per setmana</span></div></a>
+<a class="dest" href="flota.html#z=florida"><img src="https://www.miamiyachtingcompany.com/api/img/68-Galeon/Miami_Yachting_Company_68-Galeon_27.webp" alt="Miami" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Miami</h3><span class="from">87 vaixells &middot; Estats Units</span><span class="from" style="margin-top:8px;color:#c9b586">des de $700 per setmana</span></div></a>
+<a class="dest" href="flota.html#z=costa_azul"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/69010263/pictures/main.jpg?w=900" alt="Costa Blava" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Costa Blava</h3><span class="from">82 vaixells &middot; França</span><span class="from" style="margin-top:8px;color:#c9b586">des de 1.395 € per setmana</span></div></a>
+<a class="dest" href="flota.html#z=tailandia"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/72234562/pictures/main.jpg?w=900" alt="Tailàndia" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Tailàndia</h3><span class="from">69 vaixells &middot; Tailàndia</span><span class="from" style="margin-top:8px;color:#c9b586">des de 265 € per setmana</span></div></a></div>
+<p style="margin:-18px 0 0"><a class="lux-link" href="flota.html">Veure les 45 destinacions i els 4.290 vaixells →</a></p>
 </div></section>
 
 <section id="charter" class="charter"><div class="wrap">
-<div class="sec-head"><span class="sec-num">IV.</span><h2>Charter &amp; Brokerage</h2></div>
+<div class="sec-head"><span class="sec-num">II.</span><h2>Charter &amp; Brokerage</h2></div>
 <p class="sec-sub">Accés a la xarxa de charter més gran d’Europa i, des d’ara, al charter privat de Miami — velers, catamarans i iots a motor, amb o sense tripulació. Preu final amb la gestió AMARRA inclosa — sense càrrecs ocults.</p>
-<p class="fleet-line"><span>3.576 iots</span> publicats amb fitxa tècnica i fotos reals — <span>3.127 amb tarifa confirmada</span> — en <span>143 bases</span> de <span>15 països</span>, a través de <span>496 flotes associades</span>.</p>
-<p style="margin:-8px 0 26px"><a class="lux-link" href="flota.html">Veure la flota — 3.576 vaixells amb tarifes, fitxa tècnica i fotos reals →</a></p>
-<div class="dest-grid">
-<div class="dest" style="cursor:pointer" data-dest="Balears">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Cala de les Balears" onerror="this.style.opacity=0" loading="lazy">
-<div class="veil"></div>
-<div class="info"><h3>Balears</h3><span class="from">40 vaixells a Mallorca i Eivissa · des de 1.470 € / setmana</span><span class="from" style="display:block;margin-top:8px;color:#c9b586">Veure vaixells i sol·licitar dates →</span></div>
-</div>
-<div class="dest" style="cursor:pointer" data-dest="Còrsega / Sardenya / Sicília">
-<img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=1200&auto=format&fit=crop" alt="Capvespre a la Riviera" onerror="this.style.opacity=0" loading="lazy">
-<div class="veil"></div>
-<div class="info"><h3>Còrsega, Sardenya &amp; Sicília</h3><span class="from">203 vaixells a França i Itàlia · des de 1.190 € / setmana</span><span class="from" style="display:block;margin-top:8px;color:#c9b586">Veure vaixells i sol·licitar dates →</span></div>
-</div>
-<div class="dest" style="cursor:pointer" data-dest="Grècia">
-<img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1200&auto=format&fit=crop" alt="Oia, Santorini, Grècia" onerror="this.style.opacity=0" loading="lazy">
-<div class="veil"></div>
-<div class="info"><h3>Grècia &amp; Croàcia</h3><span class="from">1.092 vaixells · des de 870 € / setmana</span><span class="from" style="display:block;margin-top:8px;color:#c9b586">Veure vaixells i sol·licitar dates →</span></div>
-</div>
-</div>
 <div class="form-panel" id="charter-form-panel">
 <h3>Sol·licitud de charter — proposta en 24 h</h3>
 <p class="fp-sub">Digui’ns dates i aigües. Rebrà 3 opcions concretes amb foto, preu final i disponibilitat real, sense compromís.</p>
@@ -309,13 +271,49 @@ section{padding:90px 0}
 <button class="btn" type="submit">Sol·licitar proposta</button>
 <div class="ok-msg" id="charter-ok">Rebut. Li enviarem 3 opcions amb disponibilitat real en menys de 24 hores.</div>
 <div class="err-msg" id="charter-err">No hem pogut enviar la sol·licitud. Escrigui’ns directament a <a href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a> i li contestem igual de ràpid.</div>
-<p class="wa-alt">Prefereixes no omplir res? Escriu-nos directament: <a href="https://wa.me/56958209294?text=Hola%2C%20m%27agradaria%20que%20m%27ajud%C3%A9ssiu%20a%20triar%20un%20vaixell.%20https%3A//amarra.vercel.app/ca/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=Sol%C2%B7licitud%20AMARRA">Correu</a></p>
+<p class="wa-alt">Prefereixes no omplir res? Escriu-nos directament: <a href="https://wa.me/56958209294?text=Hola%2C%20m%27agradaria%20que%20m%27ajud%C3%A9ssiu%20a%20triar%20un%20vaixell.%20https%3A//amarrayachts.com/ca/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=Sol%C2%B7licitud%20AMARRA">Correu</a></p>
 </form>
 </div>
 </div></section>
 
+<section id="maison"><div class="wrap">
+<div class="sec-head"><span class="sec-num">III.</span><h2>La Maison</h2></div>
+<div class="maison-grid">
+<div class="maison">
+<blockquote>«Un iot no acaba al seu buc. Acaba on el seu propietari <span>decideix aturar l’horitzó</span>.»</blockquote>
+<p>AMARRA neix a Menorca, a bord del veler <em>Buganvilia</em>, de la idea de tres grans amics i mariners. Fondejats una nit a l’illa, van entendre que l’aigua que envolta un vaixell és el seu espai més desaprofitat — i van decidir convertir-la en camarots, beach clubs i salons.</p>
+<p>Avui representem les cases líders del món en inflables de superiot, operem charter a tota la Mediterrània i desenvolupem la SeaSuite™, la nostra creació pròpia.</p>
+</div>
+<div class="photo-frame">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop" alt="Cala mediterrània d’aigües transparents" onerror="this.style.opacity=0" loading="lazy">
+<span class="cap">Cala Macarella — Menorca</span>
+</div>
+</div>
+</div></section>
+
+<section id="boutique" class="boutique"><div class="wrap">
+<div class="sec-head"><span class="sec-num">IV.</span><h2>Boutique</h2></div>
+<p class="sec-sub">Compra directa amb lliurament a tot Europa. Selecciona, envia la teva comanda i rep la pro forma amb instruccions de pagament en menys de 2 hores. Estoc confirmat abans de cobrar.</p>
+<div class="prod-grid" id="prod-grid"></div>
+<p class="buy-note">Preus de tarifa en EUR, IVA no inclòs. Lliurament assegurat porta a porta o directament al seu port esportiu en 5–15 dies hàbils segons el producte. Garantia europea de 2 anys. Actualment el pagament és per transferència SEPA contra pro forma; el pagament amb targeta estarà disponible pròximament.</p>
+</div></section>
+
+<section id="prive" class="prive">
+<img class="bg" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop" alt="" loading="lazy" onerror="this.style.display='none'">
+<div class="wrap">
+<span class="micro">V. — Privé</span>
+<h2>El seu beach club complet, dissenyat, lliurat i instal·lat a la seva popa.</h2>
+<p class="lead">Un sol interlocutor. Dissenyem la configuració exacta per a la seva eslora, el seu fondeig i els seus hostes — i formem la seva tripulació.</p>
+<div class="stats">
+<div class="stat"><div class="v">37 €–110k</div><div class="k">per projecte complet</div></div>
+<div class="stat"><div class="v">21</div><div class="k">dies de lliurament de mitjana</div></div>
+<div class="stat"><div class="v">1</div><div class="k">interlocutor dedicat</div></div>
+</div>
+<button class="lux-link" onclick="addPrive()">Iniciar un projecte privé — senyal 1.000 €</button>
+</div></section>
+
 <section id="seasuite" class="seasuite"><div class="wrap">
-<div class="sec-head"><span class="sec-num">V.</span><h2>SeaSuite™</h2></div>
+<div class="sec-head"><span class="sec-num">VI.</span><h2>SeaSuite™</h2></div>
 <p class="sec-sub">El primer camarot flotant de luxe. S’amarra a la seva popa al capvespre i es desperta sobre l’aigua: llit queen, blackout total, cúpula de polímer transparent de grau oceànic i enginyeria dissenyada per a 25 nusos. Reservi la seva plaça a la primera sèrie amb un senyal reemborsable.</p>
 <p style="margin:-46px 0 60px"><a href="seasuite.html" style="color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:.24em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:4px">Veure els renders i els plànols acotats &rarr;</a></p>
 <div class="ss-grid">
@@ -345,7 +343,7 @@ section{padding:90px 0}
 </div></section>
 
 <section class="faq"><div class="wrap">
-<div class="sec-head"><span class="sec-num">VI.</span><h2>Com funciona</h2></div>
+<div class="sec-head"><span class="sec-num">VII.</span><h2>Com funciona</h2></div>
 <div class="faq-grid">
 <div class="faq-item"><h4>Com compro?</h4><p>Afegeix productes a la teva comanda i completa-la amb les teves dades. En menys de 2 hores reps la pro forma amb estoc confirmat i instruccions de pagament per transferència SEPA. No es cobra res fins a confirmar l’estoc amb tu.</p></div>
 <div class="faq-item"><h4>Quant triga el lliurament?</h4><p>Entre 5 i 15 dies hàbils a la UE, assegurat porta a porta o al teu port esportiu. Els projectes Privé tenen una mitjana de 21 dies amb instal·lació inclosa.</p></div>
@@ -357,7 +355,7 @@ section{padding:90px 0}
 </div></section>
 
 <section id="contacto" class="contact"><div class="wrap">
-<span class="micro" style="color:var(--gold-l);display:block;margin-bottom:26px">VII. — Contacte</span>
+<span class="micro" style="color:var(--gold-l);display:block;margin-bottom:26px">VIII. — Contacte</span>
 <h2>Parlem del seu projecte.</h2>
 <p>Propietaris, capitans, family offices i brokers. Resposta en 24 hores, en espanyol, anglès o francès.</p>
 <a class="mail" href="mailto:zagatomiami@gmail.com?subject=Projecte%20AMARRA">zagatomiami@gmail.com</a>
@@ -367,7 +365,7 @@ section{padding:90px 0}
 <div class="foot-in">
 <a class="wordmark" href="#">AMARRA</a>
 <div class="foot-links">
-<a href="#maison">Maison</a><a href="#boutique">Boutique</a><a href="#prive">Privé</a><a href="#charter">Charter</a><a href="#seasuite">SeaSuite™</a>
+<a href="#destinos">Destinacions</a><a href="flota.html">Flota</a><a href="#charter">Charter</a><a href="#seasuite">SeaSuite™</a><a href="#boutique">Boutique</a><a href="#prive">Privé</a><a href="#maison">Maison</a>
 </div>
 </div>
 <div class="fine"><span>© MMXXVI AMARRA — Menorca · Miami</span><span>Fotografia: Unsplash. Les marques de tercers pertanyen a les seves respectives cases. Preus en EUR, orientatius.</span></div>
@@ -390,7 +388,7 @@ section{padding:90px 0}
 <label class="pay-opt" style="opacity:.55"><input type="radio" name="pago" value="Targeta" disabled><span><strong>Targeta / finançament</strong><br><span class="pd">Disponible pròximament.</span></span></label>
 <button class="btn" type="submit">Enviar comanda</button>
 <div class="ok-msg" id="order-ok"></div>
-<p class="wa-alt">Prefereixes no omplir res? Escriu-nos directament: <a href="https://wa.me/56958209294?text=Hola%2C%20m%27agradaria%20que%20m%27ajud%C3%A9ssiu%20a%20triar%20un%20vaixell.%20https%3A//amarra.vercel.app/ca/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=Sol%C2%B7licitud%20AMARRA">Correu</a></p>
+<p class="wa-alt">Prefereixes no omplir res? Escriu-nos directament: <a href="https://wa.me/56958209294?text=Hola%2C%20m%27agradaria%20que%20m%27ajud%C3%A9ssiu%20a%20triar%20un%20vaixell.%20https%3A//amarrayachts.com/ca/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=Sol%C2%B7licitud%20AMARRA">Correu</a></p>
 </form>
 </div>
 </aside>
@@ -485,9 +483,8 @@ sendForm(d,'Sol·licitud de charter AMARRA — '+d.destino,
   function(){er.style.display='block';er.scrollIntoView({behavior:'smooth',block:'center'})});
 });
 render();sync();
-Array.prototype.forEach.call(document.querySelectorAll('.dest'),function(d){d.addEventListener('click',function(){var s=document.querySelector('select[name=destino]');if(s)s.value=d.getAttribute('data-dest');var p=document.getElementById('charter-form-panel');if(p)p.scrollIntoView({behavior:'smooth'});})});
 </script>
 
-<a class="wa-float" href="https://wa.me/56958209294?text=Hola%2C%20m%27agradaria%20que%20m%27ajud%C3%A9ssiu%20a%20triar%20un%20vaixell.%20https%3A//amarra.vercel.app/ca/" rel="noopener" target="_blank" aria-label="Escriu-nos per WhatsApp" title="Escriu-nos per WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23z"/></svg><b>WhatsApp</b></a>
+<a class="wa-float" href="https://wa.me/56958209294?text=Hola%2C%20m%27agradaria%20que%20m%27ajud%C3%A9ssiu%20a%20triar%20un%20vaixell.%20https%3A//amarrayachts.com/ca/" rel="noopener" target="_blank" aria-label="Escriu-nos per WhatsApp" title="Escriu-nos per WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23z"/></svg><b>WhatsApp</b></a>
 </body>
 </html>
