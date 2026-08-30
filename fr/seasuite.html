@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SeaSuite&trade; &mdash; La cabine flottante qui s&rsquo;amarre &agrave; votre poupe | AMARRA</title>
+<meta name="description" content="SeaSuite Horizon et Aurora : cabines flottantes qui s&rsquo;amarrent &agrave; la poupe du yacht. Rendus, plans cot&eacute;s, s&eacute;quence de d&eacute;ploiement et ing&eacute;nierie d&rsquo;amarrage. S&eacute;rie inaugurale de 12 unit&eacute;s.">
+<meta property="og:title" content="SeaSuite&trade; por AMARRA">
+<meta property="og:description" content="La premi&egrave;re cabine flottante de luxe qui s&rsquo;amarre &agrave; la poupe de votre yacht. Rendus et plans des deux configurations.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://amarra.vercel.app/fr/seasuite.html">
+<link rel="alternate" hreflang="es" href="https://amarra.vercel.app/seasuite.html">
+<link rel="alternate" hreflang="en" href="https://amarra.vercel.app/en/seasuite.html">
+<link rel="alternate" hreflang="fr" href="https://amarra.vercel.app/fr/seasuite.html">
+<link rel="alternate" hreflang="de" href="https://amarra.vercel.app/de/seasuite.html">
+<link rel="alternate" hreflang="it" href="https://amarra.vercel.app/it/seasuite.html">
+<link rel="alternate" hreflang="ca" href="https://amarra.vercel.app/ca/seasuite.html">
+<link rel="alternate" hreflang="x-default" href="https://amarra.vercel.app/seasuite.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0b0e13;--ink:#141922;--ivory:#f4f1ea;--paper:#faf8f4;--gold:#ab9260;--gold-l:#c9b586;--line-d:rgba(244,241,234,.14);--line-l:rgba(11,14,19,.12);--mut-d:#8b93a1;--mut-l:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;font-weight:300;background:var(--paper);color:var(--ink);line-height:1.7;font-size:15px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.micro{font-size:10px;letter-spacing:.42em;text-transform:uppercase;font-weight:500}
+svg{display:block;width:100%;height:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,14,19,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+.wordmark{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.34em;color:var(--ivory);text-decoration:none}
+.nav-r{display:flex;gap:34px}
+.nav-r a{color:rgba(244,241,234,.66);text-decoration:none;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.nav-r a:hover,.nav-r a.on{color:var(--gold-l)}
+header{background:var(--black);color:var(--ivory);padding:170px 0 0}
+header h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(44px,6.4vw,86px);line-height:1.02;margin:20px 0 26px}
+header h1 em{font-style:italic;color:var(--gold-l)}
+.eyebrow{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-l)}
+.lede{color:#9aa3b2;max-width:720px;font-size:17px}
+.lede strong{color:var(--ivory);font-weight:400}
+.hero-art{margin-top:64px;border-top:1px solid var(--line-d)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-d);background:var(--black)}
+.kpi{padding:30px 40px;border-right:1px solid var(--line-d);color:var(--ivory)}
+.kpi:last-child{border-right:0}
+.kpi b{display:block;font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;color:var(--gold-l)}
+.kpi span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--mut-d)}
+section{padding:110px 0}
+.sec-head{display:flex;align-items:baseline;gap:28px;margin-bottom:24px}
+.sec-num{font-size:10px;letter-spacing:.42em;color:var(--gold)}
+.sec-head h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.1}
+.sec-sub{color:var(--mut-l);max-width:680px;margin-bottom:64px}
+.dark{background:var(--black);color:var(--ivory)}
+.dark .sec-sub{color:var(--mut-d)}
+.ivory{background:var(--ivory)}
+.render{border:1px solid var(--line-d);background:#05070a}
+.dark .render{border-color:rgba(244,241,234,.16)}
+.cap{display:flex;justify-content:space-between;gap:24px;padding:16px 22px;border-top:1px solid rgba(244,241,234,.14);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut-d)}
+.cap b{color:var(--gold-l);font-weight:500}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:58px}
+.model-h{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:38px;margin:14px 0 6px}
+.tag-line{font-style:italic;font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--mut-d);margin-bottom:30px}
+.spec{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-top:1px solid var(--line-d);font-size:12.5px;letter-spacing:.04em}
+.spec .k{color:var(--mut-d);text-transform:uppercase;font-size:10px;letter-spacing:.22em;flex:0 0 42%}
+.spec span:last-child{text-align:right}
+.btn{display:inline-block;margin-top:34px;padding:15px 34px;border:1px solid var(--gold);background:none;color:var(--gold-l);font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:.25s}
+.btn:hover{background:var(--gold);color:var(--black)}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.plan{background:var(--paper);border:1px solid var(--line-l);padding:30px}
+.plan h4{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.step{background:#05070a;border:1px solid rgba(244,241,234,.16)}
+.step .t{padding:16px 20px 20px}
+.step .n{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold-l)}
+.step h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin:6px 0 8px;color:var(--ivory);font-weight:500}
+.step p{font-size:12.5px;color:var(--mut-d);line-height:1.6}
+.note{margin-top:52px;padding:22px 26px;border-left:2px solid var(--gold);background:rgba(171,146,96,.07);font-size:13px;color:var(--mut-l);max-width:820px}
+.dark .note{color:var(--mut-d)}
+footer{background:var(--black);color:var(--ivory);padding:64px 0 46px;border-top:1px solid var(--line-d)}
+.foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.foot-links{display:flex;gap:26px}
+.foot-links a{color:rgba(244,241,234,.6);text-decoration:none;font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.foot-links a:hover{color:var(--gold-l)}
+.fine{margin-top:34px;padding-top:22px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:11px;color:var(--mut-d)}
+@media(max-width:900px){.two,.plans{grid-template-columns:1fr;gap:44px}.kpis{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.wrap{padding:0 22px}.nav-r{gap:16px}.nav-r a{font-size:10px;letter-spacing:.1em}section{padding:78px 0}}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.lang-sw{display:inline-flex;flex-wrap:wrap;gap:8px;margin-left:26px}
+.lang-sw a{display:inline-block;margin-left:0;border:1px solid var(--line-d);padding:5px 9px;font-size:10px;letter-spacing:.18em;color:var(--gold-l);text-decoration:none}
+.lang-sw a:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
+@media(max-width:880px){.lang-sw{margin-left:14px;gap:5px}.lang-sw a{padding:4px 6px;letter-spacing:.1em}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-in">
+<a class="wordmark" href="index.html">AMARRA</a>
+<div class="nav-r">
+<a href="index.html#maison">La Maison</a>
+<a href="index.html#boutique">Boutique</a>
+<a href="index.html#charter">Charter</a>
+<a href="flota.html">Flotte</a>
+<a class="on" href="seasuite.html">SeaSuite&trade;</a>
+<span class="lang-sw"><a href="/seasuite.html" hreflang="es">ES</a><a href="/en/seasuite.html" hreflang="en">EN</a><a href="/de/seasuite.html" hreflang="de">DE</a><a href="/it/seasuite.html" hreflang="it">IT</a><a href="/ca/seasuite.html" hreflang="ca">CA</a></span>
+</div>
+</div></nav>
+
+<header>
+<div class="wrap">
+<div class="eyebrow">Design maison &mdash; S&eacute;rie inaugurale 2027</div>
+<h1>SeaSuite&trade;<br>La cabine <em>flottante</em>.</h1>
+<p class="lede">Elle s&rsquo;amarre &agrave; votre poupe au coucher du soleil et l&rsquo;on se r&eacute;veille sur l&rsquo;eau. Lit <strong>queen 160</strong>, blackout total, coupole en polym&egrave;re transparent de qualit&eacute; oc&eacute;anique et une plateforme con&ccedil;ue pour <strong>25 n&oelig;uds</strong> de vent apparent. Douze unit&eacute;s dans la premi&egrave;re s&eacute;rie. Ci-dessous, les rendus et les plans cot&eacute;s du projet tels qu&rsquo;ils sont aujourd&rsquo;hui.</p>
+</div>
+
+<div class="hero-art">
+<!-- ================= RENDER 01 — HORIZON AL ATARDECER ================= -->
+<svg viewBox="0 0 1400 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rendu : SeaSuite Horizon amarr&eacute;e &agrave; la poupe d&rsquo;un yacht au coucher du soleil">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0a1020"/><stop offset=".34" stop-color="#1d2740"/>
+<stop offset=".62" stop-color="#5b4a48"/><stop offset=".84" stop-color="#b8794a"/><stop offset="1" stop-color="#e8a860"/>
+</linearGradient>
+<linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#8d6440"/><stop offset=".16" stop-color="#33323f"/>
+<stop offset=".55" stop-color="#141c2b"/><stop offset="1" stop-color="#080c15"/>
+</linearGradient>
+<radialGradient id="sunglow" cx=".5" cy=".5" r=".5">
+<stop offset="0" stop-color="#ffd9a0" stop-opacity=".95"/><stop offset=".45" stop-color="#e79a52" stop-opacity=".4"/><stop offset="1" stop-color="#e79a52" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="warm" cx=".5" cy=".5" r=".5">
+<stop offset="0" stop-color="#ffcf8e" stop-opacity=".85"/><stop offset="1" stop-color="#ffcf8e" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="glassH" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffe6bd" stop-opacity=".92"/><stop offset="1" stop-color="#f0a860" stop-opacity=".62"/>
+</linearGradient>
+<linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#2b3240"/><stop offset=".55" stop-color="#161c27"/><stop offset="1" stop-color="#0a0e15"/>
+</linearGradient>
+<linearGradient id="deckG" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#cbb389"/><stop offset=".5" stop-color="#e6d4b0"/><stop offset="1" stop-color="#b99f76"/>
+</linearGradient>
+<linearGradient id="canopy" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#f2ece1"/><stop offset=".55" stop-color="#d8cfc0"/><stop offset="1" stop-color="#a99f90"/>
+</linearGradient>
+<filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="blur14"><feGaussianBlur stdDeviation="14"/></filter>
+<filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+<clipPath id="water"><rect x="0" y="430" width="1400" height="290"/></clipPath>
+</defs>
+
+<rect width="1400" height="430" fill="url(#sky)"/>
+<!-- nubes largas -->
+<g opacity=".5" filter="url(#blur6)">
+<ellipse cx="330" cy="252" rx="230" ry="11" fill="#8b6a63"/>
+<ellipse cx="980" cy="212" rx="290" ry="9" fill="#7c5f5c"/>
+<ellipse cx="640" cy="318" rx="340" ry="13" fill="#c88a58" opacity=".7"/>
+<ellipse cx="1180" cy="352" rx="240" ry="10" fill="#e0a266" opacity=".6"/>
+</g>
+<!-- sol -->
+<circle cx="248" cy="424" r="150" fill="url(#sunglow)"/>
+<circle cx="248" cy="426" r="27" fill="#ffe0ac"/>
+<!-- horizonte / costa lejana -->
+<path d="M0 430 H420 l40-7 60 5 70-9 90 8 120-6 90 9 130-5 110 7 170-4v2H0z" fill="#171f2e" opacity=".75"/>
+<rect x="0" y="430" width="1400" height="290" fill="url(#sea)"/>
+
+<g clip-path="url(#water)">
+<!-- camino de sol -->
+<g opacity=".72">
+<rect x="196" y="436" width="104" height="3" rx="1.5" fill="#ffd8a0" opacity=".85"/>
+<rect x="182" y="447" width="132" height="3.5" rx="1.7" fill="#f7c88c" opacity=".7"/>
+<rect x="164" y="461" width="168" height="4" rx="2" fill="#eeb87c" opacity=".6"/>
+<rect x="140" y="479" width="216" height="4.5" rx="2.2" fill="#e0a86e" opacity=".5"/>
+<rect x="112" y="501" width="272" height="5" rx="2.5" fill="#cf975f" opacity=".42"/>
+<rect x="76"  y="528" width="344" height="6" rx="3" fill="#bd8752" opacity=".34"/>
+<rect x="30"  y="562" width="436" height="7" rx="3.5" fill="#a97747" opacity=".26"/>
+<rect x="-20" y="604" width="540" height="8" rx="4" fill="#96693e" opacity=".2"/>
+<rect x="-70" y="654" width="640" height="9" rx="4.5" fill="#835a35" opacity=".15"/>
+</g>
+<!-- ondulacion general -->
+<g opacity=".16" stroke="#a9c0d8" fill="none">
+<path d="M0 452 q60 -4 120 0 t120 0 t120 0 t120 0 t120 0 t120 0 t120 0 t120 0 t120 0 t120 0" stroke-width="1"/>
+<path d="M0 476 q70 -5 140 0 t140 0 t140 0 t140 0 t140 0 t140 0 t140 0 t140 0" stroke-width="1.2"/>
+<path d="M0 512 q80 -6 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0" stroke-width="1.4"/>
+<path d="M0 560 q95 -7 190 0 t190 0 t190 0 t190 0 t190 0 t190 0" stroke-width="1.6"/>
+<path d="M0 622 q115 -8 230 0 t230 0 t230 0 t230 0 t230 0" stroke-width="1.9"/>
+<path d="M0 690 q140 -9 280 0 t280 0 t280 0 t280 0" stroke-width="2.2"/>
+</g>
+<!-- reflejo del yate -->
+<g opacity=".3" filter="url(#blur6)" transform="translate(0,878) scale(1,-1)">
+<path d="M905 430 h430 l-24 62 q-8 20 -34 20 H944 q-30 0 -38 -22z" fill="#0d1420"/>
+</g>
+<!-- reflejo de la suite -->
+<g opacity=".34" filter="url(#blur6)" transform="translate(0,864) scale(1,-1)">
+<rect x="424" y="392" width="392" height="40" rx="18" fill="#0e1622"/>
+<path d="M470 392 v-74 q0 -32 34 -32 h268 q34 0 34 32 v74z" fill="#1a1410"/>
+</g>
+<!-- reflejo calido de la ventana -->
+<g opacity=".5" filter="url(#blur14)">
+<ellipse cx="628" cy="470" rx="128" ry="26" fill="#ffbd72"/>
+<ellipse cx="628" cy="512" rx="164" ry="20" fill="#f0a45e" opacity=".55"/>
+<ellipse cx="628" cy="560" rx="200" ry="16" fill="#d98d4e" opacity=".33"/>
+</g>
+</g>
+
+<!-- ================= YATE (popa, cuarto de estribor) ================= -->
+<g>
+<!-- casco -->
+<path d="M905 428 h436 v34 q0 44 -46 52 l-240 26 q-58 6 -104 -22 l-46 -28z" fill="url(#hull)"/>
+<!-- linea de flotacion / boot top -->
+<path d="M900 466 q120 40 226 34 l224 -22" stroke="#0a0d13" stroke-width="7" fill="none" opacity=".8"/>
+<!-- sheerline dorada -->
+<path d="M905 434 h432" stroke="var(--gold)" stroke-width="1.6" opacity=".85" fill="none"/>
+<!-- espejo de popa abierto + banadera -->
+<path d="M905 428 h214 v42 h-214z" fill="#1b2230"/>
+<path d="M905 470 h242 v14 q0 8 -12 8 H905z" fill="#e3d2ae"/>
+<g stroke="#b8a17c" stroke-width=".8" opacity=".55">
+<path d="M912 470 v22"/><path d="M932 470 v22"/><path d="M952 470 v22"/><path d="M972 470 v22"/>
+<path d="M992 470 v22"/><path d="M1012 470 v22"/><path d="M1032 470 v22"/><path d="M1052 470 v22"/>
+<path d="M1072 470 v22"/><path d="M1092 470 v22"/><path d="M1112 470 v22"/><path d="M1132 470 v22"/>
+</g>
+<!-- superestructura -->
+<path d="M960 428 v-84 q0 -26 30 -26 h284 q28 0 28 26 v84z" fill="#1e2532"/>
+<path d="M974 340 h316" stroke="var(--gold)" stroke-width="1" opacity=".5"/>
+<!-- ventanales del salon con luz -->
+<g>
+<rect x="984" y="352" width="126" height="30" rx="6" fill="url(#glassH)" opacity=".55"/>
+<rect x="1128" y="352" width="150" height="30" rx="6" fill="url(#glassH)" opacity=".42"/>
+<rect x="984" y="396" width="294" height="20" rx="5" fill="#0d131d"/>
+</g>
+<!-- flybridge + arco de radar -->
+<path d="M1010 318 h250 v-30 q0 -16 -20 -16 h-210 q-20 0 -20 16z" fill="#232b3a"/>
+<path d="M1030 272 v-30 M1240 272 v-30" stroke="#3a4454" stroke-width="4"/>
+<path d="M1030 244 h210" stroke="#3a4454" stroke-width="5"/>
+<ellipse cx="1135" cy="234" rx="16" ry="7" fill="#3f4959"/>
+<path d="M1135 226 v-16" stroke="#3a4454" stroke-width="3"/>
+<circle cx="1135" cy="204" r="5" fill="#c9b586" opacity=".8"/>
+<!-- mastil / luz de fondeo -->
+<path d="M1300 288 v-96" stroke="#39424f" stroke-width="3"/>
+<circle cx="1300" cy="188" r="5.5" fill="#fff2d2"/>
+<circle cx="1300" cy="188" r="18" fill="url(#warm)" opacity=".75"/>
+<!-- candeleros y guardamancebos -->
+<g stroke="#4a5464" stroke-width="2.4">
+<path d="M930 428 v-34 M1330 428 v-34"/>
+</g>
+<path d="M930 396 H1330" stroke="#5a6474" stroke-width="1.8"/>
+<path d="M930 410 H1330" stroke="#5a6474" stroke-width="1.2" opacity=".7"/>
+<!-- nombre en el espejo -->
+<text x="1012" y="456" fill="#c9b586" font-family="Cormorant Garamond,serif" font-size="17" letter-spacing="7" opacity=".85">AMARRA</text>
+</g>
+
+<!-- ================= AMARRE: CABOS Y PASARELA ================= -->
+<g stroke="#c9b586" fill="none" opacity=".85">
+<path d="M816 372 q52 16 90 42" stroke-width="2"/>
+<path d="M816 404 q56 24 92 44" stroke-width="2"/>
+<path d="M810 428 q48 22 96 30" stroke-width="1.4" opacity=".55"/>
+</g>
+<!-- pasarela corta -->
+<path d="M812 446 l96 24 v10 l-96 -22z" fill="#d9c6a2"/>
+<path d="M812 446 l96 24" stroke="#a98f65" stroke-width="1"/>
+
+<!-- ================= SEASUITE HORIZON ================= -->
+<g>
+<!-- halo calido -->
+<ellipse cx="628" cy="368" rx="290" ry="120" fill="url(#warm)" opacity=".28"/>
+<!-- pontona / plataforma -->
+<path d="M424 392 h392 q26 0 26 20 v10 q0 20 -26 20 H424 q-26 0 -26 -20 v-10 q0 -20 26 -20z" fill="#e6d8bb"/>
+<path d="M398 424 q0 18 26 18 h392 q26 0 26 -18 v6 q0 20 -26 20 H424 q-26 0 -26 -20z" fill="#b6a686"/>
+<!-- teca de la plataforma -->
+<g stroke="#c4b18c" stroke-width=".9" opacity=".7">
+<path d="M410 400 H830"/><path d="M406 408 H834"/><path d="M404 416 H836"/>
+</g>
+<!-- flotadores laterales -->
+<path d="M396 428 q-16 6 -16 16 t16 14 h456 q16 -4 16 -16 t-16 -14z" fill="#1c2531" opacity=".9"/>
+<path d="M400 436 h444" stroke="#38424f" stroke-width="1.4" opacity=".7"/>
+<!-- estructura de la cabina -->
+<path d="M470 392 v-74 q0 -34 36 -34 h264 q36 0 36 34 v74z" fill="#12181f"/>
+<!-- lona / techo -->
+<path d="M462 322 q0 -46 46 -46 h260 q46 0 46 46 l-8 8 q0 -38 -40 -38 H510 q-40 0 -40 38z" fill="url(#canopy)"/>
+<path d="M462 322 h352 v10 q0 6 -8 6 H470 q-8 0 -8 -6z" fill="#c3b8a8"/>
+<!-- costillas de la estructura -->
+<g stroke="#8f8578" stroke-width="1.2" opacity=".65" fill="none">
+<path d="M534 284 q-16 10 -16 38"/><path d="M624 280 v42"/><path d="M714 284 q16 10 16 38"/>
+</g>
+<!-- ventanal panoramico iluminado -->
+<rect x="492" y="334" width="300" height="54" rx="7" fill="url(#glassH)"/>
+<rect x="492" y="334" width="300" height="54" rx="7" fill="none" stroke="#e9d3a8" stroke-width="1.2" opacity=".7"/>
+<!-- montantes -->
+<g stroke="#5c4c34" stroke-width="2" opacity=".45">
+<path d="M592 334 v54"/><path d="M692 334 v54"/>
+</g>
+<!-- persiana blackout medio bajada en el modulo derecho -->
+<rect x="694" y="334" width="98" height="20" rx="4" fill="#2a231a" opacity=".82"/>
+<!-- interior: cama y mesilla, en silueta -->
+<g opacity=".55">
+<rect x="516" y="366" width="118" height="20" rx="5" fill="#8a5f30"/>
+<rect x="516" y="360" width="38" height="8" rx="3" fill="#c99a5e"/>
+<rect x="650" y="372" width="26" height="14" rx="3" fill="#8a5f30"/>
+</g>
+<!-- dos siluetas para escala -->
+<g fill="#101720" opacity=".9">
+<path d="M745 392 v-40 q0 -8 7 -8 t7 8 v40z"/><circle cx="752" cy="340" r="6"/>
+<path d="M776 392 v-36 q0 -7 6 -7 t6 7 v36z"/><circle cx="782" cy="345" r="5.4"/>
+</g>
+<!-- barandilla de proa de la plataforma -->
+<g stroke="#c9b586" stroke-width="1.6" opacity=".75" fill="none">
+<path d="M414 392 v-26 M446 392 v-26"/><path d="M414 366 h32"/>
+</g>
+<!-- guirnalda de luces -->
+<g fill="#ffe0ae">
+<circle cx="486" cy="326" r="2.4"/><circle cx="540" cy="316" r="2.4"/><circle cx="600" cy="311" r="2.4"/>
+<circle cx="660" cy="311" r="2.4"/><circle cx="720" cy="316" r="2.4"/><circle cx="778" cy="326" r="2.4"/>
+</g>
+<path d="M486 326 q140 -22 292 0" stroke="#c9b586" stroke-width=".7" fill="none" opacity=".5"/>
+<!-- luz sumergida -->
+<ellipse cx="628" cy="452" rx="150" ry="14" fill="#7fd7d0" opacity=".14" filter="url(#blur6)"/>
+</g>
+
+<!-- anotacion -->
+<g font-family="Inter,sans-serif" font-size="10" letter-spacing="3" fill="#c9b586" opacity=".85">
+<text x="52" y="668">SEASUITE&#8482; N&ordm; 01 &mdash; HORIZON</text>
+<text x="52" y="690" fill="#8b93a1" letter-spacing="2.4">RENDU CONCEPTUEL AMARRA &mdash; AMARRAGE &Agrave; LA POUPE, 6.0 &times; 3.2 M</text>
+</g>
+</svg>
+</div>
+
+<div class="kpis wrap" style="max-width:none;padding:0">
+<div class="kpi"><b>2</b><span>Configurations</span></div>
+<div class="kpi"><b>12</b><span>Unit&eacute;s premi&egrave;re s&eacute;rie</span></div>
+<div class="kpi"><b>25 kn</b><span>Vent de calcul</span></div>
+<div class="kpi"><b>&euro;500</b><span>Acompte remboursable</span></div>
+</div>
+</header>
+
+<!-- ================================================================= -->
+<section class="ivory">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">I.</span><h2>Les deux configurations</h2></div>
+<p class="sec-sub">M&ecirc;me plateforme, m&ecirc;me ing&eacute;nierie d&rsquo;amarrage, deux fa&ccedil;ons de dormir sur l&rsquo;eau. <em>Horizon</em> est une chambre ferm&eacute;e avec baie vitr&eacute;e panoramique et blackout. <em>Aurora</em> remplace le toit par une coupole transparente en polym&egrave;re oc&eacute;anique qui s&rsquo;opacifie compl&egrave;tement d&rsquo;une seule commande.</p>
+
+<div class="render">
+<!-- ================= RENDER 02 — AURORA DE NOCHE ================= -->
+<svg viewBox="0 0 1400 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rendu : SeaSuite Aurora de nuit, coupole transparente sous les &eacute;toiles">
+<defs>
+<linearGradient id="nsky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#04060d"/><stop offset=".45" stop-color="#0a1424"/>
+<stop offset=".82" stop-color="#15263c"/><stop offset="1" stop-color="#243a51"/>
+</linearGradient>
+<linearGradient id="nsea" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#1b2d40"/><stop offset=".4" stop-color="#0c1725"/><stop offset="1" stop-color="#050910"/>
+</linearGradient>
+<radialGradient id="moon" cx=".5" cy=".5" r=".5">
+<stop offset="0" stop-color="#dfe9f6" stop-opacity=".9"/><stop offset=".4" stop-color="#9fb6d0" stop-opacity=".25"/><stop offset="1" stop-color="#9fb6d0" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="domeG" cx=".38" cy=".26" r=".78">
+<stop offset="0" stop-color="#dff2ff" stop-opacity=".38"/><stop offset=".5" stop-color="#8fc2df" stop-opacity=".16"/><stop offset="1" stop-color="#2b4a63" stop-opacity=".3"/>
+</radialGradient>
+<radialGradient id="warm2" cx=".5" cy=".6" r=".5">
+<stop offset="0" stop-color="#ffcf8e" stop-opacity=".75"/><stop offset="1" stop-color="#ffcf8e" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="teal" cx=".5" cy=".5" r=".5">
+<stop offset="0" stop-color="#7ff0e2" stop-opacity=".5"/><stop offset="1" stop-color="#7ff0e2" stop-opacity="0"/>
+</radialGradient>
+<filter id="b8"><feGaussianBlur stdDeviation="8"/></filter>
+<filter id="b20"><feGaussianBlur stdDeviation="20"/></filter>
+<clipPath id="w2"><rect x="0" y="404" width="1400" height="236"/></clipPath>
+</defs>
+
+<rect width="1400" height="404" fill="url(#nsky)"/>
+<!-- via lactea -->
+<g opacity=".3" filter="url(#b20)">
+<ellipse cx="700" cy="150" rx="560" ry="52" fill="#4a6a94" transform="rotate(-11 700 150)"/>
+<ellipse cx="820" cy="120" rx="300" ry="30" fill="#7d94b8" transform="rotate(-11 820 120)"/>
+</g>
+<!-- estrellas -->
+<g fill="#eaf2ff">
+<circle cx="90" cy="62" r="1.5"/><circle cx="180" cy="128" r="1"/><circle cx="264" cy="46" r="1.8" opacity=".9"/>
+<circle cx="342" cy="150" r="1.1"/><circle cx="410" cy="80" r="1.4"/><circle cx="498" cy="36" r="1"/>
+<circle cx="560" cy="128" r="1.7"/><circle cx="640" cy="66" r="1.1"/><circle cx="722" cy="140" r="1.3"/>
+<circle cx="806" cy="52" r="1.6"/><circle cx="884" cy="112" r="1"/><circle cx="962" cy="70" r="1.4"/>
+<circle cx="1046" cy="146" r="1.2"/><circle cx="1128" cy="44" r="1.7"/><circle cx="1210" cy="118" r="1"/>
+<circle cx="1288" cy="74" r="1.5"/><circle cx="1350" cy="158" r="1.1"/><circle cx="60" cy="190" r="1.2"/>
+<circle cx="470" cy="196" r="1"/><circle cx="1000" cy="212" r="1.1"/><circle cx="230" cy="238" r="1"/>
+<circle cx="1300" cy="242" r="1.2"/><circle cx="760" cy="230" r="1"/>
+</g>
+<!-- luna -->
+<circle cx="1136" cy="128" r="96" fill="url(#moon)"/>
+<circle cx="1136" cy="128" r="26" fill="#f0f5fd"/>
+<circle cx="1128" cy="120" r="5" fill="#dbe4f0" opacity=".7"/><circle cx="1146" cy="136" r="3.4" fill="#dbe4f0" opacity=".6"/>
+<!-- horizonte -->
+<path d="M0 404 h1400v2H0z" fill="#0a1420"/>
+<rect x="0" y="404" width="1400" height="236" fill="url(#nsea)"/>
+
+<g clip-path="url(#w2)">
+<!-- camino de luna -->
+<g opacity=".5">
+<rect x="1096" y="410" width="80" height="2.6" rx="1.3" fill="#cfe0f4"/>
+<rect x="1082" y="422" width="110" height="3" rx="1.5" fill="#bcd2ea" opacity=".8"/>
+<rect x="1062" y="438" width="150" height="3.4" rx="1.7" fill="#a8c2de" opacity=".65"/>
+<rect x="1036" y="458" width="204" height="4" rx="2" fill="#93b0cf" opacity=".5"/>
+<rect x="1002" y="484" width="270" height="4.6" rx="2.3" fill="#7d9cbd" opacity=".38"/>
+<rect x="960" y="516" width="352" height="5.4" rx="2.7" fill="#6a89ab" opacity=".28"/>
+<rect x="906" y="556" width="460" height="6" rx="3" fill="#5a7899" opacity=".2"/>
+</g>
+<g opacity=".13" stroke="#9dc0e0" fill="none">
+<path d="M0 424 q70 -4 140 0 t140 0 t140 0 t140 0 t140 0 t140 0 t140 0 t140 0" stroke-width="1"/>
+<path d="M0 456 q85 -5 170 0 t170 0 t170 0 t170 0 t170 0 t170 0 t170 0" stroke-width="1.3"/>
+<path d="M0 500 q100 -6 200 0 t200 0 t200 0 t200 0 t200 0 t200 0" stroke-width="1.6"/>
+<path d="M0 556 q125 -7 250 0 t250 0 t250 0 t250 0 t250 0" stroke-width="2"/>
+<path d="M0 616 q150 -8 300 0 t300 0 t300 0 t300 0" stroke-width="2.4"/>
+</g>
+<!-- reflejo calido -->
+<g opacity=".45" filter="url(#b8)">
+<ellipse cx="560" cy="430" rx="150" ry="20" fill="#ffbe78"/>
+<ellipse cx="560" cy="470" rx="190" ry="16" fill="#e79f5e" opacity=".5"/>
+</g>
+<!-- luz sumergida -->
+<ellipse cx="560" cy="424" rx="230" ry="34" fill="url(#teal)" filter="url(#b8)"/>
+</g>
+
+<!-- yate al fondo, silueta -->
+<g opacity=".82">
+<path d="M1040 404 h300 v10 q0 20 -22 24 l-160 12 q-32 2 -56 -12 l-62 -34z" fill="#0b1219"/>
+<path d="M1078 404 v-42 q0 -14 16 -14 h170 q16 0 16 14 v42z" fill="#0e1620"/>
+<rect x="1094" y="366" width="72" height="14" rx="3" fill="#ffd9a0" opacity=".45"/>
+<rect x="1180" y="366" width="76" height="14" rx="3" fill="#ffd9a0" opacity=".3"/>
+<path d="M1300 348 v-64" stroke="#1c2531" stroke-width="2.4"/>
+<circle cx="1300" cy="282" r="4" fill="#fff2d2"/><circle cx="1300" cy="282" r="14" fill="url(#warm2)" opacity=".7"/>
+</g>
+
+<!-- cabo de amarre -->
+<path d="M742 350 q140 6 300 46" stroke="#c9b586" stroke-width="1.6" fill="none" opacity=".55"/>
+
+<!-- ================= AURORA ================= -->
+<g>
+<ellipse cx="560" cy="320" rx="260" ry="110" fill="url(#warm2)" opacity=".22"/>
+<!-- plataforma -->
+<path d="M392 372 h336 q24 0 24 18 v8 q0 18 -24 18 H392 q-24 0 -24 -18 v-8 q0 -18 24 -18z" fill="#d9caab"/>
+<path d="M368 400 q0 18 24 18 h336 q24 0 24 -18 v6 q0 18 -24 18 H392 q-24 0 -24 -18z" fill="#a3937a"/>
+<path d="M366 404 q-16 6 -16 15 t16 13 h396 q16 -3 16 -15 t-16 -13z" fill="#141c26"/>
+<!-- cupula -->
+<path d="M418 372 a142 142 0 0 1 284 0z" fill="url(#domeG)"/>
+<path d="M418 372 a142 142 0 0 1 284 0" fill="none" stroke="#a9d5ea" stroke-width="1.6" opacity=".7"/>
+<!-- gajos de la cupula -->
+<g stroke="#9cc8de" stroke-width=".9" opacity=".4" fill="none">
+<path d="M560 230 q-84 34 -100 142"/><path d="M560 230 q84 34 100 142"/>
+<path d="M560 230 v142"/>
+<path d="M446 316 q114 -34 228 0"/><path d="M430 344 q130 -26 260 0"/>
+</g>
+<!-- reflejo especular de la cupula -->
+<path d="M474 336 q22 -66 84 -84" stroke="#eaf7ff" stroke-width="4" fill="none" opacity=".45" stroke-linecap="round"/>
+<!-- persiana blackout enrollada en la base -->
+<path d="M418 360 h284 v12 H418z" fill="#1a1d24" opacity=".75"/>
+<path d="M418 360 h284" stroke="#c9b586" stroke-width=".8" opacity=".5"/>
+<!-- cama iluminada dentro -->
+<g opacity=".8">
+<rect x="486" y="334" width="150" height="30" rx="7" fill="#c99a5e" opacity=".55"/>
+<rect x="486" y="326" width="46" height="12" rx="4" fill="#f0d3a4" opacity=".7"/>
+<rect x="556" y="326" width="46" height="12" rx="4" fill="#f0d3a4" opacity=".55"/>
+</g>
+<ellipse cx="560" cy="352" rx="120" ry="26" fill="url(#warm2)" opacity=".5"/>
+<!-- silueta sentada al borde -->
+<g fill="#0c1219" opacity=".92">
+<path d="M712 372 v-30 q0 -7 6 -7 t6 7 v30z"/><circle cx="718" cy="331" r="5.4"/>
+</g>
+<!-- barandilla -->
+<g stroke="#c9b586" stroke-width="1.4" opacity=".6" fill="none">
+<path d="M382 372 v-24 M410 372 v-24"/><path d="M382 348 h28"/>
+<path d="M712 372 v-24 M740 372 v-24"/><path d="M712 348 h28"/>
+</g>
+<!-- escalerilla de bano -->
+<g stroke="#c9b586" stroke-width="1.6" opacity=".7" fill="none">
+<path d="M344 398 v40 M362 398 v40"/><path d="M344 412 h18 M344 426 h18"/>
+</g>
+</g>
+
+<g font-family="Inter,sans-serif" font-size="10" letter-spacing="3" fill="#c9b586" opacity=".85">
+<text x="52" y="592">SEASUITE&#8482; N&ordm; 02 &mdash; AURORA</text>
+<text x="52" y="614" fill="#8b93a1" letter-spacing="2.4">RENDU CONCEPTUEL AMARRA &mdash; COUPOLE &empty; 3.4 M, BLACKOUT 360&deg;</text>
+</g>
+</svg>
+<div class="cap"><span>Rendu 02 &mdash; <b>Aurora</b>, mouillage nocturne</span><span>Illustration vectorielle AMARRA</span></div>
+</div>
+
+<div class="two">
+<div>
+<span class="micro" style="color:var(--gold)">N&ordm; 01</span>
+<h3 class="model-h">Horizon</h3>
+<p class="tag-line">La suite d&rsquo;h&ocirc;tel sur l&rsquo;eau</p>
+<div class="spec"><span class="k">Longueur &times; largeur</span><span>6.0 &times; 3.2 m</span></div>
+<div class="spec"><span class="k">Capacit&eacute;</span><span>2 invit&eacute;s &middot; queen 160</span></div>
+<div class="spec"><span class="k">Vent de calcul</span><span>25 n&oelig;uds</span></div>
+<div class="spec"><span class="k">Fermeture</span><span>Baie vitr&eacute;e panoramique 300&deg; &middot; blackout &eacute;lectrique</span></div>
+<div class="spec"><span class="k">&Eacute;nergie</span><span>Solaire 200 W autonome &middot; 24 h sans connexion</span></div>
+<div class="spec"><span class="k">Poids &agrave; vide</span><span>410 kg</span></div>
+<div class="spec"><span class="k">Arrim&eacute;</span><span>1.9 &times; 3.2 &times; 0.6 m</span></div>
+<div class="spec"><span class="k">&Eacute;dition</span><span>&euro;15 500 &mdash; s&eacute;rie inaugurale</span></div>
+<a class="btn" href="index.html#seasuite">R&eacute;server une place &mdash; acompte &euro;500</a>
+</div>
+<div>
+<span class="micro" style="color:var(--gold)">N&ordm; 02</span>
+<h3 class="model-h">Aurora</h3>
+<p class="tag-line">Dormir sous les &eacute;toiles, litt&eacute;ralement</p>
+<div class="spec"><span class="k">Plateforme</span><span>4.6 &times; 4.0 m &middot; coupole &empty; 3.4 m</span></div>
+<div class="spec"><span class="k">Capacit&eacute;</span><span>2 invit&eacute;s &middot; queen 160</span></div>
+<div class="spec"><span class="k">Vent de calcul</span><span>20 n&oelig;uds &middot; repliement en 60 s</span></div>
+<div class="spec"><span class="k">Coupole</span><span>Polym&egrave;re transparent oc&eacute;anique &middot; blackout 360&deg;</span></div>
+<div class="spec"><span class="k">&Eacute;nergie</span><span>Solaire 200 W &middot; lumi&egrave;re immerg&eacute;e LED</span></div>
+<div class="spec"><span class="k">Poids &agrave; vide</span><span>365 kg</span></div>
+<div class="spec"><span class="k">Arrim&eacute;</span><span>1.6 &times; 4.0 &times; 0.55 m</span></div>
+<div class="spec"><span class="k">&Eacute;dition</span><span>&euro;18 200 &mdash; s&eacute;rie inaugurale</span></div>
+<a class="btn" href="index.html#seasuite">R&eacute;server une place &mdash; acompte &euro;500</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================================================================= -->
+<section>
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">II.</span><h2>Plans cot&eacute;s</h2></div>
+<p class="sec-sub">Plan et &eacute;l&eacute;vation de la configuration <em>Horizon</em>, avec les cotes qui conditionnent l&rsquo;amarrage : largeur totale, hauteur libre int&eacute;rieure, franc-bord et distance &agrave; la plateforme de bain du yacht.</p>
+
+<div class="plans">
+<div class="plan">
+<h4>Plan &mdash; Horizon</h4>
+<svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan cot&eacute; de la SeaSuite Horizon">
+<g fill="none" stroke="#141922" stroke-width="1.3">
+<!-- contorno pontona -->
+<path d="M70 96 h360 q40 0 40 40 v148 q0 40 -40 40 H70 q-40 0 -40 -40 V136 q0 -40 40 -40z"/>
+</g>
+<!-- flotadores -->
+<g fill="none" stroke="#ab9260" stroke-width="1.1" stroke-dasharray="5 4">
+<path d="M30 128 h440"/><path d="M30 292 h440"/>
+</g>
+<!-- cabina -->
+<rect x="104" y="124" width="286" height="172" rx="12" fill="rgba(171,146,96,.09)" stroke="#141922" stroke-width="1.1"/>
+<!-- cama queen 160x200 -->
+<rect x="140" y="150" width="200" height="120" rx="6" fill="rgba(171,146,96,.18)" stroke="#6b7280" stroke-width="1"/>
+<path d="M140 172 h200" stroke="#6b7280" stroke-width=".8"/>
+<rect x="150" y="156" width="80" height="12" rx="4" fill="#c9b586" opacity=".6" stroke="none"/>
+<rect x="250" y="156" width="80" height="12" rx="4" fill="#c9b586" opacity=".6" stroke="none"/>
+<text x="240" y="222" text-anchor="middle" font-family="Inter" font-size="9" letter-spacing="2.6" fill="#6b7280">QUEEN 160 &times; 200</text>
+<!-- mesillas -->
+<rect x="112" y="150" width="22" height="30" rx="3" fill="none" stroke="#6b7280" stroke-width=".9"/>
+<rect x="346" y="150" width="22" height="30" rx="3" fill="none" stroke="#6b7280" stroke-width=".9"/>
+<!-- terraza de proa -->
+<rect x="44" y="140" width="52" height="140" rx="8" fill="none" stroke="#6b7280" stroke-width=".9" stroke-dasharray="4 3"/>
+<text x="70" y="216" text-anchor="middle" font-family="Inter" font-size="8" letter-spacing="2" fill="#6b7280" transform="rotate(-90 70 216)">TERRASSE</text>
+<!-- acceso a popa -->
+<path d="M398 176 v68" stroke="#ab9260" stroke-width="2"/>
+<path d="M398 176 a68 68 0 0 1 60 34" stroke="#ab9260" stroke-width=".8" fill="none" stroke-dasharray="3 3"/>
+<text x="470" y="216" text-anchor="middle" font-family="Inter" font-size="8" letter-spacing="2" fill="#ab9260">ACC&Egrave;S</text>
+<!-- cornamusas -->
+<g fill="#141922">
+<circle cx="452" cy="140" r="4"/><circle cx="452" cy="280" r="4"/>
+<circle cx="48" cy="140" r="4"/><circle cx="48" cy="280" r="4"/>
+</g>
+<!-- cotas -->
+<g stroke="#ab9260" stroke-width=".9" fill="none">
+<path d="M30 344 h440"/><path d="M30 338 v12"/><path d="M470 338 v12"/>
+<path d="M506 96 v228"/><path d="M500 96 h12"/><path d="M500 324 h12"/>
+</g>
+<text x="250" y="362" text-anchor="middle" font-family="Inter" font-size="10" letter-spacing="2" fill="#ab9260">6 000 mm</text>
+<text x="524" y="214" text-anchor="middle" font-family="Inter" font-size="10" letter-spacing="2" fill="#ab9260" transform="rotate(90 524 214)">3 200 mm</text>
+<text x="250" y="392" text-anchor="middle" font-family="Inter" font-size="9" letter-spacing="3" fill="#6b7280">PLAN &mdash; &Eacute;CH. 1:50</text>
+</svg>
+</div>
+
+<div class="plan">
+<h4>&Eacute;l&eacute;vation &mdash; Horizon amarr&eacute;e</h4>
+<svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="&Eacute;l&eacute;vation cot&eacute;e de la SeaSuite Horizon amarr&eacute;e &agrave; la poupe">
+<!-- linea de agua -->
+<path d="M12 288 h536" stroke="#6b7280" stroke-width="1"/>
+<g stroke="#6b7280" stroke-width=".6" opacity=".5">
+<path d="M20 296 h24"/><path d="M60 296 h24"/><path d="M100 296 h24"/><path d="M140 296 h24"/>
+<path d="M180 296 h24"/><path d="M220 296 h24"/><path d="M260 296 h24"/><path d="M300 296 h24"/>
+<path d="M340 296 h24"/><path d="M380 296 h24"/><path d="M420 296 h24"/><path d="M460 296 h24"/><path d="M500 296 h24"/>
+</g>
+<!-- popa del yate a la derecha -->
+<g fill="none" stroke="#141922" stroke-width="1.3">
+<path d="M420 288 v-44 h120"/>
+<path d="M420 288 q0 14 18 14 h102"/>
+</g>
+<path d="M404 270 h40 v10 h-40z" fill="rgba(171,146,96,.25)" stroke="#141922" stroke-width="1"/>
+<text x="500" y="238" text-anchor="middle" font-family="Inter" font-size="8" letter-spacing="2.4" fill="#6b7280">POUPE DU YACHT</text>
+<!-- pontona -->
+<g stroke="#141922" stroke-width="1.3" fill="none">
+<path d="M64 264 h268 q16 0 16 12 v10 q0 12 -16 12 H64 q-16 0 -16 -12 v-10 q0 -12 16 -12z"/>
+</g>
+<path d="M48 288 h316" stroke="#6b7280" stroke-width=".8" stroke-dasharray="4 3"/>
+<!-- cabina -->
+<path d="M96 264 v-72 q0 -24 26 -24 h164 q26 0 26 24 v72" fill="rgba(171,146,96,.09)" stroke="#141922" stroke-width="1.3"/>
+<path d="M88 190 q0 -32 34 -32 h164 q34 0 34 32" fill="none" stroke="#141922" stroke-width="1.3"/>
+<rect x="116" y="208" width="176" height="40" rx="5" fill="none" stroke="#6b7280" stroke-width="1"/>
+<!-- cama -->
+<rect x="120" y="244" width="110" height="14" rx="3" fill="rgba(171,146,96,.3)" stroke="none"/>
+<!-- cabos -->
+<path d="M348 210 q40 12 62 40" stroke="#ab9260" stroke-width="1.2" fill="none"/>
+<path d="M348 250 q42 16 60 30" stroke="#ab9260" stroke-width="1.2" fill="none"/>
+<text x="392" y="196" text-anchor="middle" font-family="Inter" font-size="8" letter-spacing="2" fill="#ab9260">AMARRAGE</text>
+<!-- cotas verticales -->
+<g stroke="#ab9260" stroke-width=".9" fill="none">
+<path d="M28 158 v130"/><path d="M22 158 h12"/><path d="M22 288 h12"/>
+<path d="M368 264 v24"/><path d="M362 264 h12"/><path d="M362 288 h12"/>
+</g>
+<text x="16" y="224" text-anchor="middle" font-family="Inter" font-size="10" letter-spacing="2" fill="#ab9260" transform="rotate(-90 16 224)">2 180 mm</text>
+<text x="356" y="281" text-anchor="end" font-family="Inter" font-size="9" letter-spacing="1.4" fill="#ab9260">460 mm</text>
+<!-- cota horizontal separacion -->
+<g stroke="#ab9260" stroke-width=".9" fill="none">
+<path d="M348 330 h56"/><path d="M348 324 v12"/><path d="M404 324 v12"/>
+</g>
+<text x="376" y="350" text-anchor="middle" font-family="Inter" font-size="9" letter-spacing="1.6" fill="#ab9260">700 mm</text>
+<text x="200" y="392" text-anchor="middle" font-family="Inter" font-size="9" letter-spacing="3" fill="#6b7280">&Eacute;L&Eacute;VATION &mdash; &Eacute;CH. 1:50</text>
+</svg>
+</div>
+</div>
+
+<div class="note">Cotes de projet, sous r&eacute;serve de validation structurelle et de la certification CE des bateaux de plaisance de cat&eacute;gorie D (eaux prot&eacute;g&eacute;es). La SeaSuite&trade; est con&ccedil;ue comme une unit&eacute; mouill&eacute;e ou amarr&eacute;e, non comme un bateau de navigation autonome.</div>
+</div>
+</section>
+
+<!-- ================================================================= -->
+<section class="dark">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">III.</span><h2>Comment elle s&rsquo;amarre</h2></div>
+<p class="sec-sub">Quatre mouvements, deux personnes, moins de douze minutes entre l&rsquo;ouverture du coffre et le lit fait. Sans grue, sans outil et sans toucher au tableau arri&egrave;re.</p>
+
+<div class="steps">
+<div class="step">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+<rect width="300" height="200" fill="#05070a"/>
+<path d="M0 150 h300" stroke="#1e2733" stroke-width="1"/>
+<path d="M188 150 v-40 h96" stroke="#39424f" stroke-width="1.6" fill="none"/>
+<path d="M188 150 q0 10 14 10 h82" stroke="#39424f" stroke-width="1.6" fill="none"/>
+<rect x="60" y="118" width="104" height="32" rx="6" fill="none" stroke="#c9b586" stroke-width="1.4"/>
+<path d="M60 118 h104" stroke="#c9b586" stroke-width="1.4"/>
+<path d="M74 118 v-14 h76 v14" fill="none" stroke="#ab9260" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M170 134 h14 m-6 -6 l6 6 l-6 6" stroke="#c9b586" stroke-width="1.2" fill="none"/>
+<g fill="#6b7280"><circle cx="42" cy="132" r="5"/><path d="M37 150 v-14h10v14z"/></g>
+</svg>
+<div class="t"><span class="n">01</span><h4>Mise &agrave; l&rsquo;eau</h4><p>La plateforme sort pli&eacute;e du coffre de poupe et se met &agrave; l&rsquo;eau depuis le cockpit. Elle flotte seule&nbsp;: 410 kg r&eacute;partis sur deux flotteurs &eacute;tanches.</p></div>
+</div>
+<div class="step">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+<rect width="300" height="200" fill="#05070a"/>
+<path d="M0 150 h300" stroke="#1e2733" stroke-width="1"/>
+<path d="M188 150 v-40 h96" stroke="#39424f" stroke-width="1.6" fill="none"/>
+<rect x="46" y="122" width="118" height="28" rx="6" fill="none" stroke="#c9b586" stroke-width="1.4"/>
+<path d="M164 128 q26 -2 42 12" stroke="#c9b586" stroke-width="1.6" fill="none"/>
+<path d="M164 144 q28 4 40 6" stroke="#c9b586" stroke-width="1.6" fill="none"/>
+<circle cx="206" cy="140" r="4" fill="none" stroke="#ab9260" stroke-width="1.2"/>
+<circle cx="204" cy="150" r="4" fill="none" stroke="#ab9260" stroke-width="1.2"/>
+<text x="150" y="96" text-anchor="middle" font-family="Inter" font-size="8" letter-spacing="2" fill="#ab9260">4 AMARRES &middot; 2 D&Eacute;FENSES</text>
+</svg>
+<div class="t"><span class="n">02</span><h4>Amarrage</h4><p>Quatre amarres amortissantes sur les taquets existants et deux d&eacute;fenses cylindriques. Elle reste &agrave; 70 cm de la plateforme de bain.</p></div>
+</div>
+<div class="step">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+<rect width="300" height="200" fill="#05070a"/>
+<path d="M0 150 h300" stroke="#1e2733" stroke-width="1"/>
+<rect x="60" y="122" width="150" height="28" rx="6" fill="none" stroke="#c9b586" stroke-width="1.4"/>
+<path d="M84 122 v-42 q0 -18 20 -18 h62 q20 0 20 18 v42" fill="none" stroke="#c9b586" stroke-width="1.4"/>
+<path d="M78 80 q0 -24 26 -24 h62 q26 0 26 24" fill="none" stroke="#ab9260" stroke-width="1.2"/>
+<g stroke="#ab9260" stroke-width="1" fill="none" opacity=".7">
+<path d="M110 62 q-14 8 -16 18"/><path d="M135 58 v22"/><path d="M160 62 q14 8 16 18"/>
+</g>
+<path d="M228 96 q-14 -14 -14 -30" stroke="#c9b586" stroke-width="1.2" fill="none"/>
+<path d="M214 66 l-5 9 l10 0z" fill="#c9b586"/>
+<text x="248" y="86" text-anchor="middle" font-family="Inter" font-size="8" letter-spacing="2" fill="#ab9260">90 s</text>
+</svg>
+<div class="t"><span class="n">03</span><h4>D&eacute;ploiement</h4><p>L&rsquo;arceau met la structure en tension en quatre-vingt-dix secondes avec un actionneur &eacute;lectrique de 24 V. La toile se tend d&rsquo;elle-m&ecirc;me.</p></div>
+</div>
+<div class="step">
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="wS" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffcf8e" stop-opacity=".7"/><stop offset="1" stop-color="#ffcf8e" stop-opacity="0"/></radialGradient></defs>
+<rect width="300" height="200" fill="#05070a"/>
+<ellipse cx="140" cy="106" rx="120" ry="60" fill="url(#wS)" opacity=".5"/>
+<path d="M0 150 h300" stroke="#1e2733" stroke-width="1"/>
+<rect x="60" y="122" width="150" height="28" rx="6" fill="none" stroke="#c9b586" stroke-width="1.4"/>
+<path d="M84 122 v-42 q0 -18 20 -18 h62 q20 0 20 18 v42" fill="none" stroke="#c9b586" stroke-width="1.4"/>
+<rect x="96" y="92" width="126" height="0" fill="none"/>
+<rect x="96" y="92" width="66" height="26" rx="4" fill="#ffd9a0" opacity=".75"/>
+<rect x="168" y="92" width="18" height="26" rx="4" fill="#ffd9a0" opacity=".45"/>
+<rect x="100" y="132" width="52" height="10" rx="3" fill="#c9b586" opacity=".5"/>
+<g fill="#c9b586"><circle cx="252" cy="40" r="1.6"/><circle cx="272" cy="66" r="1.4"/><circle cx="236" cy="72" r="1.2"/></g>
+</svg>
+<div class="t"><span class="n">04</span><h4>Nuit &agrave; bord</h4><p>Linge de lit en lin, lumi&egrave;re chaude r&eacute;glable et blackout total. &Agrave; l&rsquo;aube, la mer &agrave; trente centim&egrave;tres de l&rsquo;oreiller.</p></div>
+</div>
+</div>
+
+<div class="note">Les temps et les poids indiqu&eacute;s sont des objectifs de conception de la s&eacute;rie inaugurale, non les mesures d&rsquo;une unit&eacute; fabriqu&eacute;e. Le premier prototype fonctionnel est pr&eacute;vu pour la saison 2027&nbsp;; l&rsquo;acompte de &euro;500 est remboursable &agrave; 100&nbsp;% jusqu&rsquo;&agrave; la confirmation de la configuration finale.</div>
+</div>
+</section>
+
+<!-- ================================================================= -->
+<section class="ivory">
+<div class="wrap">
+<div class="sec-head"><span class="sec-num">IV.</span><h2>R&eacute;servez votre place</h2></div>
+<p class="sec-sub">Douze unit&eacute;s dans la premi&egrave;re s&eacute;rie, r&eacute;parties entre les Bal&eacute;ares et Miami. L&rsquo;acompte assure la position sur la liste et le prix de l&rsquo;&eacute;dition inaugurale&nbsp;; il est int&eacute;gralement remboursable jusqu&rsquo;&agrave; ce que vous confirmiez votre configuration.</p>
+<a class="btn" style="border-color:var(--gold);color:var(--gold)" href="index.html#seasuite">Aller au configurateur</a>
+<a class="btn" style="border-color:var(--line-l);color:var(--mut-l);margin-left:14px" href="mailto:zagatomiami@gmail.com?subject=SeaSuite%20-%20informations">Nous &eacute;crire</a>
+</div>
+</section>
+
+<footer><div class="wrap">
+<div class="foot-in">
+<a class="wordmark" href="index.html">AMARRA</a>
+<div class="foot-links">
+<a href="index.html#maison">Maison</a><a href="index.html#boutique">Boutique</a><a href="index.html#prive">Priv&eacute;</a><a href="index.html#charter">Charter</a><a href="flota.html">Flotte</a><a href="seasuite.html">SeaSuite&trade;</a>
+</div>
+</div>
+<div class="fine"><span>&copy; MMXXVI AMARRA &mdash; Menorca &middot; Miami</span><span>Rendus et illustrations techniques originaux d&rsquo;AMARRA. Produit en phase de projet&nbsp;: les images ne correspondent pas &agrave; une unit&eacute; fabriqu&eacute;e.</span></div>
+</div></footer>
+
+</body>
+</html>

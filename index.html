@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMARRA — Maison Náutica | Boutique, Charter y SeaSuite™</title>
 <meta name="description" content="Maison náutica nacida en Menorca. Boutique de toys y plataformas con compra directa, charter brokerage en toda Europa y la SeaSuite™.">
+<link rel="canonical" href="https://amarra.vercel.app/">
+<link rel="alternate" hreflang="es" href="https://amarra.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://amarra.vercel.app/en/">
+<link rel="alternate" hreflang="fr" href="https://amarra.vercel.app/fr/">
+<link rel="alternate" hreflang="de" href="https://amarra.vercel.app/de/">
+<link rel="alternate" hreflang="it" href="https://amarra.vercel.app/it/">
+<link rel="alternate" hreflang="ca" href="https://amarra.vercel.app/ca/">
+<link rel="alternate" hreflang="x-default" href="https://amarra.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -103,6 +111,8 @@ section{padding:130px 0}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
 .form-panel .btn{width:auto;padding:15px 44px;margin-top:10px}
 .ok-msg{display:none;margin-top:22px;padding:16px 20px;background:rgba(29,122,85,.08);border:1px solid rgba(29,122,85,.3);color:#1d7a55;font-size:13px}
+.err-msg{display:none;margin-top:22px;padding:16px 20px;background:rgba(125,42,28,.07);border:1px solid rgba(125,42,28,.3);color:#7d2a1c;font-size:13px}
+.err-msg a{color:#7d2a1c;font-weight:600}
 .seasuite{background:var(--ivory);border-top:1px solid var(--line-l)}
 .ss-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
 .ss-panel{background:var(--black);padding:64px 56px;color:var(--ivory)}
@@ -161,6 +171,10 @@ section{padding:90px 0}
 .fgrid{grid-template-columns:1fr}
 .form-panel{padding:34px 24px}
 }
+.lang-sw{display:inline-flex;flex-wrap:wrap;gap:8px;margin-left:26px}
+.lang-sw a{display:inline-block;margin-left:0;border:1px solid var(--line-d);padding:5px 9px;font-size:10px;letter-spacing:.18em;color:var(--gold-l);text-decoration:none}
+.lang-sw a:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
+@media(max-width:880px){.lang-sw{margin-left:14px;gap:5px}.lang-sw a{padding:4px 6px;letter-spacing:.1em}}
 </style>
 </head>
 <body>
@@ -174,6 +188,7 @@ section{padding:90px 0}
 <a href="#charter">Charter</a>
 <a href="flota.html">Flota</a>
 <a href="#seasuite">SeaSuite™</a>
+<span class="lang-sw"><a href="/en/" hreflang="en">EN</a><a href="/fr/" hreflang="fr">FR</a><a href="/de/" hreflang="de">DE</a><a href="/it/" hreflang="it">IT</a><a href="/ca/" hreflang="ca">CA</a></span>
 <button class="cart-btn" onclick="openCart()">Pedido (<span id="cart-n">0</span>)</button>
 </div>
 </div></nav>
@@ -276,6 +291,7 @@ section{padding:90px 0}
 </div>
 <button class="btn" type="submit">Solicitar propuesta</button>
 <div class="ok-msg" id="charter-ok">Recibido. Le enviaremos 3 opciones con disponibilidad real en menos de 24 horas.</div>
+<div class="err-msg" id="charter-err">No hemos podido enviar la solicitud. Escríbanos directamente a <a href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a> y le contestamos igual de rápido.</div>
 </form>
 </div>
 </div></section>
@@ -415,7 +431,10 @@ function closeCart(){document.getElementById('drawer').classList.remove('open');
 function sendForm(data,subject,cb,errcb){
 data._subject=subject;data._template='table';data._captcha='false';
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-.then(function(r){return r.json()}).then(function(){cb()}).catch(function(){errcb()});
+.then(function(r){if(!r.ok)throw 0;return r.json()})
+.then(function(j){if(j&&(j.success===false||j.success==='false'))throw 0;cb()})
+/* nunca decimos "recibido" si no lo sabemos: se ensena el contacto directo */
+.catch(function(){errcb()});
 }
 document.getElementById('order-form').addEventListener('submit',function(e){
 e.preventDefault();
@@ -427,19 +446,24 @@ d.pedido=cart.map(function(c){return c.name+' — '+fmt(c.price)}).join(' | ');
 d.total=fmt(cart.reduce(function(a,c){return a+c.price},0));
 var ok=document.getElementById('order-ok');
 sendForm(d,'Pedido AMARRA '+ref,function(){
-ok.style.display='block';
+ok.className='ok-msg';ok.style.display='block';
 ok.textContent='Pedido '+ref+' recibido. Te enviaremos la pro forma con stock confirmado e instrucciones de pago en menos de 2 horas a '+d.email+'.';
 cart=[];sync();
 },function(){
 ok.style.display='block';
-ok.textContent='Pedido '+ref+' registrado. Si no recibes la pro forma en 2 h, escríbenos a zagatomiami@gmail.com citando la referencia.';
+ok.className='err-msg';
+ok.innerHTML='No hemos podido enviar el pedido. Escríbenos a <a href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a> con lo que quieres y te lo preparamos igual. Tu cesta sigue aquí.';
 });
 });
 document.getElementById('charter-form').addEventListener('submit',function(e){
 e.preventDefault();
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
 var ok=document.getElementById('charter-ok');
-sendForm(d,'Solicitud de charter AMARRA — '+d.destino,function(){ok.style.display='block'},function(){ok.style.display='block'});
+var er=document.getElementById('charter-err');
+ok.style.display=er.style.display='none';
+sendForm(d,'Solicitud de charter AMARRA — '+d.destino,
+  function(){ok.style.display='block'},
+  function(){er.style.display='block';er.scrollIntoView({behavior:'smooth',block:'center'})});
 });
 render();sync();
 Array.prototype.forEach.call(document.querySelectorAll('.dest'),function(d){d.addEventListener('click',function(){var s=document.querySelector('select[name=destino]');if(s)s.value=d.getAttribute('data-dest');var p=document.getElementById('charter-form-panel');if(p)p.scrollIntoView({behavior:'smooth'});})});
