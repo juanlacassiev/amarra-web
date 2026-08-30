@@ -171,10 +171,17 @@ section{padding:90px 0}
 .fgrid{grid-template-columns:1fr}
 .form-panel{padding:34px 24px}
 }
-.lang-sw{display:inline-flex;flex-wrap:wrap;gap:8px;margin-left:26px}
-.lang-sw a{display:inline-block;margin-left:0;border:1px solid var(--line-d);padding:5px 9px;font-size:10px;letter-spacing:.18em;color:var(--gold-l);text-decoration:none}
-.lang-sw a:hover{background:var(--gold);border-color:var(--gold);color:var(--black)}
-@media(max-width:880px){.lang-sw{margin-left:14px;gap:5px}.lang-sw a{padding:4px 6px;letter-spacing:.1em}}
+.nav-r{display:flex;align-items:center}
+.lang{position:relative;margin-left:24px}
+.lang>summary{list-style:none;display:flex;align-items:center;gap:6px;cursor:pointer;color:var(--mut-d);font-size:11px;letter-spacing:.18em;padding:4px 2px;transition:color .3s}
+.lang>summary::-webkit-details-marker{display:none}
+.lang>summary:hover,.lang[open]>summary{color:var(--gold-l)}
+.lang>summary b{font-weight:400}
+.lang-m{position:absolute;right:0;top:calc(100% + 13px);min-width:162px;background:var(--black);border:1px solid var(--line-d);padding:6px 0;z-index:90;box-shadow:0 20px 44px rgba(0,0,0,.5)}
+.lang-m a{display:block;margin:0;padding:9px 17px;font-size:12.5px;letter-spacing:.03em;text-transform:none;color:var(--mut-d);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.lang-m a:hover{background:rgba(171,146,96,.16);color:var(--gold-l)}
+.lang-m a.on{color:var(--gold-l)}
+@media(max-width:760px){.lang{margin-left:16px}.lang-m{position:fixed;right:16px;top:auto;margin-top:13px}}
 </style>
 </head>
 <body>
@@ -188,8 +195,8 @@ section{padding:90px 0}
 <a href="#charter">Charter</a>
 <a href="flota.html">Flota</a>
 <a href="#seasuite">SeaSuite™</a>
-<span class="lang-sw"><a href="/en/" hreflang="en">EN</a><a href="/fr/" hreflang="fr">FR</a><a href="/de/" hreflang="de">DE</a><a href="/it/" hreflang="it">IT</a><a href="/ca/" hreflang="ca">CA</a></span>
 <button class="cart-btn" onclick="openCart()">Pedido (<span id="cart-n">0</span>)</button>
+<details class="lang"><summary title="Idioma" aria-label="Idioma"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.4 2.6 3.7 5.6 3.7 9s-1.3 6.4-3.7 9c-2.4-2.6-3.7-5.6-3.7-9S9.6 5.6 12 3z"/></svg><b>ES</b></summary><div class="lang-m"><a href="/" class="on" aria-current="true">Español</a><a href="/en/" hreflang="en" lang="en">English</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/ca/" hreflang="ca" lang="ca">Català</a></div></details><script>(function(){var d=document.querySelector("details.lang");if(!d)return;document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false},true);document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false})})();</script>
 </div>
 </div></nav>
 
