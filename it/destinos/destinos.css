@@ -2,7 +2,10 @@
 :root{--black:#0b0e13;--ink:#141922;--ivory:#f4f1ea;--paper:#faf8f4;--gold:#ab9260;--gold-l:#c9b586;--line-d:rgba(244,241,234,.14);--line-l:rgba(11,14,19,.12);--mut-d:#8b93a1;--mut-l:#6b7280}
 body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);font-weight:300;line-height:1.6}
 .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
-nav{position:sticky;top:0;z-index:50;background:rgba(11,14,19,.94);border-bottom:1px solid var(--line-d)}
+/* :not([class]): la cabecera es el unico nav sin clase. Con el selector suelto
+   cualquier nav del cuerpo se pegaria arriba, que es lo que le paso a la
+   lista de destinos de la portada. */
+nav:not([class]){position:sticky;top:0;z-index:50;background:rgba(11,14,19,.94);border-bottom:1px solid var(--line-d)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
 .wordmark{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:.42em;color:var(--ivory);text-decoration:none;font-weight:500}
 .nav-r a{color:var(--mut-d);text-decoration:none;margin-left:24px;font-size:11px;letter-spacing:.2em;text-transform:uppercase}

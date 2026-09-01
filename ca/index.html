@@ -23,7 +23,11 @@ body{font-family:'Inter',sans-serif;font-weight:300;background:var(--paper);colo
 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
 .micro{font-size:10px;letter-spacing:.42em;text-transform:uppercase;font-weight:500}
 img{display:block}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,14,19,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d)}
+/* :not([class]) porque la cabecera es el unico nav sin clase. La lista de los
+   44 destinos tambien es un nav y con el selector suelto heredaba este
+   position:fixed;top:0, que la despegaba de la seccion de destinos y la
+   clavaba en el borde superior, encima del hero. */
+nav:not([class]){position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,14,19,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
 .wordmark{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:.5em;color:var(--ivory);text-decoration:none;font-weight:500}
 .nav-r{display:flex;align-items:center}
