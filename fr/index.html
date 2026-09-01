@@ -203,10 +203,6 @@ section{padding:90px 0}
 <a href="#destinos">Destinations</a>
 <a href="flota.html">Flotte</a>
 <a href="#charter">Charter</a>
-<a href="#seasuite">SeaSuite™</a>
-<a href="#boutique">Boutique</a>
-<a href="#maison">La Maison</a>
-<button class="cart-btn" onclick="openCart()">Commande (<span id="cart-n">0</span>)</button>
 <details class="lang"><summary title="Langue" aria-label="Langue"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.4 2.6 3.7 5.6 3.7 9s-1.3 6.4-3.7 9c-2.4-2.6-3.7-5.6-3.7-9S9.6 5.6 12 3z"/></svg><b>FR</b></summary><div class="lang-m"><a href="/" hreflang="es" lang="es">Español</a><a href="/en/" hreflang="en" lang="en">English</a><a href="/fr/" class="on" aria-current="true">Français</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/ca/" hreflang="ca" lang="ca">Català</a></div></details><script>(function(){var d=document.querySelector("details.lang");if(!d)return;document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false},true);document.addEventListener("keydown",function(e){if(e.key==="Escape")d.open=false})})();</script>
 </div>
 </div></nav>
@@ -223,28 +219,29 @@ section{padding:90px 0}
 <a class="lux-link dim" href="#charter">Proposition sous 24 h</a>
 </div>
 </div>
-<div class="coords"><span>Méditerranée occidentale — 39° N</span><span>Mahón · Monaco · Miami</span></div>
+<div class="coords"><span>Méditerranée occidentale — 39° N</span><span>Mahón · Palma · Ibiza</span></div>
 </header>
 
 <div class="gallery">
-<figure style="cursor:pointer" onclick="location.href='flota.html#z=napoles'"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800&auto=format&fit=crop" alt="Positano, côte amalfitaine" onerror="this.parentElement.style.display='none'" loading="lazy"><figcaption>Positano — Amalfi · Voir la flotte →</figcaption></figure>
-<figure style="cursor:pointer" onclick="location.href='flota.html#z=cicladas'"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=800&auto=format&fit=crop" alt="Oia, Santorini" onerror="this.parentElement.style.display='none'" loading="lazy"><figcaption>Oia — Santorini · Voir la flotte →</figcaption></figure>
-<figure style="cursor:pointer" onclick="location.href='flota.html#z=baleares'"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Cala Macarella, Menorca" onerror="this.parentElement.style.display='none'" loading="lazy"><figcaption>Cala Macarella — Baléares · Voir la flotte →</figcaption></figure>
+<figure style="cursor:pointer" onclick="location.href='destinos/napoles.html'"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800&auto=format&fit=crop" alt="Positano, côte amalfitaine" onerror="this.parentElement.style.display='none'" loading="lazy"><figcaption><a href="destinos/napoles.html">Positano — Amalfi · Voir la flotte →</a></figcaption></figure>
+<figure style="cursor:pointer" onclick="location.href='destinos/cicladas.html'"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=800&auto=format&fit=crop" alt="Oia, Santorini" onerror="this.parentElement.style.display='none'" loading="lazy"><figcaption><a href="destinos/cicladas.html">Oia — Santorini · Voir la flotte →</a></figcaption></figure>
+<figure style="cursor:pointer" onclick="location.href='destinos/baleares.html'"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Cala Macarella, Menorca" onerror="this.parentElement.style.display='none'" loading="lazy"><figcaption><a href="destinos/baleares.html">Cala Macarella — Baléares · Voir la flotte →</a></figcaption></figure>
 </div>
 
 <section id="destinos" class="charter"><div class="wrap">
 <div class="sec-head"><span class="sec-num">I.</span><h2>O&ugrave; souhaitez-vous naviguer&nbsp;?</h2></div>
 <p class="sec-sub">D'abord la destination, ensuite le bateau. Chaque zone de navigation avec sa flotte r&eacute;elle, son prix d'appel et l'op&eacute;rateur qui l'y tient amarr&eacute;e.</p>
 <p class="fleet-line"><span>4 203 bateaux</span> avec fiche technique, photos réelles et le tarif de leur opérateur — dans <span>175 bases</span> de <span>23 pays</span>, regroupées en <span>44 destinations</span>.</p>
-<div class="dest-grid"><a class="dest" href="flota.html#z=split"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/72339431/pictures/main.jpg?w=900" alt="Split et Dalmatie centrale" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Split et Dalmatie centrale</h3><span class="from">590 bateaux &middot; Croatie</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 250 € par semaine</span></div></a>
-<a class="dest" href="flota.html#z=jonico"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/52110469/pictures/main.jfif.JPG?w=900" alt="Îles Ioniennes" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Îles Ioniennes</h3><span class="from">422 bateaux &middot; Grèce</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 895 € par semaine</span></div></a>
-<a class="dest" href="flota.html#z=cerdena"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/32861990/pictures/main.jpg?w=900" alt="Sardaigne" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Sardaigne</h3><span class="from">126 bateaux &middot; Italie</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 1 190 € par semaine</span></div></a>
-<a class="dest" href="flota.html#z=baleares"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/39822480/pictures/n1.jpg?w=900" alt="Baléares" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Baléares</h3><span class="from">91 bateaux &middot; Espagne</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 1 470 € par semaine</span></div></a>
-<a class="dest" href="flota.html#z=antillas"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/54553821/pictures/MAIN.jpg?w=900" alt="Antilles" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Antilles</h3><span class="from">138 bateaux &middot; Caraïbes</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 2 599 € par semaine</span></div></a>
-<a class="dest" href="flota.html#z=gocek"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/26820881/pictures/main.jpg?w=900" alt="Fethiye et Göcek" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Fethiye et Göcek</h3><span class="from">129 bateaux &middot; Turquie</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 1 350 € par semaine</span></div></a>
-<a class="dest" href="flota.html#z=costa_azul"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/69010263/pictures/main.jpg?w=900" alt="Côte d'Azur" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Côte d'Azur</h3><span class="from">82 bateaux &middot; France</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 1 395 € par semaine</span></div></a>
-<a class="dest" href="flota.html#z=seychelles"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/35765256/pictures/main.jpg?w=900" alt="Seychelles" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Seychelles</h3><span class="from">56 bateaux &middot; Seychelles</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 3 500 € par semaine</span></div></a>
-<a class="dest" href="flota.html#z=tailandia"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/72234562/pictures/main.jpg?w=900" alt="Thaïlande" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Thaïlande</h3><span class="from">69 bateaux &middot; Thaïlande</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 265 € par semaine</span></div></a></div>
+<div class="dest-grid"><a class="dest" href="destinos/split.html"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/72339431/pictures/main.jpg?w=900" alt="Split et Dalmatie centrale" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Split et Dalmatie centrale</h3><span class="from">590 bateaux &middot; Croatie</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 250 € par semaine</span></div></a>
+<a class="dest" href="destinos/jonico.html"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/52110469/pictures/main.jfif.JPG?w=900" alt="Îles Ioniennes" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Îles Ioniennes</h3><span class="from">422 bateaux &middot; Grèce</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 895 € par semaine</span></div></a>
+<a class="dest" href="destinos/cerdena.html"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/32861990/pictures/main.jpg?w=900" alt="Sardaigne" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Sardaigne</h3><span class="from">126 bateaux &middot; Italie</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 1 190 € par semaine</span></div></a>
+<a class="dest" href="destinos/baleares.html"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/39822480/pictures/n1.jpg?w=900" alt="Baléares" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Baléares</h3><span class="from">91 bateaux &middot; Espagne</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 1 470 € par semaine</span></div></a>
+<a class="dest" href="destinos/antillas.html"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/54553821/pictures/MAIN.jpg?w=900" alt="Antilles" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Antilles</h3><span class="from">138 bateaux &middot; Caraïbes</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 2 599 € par semaine</span></div></a>
+<a class="dest" href="destinos/gocek.html"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/26820881/pictures/main.jpg?w=900" alt="Fethiye et Göcek" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Fethiye et Göcek</h3><span class="from">129 bateaux &middot; Turquie</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 1 350 € par semaine</span></div></a>
+<a class="dest" href="destinos/costa-azul.html"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/69010263/pictures/main.jpg?w=900" alt="Côte d'Azur" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Côte d'Azur</h3><span class="from">82 bateaux &middot; France</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 1 395 € par semaine</span></div></a>
+<a class="dest" href="destinos/seychelles.html"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/35765256/pictures/main.jpg?w=900" alt="Seychelles" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Seychelles</h3><span class="from">56 bateaux &middot; Seychelles</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 3 500 € par semaine</span></div></a>
+<a class="dest" href="destinos/tailandia.html"><img src="https://ws.nausys.com/CBMS-external/rest/yacht/72234562/pictures/main.jpg?w=900" alt="Thaïlande" onerror="this.style.opacity=0" loading="lazy"><div class="veil"></div><div class="info"><h3>Thaïlande</h3><span class="from">69 bateaux &middot; Thaïlande</span><span class="from" style="margin-top:8px;color:#c9b586">&agrave; partir de 265 € par semaine</span></div></a></div>
+<nav class="dest-all" aria-label="O&amp;ugrave; souhaitez-vous naviguer&amp;nbsp;?"><a href="destinos/split.html">Split et Dalmatie centrale<b>590</b></a><a href="destinos/jonico.html">Îles Ioniennes<b>422</b></a><a href="destinos/atenas.html">Athènes et golfe Saronique<b>410</b></a><a href="destinos/sibenik.html">Šibenik et Kornati<b>390</b></a><a href="destinos/zadar.html">Zadar et Biograd<b>375</b></a><a href="destinos/cerdena.html">Sardaigne<b>126</b></a><a href="destinos/dodecaneso.html">Dodécanèse<b>157</b></a><a href="destinos/istria.html">Istrie<b>241</b></a><a href="destinos/baleares.html">Baléares<b>91</b></a><a href="destinos/antillas.html">Antilles<b>138</b></a><a href="destinos/kvarner.html">Kvarner<b>163</b></a><a href="destinos/gocek.html">Fethiye et Göcek<b>129</b></a><a href="destinos/sicilia.html">Sicile<b>84</b></a><a href="destinos/bvi.html">Îles Vierges britanniques<b>150</b></a><a href="destinos/costa-azul.html">Côte d'Azur<b>82</b></a><a href="destinos/napoles.html">Naples et côte amalfitaine<b>62</b></a><a href="destinos/seychelles.html">Seychelles<b>56</b></a><a href="destinos/cicladas.html">Cyclades<b>44</b></a><a href="destinos/tailandia.html">Thaïlande<b>69</b></a><a href="destinos/bodrum.html">Bodrum et Marmaris<b>44</b></a><a href="destinos/esporadas.html">Sporades<b>50</b></a><a href="destinos/bahamas.html">Bahamas<b>35</b></a><a href="destinos/dubrovnik.html">Dubrovnik et Dalmatie du Sud<b>42</b></a><a href="destinos/toscana.html">Toscane<b>27</b></a><a href="destinos/corcega.html">Corse<b>21</b></a><a href="destinos/montenegro.html">Monténégro<b>25</b></a><a href="destinos/b-farol-de-paraty-marina.html">Farol de Paraty Marina<b>13</b></a><a href="destinos/venecia.html">Venise et haute Adriatique<b>18</b></a><a href="destinos/b-annapolis-chesapeake-bay.html">Annapolis, Chesapeake Bay<b>11</b></a><a href="destinos/atlantico-fr.html">Atlantique français<b>19</b></a><a href="destinos/b-roblinsee-marina.html">Röblinsee Marina<b>14</b></a><a href="destinos/b-mitan-marina.html">Mitan Marina<b>1</b></a><a href="destinos/b-port-of-avdira.html">Port of Avdira<b>6</b></a><a href="destinos/b-zanzibar-azam-marine.html">Zanzibar, Azam Marine<b>4</b></a><a href="destinos/b-la-balise-marina-mauritius.html">La Balise Marina, Mauritius<b>3</b></a><a href="destinos/b-tromso.html">Tromso<b>3</b></a><a href="destinos/canarias.html">Canaries<b>6</b></a><a href="destinos/b-san-diego-harbor-island.html">San Diego, Harbor Island<b>2</b></a><a href="destinos/cataluna.html">Costa Brava et Barcelone<b>5</b></a><a href="destinos/polinesia.html">Polynésie<b>35</b></a><a href="destinos/baja.html">Basse-Californie<b>20</b></a><a href="destinos/whitsundays.html">Whitsundays<b>15</b></a><a href="destinos/caribe-o.html">Caraïbes occidentales<b>4</b></a><a href="destinos/b-maldives-male.html">Maldives, Male<b>1</b></a></nav>
 <p style="margin:-18px 0 0"><a class="lux-link" href="flota.html">Voir les 44 destinations et les 4 203 bateaux →</a></p>
 </div></section>
 
@@ -274,83 +271,15 @@ section{padding:90px 0}
 </div>
 </div></section>
 
-<section id="maison"><div class="wrap">
-<div class="sec-head"><span class="sec-num">III.</span><h2>La Maison</h2></div>
-<div class="maison-grid">
-<div class="maison">
-<blockquote>«Un yacht ne s’arrête pas à sa coque. Il s’arrête là où son propriétaire <span>décide d’arrêter l’horizon</span>.»</blockquote>
-<p>AMARRA est née à Minorque, à bord du voilier <em>Buganvilia</em>, de l’idée de trois grands amis et marins. Au mouillage un soir au large de l’île, ils ont compris que l’eau qui entoure un bateau est son espace le plus mal exploité — et ils ont décidé de la transformer en cabines, en beach clubs et en salons.</p>
-<p>Aujourd’hui, nous représentons les maisons leaders mondiales du gonflable de superyacht, nous opérons du charter dans toute la Méditerranée et nous développons la SeaSuite™, notre création propre.</p>
-</div>
-<div class="photo-frame">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop" alt="Crique méditerranéenne aux eaux transparentes" onerror="this.style.opacity=0" loading="lazy">
-<span class="cap">Cala Macarella — Menorca</span>
-</div>
-</div>
-</div></section>
 
-<section id="boutique" class="boutique"><div class="wrap">
-<div class="sec-head"><span class="sec-num">IV.</span><h2>Boutique</h2></div>
-<p class="sec-sub">Achat direct avec livraison dans toute l’Europe. Sélectionnez, envoyez votre commande et recevez la pro forma avec les instructions de paiement en moins de 2 heures. Stock confirmé avant tout encaissement.</p>
-<div class="prod-grid" id="prod-grid"></div>
-<p class="buy-note">Prix de liste en EUR, TVA non incluse. Livraison assurée porte à porte ou directement à votre port de plaisance en 5–15 jours ouvrables selon le produit. Garantie européenne de 2 ans. Paiement actuellement par virement SEPA contre pro forma ; paiement par carte disponible prochainement.</p>
-</div></section>
 
-<section id="prive" class="prive">
-<img class="bg" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop" alt="" loading="lazy" onerror="this.style.display='none'">
-<div class="wrap">
-<span class="micro">V. — Privé</span>
-<h2>Votre beach club complet, conçu, livré et installé à votre poupe.</h2>
-<p class="lead">Un seul interlocuteur. Nous concevons la configuration exacte pour votre longueur, votre mouillage et vos invités — et nous formons votre équipage.</p>
-<div class="stats">
-<div class="stat"><div class="v">37 €–110k</div><div class="k">par projet complet</div></div>
-<div class="stat"><div class="v">21</div><div class="k">jours de délai moyen</div></div>
-<div class="stat"><div class="v">1</div><div class="k">interlocuteur dédié</div></div>
-</div>
-<button class="lux-link" onclick="addPrive()">Lancer un projet privé — acompte 1 000 €</button>
-</div></section>
 
-<section id="seasuite" class="seasuite"><div class="wrap">
-<div class="sec-head"><span class="sec-num">VI.</span><h2>SeaSuite™</h2></div>
-<p class="sec-sub">Une cabine de luxe qui flotte. Elle s’amarre à votre poupe au coucher du soleil et l’on se réveille sur l’eau : lit queen, blackout total, coupole en polymère transparent de qualité océanique et une ingénierie conçue pour 25 nœuds. Réservez votre place dans la première série avec un acompte remboursable.</p>
-<p style="margin:-46px 0 60px"><a href="seasuite.html" style="color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:.24em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:4px">Voir les rendus et les plans cotés &rarr;</a></p>
-<div class="ss-grid">
-<div class="ss-panel">
-<span class="micro">Nº 01</span>
-<h3>Horizon</h3>
-<p class="tag-line">La suite d’hôtel sur l’eau</p>
-<svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 95 H380" stroke="#ab9260" stroke-width="1"/><rect x="40" y="82" width="320" height="13" rx="6" stroke="#c9b586" stroke-width="1.2"/><path d="M120 82 V50 Q120 34 140 34 H310 Q330 34 330 50 V82" stroke="#c9b586" stroke-width="1.2"/><path d="M138 56 H312" stroke="#ab9260" stroke-width="1" opacity=".7"/><path d="M138 70 H312" stroke="#ab9260" stroke-width="1" opacity=".4"/><path d="M160 34 V28 H290 V34" stroke="#ab9260" stroke-width="1" opacity=".8"/><circle cx="345" cy="28" r="3" stroke="#c9b586" stroke-width="1.2"/><path d="M60 88 H104" stroke="#ab9260" stroke-width="1" opacity=".6"/></svg>
-<div class="spec"><span class="k">Longueur × largeur</span><span>6.0 × 3.2 m</span></div>
-<div class="spec"><span class="k">Capacité</span><span>2 invités · queen 160</span></div>
-<div class="spec"><span class="k">Vent de calcul</span><span>25 nœuds</span></div>
-<div class="spec"><span class="k">Énergie</span><span>Solaire 200 W autonome</span></div>
-<div class="spec"><span class="k">Édition</span><span>15 500 € — série inaugurale</span></div>
-<button class="btn" onclick="addSeaSuite('Horizon')">Réserver une place — acompte 500 €</button></div>
-<div class="ss-panel">
-<span class="micro">Nº 02</span>
-<h3>Aurora</h3>
-<p class="tag-line">Dormir sous les étoiles, littéralement</p>
-<svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 95 H380" stroke="#ab9260" stroke-width="1"/><rect x="70" y="82" width="260" height="13" rx="6" stroke="#c9b586" stroke-width="1.2"/><path d="M115 82 A85 85 0 0 1 285 82" stroke="#c9b586" stroke-width="1.2"/><path d="M200 12 Q160 40 152 82" stroke="#ab9260" stroke-width="1" opacity=".5"/><path d="M200 12 Q240 40 248 82" stroke="#ab9260" stroke-width="1" opacity=".5"/><path d="M132 48 H268" stroke="#ab9260" stroke-width="1" opacity=".5"/><circle cx="200" cy="8" r="3" stroke="#c9b586" stroke-width="1.2"/><rect x="168" y="68" width="64" height="14" rx="4" stroke="#ab9260" stroke-width="1" opacity=".8"/><circle cx="90" cy="30" r="1.4" fill="#c9b586"/><circle cx="320" cy="22" r="1.4" fill="#c9b586"/><circle cx="348" cy="48" r="1.4" fill="#c9b586"/></svg>
-<div class="spec"><span class="k">Plateforme</span><span>4.6 × 4.0 m · coupole ⌀ 3.4</span></div>
-<div class="spec"><span class="k">Capacité</span><span>2 invités · queen 160</span></div>
-<div class="spec"><span class="k">Vent de calcul</span><span>20 nœuds · repliement 60 s</span></div>
-<div class="spec"><span class="k">Coupole</span><span>Polymère transparent océanique · blackout 360°</span></div>
-<div class="spec"><span class="k">Édition</span><span>18 200 € — série inaugurale</span></div>
-<button class="btn" onclick="addSeaSuite('Aurora')">Réserver une place — acompte 500 €</button></div>
-</div>
-</div></section>
 
-<section class="faq"><div class="wrap">
-<div class="sec-head"><span class="sec-num">VII.</span><h2>Comment ça marche</h2></div>
-<div class="faq-grid">
-<div class="faq-item"><h4>Comment acheter ?</h4><p>Ajoutez des produits à votre commande et complétez-la avec vos coordonnées. En moins de 2 heures, vous recevez une pro forma avec le stock confirmé et les instructions de paiement par virement SEPA. Rien n’est encaissé avant que le stock ne soit confirmé avec vous.</p></div>
-<div class="faq-item"><h4>Quel est le délai de livraison ?</h4><p>Entre 5 et 15 jours ouvrables dans l’UE, assurée porte à porte ou jusqu’à votre port de plaisance. Les projets Privé ont une moyenne de 21 jours, installation comprise.</p></div>
-<div class="faq-item"><h4>Quelle garantie couvre les produits ?</h4><p>La garantie légale européenne de 2 ans sur tous les produits neufs, gérée par AMARRA directement avec chaque maison.</p></div>
-<div class="faq-item"><h4>L’acompte de la SeaSuite™ est-il remboursable ?</h4><p>Oui, 100% remboursable jusqu’à la confirmation de votre configuration finale. Il assure votre position dans la série inaugurale de 12 unités.</p></div>
-<div class="faq-item"><h4>Le charter comporte-t-il des frais d’intermédiation ?</h4><p>Le prix que vous voyez est le prix final : il inclut la gestion AMARRA, sans frais cachés ni surprises. Un seul interlocuteur, en français, de la réservation au débarquement.</p></div>
-<div class="faq-item"><h4>Facturez-vous avec la TVA européenne ?</h4><p>Oui, nous émettons une facture européenne. Pour les pavillons et les immatriculations hors UE s’appliquent des régimes spéciaux d’exportation ; nous les gérons au cas par cas.</p></div>
-</div>
-</div></section>
+
+
+
+
+
 
 <section id="contacto" class="contact"><div class="wrap">
 <span class="micro" style="color:var(--gold-l);display:block;margin-bottom:26px">VIII. — Contact</span>
@@ -363,86 +292,15 @@ section{padding:90px 0}
 <div class="foot-in">
 <a class="wordmark" href="#">AMARRA</a>
 <div class="foot-links">
-<a href="#destinos">Destinations</a><a href="flota.html">Flotte</a><a href="#charter">Charter</a><a href="#seasuite">SeaSuite™</a><a href="#boutique">Boutique</a><a href="#prive">Privé</a><a href="#maison">Maison</a>
+<a href="#destinos">Destinations</a><a href="flota.html">Flotte</a><a href="#charter">Charter</a></div>
 </div>
-</div>
-<div class="fine"><span>© MMXXVI AMARRA — Menorca · Miami</span><span>Photographie : Unsplash. Les marques de tiers appartiennent à leurs maisons respectives. Prix en EUR, indicatifs.</span></div>
+<div class="fine"><span>© MMXXVI AMARRA · Patrona SpA — Menorca, Islas Baleares</span><span>Photographie : Unsplash. Les marques de tiers appartiennent à leurs maisons respectives. Prix en EUR, indicatifs.</span></div>
+<div class="legal-links"><a href="/fr/legal.html">Mentions l&eacute;gales</a><a href="/fr/privacidad.html">Confidentialit&eacute;</a><a href="/fr/cookies.html">Cookies</a><button type="button" onclick="amarraCookies()">G&eacute;rer les cookies</button></div>
 </div></footer>
 
-<div class="drawer-veil" id="veil" onclick="closeCart()"></div>
-<aside class="drawer" id="drawer">
-<header><h3>Votre commande</h3><button class="x" onclick="closeCart()">×</button></header>
-<div class="items" id="cart-items"></div>
-<div class="foot">
-<div class="total-row"><span>Total</span><span id="cart-total">0 €</span></div>
-<form id="order-form">
-<div class="fgrid">
-<div class="field"><label>Nom</label><input required name="nombre" type="text"></div>
-<div class="field"><label>Email</label><input required name="email" type="email"></div>
-<div class="field"><label>Téléphone</label><input name="telefono" type="text"></div>
-<div class="field"><label>Port / adresse de livraison</label><input name="entrega" type="text"></div>
-</div>
-<label class="pay-opt"><input type="radio" name="pago" value="Virement SEPA" checked><span><strong>Virement SEPA</strong><br><span class="pd">Vous recevez une pro forma avec le stock confirmé et l’IBAN en &lt;2 h. Vous ne payez rien avant confirmation.</span></span></label>
-<label class="pay-opt" style="opacity:.55"><input type="radio" name="pago" value="Carte" disabled><span><strong>Carte / financement</strong><br><span class="pd">Disponible prochainement.</span></span></label>
-<button class="btn" type="submit">Envoyer la commande</button>
-<div class="ok-msg" id="order-ok"></div>
-<p class="wa-alt">Vous pr&eacute;f&eacute;rez ne rien remplir&nbsp;? &Eacute;crivez-nous directement&nbsp;: <a href="https://wa.me/56958209294?text=Bonjour%2C%20j%27aimerais%20%C3%AAtre%20conseill%C3%A9%20pour%20choisir%20un%20bateau.%20https%3A//amarrayachts.com/fr/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=Demande%20AMARRA">E-mail</a></p>
-</form>
-</div>
-</aside>
+
 
 <script>
-var IMG = {
-seabob:'https://images.unsplash.com/photo-1602199926649-2e5e447bab97?q=80&w=800&auto=format&fit=crop',
-efoil:'https://images.unsplash.com/photo-1713962386741-a7a77f8d4b4a?q=80&w=800&auto=format&fit=crop',
-jetboard:'https://images.unsplash.com/photo-1555572151-ed24ab503e09?q=80&w=800&auto=format&fit=crop',
-pool:'https://images.unsplash.com/photo-1534854638093-bada1813ca19?q=80&w=800&auto=format&fit=crop',
-sup:'https://images.unsplash.com/photo-1517176118179-65244903d13c?q=80&w=800&auto=format&fit=crop',
-plat:'https://images.unsplash.com/photo-1580777187326-d45ec82084d3?q=80&w=800&auto=format&fit=crop',
-slide:'https://images.unsplash.com/photo-1646207683942-971653b6f6c2?q=80&w=800&auto=format&fit=crop',
-fender:'https://images.unsplash.com/photo-1615210833617-2698b1daad62?q=80&w=800&auto=format&fit=crop'
-};
-var PRODUCTS = [
-{id:'sbf5',cat:'Toys électriques',brand:'Seabob',name:'F5',price:10900,img:IMG.seabob,specs:['Jusqu’à 14 km/h en surface et en immersion','29 kg · jusqu’à 60 min d’autonomie','Blanc ou bleu · stock UE']},
-{id:'sbf5s',cat:'Toys électriques',brand:'Seabob',name:'F5 S',price:13900,img:IMG.seabob,specs:['Jusqu’à 20 km/h · 680 N de poussée','35 kg · caméra 4K en option','Le plus vendu sur superyachts']},
-{id:'flite',cat:'Toys électriques',brand:'Fliteboard',name:'Series 3 eFoil',price:12900,img:IMG.efoil,specs:['Vol au-dessus de l’eau à 25+ km/h','90 min d’autonomie · app de contrôle','Planche PRO 5\'8 en carbone']},
-{id:'awake',cat:'Toys électriques',brand:'Awake',name:'RÄVIK S',price:11900,img:IMG.jetboard,specs:['Jetboard électrique · 0–50 km/h en 4 s','Batterie interchangeable en 10 s','Pour riders sportifs']},
-{id:'ybplat',cat:'Plateformes & docks',brand:'Yachtbeach',name:'Master Platform 4.10',price:2790,img:IMG.plat,specs:['4.10 × 2.02 m · drop-stitch double couche','Connecteurs modulaires vers d’autres modules','Teck synthétique antidérapant']},
-{id:'nbvoy',cat:'Plateformes & docks',brand:'NautiBuoy',name:'Voyager 4 m',price:4950,img:IMG.plat,specs:['Plateforme premium 4 × 2 m','Système d’ancrage 360°','Qualité superyacht · 5 ans de garantie']},
-{id:'ybpool',cat:'Sea pools',brand:'Yachtbeach',name:'Sea Pool 4×4 avec filet',price:4590,img:IMG.pool,specs:['Piscine océanique 4 × 4 m','Filet de protection certifié','Bords lounge gonflables']},
-{id:'funair',cat:'Slides & jeux',brand:'FunAir',name:'Yacht Slide 4.5 m',price:7900,img:IMG.slide,specs:['Toboggan courbe pour la poupe','Gonflage en 8 min · turbine incluse','Sur mesure pour votre franc-bord']},
-{id:'redp',cat:'Slides & jeux',brand:'Red Paddle Co',name:'Ride 10\'6 SUP',price:1290,img:IMG.sup,specs:['La planche gonflable de référence','Kit complet : pagaie, pompe, sac à dos','Prête à offrir à bord']},
-{id:'fendx',cat:'Défenses & amarrage',brand:'Fendertex',name:'Set 4 défenses textiles S70',price:1390,img:IMG.fender,specs:['Défenses textiles ultralégères','70% plus légères que le PVC','Housses à la couleur de votre coque']}
-];
-var cart = [];
-function fmt(n){return n.toLocaleString('fr-FR')+' €'}
-function render(){
-var g=document.getElementById('prod-grid');
-g.innerHTML=PRODUCTS.map(function(p){
-return '<div class="card"><img src="'+p.img+'" alt="'+p.cat+'" loading="lazy" onerror="this.style.opacity=0">'+
-'<div class="body"><div class="cat">'+p.cat+'</div><h3>'+p.name+'</h3><div class="brand">'+p.brand+'</div>'+
-'<ul>'+p.specs.map(function(s){return '<li>'+s+'</li>'}).join('')+'</ul>'+
-'<div class="price-row"><span class="price">'+fmt(p.price)+'</span><span class="stock">Stock UE</span></div>'+
-'<button class="btn" onclick="addToCart(\''+p.id+'\')">Ajouter à la commande</button></div></div>';
-}).join('');
-}
-function addToCart(id){
-var p=PRODUCTS.find(function(x){return x.id===id});
-cart.push({name:p.brand+' '+p.name,price:p.price});
-sync();openCart();
-}
-function addSeaSuite(m){cart.push({name:'Réservation SeaSuite™ '+m+' (acompte remboursable)',price:500});sync();openCart()}
-function addPrive(){cart.push({name:'Projet Privé — acompte de conception',price:1000});sync();openCart()}
-function rm(i){cart.splice(i,1);sync()}
-function sync(){
-document.getElementById('cart-n').textContent=cart.length;
-var it=document.getElementById('cart-items');
-if(!cart.length){it.innerHTML='<div class="empty">Votre commande est vide. Explorez la boutique.</div>'}
-else{it.innerHTML=cart.map(function(c,i){return '<div class="d-item"><span class="nm">'+c.name+'</span><span>'+fmt(c.price)+'</span><button class="rm" onclick="rm('+i+')">retirer</button></div>'}).join('')}
-document.getElementById('cart-total').textContent=fmt(cart.reduce(function(a,c){return a+c.price},0));
-}
-function openCart(){document.getElementById('drawer').classList.add('open');document.getElementById('veil').style.display='block'}
-function closeCart(){document.getElementById('drawer').classList.remove('open');document.getElementById('veil').style.display='none'}
 function sendForm(data,subject,cb,errcb){
 data._subject=subject;data._template='table';data._captcha='false';
 fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
@@ -451,25 +309,6 @@ fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:
 /* on ne dit jamais "recu" tant qu on ne le sait pas: on montre le contact direct */
 .catch(function(){errcb()});
 }
-document.getElementById('order-form').addEventListener('submit',function(e){
-e.preventDefault();
-if(!cart.length){alert('Votre commande est vide.');return}
-var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
-var ref='AMR-'+Date.now().toString(36).toUpperCase().slice(-6);
-d.referencia=ref;
-d.pedido=cart.map(function(c){return c.name+' — '+fmt(c.price)}).join(' | ');
-d.total=fmt(cart.reduce(function(a,c){return a+c.price},0));
-var ok=document.getElementById('order-ok');
-sendForm(d,'Commande AMARRA '+ref,function(){
-ok.className='ok-msg';ok.style.display='block';
-ok.textContent='Commande '+ref+' reçue. Nous vous enverrons la pro forma avec le stock confirmé et les instructions de paiement en moins de 2 heures à '+d.email+'.';
-cart=[];sync();
-},function(){
-ok.style.display='block';
-ok.className='err-msg';
-ok.innerHTML='Nous n’avons pas pu envoyer la commande. Écrivez-nous à <a href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a> avec ce que vous souhaitez et nous le préparons quand même. Votre panier est toujours là.';
-});
-});
 document.getElementById('charter-form').addEventListener('submit',function(e){
 e.preventDefault();
 var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
@@ -480,9 +319,26 @@ sendForm(d,'Demande de charter AMARRA — '+d.destino,
   function(){ok.style.display='block'},
   function(){er.style.display='block';er.scrollIntoView({behavior:'smooth',block:'center'})});
 });
-render();sync();
+
 </script>
 
 <a class="wa-float" href="https://wa.me/56958209294?text=Bonjour%2C%20j%27aimerais%20%C3%AAtre%20conseill%C3%A9%20pour%20choisir%20un%20bateau.%20https%3A//amarrayachts.com/fr/" rel="noopener" target="_blank" aria-label="&Eacute;crivez-nous sur WhatsApp" title="&Eacute;crivez-nous sur WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23z"/></svg><b>WhatsApp</b></a>
+<style>#ck{position:fixed;left:0;right:0;bottom:0;z-index:120;background:#0b0e13;color:#c7cdd8;border-top:1px solid rgba(171,146,96,.45);padding:18px 20px;display:none;font-size:12.5px;line-height:1.6}#ck.on{display:block}#ck .ck-in{max-width:1200px;margin:0 auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:space-between}#ck p{margin:0;max-width:680px}#ck a{color:#c9b586}#ck .ck-b{display:flex;gap:10px;flex-shrink:0}#ck button{font-family:inherit;font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:11px 22px;cursor:pointer;border:1px solid #ab9260;background:none;color:#c9b586;transition:all .3s}#ck button.si{background:#ab9260;color:#0b0e13}#ck button:hover{background:#c9b586;color:#0b0e13}@media(max-width:640px){#ck .ck-in{flex-direction:column;align-items:flex-start}#ck .ck-b{width:100%;}#ck button{flex:1}}.legal-links{display:flex;gap:18px;flex-wrap:wrap;font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-top:14px}.legal-links a{color:inherit;opacity:.72;text-decoration:none;transition:opacity .3s}.legal-links a:hover{opacity:1}.legal-links button{background:none;border:0;padding:0;color:inherit;opacity:.72;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer}.legal-links button:hover{opacity:1}</style>
+<div id="ck" role="dialog" aria-live="polite"><div class="ck-in"><p>Nous utilisons un cookie qui nous est propre pour m&eacute;moriser ce choix et, uniquement si vous l&#39;acceptez, des cookies Google Analytics pour savoir quelles pages sont lues. Vous pouvez refuser sans rien perdre. <a href="/fr/cookies.html">Plus d&#39;informations</a>.</p><div class="ck-b"><button type="button" onclick="ckNo()">Refuser</button><button type="button" class="si" onclick="ckYes()">Accepter</button></div></div></div>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments)}
+gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','functionality_storage':'granted','security_storage':'granted'});
+var CKN='amarra_consent';
+function ckGet(){var m=document.cookie.match(/(?:^|; )amarra_consent=([^;]*)/);return m?decodeURIComponent(m[1]):''}
+function ckSet(v){document.cookie=CKN+'='+v+';path=/;max-age=15768000;samesite=lax'+(location.protocol==='https:'?';secure':'')}
+function ckHide(){var b=document.getElementById('ck');if(b)b.className=''}
+function ckOn(){
+}
+function ckYes(){ckSet('si');ckHide();ckOn()}
+function ckNo(){ckSet('no');ckHide()}
+window.amarraCookies=function(){var b=document.getElementById('ck');if(b)b.className='on'};
+(function(){var v=ckGet();if(v==='si'){ckOn()}else if(v!=='no'){var b=document.getElementById('ck');if(b)b.className='on'}})();
+</script>
 </body>
 </html>
