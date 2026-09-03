@@ -1,6 +1,17 @@
 {
  "redirects": [
   {
+   "source": "/(.*)",
+   "has": [
+    {
+     "type": "host",
+     "value": "amarra.vercel.app"
+    }
+   ],
+   "destination": "https://amarrayachts.com/$1",
+   "permanent": true
+  },
+  {
    "source": "/ca/yate/adria-mare-38-paola-41167993.html",
    "destination": "/ca/yate/adria-mare-38-paola-40049611.html",
    "permanent": true
