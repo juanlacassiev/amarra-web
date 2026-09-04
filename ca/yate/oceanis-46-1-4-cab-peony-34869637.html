@@ -8,6 +8,8 @@
   function gtag(){dataLayer.push(arguments);}
   // Consent Mode: los valores por defecto se fijan ANTES del config.
   gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied', 'functionality_storage': 'granted', 'security_storage': 'granted'});
+  // Si el visitante ya acepto en una visita anterior, se aplica antes del config.
+  if (/(?:^|; )amarra_consent=si(?:;|$)/.test(document.cookie)) gtag('consent', 'update', {'analytics_storage': 'granted'});
   gtag('js', new Date());
   gtag('config', 'G-G688LPED1M');
 </script>
