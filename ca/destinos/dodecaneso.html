@@ -6,6 +6,8 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Consent Mode: los valores por defecto se fijan ANTES del config.
+  gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied', 'functionality_storage': 'granted', 'security_storage': 'granted'});
   gtag('js', new Date());
   gtag('config', 'G-G688LPED1M');
 </script>
@@ -223,15 +225,15 @@
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments)}
-gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','functionality_storage':'granted','security_storage':'granted'});
 var CKN='amarra_consent';
 function ckGet(){var m=document.cookie.match(/(?:^|; )amarra_consent=([^;]*)/);return m?decodeURIComponent(m[1]):''}
 function ckSet(v){document.cookie=CKN+'='+v+';path=/;max-age=15768000;samesite=lax'+(location.protocol==='https:'?';secure':'')}
 function ckHide(){var b=document.getElementById('ck');if(b)b.className=''}
 function ckOn(){
+gtag('consent','update',{'analytics_storage':'granted'})
 }
 function ckYes(){ckSet('si');ckHide();ckOn()}
-function ckNo(){ckSet('no');ckHide()}
+function ckNo(){ckSet('no');ckHide();gtag('consent','update',{'analytics_storage':'denied'})}
 window.amarraCookies=function(){var b=document.getElementById('ck');if(b)b.className='on'};
 (function(){var v=ckGet();if(v==='si'){ckOn()}else if(v!=='no'){var b=document.getElementById('ck');if(b)b.className='on'}})();
 </script>

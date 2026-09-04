@@ -6,8 +6,12 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Consent Mode: los valores por defecto se fijan ANTES del config.
+  gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied', 'functionality_storage': 'granted', 'security_storage': 'granted'});
   gtag('js', new Date());
   gtag('config', 'G-G688LPED1M');
+  // Esta pagina no lleva banner: si ya se acepto en otra, se respeta.
+  if (/(?:^|; )amarra_consent=si(?:;|$)/.test(document.cookie)) gtag('consent', 'update', {'analytics_storage': 'granted'});
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
