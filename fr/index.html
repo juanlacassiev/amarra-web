@@ -12,6 +12,8 @@
   if (/(?:^|; )amarra_consent=si(?:;|$)/.test(document.cookie)) gtag('consent', 'update', {'analytics_storage': 'granted'});
   gtag('js', new Date());
   gtag('config', 'G-G688LPED1M');
+  window.amLead=function(m,l){try{gtag('event','generate_lead',{method:m,link_url:l||'',page_type:(location.pathname.indexOf('/yate/')>-1?'yate':(location.pathname.indexOf('/destinos/')>-1?'destino':'home')),page_path:location.pathname})}catch(e){}};
+  document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;var a=t.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';if(h.indexOf('wa.me/')>-1)window.amLead('whatsapp',h);else if(h.indexOf('mailto:')===0)window.amLead('email',h)},true);
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -334,7 +336,7 @@ var ok=document.getElementById('charter-ok');
 var er=document.getElementById('charter-err');
 ok.style.display=er.style.display='none';
 sendForm(d,'Demande de charter AMARRA — '+d.destino,
-  function(){ok.style.display='block'},
+  function(){ok.style.display='block';if(window.amLead)window.amLead('form')},
   function(){er.style.display='block';er.scrollIntoView({behavior:'smooth',block:'center'})});
 });
 
