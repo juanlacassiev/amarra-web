@@ -274,23 +274,11 @@ section{padding:90px 0}
 <div class="form-panel" id="charter-form-panel">
 <h3>Charter-Anfrage — Vorschlag in 24 h</h3>
 <p class="fp-sub">Nennen Sie uns Ihre Termine und Ihr Revier. Sie erhalten 3 konkrete Optionen mit Foto, Endpreis und echter Verfügbarkeit, unverbindlich.</p>
-<form id="charter-form">
-<div class="fgrid">
-<div class="field"><label>Name</label><input required name="nombre" type="text"></div>
-<div class="field"><label>Email</label><input required name="email" type="email"></div>
-<div class="field"><label>Telefon / WhatsApp</label><input name="telefono" type="text"></div>
-<div class="field"><label>Reiseziel</label><select name="destino"><option>Kroatien</option><option>Griechenland</option><option>Balearen</option><option>Korsika / Sardinien / Sizilien</option><option>Türkei</option><option>Montenegro</option><option>Karibik</option><option>Seychellen</option><option>Thailand</option><option>Übriges Mittelmeer</option></select></div>
-<div class="field"><label>Ungefähre Termine</label><input name="fechas" type="text" placeholder="z. B. 10.–17. Juli"></div>
-<div class="field"><label>Gäste</label><input name="huespedes" type="number" min="1" placeholder="6"></div>
-<div class="field"><label>Bootstyp</label><select name="tipo"><option>Katamaran</option><option>Segelyacht</option><option>Motoryacht</option><option>Mit Crew</option><option>Bitte beraten Sie mich</option></select></div>
-<div class="field"><label>Wochenbudget</label><select name="presupuesto"><option>3.000 €–6.000</option><option>6.000 €–12.000</option><option>12.000 €–25.000</option><option>25.000 €+</option></select></div>
-<div class="field"><label>Anmerkungen</label><input name="comentarios" type="text" placeholder="optional"></div>
-</div>
-<button class="btn" type="submit">Vorschlag anfordern</button>
-<div class="ok-msg" id="charter-ok">Erhalten. Wir senden Ihnen in weniger als 24 Stunden 3 Optionen mit echter Verfügbarkeit.</div>
-<div class="err-msg" id="charter-err">Wir konnten Ihre Anfrage nicht senden. Schreiben Sie uns bitte direkt an <a href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a> und wir antworten genauso schnell.</div>
+<div id="charter-form" class="req-cta">
+<p style="margin:18px 0 0"><a class="btn" href="https://venta.amarrayachts.com/en/charter/request?lang=de&amp;from=https%3A%2F%2Famarrayachts.com%2Fde%2Findex.html" onclick="if(window.amLead)window.amLead('form',this.href)" style="display:inline-block;text-decoration:none;text-align:center">Angebot anfordern</a></p>
+<p class="req-note" style="font-size:12px;opacity:.75;margin:12px 0 0;line-height:1.55">Anfragen werden &uuml;ber Ihr AMARRA-Konto mit best&auml;tigter E-Mail gesendet (kostenlos, in einer Minute). So sch&uuml;tzen wir Eigner und G&auml;ste vor Spam.</p>
 <p class="wa-alt">Lieber kein Formular? Schreiben Sie uns direkt: <a href="https://wa.me/56958209294?text=Hallo%2C%20ich%20h%C3%A4tte%20gern%20Hilfe%20bei%20der%20Auswahl%20eines%20Bootes.%20https%3A//amarrayachts.com/de/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=AMARRA%20Anfrage">E-Mail</a></p>
-</form>
+</div>
 </div>
 </div></section>
 
@@ -330,24 +318,6 @@ section{padding:90px 0}
 
 
 <script>
-function sendForm(data,subject,cb,errcb){
-data._subject=subject;data._template='table';data._captcha='false';
-fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-.then(function(r){if(!r.ok)throw 0;return r.json()})
-.then(function(j){if(j&&(j.success===false||j.success==='false'))throw 0;cb()})
-/* nie "erhalten" sagen, wenn wir es nicht wissen: es wird der direkte Kontakt gezeigt */
-.catch(function(){errcb()});
-}
-document.getElementById('charter-form').addEventListener('submit',function(e){
-e.preventDefault();
-var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
-var ok=document.getElementById('charter-ok');
-var er=document.getElementById('charter-err');
-ok.style.display=er.style.display='none';
-sendForm(d,'AMARRA Charter-Anfrage — '+d.destino,
-  function(){ok.style.display='block';if(window.amLead)window.amLead('form')},
-  function(){er.style.display='block';er.scrollIntoView({behavior:'smooth',block:'center'})});
-});
 
 </script>
 

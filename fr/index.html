@@ -274,23 +274,11 @@ section{padding:90px 0}
 <div class="form-panel" id="charter-form-panel">
 <h3>Demande de charter — proposition sous 24 h</h3>
 <p class="fp-sub">Dites-nous vos dates et vos eaux. Vous recevrez 3 options concrètes avec photo, prix final et disponibilité réelle, sans engagement.</p>
-<form id="charter-form">
-<div class="fgrid">
-<div class="field"><label>Nom</label><input required name="nombre" type="text"></div>
-<div class="field"><label>Email</label><input required name="email" type="email"></div>
-<div class="field"><label>Téléphone / WhatsApp</label><input name="telefono" type="text"></div>
-<div class="field"><label>Destination</label><select name="destino"><option>Croatie</option><option>Grèce</option><option>Baléares</option><option>Corse / Sardaigne / Sicile</option><option>Turquie</option><option>Monténégro</option><option>Caraïbes</option><option>Seychelles</option><option>Thaïlande</option><option>Autre Méditerranée</option></select></div>
-<div class="field"><label>Dates approximatives</label><input name="fechas" type="text" placeholder="ex. 10–17 juillet"></div>
-<div class="field"><label>Invités</label><input name="huespedes" type="number" min="1" placeholder="6"></div>
-<div class="field"><label>Type de bateau</label><select name="tipo"><option>Catamaran</option><option>Voilier</option><option>Yacht à moteur</option><option>Avec équipage</option><option>Conseillez-moi</option></select></div>
-<div class="field"><label>Budget hebdomadaire</label><select name="presupuesto"><option>3 000 €–6 000</option><option>6 000 €–12 000</option><option>12 000 €–25 000</option><option>25 000 €+</option></select></div>
-<div class="field"><label>Commentaires</label><input name="comentarios" type="text" placeholder="facultatif"></div>
-</div>
-<button class="btn" type="submit">Demander une proposition</button>
-<div class="ok-msg" id="charter-ok">Bien reçu. Nous vous enverrons 3 options avec disponibilité réelle en moins de 24 heures.</div>
-<div class="err-msg" id="charter-err">Nous n’avons pas pu envoyer la demande. Écrivez-nous directement à <a href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a> et nous vous répondons tout aussi vite.</div>
+<div id="charter-form" class="req-cta">
+<p style="margin:18px 0 0"><a class="btn" href="https://venta.amarrayachts.com/en/charter/request?lang=fr&amp;from=https%3A%2F%2Famarrayachts.com%2Ffr%2Findex.html" onclick="if(window.amLead)window.amLead('form',this.href)" style="display:inline-block;text-decoration:none;text-align:center">Demander une proposition</a></p>
+<p class="req-note" style="font-size:12px;opacity:.75;margin:12px 0 0;line-height:1.55">Les demandes sont envoy&eacute;es depuis votre compte AMARRA avec e-mail confirm&eacute; (gratuit, en une minute). Cela prot&egrave;ge armateurs et clients du spam.</p>
 <p class="wa-alt">Vous pr&eacute;f&eacute;rez ne rien remplir&nbsp;? &Eacute;crivez-nous directement&nbsp;: <a href="https://wa.me/56958209294?text=Bonjour%2C%20j%27aimerais%20%C3%AAtre%20conseill%C3%A9%20pour%20choisir%20un%20bateau.%20https%3A//amarrayachts.com/fr/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=Demande%20AMARRA">E-mail</a></p>
-</form>
+</div>
 </div>
 </div></section>
 
@@ -330,24 +318,6 @@ section{padding:90px 0}
 
 
 <script>
-function sendForm(data,subject,cb,errcb){
-data._subject=subject;data._template='table';data._captcha='false';
-fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-.then(function(r){if(!r.ok)throw 0;return r.json()})
-.then(function(j){if(j&&(j.success===false||j.success==='false'))throw 0;cb()})
-/* on ne dit jamais "recu" tant qu on ne le sait pas: on montre le contact direct */
-.catch(function(){errcb()});
-}
-document.getElementById('charter-form').addEventListener('submit',function(e){
-e.preventDefault();
-var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
-var ok=document.getElementById('charter-ok');
-var er=document.getElementById('charter-err');
-ok.style.display=er.style.display='none';
-sendForm(d,'Demande de charter AMARRA — '+d.destino,
-  function(){ok.style.display='block';if(window.amLead)window.amLead('form')},
-  function(){er.style.display='block';er.scrollIntoView({behavior:'smooth',block:'center'})});
-});
 
 </script>
 

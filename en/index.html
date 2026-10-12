@@ -274,23 +274,11 @@ section{padding:90px 0}
 <div class="form-panel" id="charter-form-panel">
 <h3>Charter enquiry — proposal within 24 h</h3>
 <p class="fp-sub">Tell us your dates and your cruising ground. You will receive 3 specific options with photographs, final price and real availability, with no obligation.</p>
-<form id="charter-form">
-<div class="fgrid">
-<div class="field"><label>Name</label><input required name="nombre" type="text"></div>
-<div class="field"><label>Email</label><input required name="email" type="email"></div>
-<div class="field"><label>Phone / WhatsApp</label><input name="telefono" type="text"></div>
-<div class="field"><label>Destination</label><select name="destino"><option>Croatia</option><option>Greece</option><option>The Balearics</option><option>Corsica / Sardinia / Sicily</option><option>Turkey</option><option>Montenegro</option><option>Caribbean</option><option>Seychelles</option><option>Thailand</option><option>Elsewhere in the Mediterranean</option></select></div>
-<div class="field"><label>Approximate dates</label><input name="fechas" type="text" placeholder="e.g. 10–17 July"></div>
-<div class="field"><label>Guests</label><input name="huespedes" type="number" min="1" placeholder="6"></div>
-<div class="field"><label>Type of yacht</label><select name="tipo"><option>Catamaran</option><option>Sailing yacht</option><option>Motor yacht</option><option>Crewed</option><option>Advise me</option></select></div>
-<div class="field"><label>Weekly budget</label><select name="presupuesto"><option>€3,000–6,000</option><option>€6,000–12,000</option><option>€12,000–25,000</option><option>€25,000+</option></select></div>
-<div class="field"><label>Comments</label><input name="comentarios" type="text" placeholder="optional"></div>
-</div>
-<button class="btn" type="submit">Request a proposal</button>
-<div class="ok-msg" id="charter-ok">Received. We will send you 3 options with real availability in under 24 hours.</div>
-<div class="err-msg" id="charter-err">We could not send your enquiry. Please write to us directly at <a href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a> and we will answer just as quickly.</div>
+<div id="charter-form" class="req-cta">
+<p style="margin:18px 0 0"><a class="btn" href="https://venta.amarrayachts.com/en/charter/request?lang=en&amp;from=https%3A%2F%2Famarrayachts.com%2Fen%2Findex.html" onclick="if(window.amLead)window.amLead('form',this.href)" style="display:inline-block;text-decoration:none;text-align:center">Request a proposal</a></p>
+<p class="req-note" style="font-size:12px;opacity:.75;margin:12px 0 0;line-height:1.55">Requests are sent from your AMARRA account with a confirmed email (free, takes a minute). This keeps owners and guests safe from spam.</p>
 <p class="wa-alt">Would you rather not fill in a form? Write to us directly: <a href="https://wa.me/56958209294?text=Hello%2C%20I%20would%20like%20some%20help%20choosing%20a%20yacht.%20https%3A//amarrayachts.com/en/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=AMARRA%20enquiry">Email</a></p>
-</form>
+</div>
 </div>
 </div></section>
 
@@ -330,24 +318,6 @@ section{padding:90px 0}
 
 
 <script>
-function sendForm(data,subject,cb,errcb){
-data._subject=subject;data._template='table';data._captcha='false';
-fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-.then(function(r){if(!r.ok)throw 0;return r.json()})
-.then(function(j){if(j&&(j.success===false||j.success==='false'))throw 0;cb()})
-/* never say "received" unless we know it: show the direct contact instead */
-.catch(function(){errcb()});
-}
-document.getElementById('charter-form').addEventListener('submit',function(e){
-e.preventDefault();
-var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
-var ok=document.getElementById('charter-ok');
-var er=document.getElementById('charter-err');
-ok.style.display=er.style.display='none';
-sendForm(d,'AMARRA charter enquiry — '+d.destino,
-  function(){ok.style.display='block';if(window.amLead)window.amLead('form')},
-  function(){er.style.display='block';er.scrollIntoView({behavior:'smooth',block:'center'})});
-});
 
 </script>
 

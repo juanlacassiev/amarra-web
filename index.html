@@ -274,23 +274,11 @@ section{padding:90px 0}
 <div class="form-panel" id="charter-form-panel">
 <h3>Solicitud de charter — propuesta en 24 h</h3>
 <p class="fp-sub">Díganos fechas y aguas. Recibirá 3 opciones concretas con foto, precio final y disponibilidad real, sin compromiso.</p>
-<form id="charter-form">
-<div class="fgrid">
-<div class="field"><label>Nombre</label><input required name="nombre" type="text"></div>
-<div class="field"><label>Email</label><input required name="email" type="email"></div>
-<div class="field"><label>Teléfono / WhatsApp</label><input name="telefono" type="text"></div>
-<div class="field"><label>Destino</label><select name="destino"><option>Croacia</option><option>Grecia</option><option>Baleares</option><option>Córcega / Cerdeña / Sicilia</option><option>Turquía</option><option>Montenegro</option><option>Caribe</option><option>Seychelles</option><option>Tailandia</option><option>Otro Mediterráneo</option></select></div>
-<div class="field"><label>Fechas aproximadas</label><input name="fechas" type="text" placeholder="ej. 10–17 julio"></div>
-<div class="field"><label>Huéspedes</label><input name="huespedes" type="number" min="1" placeholder="6"></div>
-<div class="field"><label>Tipo de barco</label><select name="tipo"><option>Catamarán</option><option>Velero</option><option>Yate a motor</option><option>Con tripulación</option><option>Me asesoran</option></select></div>
-<div class="field"><label>Presupuesto semanal</label><select name="presupuesto"><option>€3.000–6.000</option><option>€6.000–12.000</option><option>€12.000–25.000</option><option>€25.000+</option></select></div>
-<div class="field"><label>Comentarios</label><input name="comentarios" type="text" placeholder="opcional"></div>
-</div>
-<button class="btn" type="submit">Solicitar propuesta</button>
-<div class="ok-msg" id="charter-ok">Recibido. Le enviaremos 3 opciones con disponibilidad real en menos de 24 horas.</div>
-<div class="err-msg" id="charter-err">No hemos podido enviar la solicitud. Escríbanos directamente a <a href="mailto:zagatomiami@gmail.com">zagatomiami@gmail.com</a> y le contestamos igual de rápido.</div>
+<div id="charter-form" class="req-cta">
+<p style="margin:18px 0 0"><a class="btn" href="https://venta.amarrayachts.com/charter/solicitud?lang=es&amp;from=https%3A%2F%2Famarrayachts.com%2Findex.html" onclick="if(window.amLead)window.amLead('form',this.href)" style="display:inline-block;text-decoration:none;text-align:center">Solicitar propuesta</a></p>
+<p class="req-note" style="font-size:12px;opacity:.75;margin:12px 0 0;line-height:1.55">Las solicitudes se env&iacute;an desde tu cuenta AMARRA con el email confirmado (gratis, en un minuto). As&iacute; protegemos a armadores y clientes del spam.</p>
 <p class="wa-alt">&iquest;Prefieres no rellenar nada? Escr&iacute;benos directamente: <a href="https://wa.me/56958209294?text=Hola%2C%20me%20gustar%C3%ADa%20que%20me%20ayudarais%20a%20elegir%20barco.%20https%3A//amarrayachts.com/" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=Solicitud%20AMARRA">Correo</a></p>
-</form>
+</div>
 </div>
 </div></section>
 
@@ -330,24 +318,6 @@ section{padding:90px 0}
 
 
 <script>
-function sendForm(data,subject,cb,errcb){
-data._subject=subject;data._template='table';data._captcha='false';
-fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
-.then(function(r){if(!r.ok)throw 0;return r.json()})
-.then(function(j){if(j&&(j.success===false||j.success==='false'))throw 0;cb()})
-/* nunca decimos "recibido" si no lo sabemos: se ensena el contacto directo */
-.catch(function(){errcb()});
-}
-document.getElementById('charter-form').addEventListener('submit',function(e){
-e.preventDefault();
-var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
-var ok=document.getElementById('charter-ok');
-var er=document.getElementById('charter-err');
-ok.style.display=er.style.display='none';
-sendForm(d,'Solicitud de charter AMARRA — '+d.destino,
-  function(){ok.style.display='block';if(window.amLead)window.amLead('form')},
-  function(){er.style.display='block';er.scrollIntoView({behavior:'smooth',block:'center'})});
-});
 
 </script>
 

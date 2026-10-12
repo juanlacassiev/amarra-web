@@ -312,19 +312,12 @@ nav.dest-idx{background:var(--black);color:var(--mut-d);padding:40px 0 6px;borde
 <button class="x" onclick="closeModal()">&times;</button>
 <h4 id="m-title">Sol·licitar disponibilitat</h4>
 <div class="sub" id="m-boat"></div>
-<form id="req-form">
-<input type="hidden" name="barco" id="f-barco">
-<label>Nom</label><input name="nombre" required>
-<label>Email</label><input type="email" name="email" required>
-<label>Tel&egrave;fon / WhatsApp</label><input name="telefono" required>
-<label>Dates aproximades</label><input name="fechas" placeholder="p. ex. 2a quinzena de juliol, 7 nits" required>
-<label>Convidats</label><input name="invitados" placeholder="p. ex. 6 adults, 2 nens">
-<label>Comentaris</label><textarea name="comentarios" placeholder="Patr&oacute;, hostess, prefer&egrave;ncies de port de sortida&hellip;"></textarea>
-<button class="send" type="submit">Enviar sol·licitud &mdash; resposta en 24 h</button>
-<div class="ok-msg" id="ok-msg">Sol·licitud rebuda. Li enviarem disponibilitat confirmada i 3 alternatives comparables en menys de 24 hores.</div>
-<div class="ok-msg" id="err-msg" style="background:#f6e9e6;color:#7d2a1c">No hem pogut enviar el formulari. Escrigui&rsquo;ns directament i li contestem igual de r&agrave;pid: <a href="mailto:zagatomiami@gmail.com" style="color:#7d2a1c">zagatomiami@gmail.com</a></div>
+<div id="req-form" class="req-cta">
+<input type="hidden" id="f-barco"><div id="ok-msg" style="display:none"></div><div id="err-msg" style="display:none"></div>
+<p style="margin:18px 0 0"><a class="send" href="https://venta.amarrayachts.com/charter/solicitud?lang=ca&amp;from=https%3A%2F%2Famarrayachts.com%2Fca%2Fflota.html" id="req-link" data-base="https://venta.amarrayachts.com/charter/solicitud?lang=ca&amp;from=https%3A%2F%2Famarrayachts.com%2Fca%2Fflota.html" onclick="if(window.amLead)window.amLead('form',this.href)" style="display:inline-block;text-decoration:none;text-align:center">Sol&middot;licitar disponibilitat</a></p>
+<p class="req-note" style="font-size:12px;opacity:.75;margin:12px 0 0;line-height:1.55">Les sol&middot;licituds s'envien des del teu compte AMARRA amb el correu confirmat (gratis, en un minut). Aix&iacute; protegim armadors i clients de l'spam.</p>
 <p class="wa-alt">Prefereixes no omplir res? Escriu-nos directament: <a href="https://wa.me/56958209294?text=Hola%2C%20m%27agradaria%20que%20m%27ajud%C3%A9ssiu%20a%20triar%20un%20vaixell.%20https%3A//amarrayachts.com/ca/flota.html" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=Sol%C2%B7licitud%20AMARRA">Correu</a></p>
-</form>
+</div>
 </div>
 
 <script>
@@ -611,7 +604,7 @@ function openModal(id){
   var b=byId(id);if(!b)return;
   var label=b[2]+' — '+b[1]+' · '+b[6];
   document.getElementById('m-boat').textContent=label;
-  document.getElementById('f-barco').value=label;
+  document.getElementById('f-barco').value=label;var rl=document.getElementById('req-link');if(rl)rl.href=rl.getAttribute('data-base')+'&yacht='+encodeURIComponent(label)+'&destino='+encodeURIComponent(b[6]||'');
   document.getElementById('ok-msg').style.display='none';
   document.getElementById('err-msg').style.display='none';
   document.getElementById('modal').classList.add('open');
@@ -624,19 +617,6 @@ function closeModal(){
   document.body.style.overflow='';
 }
 function closeAll(){closeSheet();closeModal()}
-document.getElementById('req-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
-  d._subject='Sol·licitud de flota AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
-  var er=document.getElementById('err-msg');
-  er.style.display='none';
-  fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-  .then(function(r){if(!r.ok)throw 0;return r.json()})
-  .then(function(j){if(j&&(j.success===false||j.success==='false'))throw 0;
-    document.getElementById('ok-msg').style.display='block'})
-  /* nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo */
-  .catch(function(){er.style.display='block'});
-});
 renderDest();
 apply();
 delHash();

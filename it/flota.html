@@ -312,19 +312,12 @@ nav.dest-idx{background:var(--black);color:var(--mut-d);padding:40px 0 6px;borde
 <button class="x" onclick="closeModal()">&times;</button>
 <h4 id="m-title">Richiedi disponibilità</h4>
 <div class="sub" id="m-boat"></div>
-<form id="req-form">
-<input type="hidden" name="barco" id="f-barco">
-<label>Nome</label><input name="nombre" required>
-<label>Email</label><input type="email" name="email" required>
-<label>Telefono / WhatsApp</label><input name="telefono" required>
-<label>Date approssimative</label><input name="fechas" placeholder="es. seconda metà di luglio, 7 notti" required>
-<label>Ospiti</label><input name="invitados" placeholder="es. 6 adulti, 2 bambini">
-<label>Commenti</label><textarea name="comentarios" placeholder="Skipper, hostess, preferenze sul porto di partenza&hellip;"></textarea>
-<button class="send" type="submit">Invia la richiesta &mdash; risposta in 24 h</button>
-<div class="ok-msg" id="ok-msg">Richiesta ricevuta. Le invieremo disponibilità confermata e 3 alternative comparabili in meno di 24 ore.</div>
-<div class="ok-msg" id="err-msg" style="background:#f6e9e6;color:#7d2a1c">Non siamo riusciti a inviare il modulo. Ci scriva direttamente e le rispondiamo altrettanto in fretta: <a href="mailto:zagatomiami@gmail.com" style="color:#7d2a1c">zagatomiami@gmail.com</a></div>
+<div id="req-form" class="req-cta">
+<input type="hidden" id="f-barco"><div id="ok-msg" style="display:none"></div><div id="err-msg" style="display:none"></div>
+<p style="margin:18px 0 0"><a class="send" href="https://venta.amarrayachts.com/en/charter/request?lang=it&amp;from=https%3A%2F%2Famarrayachts.com%2Fit%2Fflota.html" id="req-link" data-base="https://venta.amarrayachts.com/en/charter/request?lang=it&amp;from=https%3A%2F%2Famarrayachts.com%2Fit%2Fflota.html" onclick="if(window.amLead)window.amLead('form',this.href)" style="display:inline-block;text-decoration:none;text-align:center">Richiedi disponibilit&agrave;</a></p>
+<p class="req-note" style="font-size:12px;opacity:.75;margin:12px 0 0;line-height:1.55">Le richieste si inviano dal tuo account AMARRA con email confermata (gratis, in un minuto). Cos&igrave; proteggiamo armatori e clienti dallo spam.</p>
 <p class="wa-alt">Preferisci non compilare nulla? Scrivici direttamente: <a href="https://wa.me/56958209294?text=Buongiorno%2C%20vorrei%20essere%20aiutato%20a%20scegliere%20una%20barca.%20https%3A//amarrayachts.com/it/flota.html" rel="noopener" target="_blank">WhatsApp</a><span>&middot;</span><a href="mailto:zagatomiami@gmail.com?subject=Richiesta%20AMARRA">E-mail</a></p>
-</form>
+</div>
 </div>
 
 <script>
@@ -611,7 +604,7 @@ function openModal(id){
   var b=byId(id);if(!b)return;
   var label=b[2]+' — '+b[1]+' · '+b[6];
   document.getElementById('m-boat').textContent=label;
-  document.getElementById('f-barco').value=label;
+  document.getElementById('f-barco').value=label;var rl=document.getElementById('req-link');if(rl)rl.href=rl.getAttribute('data-base')+'&yacht='+encodeURIComponent(label)+'&destino='+encodeURIComponent(b[6]||'');
   document.getElementById('ok-msg').style.display='none';
   document.getElementById('err-msg').style.display='none';
   document.getElementById('modal').classList.add('open');
@@ -624,19 +617,6 @@ function closeModal(){
   document.body.style.overflow='';
 }
 function closeAll(){closeSheet();closeModal()}
-document.getElementById('req-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  var f=new FormData(e.target),d={};f.forEach(function(v,k){d[k]=v});
-  d._subject='Richiesta di flotta AMARRA \u2014 '+d.barco;d._template='table';d._captcha='false';
-  var er=document.getElementById('err-msg');
-  er.style.display='none';
-  fetch('https://formsubmit.co/ajax/zagatomiami@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
-  .then(function(r){if(!r.ok)throw 0;return r.json()})
-  .then(function(j){if(j&&(j.success===false||j.success==='false'))throw 0;
-    document.getElementById('ok-msg').style.display='block'})
-  /* nunca decimos "recibida" si no lo sabemos: se ensena el contacto directo */
-  .catch(function(){er.style.display='block'});
-});
 renderDest();
 apply();
 delHash();
